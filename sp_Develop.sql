@@ -83,10 +83,10 @@ AS
 	    ** Setting some varibles
 	    **********************************************************************************************************************/
 
-        SET @Version = '2.1.1';
-        SET @VersionDate = '20230513';
-        SET @URLBase = 'https://kevinmartintech.github.io/sp_Develop/best-practices-and-findings/';
-        SET @URLSkipChecks = 'https://kevinmartintech.github.io/sp_Develop/how-to-skip-checks';
+        SET @Version = '3.0.1';
+        SET @VersionDate = '20230608';
+        SET @URLBase = 'https://www.spdevelop.org/best-practices-and-findings/';
+        SET @URLSkipChecks = 'https://www.spdevelop.org/how-to-skip-checks';
         SET @OutputType = UPPER(@OutputType);
         SET @LineFeed = CHAR(13) + CHAR(10);
         SET @ScriptVersionName = N'sp_Develop v' + @Version + N' - ' + DATENAME(MONTH, @VersionDate) + N' ' + RIGHT('0' + DATENAME(DAY, @VersionDate), 2) + N', ' + DATENAME(YEAR, @VersionDate);
