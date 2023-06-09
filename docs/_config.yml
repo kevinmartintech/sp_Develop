@@ -1,7 +1,7 @@
 title: "Kevin's sp_Develop"
 description: "sp_Develop can be used by database developers, software developers and for performing database code (smell) reviews."
 remote_theme: just-the-docs/just-the-docs@v0.5.2
-color_scheme: "light"
+color_scheme: "dark"
 search_enabled: "true"
 baseurl: "/"
 url: "https://www.spdevelop.org"
