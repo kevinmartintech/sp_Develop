@@ -5,7 +5,7 @@ color_scheme: "light"
 search_enabled: "true"
 baseurl: "/"
 url: "https://www.spdevelop.org"
-logo: "/images/sp_Develop_logo.png"
+logo: "/Images/sp_Develop_logo.png"
 
 
 # Enable or disable heading anchors
