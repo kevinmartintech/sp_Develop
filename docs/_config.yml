@@ -4,7 +4,7 @@ remote_theme: "pmarsceill/just-the-docs"
 color_scheme: "light"
 search_enabled: "true"
 baseurl: "/sp_Develop"
-url: "https://spdevelop.org"
+url: "https://www.spdevelop.org"
 
 
 
