@@ -306,7 +306,7 @@ There is no functional or performance difference between a unique constraint (un
 
 The only possible benefit of a unique constraint (unique key) has over a unique index is to emphasize the purpose of the index and is displayed in the SSMS (SQL Server Management Studio) table 'Keys' folder in the 'Object Explorer' side pane.
 
-- See [Naming Constraint Usage](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#naming-constraint-usage)
+- See [Naming Constraint Usage](/sp_Develop/best-practices-and-findings/naming-conventions#naming-constraint-usage)
 
 [Back to top](#top)
 

@@ -162,7 +162,7 @@ In the beginning, all three connection strings below will have the same content 
      - See [Connecting With MultiSubnetFailover](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover)
 
 
-- See [Not Using Code Retry Logic for Transient Errors](/SQL-Server-Development-Assessment/best-practices-and-findings/configuration-issues#54)
+- See [Not Using Code Retry Logic for Transient Errors](/sp_Develop/best-practices-and-findings/configuration-issues#54)
 
 
 

@@ -30,7 +30,7 @@ The purpose of naming and style convention allows you and others to identify the
 ## Improper Named Foreign Key Relationship
 **Check Id:** 41 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Improper+Named+Foreign+Key+Relationship)
 
-No need to use the ``FK_`` prefix in foreign key relationships. See [Using Prefix in Name](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#using-prefix-in-name).
+No need to use the ``FK_`` prefix in foreign key relationships. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#using-prefix-in-name).
 
 Use the format of ``[FOREIGN-KEY-TABLE]_[PRIMARY-KEY-TABLE]`` in most cases. This gives you a quick view of the tables that are involved in the relationship. The first table named depends on the second table named.
 
@@ -58,7 +58,7 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the [TA
 ## Improper Named Primary Key
 **Check Id:** 42 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Improper+Named+Foreign+Key+Relationship)
 
-No need to use the ``PK_`` prefix for primary keys. Use the format of ```[TABLE-NAME]_[COLUMN-NAME]```. See [Using Prefix in Name](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#using-prefix-in-name).
+No need to use the ``PK_`` prefix for primary keys. Use the format of ```[TABLE-NAME]_[COLUMN-NAME]```. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#using-prefix-in-name).
 
 **Basic Example:** ``Invoice_InvoiceId``
 
@@ -66,8 +66,8 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 
 **Example:** ```Purchasing_PurchaseOrder_PurchaseOrderId```
 
-- See [Index Naming](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#index-naming)
-- See [Naming Natural Keys](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#naming-natural-keys)
+- See [Index Naming](/sp_Develop/best-practices-and-findings/naming-conventions#index-naming)
+- See [Naming Natural Keys](/sp_Develop/best-practices-and-findings/naming-conventions#naming-natural-keys)
 
 
 [Back to top](#top)
@@ -79,7 +79,7 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 ## Using Natural Key
 **Check Id:** 43 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Naming+Natural+Keys)
 
-- See [Unique Constraint or Unique Indexes Usage](/SQL-Server-Development-Assessment/best-practices-and-findings/table-conventions#unique-constraint-or-unique-indexes-usage)
+- See [Unique Constraint or Unique Indexes Usage](/sp_Develop/best-practices-and-findings/table-conventions#unique-constraint-or-unique-indexes-usage)
 
 [Back to top](#top)
 
@@ -115,7 +115,7 @@ Use the format Use the format ```[TABLE-NAME]_[COLUMN-NAME]_[DESCRIPTION]```
 ```CONSTRAINT Feedback_Stars_Range CHECK (Stars BETWEEN 0 AND 5)```<br/>
 
 
-- See [Unique Constraint or Unique Indexes Usage](/SQL-Server-Development-Assessment/best-practices-and-findings/table-conventions#unique-constraint-or-unique-indexes-usage)
+- See [Unique Constraint or Unique Indexes Usage](/sp_Develop/best-practices-and-findings/table-conventions#unique-constraint-or-unique-indexes-usage)
 
 [Back to top](#top)
 
@@ -148,8 +148,8 @@ CREATE TABLE dbo.TableName (
 );
 ```
 
-- See [Naming Constraint Usage](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#naming-constraint-usage)
-- See [Naming Primary Keys](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#naming-primary-keys)
+- See [Naming Constraint Usage](/sp_Develop/best-practices-and-findings/naming-conventions#naming-constraint-usage)
+- See [Naming Primary Keys](/sp_Develop/best-practices-and-findings/naming-conventions#naming-primary-keys)
 
 [Back to top](#top)
 
@@ -183,7 +183,7 @@ Variable and parameter names should contain only letters and numbers. No special
 
 Parameter and variable and names should be named identically as the column names for the data they represent other than the ```@``` symbol.
 
-- See [Column Naming](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#column-naming)
+- See [Column Naming](/sp_Develop/best-practices-and-findings/naming-conventions#column-naming)
 
 [Back to top](#top)
 
@@ -311,12 +311,12 @@ Do not prefix your columns with ``fld_``, ``col_``, ``f_``, ``u_`` as it should 
 ## Improper Index Name
 **Check Id:** 49 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Improper+Index+Name)
 
-No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#using-prefix-in-name).
+No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#using-prefix-in-name).
 
 - Index Names should be ``[SchemaName_]TableName_Column1_Column2_Column3`` 
 - Index Names should indicate if there are included columns with ``[SchemaName_]TableName_Column1_Column2_Column3_Includes``
 - When using ``uniqueidentifier/guid`` columns for clustered index you can use ``[SchemaName_]TableName_ColumnName_INDEX_REBUILD_ONLY`` to signify special index maintenance handling.
-  - See [UNIQUEIDENTIFIER in a Clustered Index](/SQL-Server-Development-Assessment/best-practices-and-findings/table-conventions#uniqueidentifier-in-a-clustered-index)
+  - See [UNIQUEIDENTIFIER in a Clustered Index](/sp_Develop/best-practices-and-findings/table-conventions#uniqueidentifier-in-a-clustered-index)
 
 [Back to top](#top)
 
@@ -355,7 +355,7 @@ Sometimes SSMS will color code a word making you think it is a reserved keyword.
 
 Special characters should not be used in names. Using PascalCase for your table name allows for the upper-case letter to denote the first letter of a new word or name. Thus, there is no need to do so with an underscore character. Do not use numbers in your table names either. This usually points to a poorly designed data model or irregularly-partitioned tables. Do not use spaces in your table names either. While most database systems can handle names that include spaces, systems such as SQL Server require you to add brackets around the name when referencing it (like ``[table name]`` for example) which goes against the rule of keeping things as short and simple as possible.
 
-- See [PascalCase Usage](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#pascalcase-usage)
+- See [PascalCase Usage](/sp_Develop/best-practices-and-findings/naming-conventions#pascalcase-usage)
 
 [Back to top](#top)
 
@@ -383,7 +383,7 @@ Do not give a table the same name as one of its columns.
 
 A use case exception is for tables that store something like account numbers. The table could be named `dbo.AccountNumber` and there could be a column named `AccountNumber`. Number is a generic or class word so it should be prefixed with the table name.
 
-- See [Column Naming](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#column-naming)
+- See [Column Naming](/sp_Develop/best-practices-and-findings/naming-conventions#column-naming)
 
 [Back to top](#top)
 
