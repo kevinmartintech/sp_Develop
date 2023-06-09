@@ -49,7 +49,7 @@ EXEC dbo.sp_Develop
 
 ## Checks to Skip
 
-The CheckId column refers checks found in the [Findings](findings) section. You can also scroll to the right in the [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql) 'Results' tab and look at the 'CheckId' column to see the number of the one you want to skip. 
+The CheckId column refers checks found in the [Best Practices & Findings](best-practices-and-findings) section. You can also scroll to the right in the [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql) 'Results' tab and look at the 'CheckId' column to see the number of the one you want to skip. 
 
 You can also copy the ``INSERT`` SQL statement in the 'SkipCheckTSQL' column found in the 'Results' tab to `INSERT` that record into your skip check table. You need to have a value for the parameters @SkipCheckSchema & @SkipCheckTable for the ``INSERT`` statement to be displayed. Otherwise a website URL is displayed directing you to here.
 
