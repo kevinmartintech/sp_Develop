@@ -8,6 +8,7 @@ There you will find the check findings with database development best practices.
 
 ### Please connect with me (Kevin Martin) if you need assistance with sp_Develop:
 
+- [Kevin Martin Website](https://kevinmartin.tech)
 - [Kevin Martin on LinkedIn](https://www.linkedin.com/in/KevinMartinLink)
 - [Kevin Martin on Twitter](https://twitter.com/KevinMartinLink)
 - [Kevin Martin on GitHub](https://github.com/KevinMartinLink)
