@@ -58,7 +58,7 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the [TA
 ## Improper Named Primary Key
 **Check Id:** 42 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Improper+Named+Foreign+Key+Relationship)
 
-No need to use the ``PK_`` prefix for primary keys. Use the format of ```[TABLE-NAME]_[COLUMN-NAME]```. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#using-prefix-in-name).
+No need to use the ``PK_`` prefix for primary keys. Use the format of ```[TABLE-NAME]_[COLUMN-NAME]```. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#2).
 
 **Basic Example:** ``Invoice_InvoiceId``
 
@@ -66,8 +66,8 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 
 **Example:** ```Purchasing_PurchaseOrder_PurchaseOrderId```
 
-- See [Index Naming](/sp_Develop/best-practices-and-findings/naming-conventions#index-naming)
-- See [Naming Natural Keys](/sp_Develop/best-practices-and-findings/naming-conventions#naming-natural-keys)
+- See [Index Naming](/sp_Develop/best-practices-and-findings/naming-conventions#49)
+- See [Naming Natural Keys](/sp_Develop/best-practices-and-findings/naming-conventions#43)
 
 
 [Back to top](#top)
@@ -79,7 +79,7 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 ## Using Natural Key
 **Check Id:** 43 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Naming+Natural+Keys)
 
-- See [Unique Constraint or Unique Indexes Usage](/sp_Develop/best-practices-and-findings/table-conventions#unique-constraint-or-unique-indexes-usage)
+- See [Unique Constraint or Unique Indexes Usage](/sp_Develop/best-practices-and-findings/table-conventions#29)
 
 [Back to top](#top)
 
@@ -115,7 +115,7 @@ Use the format Use the format ```[TABLE-NAME]_[COLUMN-NAME]_[DESCRIPTION]```
 ```CONSTRAINT Feedback_Stars_Range CHECK (Stars BETWEEN 0 AND 5)```<br/>
 
 
-- See [Unique Constraint or Unique Indexes Usage](/sp_Develop/best-practices-and-findings/table-conventions#unique-constraint-or-unique-indexes-usage)
+- See [Unique Constraint or Unique Indexes Usage](/sp_Develop/best-practices-and-findings/table-conventions#29)
 
 [Back to top](#top)
 
@@ -149,7 +149,7 @@ CREATE TABLE dbo.TableName (
 ```
 
 - See [Naming Constraint Usage](/sp_Develop/best-practices-and-findings/naming-conventions#naming-constraint-usage)
-- See [Naming Primary Keys](/sp_Develop/best-practices-and-findings/naming-conventions#naming-primary-keys)
+- See [Naming Primary Keys](/sp_Develop/best-practices-and-findings/naming-conventions#42)
 
 [Back to top](#top)
 
@@ -311,7 +311,7 @@ Do not prefix your columns with ``fld_``, ``col_``, ``f_``, ``u_`` as it should 
 ## Improper Index Name
 **Check Id:** 49 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Improper+Index+Name)
 
-No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#using-prefix-in-name).
+No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/sp_Develop/best-practices-and-findings/naming-conventions#2).
 
 - Index Names should be ``[SchemaName_]TableName_Column1_Column2_Column3`` 
 - Index Names should indicate if there are included columns with ``[SchemaName_]TableName_Column1_Column2_Column3_Includes``
