@@ -30,14 +30,15 @@ AS
         ** 
         ** Copyright for portions of sp_Develop are held by Brent Ozar Unlimited as part of project 
         ** SQL-Server-First-Responder-Kit and are provided under the MIT license: 
-        ** https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/ 
+        ** https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/
         **
         ** Copyright for portions of sp_Develop are held by Phil Factor (real name withheld) as part of project 
         ** SQLCodeSmells https://github.com/Phil-Factor/SQLCodeSmells
         **
-        ** All other copyrights for sp_Develop are held by Emergent Software, LLC as described below.
+        ** Copyright for portions of Emergent Software as part of project 
+        ** SQLCodeSmells https://github.com/EmergentSoftware/SQL-Server-Development-Assessment
         ** 
-        ** Copyright (c) 2023 Emergent Software, LLC
+        ** Copyright (c) 2023 Kevin Martin Tech.
         ** 
         ** Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
         ** documentation files (the "Software"), to deal in the Software without restriction, including without limitation the 
