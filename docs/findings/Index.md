@@ -1,5 +1,5 @@
 ---
-title: Best Practices & Potential Findings
+title: Best Practices & Findings
 permalink: best-practices-and-findings
 nav_order: 9
 has_children: true
