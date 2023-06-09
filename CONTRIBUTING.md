@@ -60,7 +60,7 @@ We know that's a pain, but that's the kind of thing we find out in the wild. Of 
    # Navigate to the newly cloned directory
    cd SQL-Server-Assess
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/
+   git remote add upstream https://github.com/kevinmartintech/sp_Develop/
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -79,7 +79,7 @@ We know that's a pain, but that's the kind of thing we find out in the wild. Of 
 
 4. Make changes.
 
-   Make changes to one or more of the files in the project. If your change requires a new CheckId look here: https://emergentsoftware.github.io/SQL-Server-Development-Assessment/findings/current-high-check-id.
+   Make changes to one or more of the files in the project. If your change requires a new CheckId look here: https://kevinmartintech.github.io/sp_Develop/best-practices-and-findings/current-high-check-id.
    
    You should modify the markdown documentation files in the docs folder by yourself.
 
@@ -104,11 +104,11 @@ We know that's a pain, but that's the kind of thing we find out in the wild. Of 
 **IMPORTANT**: By submitting the work, you agree to allow the project owner to license your work under the MIT [LICENSE]
 
 
-[Github issues list]:https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues
-[closed issues list]: https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues?q=is%3Aissue+is%3Aclosed
+[Github issues list]:https://github.com/kevinmartintech/sp_Develop/issues
+[closed issues list]: https://github.com/kevinmartintech/sp_Develop/issues?q=is%3Aissue+is%3Aclosed
 [Fork]:https://help.github.com/articles/fork-a-repo/
 [git commit message guidelines]:http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [interactive rebase]:https://help.github.com/articles/about-git-rebase/
 [Open a Pull Request]:https://help.github.com/articles/about-pull-requests/
-[LICENSE]:https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/blob/master/LICENSE.md
-[download the dev branch version]: https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/archive/dev.zip
+[LICENSE]:https://github.com/kevinmartintech/sp_Develop/blob/master/LICENSE.md
+[download the dev branch version]: https://github.com/kevinmartintech/sp_Develop/archive/dev.zip

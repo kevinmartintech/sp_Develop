@@ -1,6 +1,6 @@
 ---
 title: Data Type Conventions
-permalink: best-practices-and-potential-findings/data-type-conventions
+permalink: best-practices-and-findings/data-type-conventions
 parent: Best Practices & Potential Findings
 nav_order: 3
 layout: default
@@ -28,7 +28,7 @@ Poor data type choices can have significant impact on a database design and perf
 <a name="61"/><a name="columns-named-the-same-have-different-data-types"/>
 
 ## Columns and Parameters or Variables Used in JOINs and WHERE Clauses Should Have the Same Data Type
-**Check Id:** 61 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Columns+and+Parameters+or+Variables+Used+in+JOINs+and+WHERE+Clauses+Should+Have+the+Same+Data+Type)
+**Check Id:** 61 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Columns+and+Parameters+or+Variables+Used+in+JOINs+and+WHERE+Clauses+Should+Have+the+Same+Data+Type)
 
 There are two situations where this is going to hurt performance. When you have a mismatch of data types in a JOIN and a WHERE clause. SQL Server will need to convert one of them to match the others data type. This is called implicit conversion.
 
@@ -45,7 +45,7 @@ There are two situations where this is going to hurt performance. When you have 
 <a name="62"/><a name="do-not-use-deprecated-data-type"/>
 
 ## Using of Deprecated Data Type
-**Check Id:** 62 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Do+not+use+Deprecated+Data+Type)
+**Check Id:** 62 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Do+not+use+Deprecated+Data+Type)
 
 - Do not use the deprecated data types below.
   - ``text``
@@ -62,7 +62,7 @@ There is no good reason to use ``text`` or ``ntext``. They were a flawed attempt
 <a name="63"/><a name="use-nvarchar128-when-storing-database-object-names"/>
 
 ## Does not match sysname Column data type
-**Check Id:** 63 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Semicolon+THROW)
+**Check Id:** 63 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Semicolon+THROW)
 
 Use `nvarchar(128)` when storing database object names.
 
@@ -77,7 +77,7 @@ Use `nvarchar(128)` when storing database object names.
 <a name="64"/><a name="email-address-column"/>
 
 ## An Email Address Column Must not Exceed 254 Characters
-**Check Id:** 64 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=An+Email+Address+Column+Must+not+Exceed+254+Characters)
+**Check Id:** 64 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=An+Email+Address+Column+Must+not+Exceed+254+Characters)
 
 An email address column should be set to ``nvarchar(254)`` to leave 2 characters for <> if needed.
 
@@ -92,7 +92,7 @@ This was accepted by the IETF following [submitted erratum](https://www.rfc-edit
 <a name="65"/><a name="url-column"/>
 
 ## A URL Column Must not Exceed 2083 Characters
-**Check Id:** 65 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=A+URL+Column+Must+not+Exceed+2083+Characters)
+**Check Id:** 65 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=A+URL+Column+Must+not+Exceed+2083+Characters)
 
 A URL column should be set to ```nvarchar(2083)```.
 
@@ -100,7 +100,7 @@ RFC 2616, "Hypertext Transfer Protocol -- HTTP/1.1," does not specify any requir
 
 The Internet Explorer browser has the shortest allowed URL max length in the address bar at 2083 characters. 
 
-- See [URL or URI Naming](/SQL-Server-Development-Assessment/best-practices-and-potential-findings/naming-conventions#url-or-uri-naming)
+- See [URL or URI Naming](/SQL-Server-Development-Assessment/best-practices-and-findings/naming-conventions#url-or-uri-naming)
 
 #### Use Case Exception
 If your application requires larger than 2083 characters, ensure the users are not utilizing IE and increase the nvarchar length.
@@ -115,7 +115,7 @@ If your application requires larger than 2083 characters, ensure the users are n
 <a name="66"/><a name="do-not-overuse-nvarcharmax-for-columns"/>
 
 ## Overuse of (n)varchar(MAX)
-**Check Id:** 66 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Do+not+Overuse+(n)varchar(MAX)+for+Columns)
+**Check Id:** 66 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Do+not+Overuse+(n)varchar(MAX)+for+Columns)
 
 You might be overusing ``(n)varchar(MAX)`` on your table.
 
@@ -132,7 +132,7 @@ Since SQL Server 2016 if the size of the cell is < 8K characters for ``varchar(M
 <a name="67"/><a name="use-bit-for-boolean-columns"/>
 
 ## Boolean Column Not Using bit
-**Check Id:** 67 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+bit+for+Boolean+Columns)
+**Check Id:** 67 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+bit+for+Boolean+Columns)
 
 Use the ``bit`` data type for boolean columns. These columns will have names like IsSpecialSaleFlag.
 
@@ -143,7 +143,7 @@ Use the ``bit`` data type for boolean columns. These columns will have names lik
 <a name="68"/><a name="only-use-the-float-and-real-data-types-for-scientific-use-cases"/>
 
 ## Using float or real
-**Check Id:** 68 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Only+use+the+float+and+real+Data+Types+for+Scientific+Use+Cases)
+**Check Id:** 68 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Only+use+the+float+and+real+Data+Types+for+Scientific+Use+Cases)
 
 Only use the `float` and `real` data types for scientific use cases.
 
@@ -156,7 +156,7 @@ The ``float`` (8 byte) and ``real`` (4 byte) data types are suitable only for sp
 <a name="69"/><a name="do-not-use-the-sql_variant-data-type"/>
 
 ## Using sql_variant
-**Check Id:** 69 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Do+not+use+the+sql_variant+Data+Type)
+**Check Id:** 69 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Do+not+use+the+sql_variant+Data+Type)
 
 Do not use the sql_variant data type.
 
@@ -183,7 +183,7 @@ User-defined data types should be avoided whenever possible. They are an added p
 <a name="70"/><a name="use-the-datetimeoffset-data-type-when-time-zone-awareness-is-needed"/>
 
 ## Using datetime Instead of datetimeoffset
-**Check Id:** 70 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+datetimeoffset+Data+Type+When+Time+Zone+Awareness+is+Needed)
+**Check Id:** 70 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+datetimeoffset+Data+Type+When+Time+Zone+Awareness+is+Needed)
 
 Use the `datetimeoffset` data type when time zone awareness is needed.
 
@@ -202,7 +202,7 @@ SELECT * FROM sys.time_zone_info
 <a name="156"/><a name="use-the-date-data-type-when-time-values-are-not-required-or-the-smalldatetime-data-type-when-precision-of-minute-is-acceptable"/>
 
 ## Using datetime or datetime2 Instead of date
-**Check Id:** 156 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+date+Data+Type+When+Time+Values+are+not+Required+or+the+smalldatetime+Data+Type+when+Precision+of+Minute+is+Acceptable)
+**Check Id:** 156 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+date+Data+Type+When+Time+Values+are+not+Required+or+the+smalldatetime+Data+Type+when+Precision+of+Minute+is+Acceptable)
 
 Use the `date` data type when time values are not required or the `smalldatetime` data type when precision of minute is acceptable.
 
@@ -215,7 +215,7 @@ Even with data storage being so cheap, a saving in a data type adds up and makes
 <a name="71"/><a name="use-the-time-data-type-when-date-values-are-not-required-or-the-smalldatetime-data-type-when-precision-of-minute-is-acceptable"/>
 
 ## Using datetime or datetime2 Instead of time
-**Check Id:** 71 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+time+Data+Type+When+Date+Values+are+not+Required+or+the+smalldatetime+Data+Type+when+Precision+of+Minute+is+Acceptable)
+**Check Id:** 71 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+time+Data+Type+When+Date+Values+are+not+Required+or+the+smalldatetime+Data+Type+when+Precision+of+Minute+is+Acceptable)
 
 Use the `time` data type when date values are not required or the `smalldatetime` data type when precision of minute is acceptable.
 
@@ -247,7 +247,7 @@ Although the ``money`` data type generally takes less storage and takes less ban
 <a name="72"/><a name="use-the-nvarchar-data-type-instead-the-varchar-data-type-for-unicode-data"/>
 
 ## Using varchar Instead of nvarchar for Unicode Data
-**Check Id:** 72 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+nvarchar+Data+Type+Instead+the+varchar+Data+Type+for+Unicode+Data)
+**Check Id:** 72 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+the+nvarchar+Data+Type+Instead+the+varchar+Data+Type+for+Unicode+Data)
 
 Use the `nvarchar` data type instead the `varchar` data type for unicode values.
 

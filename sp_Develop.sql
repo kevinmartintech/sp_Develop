@@ -36,7 +36,7 @@ AS
         ** SQLCodeSmells https://github.com/Phil-Factor/SQLCodeSmells
         **
         ** Copyright for portions of Emergent Software as part of project 
-        ** SQLCodeSmells https://github.com/EmergentSoftware/SQL-Server-Development-Assessment
+        ** SQLCodeSmells https://github.com/kevinmartintech/sp_Develop
         ** 
         ** Copyright (c) 2023 Kevin Martin Tech.
         ** 
@@ -85,8 +85,8 @@ AS
 
         SET @Version = '2.1.1';
         SET @VersionDate = '20230513';
-        SET @URLBase = 'https://emergentsoftware.github.io/SQL-Server-Development-Assessment/best-practices-and-potential-findings/';
-        SET @URLSkipChecks = 'https://emergentsoftware.github.io/SQL-Server-Development-Assessment/how-to-skip-checks';
+        SET @URLBase = 'https://kevinmartintech.github.io/sp_Develop/best-practices-and-findings/';
+        SET @URLSkipChecks = 'https://kevinmartintech.github.io/sp_Develop/how-to-skip-checks';
         SET @OutputType = UPPER(@OutputType);
         SET @LineFeed = CHAR(13) + CHAR(10);
         SET @ScriptVersionName = N'sp_Develop v' + @Version + N' - ' + DATENAME(MONTH, @VersionDate) + N' ' + RIGHT('0' + DATENAME(DAY, @VersionDate), 2) + N', ' + DATENAME(YEAR, @VersionDate);

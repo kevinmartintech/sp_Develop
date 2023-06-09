@@ -1,6 +1,6 @@
 ---
 title: Data Issues
-permalink: best-practices-and-potential-findings/data-issues
+permalink: best-practices-and-findings/data-issues
 parent: Best Practices & Potential Findings
 nav_order: 5
 layout: default
@@ -28,7 +28,7 @@ Checks for data issues.
 <a name="60"/><a name="do-not-use-placeholder-rows"/>
 
 ## Using Placeholder Rows
-**Check Id:** 60 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Placeholder+Rows)
+**Check Id:** 60 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Placeholder+Rows)
 
 A placeholder is an empty row/record that is created to hold the place of possible future data in the row that may or may not be necessary.
 
