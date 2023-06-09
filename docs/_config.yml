@@ -3,7 +3,7 @@ description: "sp_Develop can be used by database developers, software developers
 remote_theme: "pmarsceill/just-the-docs"
 color_scheme: "light"
 search_enabled: "true"
-baseurl: "/sp_Develop"
+baseurl: "/"
 url: "https://www.spdevelop.org"
 
 
