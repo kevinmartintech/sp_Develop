@@ -14,4 +14,4 @@ Feel free to browse the finding groupings. There are best practices that do not 
 
 Some best practices might not have potential findings that sp_Develop can detect and some might have more than one
 
-Please consider [Contributing to the SQL Server Assess](https://github.com/kevinmartintech/sp_Develop/blob/master/CONTRIBUTING.md) project.
+Please consider [Contributing to the sp_Develop](https://github.com/kevinmartintech/sp_Develop/blob/master/CONTRIBUTING.md) project.
