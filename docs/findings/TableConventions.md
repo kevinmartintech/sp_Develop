@@ -1,7 +1,7 @@
 ---
 title: Table Conventions
 permalink: best-practices-and-findings/table-conventions
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 2
 layout: default
 ---

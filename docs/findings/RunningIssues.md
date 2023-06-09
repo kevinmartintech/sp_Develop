@@ -1,7 +1,7 @@
 ---
 title: Running Issues
 permalink: best-practices-and-findings/running-issues
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 7
 layout: default
 ---

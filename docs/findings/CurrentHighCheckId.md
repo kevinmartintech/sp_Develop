@@ -1,7 +1,7 @@
 ---
 title: Current High Check Id
 permalink: best-practices-and-findings/current-high-check-id
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 99
 layout: default
 ---

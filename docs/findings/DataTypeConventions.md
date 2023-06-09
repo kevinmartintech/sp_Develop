@@ -1,7 +1,7 @@
 ---
 title: Data Type Conventions
 permalink: best-practices-and-findings/data-type-conventions
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 3
 layout: default
 ---

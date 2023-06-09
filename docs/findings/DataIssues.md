@@ -1,7 +1,7 @@
 ---
 title: Data Issues
 permalink: best-practices-and-findings/data-issues
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 5
 layout: default
 ---

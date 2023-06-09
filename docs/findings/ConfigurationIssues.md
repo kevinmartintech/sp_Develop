@@ -1,7 +1,7 @@
 ---
 title: Configuration Issues
 permalink: best-practices-and-findings/configuration-issues
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 6
 layout: default
 ---

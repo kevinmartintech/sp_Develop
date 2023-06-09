@@ -1,7 +1,7 @@
 ---
 title: Naming Conventions
 permalink: best-practices-and-findings/naming-conventions
-parent: Best Practices & Potential Findings
+parent: Best Practices & Findings
 nav_order: 1
 layout: default
 ---
