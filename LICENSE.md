@@ -8,7 +8,7 @@ Copyright for portions of sp_Develop are held by Phil Factor (real name withheld
 SQLCodeSmells https://github.com/Phil-Factor/SQLCodeSmells
 
 Copyright for portions of Emergent Software as part of project 
-SQLCodeSmells https://github.com/EmergentSoftware/SQL-Server-Development-Assessment
+https://github.com/EmergentSoftware/SQL-Server-Development-Assessment
  
 Copyright (c) 2023 Kevin Martin Tech.
  
