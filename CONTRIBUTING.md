@@ -79,7 +79,7 @@ We know that's a pain, but that's the kind of thing we find out in the wild. Of 
 
 4. Make changes.
 
-   Make changes to one or more of the files in the project. If your change requires a new CheckId look here: https://kevinmartintech.github.io/best-practices-and-findings/current-high-check-id.
+   Make changes to one or more of the files in the project. If your change requires a new CheckId look here: https://kevinmartintech.github.io/sp_Develop/best-practices-and-findings/current-high-check-id.
    
    You should modify the markdown documentation files in the docs folder by yourself.
 
