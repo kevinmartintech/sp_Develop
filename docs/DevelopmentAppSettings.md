@@ -25,7 +25,7 @@ The settings are located in the project [here](https://github.com/kevinmartintec
 1. Cloned or forked the repo
 2. Follow [these directions](https://documentation.red-gate.com/sp/managing-sql-prompt-behavior/sharing-your-settings)
 
-[Browse the check findings](findings){: .btn .btn-purple }
+[Browse the best practices & findings](best-practices-and-findings){: .btn .btn-purple }
 [View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
 
 ---
