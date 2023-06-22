@@ -55,8 +55,6 @@ Enabling Read Committed Snapshot Isolation (RCSI) can effectively resolve numero
 
 Frequently, the `NOLOCK (READ UNCOMMITTED)` isolation level is employed to mitigate common instances of blocking and locking. However, it is important to note that this approach introduces its own set of challenges associated with dirty reads.
 
-With RCSI enabled data read queries do not block data writer queries, and writer do not block readers.
-
 When RCSI is enabled, data read queries no longer block data writer queries, and likewise, data writers do not block the progress of readers.
 
 Read Committed Snapshot Isolation is the default isolation level for Azure SQL databases.

@@ -2116,9 +2116,7 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
 **Alternatives**
 - Index Tuning
 - Use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
-  - On by default in Azure SQL Server databases, local SQL Servers should be checked for TempDB latency before enabling
-
-- See [Not Using Read Committed Snapshot Isolation](configuration-issues#161)
+  - See [Not Using Read Committed Snapshot Isolation](configuration-issues#161)
 
 [Back to top](#top)
 
