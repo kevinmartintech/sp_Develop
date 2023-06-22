@@ -250,7 +250,7 @@ Foreign key columns should have the exact same name as they do in the parent tab
 
 There is one exception to this rule, which is when you have more than one foreign key column per table referencing the same primary key column in another table. In this situation, it is helpful to add a descriptor before the column name. An example of this is if you had an Address table. You might have a Person table with foreign key columns like ``HomeAddressId``, ``WorkAddressId``, ``MailingAddressId``, or ``ShippingAddressId``.
 
-This check combined with check [Using ID for Primary Key Column Name](##7) makes for much more readable SQL:
+This check combined with check [Using ID for Primary Key Column Name](#7) makes for much more readable SQL:
 
 ```sql
 SELECT
@@ -423,7 +423,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
 - Use singular, not plural
 - Choose a name to reflect precisely what is contained in the attribute
 - Avoid repeating the table name except for:
-  - **Table Primary Key:** A table primary key should include the table name and Id (e.g. ``PersonId``) [See Using ID for Primary Key Column Name](##7)
+  - **Table Primary Key:** A table primary key should include the table name and Id (e.g. ``PersonId``) [See Using ID for Primary Key Column Name](#7)
   - **Common or Natural Words or Terms:** When you come across common or natural names like ``PatientNumber``, ``PurchaseOrderNumber`` or ``DriversLicenseNumber``, ``GLAccount``, ``ARAccount``, ``Line1``, ``Line2``, ``FirstName``, ``LastName``, ``Title``, ``Suffix`` you will want to use them as they commonly are used.
   - **Generic or Class Words:** When using generic names like ``Name``, ``Description``, ``Number``, ``Code``, ``Type``, ``Status``, ``Amount``, ``Date``, ``Quantity``, ``Rate``, ``Key``, ``Value``, ``Deleted``, ``Active``, ``Permission``, ``Primary``, ``Locked``, ``Default`` … you should prefix the class word with a modifier like the table name if appropriate.
     - Instead use ``AccountNumber``, ``AddressTypeName``, ``ProductDescription`` & ``StateCode``
