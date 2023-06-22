@@ -46,6 +46,34 @@ Ensure you are using the failover group name or availability group listener name
 
 ---
 
+<a name="161"/>
+
+## Not Using Read Committed Snapshot Isolation
+**Check Id:** 161 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Read+Committed+Snapshot+Isolation)
+
+Enabling Read Committed Snapshot Isolation (RCSI) can effectively resolve numerous blocking and deadlocking issues that may arise.
+
+Frequently, the NOLOCK (READ UNCOMMITTED) isolation level is employed to mitigate common instances of blocking and locking. However, it is important to note that this approach introduces its own set of challenges associated with dirty reads.
+
+With RCSI enabled data read queries do not block data writer queries, and writer do not block readers.
+
+When RCSI is enabled, data read queries no longer block data writer queries, and likewise, data writers do not block the progress of readers.
+
+Read Committed Snapshot Isolation is the default isolation level for Azure SQL databases.
+
+Special attention should be made to ensure your SQL Server can handle the versioning for data modifications in the tempdb or local Accelerated Database Recovery (ADR) in SQL Server 2019 and greater. A healthy SQL Server configured with best practices first is recomended. Lower enviorment testing or enable allow snapshot isolation and monitoring the workload, then enable read commited snapshot is recommomended.
+
+Remember to remove the NOLOCK hints.
+
+- See [Using NOLOCK (READ UNCOMMITTED)](sql-code-conventions#using-nolock-read-uncommitted)
+- See [Implementing Snapshot or Read Committed Snapshot Isolation in SQL Server: A Guide](https://www.brentozar.com/archive/2013/01/implementing-snapshot-or-read-committed-snapshot-isolation-in-sql-server-a-guide/) by Brent Ozar
+- See [Snapshot Isolation in SQL Server](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server) by Microsoft Learn article
+
+
+[Back to top](#top)
+
+---
+
 <a name="55"/><a name="do-not-grant-an-application-user-the-db_owner-role"/>
 
 ## Application User Granted db_owner Role
