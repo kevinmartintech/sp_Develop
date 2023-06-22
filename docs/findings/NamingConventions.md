@@ -30,7 +30,7 @@ The purpose of naming and style convention allows you and others to identify the
 ## Improper Named Foreign Key Relationship
 **Check Id:** 41 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Improper+Named+Foreign+Key+Relationship)
 
-No need to use the ``FK_`` prefix in foreign key relationships. See [Using Prefix in Name](/best-practices-and-findings/naming-conventions#using-prefix-in-name).
+No need to use the ``FK_`` prefix in foreign key relationships. See [Using Prefix in Name](/best-practices-and-findings/naming-conventions#2).
 
 Use the format of ``[FOREIGN-KEY-TABLE]_[PRIMARY-KEY-TABLE]`` in most cases. This gives you a quick view of the tables that are involved in the relationship. The first table named depends on the second table named.
 
@@ -148,7 +148,7 @@ CREATE TABLE dbo.TableName (
 );
 ```
 
-- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#naming-constraint-usage)
+- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#44)
 - See [Naming Primary Keys](/best-practices-and-findings/naming-conventions#42)
 
 [Back to top](#top)
@@ -183,7 +183,7 @@ Variable and parameter names should contain only letters and numbers. No special
 
 Parameter and variable and names should be named identically as the column names for the data they represent other than the ```@``` symbol.
 
-- See [Column Naming](/best-practices-and-findings/naming-conventions#column-naming)
+- See [Column Naming](/best-practices-and-findings/naming-conventions#14)
 
 [Back to top](#top)
 
@@ -250,7 +250,7 @@ Foreign key columns should have the exact same name as they do in the parent tab
 
 There is one exception to this rule, which is when you have more than one foreign key column per table referencing the same primary key column in another table. In this situation, it is helpful to add a descriptor before the column name. An example of this is if you had an Address table. You might have a Person table with foreign key columns like ``HomeAddressId``, ``WorkAddressId``, ``MailingAddressId``, or ``ShippingAddressId``.
 
-This check combined with check [Using ID for Primary Key Column Name](#using-id-for-primary-key-column-name) makes for much more readable SQL:
+This check combined with check [Using ID for Primary Key Column Name](##7) makes for much more readable SQL:
 
 ```sql
 SELECT
@@ -316,7 +316,7 @@ No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See
 - Index Names should be ``[SchemaName_]TableName_Column1_Column2_Column3`` 
 - Index Names should indicate if there are included columns with ``[SchemaName_]TableName_Column1_Column2_Column3_Includes``
 - When using ``uniqueidentifier/guid`` columns for clustered index you can use ``[SchemaName_]TableName_ColumnName_INDEX_REBUILD_ONLY`` to signify special index maintenance handling.
-  - See [UNIQUEIDENTIFIER in a Clustered Index](/best-practices-and-findings/table-conventions#uniqueidentifier-in-a-clustered-index)
+  - See [UNIQUEIDENTIFIER in a Clustered Index](/best-practices-and-findings/table-conventions#22)
 
 [Back to top](#top)
 
@@ -355,7 +355,7 @@ Sometimes SSMS will color code a word making you think it is a reserved keyword.
 
 Special characters should not be used in names. Using PascalCase for your table name allows for the upper-case letter to denote the first letter of a new word or name. Thus, there is no need to do so with an underscore character. Do not use numbers in your table names either. This usually points to a poorly designed data model or irregularly-partitioned tables. Do not use spaces in your table names either. While most database systems can handle names that include spaces, systems such as SQL Server require you to add brackets around the name when referencing it (like ``[table name]`` for example) which goes against the rule of keeping things as short and simple as possible.
 
-- See [PascalCase Usage](/best-practices-and-findings/naming-conventions#pascalcase-usage)
+- See [PascalCase Usage](/best-practices-and-findings/naming-conventions#50)
 
 [Back to top](#top)
 
@@ -383,7 +383,7 @@ Do not give a table the same name as one of its columns.
 
 A use case exception is for tables that store something like account numbers. The table could be named `dbo.AccountNumber` and there could be a column named `AccountNumber`. Number is a generic or class word so it should be prefixed with the table name.
 
-- See [Column Naming](/best-practices-and-findings/naming-conventions#column-naming)
+- See [Column Naming](/best-practices-and-findings/naming-conventions#14)
 
 [Back to top](#top)
 
@@ -423,7 +423,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
 - Use singular, not plural
 - Choose a name to reflect precisely what is contained in the attribute
 - Avoid repeating the table name except for:
-  - **Table Primary Key:** A table primary key should include the table name and Id (e.g. ``PersonId``) [See Using ID for Primary Key Column Name](#using-id-for-primary-key-column-name)
+  - **Table Primary Key:** A table primary key should include the table name and Id (e.g. ``PersonId``) [See Using ID for Primary Key Column Name](##7)
   - **Common or Natural Words or Terms:** When you come across common or natural names like ``PatientNumber``, ``PurchaseOrderNumber`` or ``DriversLicenseNumber``, ``GLAccount``, ``ARAccount``, ``Line1``, ``Line2``, ``FirstName``, ``LastName``, ``Title``, ``Suffix`` you will want to use them as they commonly are used.
   - **Generic or Class Words:** When using generic names like ``Name``, ``Description``, ``Number``, ``Code``, ``Type``, ``Status``, ``Amount``, ``Date``, ``Quantity``, ``Rate``, ``Key``, ``Value``, ``Deleted``, ``Active``, ``Permission``, ``Primary``, ``Locked``, ``Default`` … you should prefix the class word with a modifier like the table name if appropriate.
     - Instead use ``AccountNumber``, ``AddressTypeName``, ``ProductDescription`` & ``StateCode``
@@ -437,7 +437,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
   - Line**Amount** is a currency amount not dependent on the data type like ``decimal(19, 4)``
   - Group**Name** is the text string not dependent on the data type like ``varchar()`` or ``nvarchar()``
   - State**Code** indicates the short form of something
-  - Booleans - (See [Non-Affirmative Boolean Name Use](#non-affirmative-boolean-name-use)) for boolean column naming
+  - Booleans - (See [Non-Affirmative Boolean Name Use](#52)) for boolean column naming
     - Is**Active** indicates a status
     - Is**Deleted** indicates a soft delete status
     - Is**Locked** indicates if a record is immutable
@@ -448,7 +448,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
     - Can**Export** indicates permission to export
   - Unit**Price** is the price of a product unit
   - Website**URL** is the internet address 
-    - See [URL or URI Naming](#url-or-uri-naming)
+    - See [URL or URI Naming](#53)
   - Modify**PersonId** is the person who last updated a record
   - Create**PersonId** is the person who created a record
   - Modify**Time** is the date and time something was modified

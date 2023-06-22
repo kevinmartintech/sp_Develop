@@ -38,7 +38,7 @@ The [Table Per Type (TPT)](https://entityframework.net/tpt) table design pattern
 
 TPC & TPH do not follow normal form. 
 
-- See [Not Normalizing Tables](#not-normalizing-tables).
+- See [Not Normalizing Tables](#155).
 
 [Back to top](#top)
 
@@ -199,7 +199,7 @@ If a column has a foreign key and nullable, it will not be trusted and ```JOIN``
 
 This execution plan shows how ```JOIN``` elimination works. There is a foreign key on the column and the column does not allow null. There is only one index operation in the execution plan. SQL Server is able to eliminate JOINs because it "trusts" the data relationship.
 
-- See [Untrusted Foreign Key](#untrusted-foreign-key)
+- See [Untrusted Foreign Key](#38)
 
 ![Non-SARGable Scan vs. SARGable Seek](../Images/JOIN_Elimination_NOT_NULL.png)
 
@@ -306,7 +306,7 @@ There is no functional or performance difference between a unique constraint (un
 
 The only possible benefit of a unique constraint (unique key) has over a unique index is to emphasize the purpose of the index and is displayed in the SSMS (SQL Server Management Studio) table 'Keys' folder in the 'Object Explorer' side pane.
 
-- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#naming-constraint-usage)
+- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#44)
 
 [Back to top](#top)
 
@@ -576,7 +576,7 @@ Using ``uniqueidentifier/guid`` as primary keys causes issues with SQL Server da
 
 A use case for when you can use ``uniqueidentifier/guid`` as primary keys, is when there are separate systems and merging rows would be difficult. The uniqueness of ``uniqueidentifier/guid`` simplifies the data movements.
 
-- See [uniqueidentifier in a Clustered Index](#uniqueidentifier-in-a-clustered-index)
+- See [uniqueidentifier in a Clustered Index](#22)
 
 [Back to top](#top)
 
