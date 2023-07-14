@@ -2123,6 +2123,7 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
 - [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/) by Brent Ozar
 - [“But NOLOCK Is Okay When My Data Isn’t Changing, Right?”](https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/) by Brent Ozar
 - [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”](https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/) by Brent Ozar
+- [Transaction Isolation Levels](https://learn.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels) by Microsoft
 
 [Back to top](#top)
 
