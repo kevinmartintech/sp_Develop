@@ -435,7 +435,7 @@ Review indexes diagnosed with low fill factor. Check how much they’re written 
 
 SQL Server is not going to consider using untrusted constraints to compile a better execution plan. This can have a huge performance impact on your database queries.
 
-You might have disabled a constraint instead of dropping and recreating it for bulk loading data. This is fine, as long as your remember to enable it correctly.
+You might have disabled a constraint instead of dropping and recreating it for bulk loading data. This is fine, if you remember to enable it correctly.
 
 [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql?redirectedfrom=MSDN&view=sql-server-ver16#with-check--with-nocheck).
 
