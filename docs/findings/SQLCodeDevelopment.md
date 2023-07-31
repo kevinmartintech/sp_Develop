@@ -2119,6 +2119,7 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
   - See [Not Using Read Committed Snapshot Isolation](configuration-issues#161)
 
 **See**
+- [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following) by Microsoft
 - [NOLOCK Is Bad And You Probably Shouldn’t Use It](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/) by Brent Ozar
 - [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/) by Brent Ozar
 - [“But NOLOCK Is Okay When My Data Isn’t Changing, Right?”](https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/) by Brent Ozar
