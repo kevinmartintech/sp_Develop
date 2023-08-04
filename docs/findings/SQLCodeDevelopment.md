@@ -143,6 +143,9 @@ ELSE
     END;
 ```
 
+- See [SQL Server UPSERT Patterns and Antipatterns](https://michaeljswart.com/2017/07/sql-server-upsert-patterns-and-antipatterns/) by Michael J Swart
+- See [Please stop using this UPSERT anti-pattern](https://sqlperformance.com/2020/09/locking/upsert-anti-pattern) by Aaron Bertrand
+
 **Use this UPSERT pattern when a record update is more likely:** Don't worry about checking for a records existence just perform the update.
 
 Consider using [sp_CRUDGen](https://github.com/kevinmartintech/sp_CRUDGen) to generate an UPSERT stored procedure at least as starting point.
@@ -859,7 +862,7 @@ Try rewriting the query to use ```LEFT OUTER JOIN``` and check for ```NULL``` on
 
 Correlated subqueries can have a performance impact. Most correlated subqueries can be rewritten with joins or window functions and perform much faster.
 
-See [SQL Server Uncorrelated and Correlated Subquery](https://www.mssqltips.com/sqlservertip/6037/sql-server-uncorrelated-and-correlated-subquery/)
+- See [SQL Server Uncorrelated and Correlated Subquery](https://www.mssqltips.com/sqlservertip/6037/sql-server-uncorrelated-and-correlated-subquery/)
 
 [Back to top](#top)
 
@@ -1110,7 +1113,7 @@ The SQL Server Missing Indexes recommendations feature has limitations and even 
 
 You should assess the missing index recommendation but create a fine-tuned custom index that includes all that is excluded items.
 
-See the [Books Online: Limitations of the Missing Indexes Feature](http://msdn.microsoft.com/en-us/library/ms345485(v=sql.105).aspx)
+- See the [Books Online: Limitations of the Missing Indexes Feature](http://msdn.microsoft.com/en-us/library/ms345485(v=sql.105).aspx)
 
 
 The missing index feature has the following limitations:
@@ -2118,13 +2121,12 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
 - Use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
   - See [Not Using Read Committed Snapshot Isolation](configuration-issues#161)
 
-**See**
-- [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following) by Microsoft
-- [NOLOCK Is Bad And You Probably Shouldn’t Use It](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/) by Brent Ozar
-- [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/) by Brent Ozar
-- [“But NOLOCK Is Okay When My Data Isn’t Changing, Right?”](https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/) by Brent Ozar
-- [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”](https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/) by Brent Ozar
-- [Transaction Isolation Levels](https://learn.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels) by Microsoft
+- See [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following) by Microsoft
+- See [NOLOCK Is Bad And You Probably Shouldn’t Use It](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/) by Brent Ozar
+- See [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/) by Brent Ozar
+- See [“But NOLOCK Is Okay When My Data Isn’t Changing, Right?”](https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/) by Brent Ozar
+- See [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”](https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/) by Brent Ozar
+- See [Transaction Isolation Levels](https://learn.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels) by Microsoft
 
 [Back to top](#top)
 

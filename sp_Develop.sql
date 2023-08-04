@@ -74,7 +74,7 @@ AS
 	    **********************************************************************************************************************/
 
         SET @Version = '3.0.2';
-        SET @VersionDate = '20230621';
+        SET @VersionDate = '20230804';
         SET @URLBase = 'https://www.spdevelop.org/best-practices-and-findings/';
         SET @URLSkipChecks = 'https://www.spdevelop.org/how-to-skip-checks';
         SET @OutputType = UPPER(@OutputType);
