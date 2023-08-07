@@ -3,9 +3,11 @@
     "id": "b9530d2c-850d-46b0-b8b4-51a5899a376e",
     "name": "Kevin Martin"
   },
+  "whitespace": {
+    "wrapLinesLongerThan": 200
+  },
   "lists": {
     "placeFirstItemOnNewLine": "always",
-    "alignSubsequentItemsWithFirstItem": false,
     "alignItemsAcrossClauses": false,
     "alignAliases": true,
     "alignComments": true,
@@ -16,7 +18,7 @@
     "parenthesisStyle": "expandedSplit",
     "indentParenthesesContents": true,
     "collapseShortParenthesisContents": true,
-    "collapseParenthesesShorterThan": 55
+    "collapseParenthesesShorterThan": 100
   },
   "casing": {
     "reservedKeywords": "uppercase",
