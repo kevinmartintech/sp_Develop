@@ -437,7 +437,8 @@ SQL Server is not going to consider using untrusted constraints to compile a bet
 
 You might have disabled a constraint instead of dropping and recreating it for bulk loading data. This is fine, if you remember to enable it correctly.
 
-[If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql?redirectedfrom=MSDN&view=sql-server-ver16#with-check--with-nocheck).
+- See [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql#with-check--with-nocheck).
+- See [Can you trust your constraints?](https://sqlserverfast.com/blog/hugo/2007/03/can-you-trust-your-constraints/) by Hugo Kornelis
 
 ```sql
 ALTER TABLE dbo.TableName WITH CHECK CHECK CONSTRAINT ConstraintName;
