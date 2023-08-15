@@ -439,6 +439,7 @@ You might have disabled a constraint instead of dropping and recreating it for b
 
 - See [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql#with-check--with-nocheck).
 - See [Can you trust your constraints?](https://sqlserverfast.com/blog/hugo/2007/03/can-you-trust-your-constraints/) by Hugo Kornelis
+- See [The Whys and Wherefores of Untrusted or Disabled Constraints](https://www.red-gate.com/hub/product-learning/sql-prompt/the-whys-and-wherefores-of-untrusted-or-disabled-constraints) by Phil Factor at Redgate
 
 ```sql
 ALTER TABLE dbo.TableName WITH CHECK CHECK CONSTRAINT ConstraintName;
@@ -557,7 +558,7 @@ Start off with an index on just the foreign key column if you have no workload t
 ## Missing Primary Key
 **Check Id:** 20
 
-Every table should have some column (or set of columns) that uniquely identifies one and only one row. It makes it much easier to maintain the data.
+Every table should have a column that uniquely identifies one and only one row. It makes it much easier to maintain the data.
 
 [Back to top](#top)
 
