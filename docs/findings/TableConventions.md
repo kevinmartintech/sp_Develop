@@ -563,6 +563,22 @@ Every table should have a column that uniquely identifies one and only one row. 
 [Back to top](#top)
 
 ---
+<a name="162"/>
+
+## Not Using a Surrogate Key
+**Check Id:** 162
+
+Surrogate keys offer stable uniqueness for data management not tied to the possible changing business data. Unlike changing natural keys, surrogate keys remain consistent. They simplify coding with single `JOIN` clauses, enhance query efficiency, and ensure reliable integration, benefiting data integrity and efficiency with more compact indexes.
+
+A surrogate key is consistently unique. Consequently, during data migration, you can be confident that duplicate keys won't arise – the system will generate fresh, distinct keys for the newly inserted data.
+
+Put natural key(s) in a unique index to guarantees no duplicate values and therefore every row in the table is in some way unique.
+
+- See [Using Natural Key](/best-practices-and-findings/naming-conventions#using-natural-key)
+
+[Back to top](#top)
+
+---
 
 <a name="8"/>
 
