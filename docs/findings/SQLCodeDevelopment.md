@@ -2462,6 +2462,7 @@ If an owner-qualified procedure is executed by using a different case (upper or 
 
 The workaround is to drop and create the procedure by using the same case as the one that is used when the application executes the procedure. You can also make sure that the procedure is executed from all applications by using the correct case (upper or lower).
 
+- See [Additional Scenarios that lead to compile locks (3. Stored procedure is invoked using a different case (upper /lower))](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-blocking-caused-compile-locks#:~:text=Stored%20procedure%20is%20invoked%20using%20a%20different%20case%20(upper%20/lower)) by Microsoft
 
 [Back to top](#top)
 
