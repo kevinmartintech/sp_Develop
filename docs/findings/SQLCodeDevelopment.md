@@ -2431,16 +2431,20 @@ You can skip including the Author, Created On & Modified On details when you use
 
 ---
 
-<a name="136"/><a name="not-using-schema"/>
+<a name="136"/><a name="not-using-schema"/><a name="not-using-table-schema"/>
 
-## Not Using Table Schema
+## Not Using Fully Qualified Name
 **Check Id:** 136 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Table+Schema)
 
-Prefix all database objects like table names and stored procedures with the schema (in most cases "dbo."). This results in a performance gain as the optimizer does not have to perform a lookup on execution as well as minimizing ambiguities in your T-SQL.
+Prefix all database objects like tables, Views, and stored procedures with the schema (in most cases `dbo.`). This results in a performance gain as the optimizer does not have to perform a lookup on execution as well as minimizing ambiguities in your T-SQL.
 
 By including the schema, we avoid certain bugs, minimize the time the engine spends searching for the procedure, and help ensure that cached query plans for the procedures get reused.
 
-Not including the schema on a stored procedure will lead to compile locks. See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name)
+Not including the schema on a stored procedure execution will lead to compile locks. For example, the stored procedure named `dbo.ProductGet` that is owned by `dbo`, and another application connection string user named `app_Web` runs this stored procedure by using the command `EXECUTE ProductGet;`, the initial cache lookup by object name fails because the object is not owner-qualified. SQL Server does not yet know whether another stored procedure named `app_Web.ProductGet` exists and SQL Server cannot be sure that the cached execution plan for `dbo.ProductGet` is the correct one to use. SQL Server needs to obtain an exclusive compile lock and prepares to compile. SQL Server performs a precise search of the procedure cache to locate a previously compiled plan even without owner qualification.
+
+Use `EXECUTE dbo.ProductGet;` and not `EXECUTE ProductGet;`.
+
+- See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name) by Microsoft
 
 [Back to top](#top)
 
