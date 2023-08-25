@@ -2442,6 +2442,8 @@ By including the schema, we avoid certain bugs, minimize the time the engine spe
 
 Not including the schema on a stored procedure execution will lead to compile locks. For example, the stored procedure named `dbo.ProductGet` that is owned by `dbo`, and another application connection string user named `app_Web` runs this stored procedure by using the command `EXECUTE ProductGet;`, the initial cache lookup by object name fails because the object is not owner-qualified. SQL Server does not yet know whether another stored procedure named `app_Web.ProductGet` exists and SQL Server cannot be sure that the cached execution plan for `dbo.ProductGet` is the correct one to use. SQL Server needs to obtain an exclusive compile lock and prepares to compile. SQL Server performs a precise search of the procedure cache to locate a previously compiled plan even without owner qualification.
 
+Obtaining the lock and performing lookups and other work that is needed to reach this point can introduce a delay for the compile locks that leads to blocking. This is especially true if many users who are not the stored procedure's owner concurrently run the procedure without supplying the owner's name.
+
 Use `EXECUTE dbo.ProductGet;` and not `EXECUTE ProductGet;`.
 
 - See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name) by Microsoft
