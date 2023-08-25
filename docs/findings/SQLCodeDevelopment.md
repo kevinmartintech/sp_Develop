@@ -2447,11 +2447,25 @@ Obtaining the lock and performing lookups and other work that is needed to reach
 Use `EXECUTE dbo.ProductGet;` and not `EXECUTE ProductGet;`.
 
 - See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name) by Microsoft
+- See [Using Different Case When Executing Store Procedure](#164).
 
 [Back to top](#top)
 
 ---
 
+<a name="164"/>
+
+## Using Different Case When Executing Store Procedure
+**Check Id:** 164 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Different+Case+When+Executing+Store+Procedure)
+
+If an owner-qualified procedure is executed by using a different case (upper or lower) from the case that was used to create it, the procedure can trigger a CacheMiss event or request a COMPILE lock. Eventually, the procedure uses the cached plan and is not recompiled. But the request for a COMPILE lock can sometimes cause a blocking chain situation if there are many SPIDs that are trying to execute the same procedure by using a different case than the case that was used to create it. This is true regardless of the sort order or collation that is being used on the server or on the database. The reason for this behavior is that the algorithm that is being used to find the procedure in cache is based on hash values (for performance), and the hash values can change if the case is different.
+
+The workaround is to drop and create the procedure by using the same case as the one that is used when the application executes the procedure. You can also make sure that the procedure is executed from all applications by using the correct case (upper or lower).
+
+
+[Back to top](#top)
+
+---
 <a name="23"/>
 
 ## Using SELECT *
