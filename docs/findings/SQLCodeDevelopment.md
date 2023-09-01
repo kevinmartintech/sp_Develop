@@ -422,7 +422,9 @@ SQL Server is the second most expensive sorting system, remind the developer the
 ## Not Parameterized Queries
 **Check Id:** 78 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Parameterized+Queries)
 
-Queries should be parameterized so SQL Server can reuse the execution plan. You application code is either hardcoding the query values in the WHERE clause or you are using some sort of dynamic T-SQL and not doing it correctly.
+Parameterized queries are an effective defense against SQL injection attacks and significantly reduce the risk of such attacks. Parameterized queries help prevent SQL injection as they separate user input from the SQL query itself, ensuring that input is treated as data rather than executable code. This makes it much more challenging for attackers to inject malicious SQL code.
+
+Queries should also be parameterized so SQL Server can reuse the execution plan. You application code is either hardcoding the query values in the WHERE clause or you are using some sort of dynamic T-SQL and not doing it correctly.
 
 A temporary fix is to for parameterization until you can refactor the code and include some @parameters.
 
