@@ -426,6 +426,8 @@ Queries should be parameterized so SQL Server can reuse the execution plan. You 
 
 A temporary fix is to for parameterization until you can refactor the code and include some @parameters.
 
+- See [SqlCommand.Parameters Property](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters) from Microsoft Learn
+
 [Back to top](#top)
 
 ---
