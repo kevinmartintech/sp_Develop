@@ -426,7 +426,11 @@ Queries should be parameterized so SQL Server can reuse the execution plan. You 
 
 A temporary fix is to for parameterization until you can refactor the code and include some @parameters.
 
-- See [SqlCommand.Parameters Property](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters) from Microsoft Learn
+- See [System.Data.SqlClient > SqlCommand > Parameters Property](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters) from Microsoft Learn
+- See [Microsoft.Data.SqlClient > SqlParameter Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter) from Microsoft Learn
+- See [Using Parameters With Dapper](https://www.learndapper.com/parameters) from Lean Dapper
+- See [Entity Framework Core > SQL Queries > Passing parameters](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#passing-parameters) from Microsoft Learn
+
 
 [Back to top](#top)
 
