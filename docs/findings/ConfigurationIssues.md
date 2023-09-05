@@ -203,7 +203,7 @@ Use a different message queue based system other than SQL Server Service Broker.
 
 Using a database as message queue platform is an anti-pattern. You need to poll which hammers the database. Using a single table for inserts, updates and queries are not performant when all three need to occur on the same table. Clearing the records once the workflow is complete, so do you perform and status update on the row or perform a delete which can be inefficient.
 
-- See [https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html](https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html) from Lovisa Johansson
+- See [Why a database is not always the right tool for a queue based system](https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html) from Lovisa Johansson
 - See [Databases suck for Messaging](https://www.rabbitmq.com/resources/RabbitMQ_Oxford_Geek_Night.pdf) from Alexis Richardson
 - See [The Database As Queue Anti-Pattern](http://mikehadlow.blogspot.com/2012/04/database-as-queue-anti-pattern.html) from Mike Hadlow at Code Rant
 - See [RabbitMQ - the most widely deployed open source message broker](https://www.rabbitmq.com/)
