@@ -190,7 +190,24 @@ In the beginning, all three connection strings below will have the same content 
 
 - See [Not Using Code Retry Logic for Transient Errors](/best-practices-and-findings/configuration-issues#54)
 
+[Back to top](#top)
 
+---
+
+<a name="164"/><a name="the-database-compatibility-level-should-match-the-sql-server-version"/>
+
+## Using Service Broker or Database as Queue
+**Check Id:** 164 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using Service+Broker+or+Database+as+Queue)
+
+Use a different message queue based system other than SQL Server Service Broker.
+
+Using a database as message queue platform is an anti-pattern. You need to poll which hammers the database. Using a single table for inserts, updates and queries are not performant when all three need to occur on the same table. Clearing the records once the workflow is complete, so do you perform and status update on the row or perform a delete which can be inefficient.
+
+- See [https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html](https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html) from Lovisa Johansson
+- See [Databases suck for Messaging](https://www.rabbitmq.com/resources/RabbitMQ_Oxford_Geek_Night.pdf) from Alexis Richardson
+- See [The Database As Queue Anti-Pattern](http://mikehadlow.blogspot.com/2012/04/database-as-queue-anti-pattern.html) from Mike Hadlow at Code Rant
+- See [RabbitMQ - the most widely deployed open source message broker](https://www.rabbitmq.com/)
+- See [Storage queues and Service Bus queues - compared and contrasted](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted) from Microsoft Learn
 
 [Back to top](#top)
 
