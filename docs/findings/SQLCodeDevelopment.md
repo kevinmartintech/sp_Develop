@@ -2767,7 +2767,20 @@ CREATE NONCLUSTERED INDEX DealerInventory_MakeName ON dbo.DeliveryInventory (Mak
 [Back to top](#top)
 
 ---
-<br>
+<a name="165"/>
+
+## Using Inefficient Function
+**Check Id:** 165 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Inefficient+Function)
+
+You are using a function like `FORMAT()` that is extremely inefficient compared to other approaches. Most formatting should be performed in the client and not in the database engine.
+
+- See [FORMAT() is nice and all, but…](https://sqlperformance.com/2015/06/t-sql-queries/format-is-nice-and-all-but) from Aaron Bertrand
+- See: [FORMAT is a convenient but expensive SQL Server function - Part 1](https://www.mssqltips.com/sqlservertip/7144/sql-date-format-comparison-sql-format-sql-convert/) from Aaron Bertrand
+- See [FORMAT is a convenient but expensive SQL Server function – Part 2](https://www.mssqltips.com/sqlservertip/7145/sql-date-format-comparison-computed-column-materialized-column/) from Aaron Bertrand
+
+[Back to top](#top)
+
+---<br>
 <br>
 <br>
 <br>
