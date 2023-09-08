@@ -366,7 +366,7 @@ Special characters should not be used in names. Using PascalCase for your table 
 ## Including Numbers in Table Name
 **Check Id:** 11
 
-Beware of numbers in any object names, especially table names. It normally flags up clumsy denormalization where data is embedded in the name, as in ``Year2017``, ``Year2018`` etc. Usually the significance of the numbers is obvious to the perpetrator, but not to the maintainers of the system.
+Beware of numbers in any object names, especially table names. It normally flags clumsy denormalization where data is embedded in the name, as in ``Year2017``, ``Year2018`` etc. Usually the significance of the numbers is obvious to the perpetrator, but not to the maintainers of the system.
 
 It is far better to use partitions than to create dated tables such as ``Invoice2018``, ``Invoice2019``, etc. If old data is no longer used, archive the data, store only aggregations, or both.
 
