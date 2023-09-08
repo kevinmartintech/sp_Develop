@@ -2548,22 +2548,23 @@ There are two examples below to accomplish this using a subtraction trick.
 USE WideWorldImporters;
 GO
 
-UPDATE Sales.Orders SET PickingCompletedWhen = '2013-01-09 23:59:59.9999999' WHERE OrderId = 469
+UPDATE Sales.Orders SET PickingCompletedWhen = '2013-01-09 23:59:59.9999999' WHERE OrderId = 469 /* This will be included in the results */
+UPDATE Sales.Orders SET PickingCompletedWhen = '2013-01-10 00:00:00.0000000' WHERE OrderId = 491 /* This will not be included in the results */
 
 DECLARE
     @PickingCompletedWhenFrom datetime2(7) = '2013-01-09'
    ,@PickingCompletedWhenTo   datetime2(7) = '2013-01-09';
 
 SELECT
-    O.OrderID
-   ,O.PickingCompletedWhen
+    OrderID
+   ,PickingCompletedWhen
 FROM
-    Sales.Orders AS O
+    Sales.Orders
 WHERE
-    O.PickingCompletedWhen     >= @PickingCompletedWhenFrom
-    AND O.PickingCompletedWhen <= DATEADD(NANOSECOND, -1, DATEADD(DAY, 1, @PickingCompletedWhenTo))
+    PickingCompletedWhen     >= @PickingCompletedWhenFrom
+    AND PickingCompletedWhen <= DATEADD(NANOSECOND, -100, DATEADD(DAY, 1, @PickingCompletedWhenTo))
 ORDER BY
-    O.PickingCompletedWhen DESC;
+    PickingCompletedWhen DESC;
 ```
 
 **With BETWEEN**
@@ -2572,21 +2573,22 @@ ORDER BY
 USE WideWorldImporters;
 GO
 
-UPDATE Sales.Orders SET PickingCompletedWhen = '2013-01-09 23:59:59.9999999' WHERE OrderId = 469
+UPDATE Sales.Orders SET PickingCompletedWhen = '2013-01-09 23:59:59.9999999' WHERE OrderId = 469 /* This will be included in the results */
+UPDATE Sales.Orders SET PickingCompletedWhen = '2013-01-10 00:00:00.0000000' WHERE OrderId = 491 /* This will not be included in the results */
 
 DECLARE
     @PickingCompletedWhenFrom datetime2(7) = '2013-01-09'
    ,@PickingCompletedWhenTo   datetime2(7) = '2013-01-09';
 
 SELECT
-    O.OrderID
-   ,O.PickingCompletedWhen
+    OrderID
+   ,PickingCompletedWhen
 FROM
-    Sales.Orders AS O
+    Sales.Orders
 WHERE
-    O.PickingCompletedWhen BETWEEN @PickingCompletedWhenFrom AND DATEADD(NANOSECOND, -1, DATEADD(DAY, 1, @PickingCompletedWhenTo))
+    PickingCompletedWhen BETWEEN @PickingCompletedWhenFrom AND DATEADD(NANOSECOND, -100, DATEADD(DAY, 1, @PickingCompletedWhenTo))
 ORDER BY
-    O.PickingCompletedWhen DESC;
+    PickingCompletedWhen DESC;
 ```
 
 [Back to top](#top)
