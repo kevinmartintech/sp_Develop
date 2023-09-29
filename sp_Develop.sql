@@ -116,14 +116,14 @@ AS
            ,Database_Id        int            NOT NULL DEFAULT-1
            ,DatabaseName       nvarchar(128)  NOT NULL DEFAULT N''
            ,Priority           int            NOT NULL DEFAULT-1
-           ,FindingGroup       varchar(100)   NOT NULL
-           ,Finding            varchar(200)   NOT NULL
+           ,FindingGroup       varchar(500)   NOT NULL
+           ,Finding            varchar(500)   NOT NULL
            ,URL                varchar(2047)  NOT NULL
            ,Details            nvarchar(4000) NOT NULL
            ,Schema_Id          int            NOT NULL DEFAULT-1
            ,SchemaName         nvarchar(128)  NULL DEFAULT N''
            ,Object_Id          int            NOT NULL DEFAULT-1
-           ,ObjectName         nvarchar(128)  NOT NULL DEFAULT N''
+           ,ObjectName         nvarchar(500)  NOT NULL DEFAULT N''
            ,ObjectType         nvarchar(60)   NOT NULL DEFAULT N''
         );
 
