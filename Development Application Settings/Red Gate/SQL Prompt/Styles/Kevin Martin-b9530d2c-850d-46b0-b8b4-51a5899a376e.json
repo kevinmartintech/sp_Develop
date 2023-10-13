@@ -19,7 +19,7 @@
     "parenthesisStyle": "expandedSplit",
     "indentParenthesesContents": true,
     "collapseShortParenthesisContents": true,
-    "collapseParenthesesShorterThan": 100
+    "collapseParenthesesShorterThan": 78
   },
   "casing": {
     "reservedKeywords": "uppercase",

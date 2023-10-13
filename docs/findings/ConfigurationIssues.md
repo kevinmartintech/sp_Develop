@@ -212,6 +212,27 @@ Using a database as message queue platform is an anti-pattern. You need to poll 
 [Back to top](#top)
 
 ---
+
+<a name="166"/>
+
+## Slow Network Queries
+**Check Id:** 166 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using Service+Broker+or+Database+as+Queue)
+
+There are a couple causes for this type of issue we can see. 
+
+- The first cause is the large result sets, where client apps request numerous rows, leading to unnecessary network utilization and client processing.
+    - The recommended resolution is to balance processing between SQL Server and client apps, letting SQL Server handle filtering and aggregations to limit the result at the client app, while more data-related computations should be performed on the client side. Web/app servers cost less than SQL Server's per core license.
+- Another cause is when the client app is slow to fetch results and notify SQL Server, resulting in the "ASYNC_NETWORK_IO" wait.
+    - The solution is to fetch the results as quickly as possible using a tight loop or storing results in memory for subsequent processing. 
+- Another cause might be the client machines under stress, with I/O, memory, or CPU resource constraints, can cause slow processing.
+    - The resolution involves diagnosing and eliminating these resource constraints through tools like Performance Monitor.
+
+- See: [Troubleshoot slow queries that result from ASYNC_NETWORK_IO wait type](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-query-async-network-io) by Microsoft Learn
+-- See: [Reducing SQL Server ASYNC_NETWORK_IO wait type](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/) from SQLShack.com
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
