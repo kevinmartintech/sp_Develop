@@ -227,8 +227,9 @@ There are a couple causes for this type of issue we can see.
 - Another cause might be the client machines under stress, with I/O, memory, or CPU resource constraints, can cause slow processing.
     - The resolution involves diagnosing and eliminating these resource constraints through tools like Performance Monitor.
 
+
 - See: [Troubleshoot slow queries that result from ASYNC_NETWORK_IO wait type](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-query-async-network-io) by Microsoft Learn
--- See: [Reducing SQL Server ASYNC_NETWORK_IO wait type](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/) from SQLShack.com
+- See: [Reducing SQL Server ASYNC_NETWORK_IO wait type](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/) from SQLShack.com
 
 [Back to top](#top)
 
