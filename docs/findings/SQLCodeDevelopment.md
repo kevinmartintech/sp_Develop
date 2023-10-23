@@ -2454,6 +2454,13 @@ Obtaining the lock and performing lookups and other work that is needed to reach
 
 Use `EXECUTE dbo.ProductGet;` and not `EXECUTE ProductGet;`.
 
+In most cases, we will want to use 2-part naming conventions like SchemaName.TableName (dbo.Person), or SchemaName.ViewName (app.PersonDetail), or SchemaName.StoreProcedureName (stage.PersonIngest) as a fully qualified name. There are 3- and 4-part naming but are generally not used as best practices or have small use cases.
+
+3-part and higher naming like DatabaseName.SchemaName.TableName breaks having the SQL code be generic enough that it can be deployed to different databases or environments like [AdventureWorks | AdventureWorks Dev | AdventureWorks Test, ...].
+
+For completeness, the 4-part looks like ServerName.DatabaseName.SchemaName.TableName.
+
+
 - See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name) by Microsoft
 - See [Using Different Case When Executing Store Procedure](#164)
 
