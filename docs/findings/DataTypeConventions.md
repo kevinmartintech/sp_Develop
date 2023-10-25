@@ -283,8 +283,8 @@ You can't require everyone to stop using national characters or accents any more
 You should only use the sequence number object in the certain use cases below.
 
 1. When we need a guaranteed non-skipping sequential number.
-   1. When we need the same identification number in more than one table.
-1. Meaning there is a need for an independent identifier not attached to any single table.
+1. When we need the same identification number in more than one table.
+   1. Meaning there is a need for an independent identifier not attached to any single table.
    1. This can still use the caching function if #1 is also not a requirement.
 1. When we need a number to be recycled after a certain max value.
 1. When we need a non-numeric column populated with sequence number.
