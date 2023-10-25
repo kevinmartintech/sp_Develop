@@ -274,6 +274,29 @@ You can't require everyone to stop using national characters or accents any more
 [Back to top](#top)
 
 ---
+
+<a name="167"/>
+
+## Using Sequence Number Object
+**Check Id:** 167 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Sequence+Number+Object)
+
+You should only use the sequence number object in the certain use cases below.
+
+1. When we need a guaranteed non-skipping sequential number.
+   1. When we need the same identification number in more than one table.
+1. Meaning there is a need for an independent identifier not attached to any single table.
+   1. This can still use the caching function if #1 is also not a requirement.
+1. When we need a number to be recycled after a certain max value.
+1. When we need a non-numeric column populated with sequence number.
+1. When needed in SQL code like OVER Window Functions.
+
+
+- See: [Using SQL Server sequence objects](https://www.red-gate.com/simple-talk/databases/sql-server/learn/using-sql-server-sequence-objects/) by Redgate Simple Talk
+- See: [Sequence Numbers](https://learn.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers?view=sql-server-ver16) by Microsoft
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
