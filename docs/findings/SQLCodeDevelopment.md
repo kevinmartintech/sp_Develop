@@ -1376,6 +1376,7 @@ So, while DISTINCT and GROUP BY are identical in a lot of scenarios, there is on
 You also might be using SELECT DISTINCT to mask a JOIN problem. It’s much better to determine why rows are being duplicated and fix the problem.
 
 - See: [Performance Surprises and Assumptions : GROUP BY vs. DISTINCT](https://sqlperformance.com/2017/01/t-sql-queries/surprises-assumptions-group-by-distinct) by Aaron Bertrand
+- See: [Don’t use DISTINCT as a “join-fixer”](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/dont-use-distinct-as-a-join-fixer/)
 
 [Back to top](#top)
 
