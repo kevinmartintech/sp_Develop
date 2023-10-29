@@ -468,7 +468,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
 
 In 99% of everyday cases, you should use URL instead of URI because both are technically true but URL is more specific. The difference between a URI and a URL is that a URI can be just a name by itself (`kevinmartin.tech`), or a name with a protocol (`https://kevinmartin.tech, ftp://kevinmartin.tech, mailto://hello@kevinmartin.tech, file://kevinmartin.tech/~user/file.csv`) that tells you how to reach it—which is a URL.
 
-- See [The Difference Between a URL, URI, and a URN 🗗](https://danielmiessler.com/study/difference-between-uri-url) by Daniel Miessler
+- See [The Difference Between a URL, URI, and a URN 🗗](https://danielmiessler.com/study/difference-between-uri-url){:target="_blank" rel="noopener"} by Daniel Miessler
 
 [Back to top](#top)
 

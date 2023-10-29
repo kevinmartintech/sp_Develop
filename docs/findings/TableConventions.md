@@ -32,7 +32,7 @@ Table design matters because it is essential for building software applications 
 
 Use the [Table Per Type (TPT) 🗗](https://entityframework.net/tpt){:target="_blank" rel="noopener"} table design pattern.
 
-The [Table Per Concrete (TPC) 🗗](https://entityframework.net/tpc){:target="_blank" rel="noopener"} design is not good as it would have redundant data and no relationship between the sub tables. The redundant data would just be in multiple tables vs squished into one table with [Table Per Hierarchy (TPH)](https://entityframework.net/tph). TPC would help with the extra nullable columns compared to TPH.
+The [Table Per Concrete (TPC) 🗗](https://entityframework.net/tpc){:target="_blank" rel="noopener"} design is not good as it would have redundant data and no relationship between the sub tables. The redundant data would just be in multiple tables vs squished into one table with [Table Per Hierarchy (TPH) 🗗](https://entityframework.net/tph){:target="_blank" rel="noopener"}. TPC would help with the extra nullable columns compared to TPH.
 
 The [Table Per Type (TPT) 🗗](https://entityframework.net/tpt){:target="_blank" rel="noopener"} table design pattern is performant with proper indexes well into the 100s of millions of rows and beyond. With proper indexes a query can join multiple tables and still execute in less than a second even for costly queries that scan indexes like exporting of data. Seeking on indexes for row-level queries like finding a specific CustomerId, should only take on order of 10s of milliseconds. Until multiple of billions of rows are a consideration there is no performance reason not to follow database norm form best practices. If you have slow joined table queries, you're probably not using your database correctly.
 
@@ -437,7 +437,7 @@ SQL Server is not going to consider using untrusted constraints to compile a bet
 
 You might have disabled a constraint instead of dropping and recreating it for bulk loading data. This is fine, if you remember to enable it correctly.
 
-- See [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql#with-check--with-nocheck){:target="_blank" rel="noopener"} by Microsoft.
+- See [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql#with-check--with-nocheck){:target="_blank" rel="noopener"} by Microsoft
 - See [Can you trust your constraints? 🗗](https://sqlserverfast.com/blog/hugo/2007/03/can-you-trust-your-constraints/){:target="_blank" rel="noopener"} by Hugo Kornelis
 - See [The Whys and Wherefores of Untrusted or Disabled Constraints 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/the-whys-and-wherefores-of-untrusted-or-disabled-constraints){:target="_blank" rel="noopener"} by Phil Factor at Redgate
 
@@ -530,7 +530,7 @@ A use case for when you can use ``uniqueidentifier/guid`` as a primary key & clu
 
 DBAs have historically not implemented ``uniqueidentifier/guid`` as primary keys and/or clustered indexes. The traditional index maintenance jobs would keep the ``uniqueidentifier/guid`` indexes in a perpetual state of fragmentation causing bad page splits, which is an expensive process.
 
-A new index maintenance strategy is to name these ``uniqueidentifier/guid`` indexes with the ending "*_INDEX_REBUILD_ONLY" and create a customized index maintenance plan. One job step will perform the standard index maintenance ignoring the ``uniqueidentifier/guid`` indexes and another job step will only perform an index rebuild, skipping index reorganizations. [Ola Hallengren maintenance scripts](https://ola.hallengren.com/) is recommended.
+A new index maintenance strategy is to name these ``uniqueidentifier/guid`` indexes with the ending "*_INDEX_REBUILD_ONLY" and create a customized index maintenance plan. One job step will perform the standard index maintenance ignoring the ``uniqueidentifier/guid`` indexes and another job step will only perform an index rebuild, skipping index reorganizations. [Ola Hallengren maintenance scripts 🗗](https://ola.hallengren.com){:target="_blank" rel="noopener"} is recommended.
 
 These ``uniqueidentifier/guid`` indexes should be created and rebuilt with a custom fill factor to account for at least a weeks' worth of data. This is not a "set it, and forget it" maintenance plan and will need some looking after.
 
