@@ -68,7 +68,7 @@ Use `nvarchar(128)` when storing database object names.
 
 `sysname` is a special data type used for database objects like database names, table names, column names, et cetera. When you need to store database, table or column names in a table use nvarchar(128).
 
-- See [Microsoft docs](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/ms191240(v=sql.100)?redirectedfrom=MSDN#:~:text=The%20sysname%20data%20type%20is%20used%20for%20table%20columns%2C%20variables%2C%20and%20stored%20procedure%20parameters%20that%20store%20object%20names.)
+- See [Using Special Data Types 🗗](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/ms191240(v=sql.100)?redirectedfrom=MSDN#:~:text=The%20sysname%20data%20type%20is%20used%20for%20table%20columns%2C%20variables%2C%20and%20stored%20procedure%20parameters%20that%20store%20object%20names.){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -81,9 +81,9 @@ Use `nvarchar(128)` when storing database object names.
 
 An email address column should be set to ``nvarchar(254)`` to leave 2 characters for <> if needed.
 
-[There is a restriction in RFC 2821 on the length of an address in MAIL and RCPT commands of 254 characters. Since addresses that do not fit in those fields are not normally useful, the upper limit on address lengths should normally be considered to be 254.](https://www.rfc-editor.org/errata_search.php?rfc=3696&eid=1690#:~:text=there%20is%20a%20restriction%20in%20RFC%202821%20on%20the%20length%20of%20an%0A%20%20%20address%20in%20MAIL%20and%20RCPT%20commands%20of%20254%20characters.%20%20Since%20addresses%0A%20%20%20that%20do%20not%20fit%20in%20those%20fields%20are%20not%20normally%20useful%2C%20the%20upper%0A%20%20%20limit%20on%20address%20lengths%20should%20normally%20be%20considered%20to%20be%20254.)
+[There is a restriction in RFC 2821 on the length of an address in MAIL and RCPT commands of 254 characters. Since addresses that do not fit in those fields are not normally useful, the upper limit on address lengths should normally be considered to be 254. 🗗](https://www.rfc-editor.org/errata_search.php?rfc=3696&eid=1690#:~:text=there%20is%20a%20restriction%20in%20RFC%202821%20on%20the%20length%20of%20an%0A%20%20%20address%20in%20MAIL%20and%20RCPT%20commands%20of%20254%20characters.%20%20Since%20addresses%0A%20%20%20that%20do%20not%20fit%20in%20those%20fields%20are%20not%20normally%20useful%2C%20the%20upper%0A%20%20%20limit%20on%20address%20lengths%20should%20normally%20be%20considered%20to%20be%20254.){:target="_blank" rel="noopener"}
 
-This was accepted by the IETF following [submitted erratum](https://www.rfc-editor.org/errata_search.php?rfc=3696&eid=1690). The original version of RFC 3696 described 320 as the maximum length, but John Klensin subsequently accepted an incorrect value, since a Path is defined as ```Path = "<" [ A-d-l ":" ] Mailbox ">"```
+This was accepted by the IETF following [submitted erratum 🗗](https://www.rfc-editor.org/errata_search.php?rfc=3696&eid=1690){:target="_blank" rel="noopener"}. The original version of RFC 3696 described 320 as the maximum length, but John Klensin subsequently accepted an incorrect value, since a Path is defined as ```Path = "<" [ A-d-l ":" ] Mailbox ">"```
 
 [Back to top](#top)
 
@@ -96,7 +96,7 @@ This was accepted by the IETF following [submitted erratum](https://www.rfc-edit
 
 A URL column should be set to ```nvarchar(2083)```.
 
-RFC 2616, "Hypertext Transfer Protocol -- HTTP/1.1," does not specify any requirement for URL length. A web server will should return [RFC 7231, section 6.5.12: 414 URI Too Long](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.12)
+RFC 2616, "Hypertext Transfer Protocol -- HTTP/1.1," does not specify any requirement for URL length. A web server will should return [RFC 7231, section 6.5.12: 414 URI Too Long 🗗](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.12){:target="_blank" rel="noopener"}
 
 The Internet Explorer browser has the shortest allowed URL max length in the address bar at 2083 characters. 
 
@@ -105,7 +105,7 @@ The Internet Explorer browser has the shortest allowed URL max length in the add
 #### Use Case Exception
 If your application requires larger than 2083 characters, ensure the users are not utilizing IE and increase the nvarchar length.
 
-- See [Maximum URL length is 2,083 characters in Internet Explorer](https://support.microsoft.com/en-us/topic/maximum-url-length-is-2-083-characters-in-internet-explorer-174e7c8a-6666-f4e0-6fd6-908b53c12246)
+- See [Maximum URL length is 2,083 characters in Internet Explorer 🗗](https://support.microsoft.com/en-us/topic/maximum-url-length-is-2-083-characters-in-internet-explorer-174e7c8a-6666-f4e0-6fd6-908b53c12246){:target="_blank" rel="noopener"} by Microsoft
 
 
 [Back to top](#top)
@@ -291,8 +291,8 @@ You should only use the sequence number object in the certain use cases below.
 1. When needed in SQL code like OVER Window Functions.
 
 
-- See: [Using SQL Server sequence objects](https://www.red-gate.com/simple-talk/databases/sql-server/learn/using-sql-server-sequence-objects/) by Redgate Simple Talk
-- See: [Sequence Numbers](https://learn.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers?view=sql-server-ver16) by Microsoft
+- See [Using SQL Server sequence objects 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/learn/using-sql-server-sequence-objects/){:target="_blank" rel="noopener"} by Redgate Simple Talk
+- See [Sequence Numbers 🗗](https://learn.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
