@@ -69,9 +69,9 @@ With stored procedures there is a lot more options to tune a query. You can spli
 
 The free opensource [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin) can be utilized to create 11 different stored procedures from basic your Create, Read, Update, Delete, Upsert stored procedures to extremely advanced safe dynamic Search stored procedures otherwise known as optional parameters, kitchen sink, Swiss army knife, catch-all queries. The generated stored procedure code utilizes the SQL Server community best practices.
 
-- See [Database-First: Stored Procedure in Entity Framework 🗗](https://www.entityframeworktutorial.net/stored-procedure-in-entity-framework.aspx) by entityframeworktutorial.net
-- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1 🗗](https://www.youtube.com/watch?v=dwMFg6uxQ0I) by Tim Corey
-- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 2 🗗](https://www.youtube.com/watch?v=5tYSO5mAjXs) by Tim Corey
+- See [Database-First: Stored Procedure in Entity Framework 🗗](https://www.entityframeworktutorial.net/stored-procedure-in-entity-framework.aspx){:target="_blank" rel="noopener"} by entityframeworktutorial.net
+- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1 🗗](https://www.youtube.com/watch?v=dwMFg6uxQ0I){:target="_blank" rel="noopener"} by Tim Corey
+- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 2 🗗](https://www.youtube.com/watch?v=5tYSO5mAjXs){:target="_blank" rel="noopener"} by Tim Corey
 
 [Back to top](#top)
 
@@ -429,13 +429,11 @@ Parameterized queries are an effective defense against SQL injection attacks and
 
 Queries should also be parameterized so SQL Server can reuse the execution plan. You application code is either hardcoding the query values in the WHERE clause or you are using some sort of dynamic T-SQL and not doing it correctly.
 
-A temporary fix is to for parameterization until you can refactor the code and include some @parameters.
+A temporary fix is to force parameterization until you can refactor the code and include some @parameters.
 
 - See [System.Data.SqlClient > SqlCommand > Parameters Property 🗗](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters){:target="_blank" rel="noopener"} by Microsoft
 - See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
-- See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
-- See [Using Parameters With Dapper 🗗](https://www.learndapper.com/parameters) by Lean Dapper
-- See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
+- See [Using Parameters With Dapper 🗗](https://www.learndapper.com/parameters){:target="_blank" rel="noopener"} by Lean Dapper
 - See [Entity Framework Core > SQL Queries > Passing parameters 🗗](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#passing-parameters) by Microsoft
 
 
@@ -1008,11 +1006,12 @@ When a feature is marked deprecated, it means:
 A discontinued feature means it is no longer available. If a discontinued feature is being used, when we upgrade to a new SQL Server version, the code will break.
 
 See:
+- [Discontinued features in SQL Server 2022 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#:~:text=in%20SQL%20Server.-,Discontinued%20features%20in%20SQL%20Server%202022,-(16.x)){:target="_blank" rel="noopener"} by Microsoft
 - [Deprecated database engine features in SQL Server 2019 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
-  - [Discontinued features in SQL Server 2019 🗗](https://docs.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in-){:target="_blank" rel="noopener"} by Microsoft
+  - [Discontinued features in SQL Server 2019 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#:~:text=adls-,Discontinued%20features%20in%20SQL%20Server%202019,-(15.x)){:target="_blank" rel="noopener"} by Microsoft
 - [Deprecated Database Engine Features in SQL Server 2017 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2017?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
 - [Deprecated Database Engine Features in SQL Server 2016 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2016?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
-  - [Discontinued features in SQL Server 2016 🗗](https://docs.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in--1){:target="_blank" rel="noopener"} by Microsoft
+  - [Discontinued features in SQL Server 2016 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in--2:~:text=2017%20(14.x).-,Discontinued%20features%20in%20SQL%20Server%202016,-(13.x)){:target="_blank" rel="noopener"} by Microsoft
 - [Discontinued Database Engine Functionality in SQL Server 2014 🗗](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true){:target="_blank" rel="noopener"} by Microsoft
 - [Discontinued Features in SQL Server 2012 🗗](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true#Denali){:target="_blank" rel="noopener"} by Microsoft
 
@@ -2788,7 +2787,7 @@ CREATE NONCLUSTERED INDEX DealerInventory_MakeName ON dbo.DeliveryInventory (Mak
 
 You are using a function like `FORMAT()` that is extremely inefficient compared to other approaches. Most formatting should be performed in the client and not in the database engine.
 
-- See [FORMAT() is nice and all, but… 🗗](https://sqlperformance.com/2015/06/t-sql-queries/format-is-nice-and-all-but) by Aaron Bertrand
+- See [FORMAT() is nice and all, but… 🗗](https://sqlperformance.com/2015/06/t-sql-queries/format-is-nice-and-all-but){:target="_blank" rel="noopener"} by Aaron Bertrand
 - See: [FORMAT is a convenient but expensive SQL Server function - Part 1 🗗](https://www.mssqltips.com/sqlservertip/7144/sql-date-format-comparison-sql-format-sql-convert/){:target="_blank" rel="noopener"} bt Aaron Bertrand
 - See [FORMAT is a convenient but expensive SQL Server function – Part 2 🗗](https://www.mssqltips.com/sqlservertip/7145/sql-date-format-comparison-computed-column-materialized-column/){:target="_blank" rel="noopener"} by Aaron Bertrand
 
