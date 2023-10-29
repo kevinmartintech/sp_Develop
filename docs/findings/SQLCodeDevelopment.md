@@ -2241,6 +2241,7 @@ Not converting to Unicode for ``nvarchar()`` columns will also cause implicit co
 
 - See [Using a Non-SARGable Expression in a WHERE Clause](/best-practices-and-findings/sql-code-conventions#100)
 
+
 [Back to top](#top)
 
 ---
