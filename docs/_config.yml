@@ -24,6 +24,22 @@ nav_external_links:
     url: https://github.com/kevinmartintech/sp_Develop
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - Website
+    url: https://kevinmartin.tech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - LinkedIn
+    url: https://www.linkedin.com/in/KevinMartinTech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - Twitter
+    url: https://twitter.com/KevinMartinTech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - GitHub
+    url: https://github.com/KevinMartinTech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
 
 
 # Footer content
