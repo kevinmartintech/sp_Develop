@@ -7,9 +7,9 @@ layout: default
 
 # Test Database Install
 
-The [Test Database](https://github.com/kevinmartintech/sp_Develop/tree/master/Test%20Database) folder contains the RedGate SQL Source Control. Use this database for creating and testing checks. If you are not going to be developing [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql) checks you can skip this page.
+The [Test Database](https://github.com/kevinmartintech/sp_Develop/tree/master/Test%20Database) folder contains the RedGate SQL Source Control. Use this database for creating and testing checks. If you are not going to be developing [sp_Develop 🗗](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql){:target="_blank" rel="noopener"} checks you can skip this page.
 
-SQL Server 2008+ is supported. You can script out the test database and downgrade schema features like `DATETIME2` that is not supported. SQL Server Developer editions are now free, go [download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) and install the latest version for development.
+SQL Server 2008+ is supported. You can script out the test database and downgrade schema features like `DATETIME2` that is not supported. SQL Server Developer editions are now free, go [download 🗗](https://www.microsoft.com/en-us/sql-server/sql-server-downloads){:target="_blank" rel="noopener"} and install the latest version for development.
 
 ## Quick Steps to Setup and Use:
 
@@ -28,8 +28,8 @@ SQL Server 2008+ is supported. You can script out the test database and downgrad
 
 ## Redgate SQL Source Control Documentation
 
-- [Getting Started ](https://documentation.red-gate.com/soc7/getting-started)
-- [Link to Git](https://documentation.red-gate.com/soc7/linking-to-source-control/link-to-git)
+- [Getting Started 🗗](https://documentation.red-gate.com/soc7/getting-started){:target="_blank" rel="noopener"}
+- [Link to Git 🗗](https://documentation.red-gate.com/soc7/linking-to-source-control/link-to-git){:target="_blank" rel="noopener"}
 
 [Sharing development app settings](development-app-settings){: .btn .btn-green}
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}
+[View on GitHub 🗗](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}{:target="_blank" rel="noopener"}
