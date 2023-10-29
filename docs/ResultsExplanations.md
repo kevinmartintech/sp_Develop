@@ -29,5 +29,5 @@ The findings results are order by DatabaseName, SchemaName, ObjectName, ObjectTy
 |PriorityNumber|The lower the number the more severe the potential issue is to address|
 |CheckId|Every check is uniquely numbered|
 
-[What other parameters can be used](parameter-explanations){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[What other parameters can be used](parameter-explanations){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}

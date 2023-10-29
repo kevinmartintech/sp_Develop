@@ -16,5 +16,5 @@ sp_Develop runs on SQL Server 2005, 2008, 2008 R2, 2012, 2014,2016, 2017, 2019, 
 
 Please consider [Contributing to the sp_Develop](https://github.com/kevinmartintech/sp_Develop/blob/master/CONTRIBUTING.md) project.
 
-[Get started now and install](install-instructions){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[Get started now and install](install-instructions){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}

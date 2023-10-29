@@ -27,5 +27,5 @@ While you can run [sp_Develop](https://raw.githubusercontent.com/kevinmartintech
 |@VersionDate|Output variable to check the version date.|
 |@VersionCheckMode|Will set the version output variables and return without running the stored procedure.|
 
-[Why you would want to skip checks](how-to-skip-checks){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[Why you would want to skip checks](how-to-skip-checks){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}

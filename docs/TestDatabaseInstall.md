@@ -31,5 +31,5 @@ SQL Server 2008+ is supported. You can script out the test database and downgrad
 - [Getting Started ](https://documentation.red-gate.com/soc7/getting-started)
 - [Link to Git](https://documentation.red-gate.com/soc7/linking-to-source-control/link-to-git)
 
-[Sharing development app settings](development-app-settings){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[Sharing development app settings](development-app-settings){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}

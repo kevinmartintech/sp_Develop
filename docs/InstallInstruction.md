@@ -13,5 +13,5 @@ It is recommend installing the [sp_Develop](https://raw.githubusercontent.com/ke
 
 On Azure SQL Server you will need to install the [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql) stored procedure in the user database.
 
-[How to run sp_Develop](usage-instructions){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[How to run sp_Develop](usage-instructions){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}

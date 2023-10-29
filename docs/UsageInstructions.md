@@ -23,5 +23,5 @@ EXECUTE dbo.sp_Develop @PriorityOrHigher = 'High';
 
 Visit [Parameter Explanations for more options](parameter-explanations)
 
-[What the results mean](results-explanations){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[What the results mean](results-explanations){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}

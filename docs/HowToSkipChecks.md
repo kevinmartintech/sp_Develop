@@ -71,5 +71,5 @@ VALUES
 
 
 
-[Tell me about the test database](test-database-install){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[Tell me about the test database](test-database-install){: .btn .btn-green}
+[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}
