@@ -35,19 +35,19 @@ Source control lets you see who made what changes, when, and why. Automate SQL c
 
 Most importantly, you work from a single source of truth, greatly reducing the risk of downtime at deployment.
 
-Your choices are [Redgate SQL Source Control](https://www.red-gate.com/products/sql-development/sql-source-control/) or a SSDT ([SQL Server Data Tools](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt)) database project backed by DevOps or Github depending on the client requirments.
+Your choices are [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control/){:target="_blank" rel="noopener"} or a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by DevOps or Github depending on the client requirments.
 
 It is recommended that the database project source control be kept separate from application code. Database and reporting team members might/should not need access to the app source code. The data and business intelligence development team might have their own changes (performance tuning, data warehouse, reporting) in a "dev" branch, but their version is not ready for production yet.
 
-**Reasons to use a [monorepo](https://en.wikipedia.org/wiki/Monorepo) for multiple projects**
+**Reasons to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:target="_blank" rel="noopener"} for multiple projects**
 - All the projects have the same permissions and access needs
 - All the projects are fully aligned in terms of versioning
 - All the projects must always be deployed together by the CI/CD pipeline(s)
 - All the projects cannot be built separately unless they are in the same solution
 
-If you choose to use a [monorepo](https://en.wikipedia.org/wiki/Monorepo), please ensure you have accounted for the issues that can occur if not all the bullet points are fully true.
+If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:target="_blank" rel="noopener"}, please ensure you have accounted for the issues that can occur if not all the bullet points are fully true.
 
-- See [Should the Database and Application projects be in the same Repository?](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository) article by Eitan Blumin.
+- See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin.
 
 [Back to top](#top)
 
@@ -67,11 +67,11 @@ The benefit of using stored procedures is with query performance tuning. Eventua
 
 With stored procedures there is a lot more options to tune a query. You can split up complex SQL code so the SQL Server engine can generate better execution plans, convert to dynamic SQL, use different hints, trace flags, and isolation levels, etc.
 
-The free opensource [sp_CRUDGen](https://github.com/kevinmartintech/sp_CRUDGen) can be utilized to create 11 different stored procedures from basic your Create, Read, Update, Delete, Upsert stored procedures to extremely advanced safe dynamic Search stored procedures otherwise known as optional parameters, kitchen sink, Swiss army knife, catch-all queries. The generated stored procedure code utilizes the SQL Server community best practices.
+The free opensource [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin) can be utilized to create 11 different stored procedures from basic your Create, Read, Update, Delete, Upsert stored procedures to extremely advanced safe dynamic Search stored procedures otherwise known as optional parameters, kitchen sink, Swiss army knife, catch-all queries. The generated stored procedure code utilizes the SQL Server community best practices.
 
-- See [Database-First: Stored Procedure in Entity Framework](https://www.entityframeworktutorial.net/stored-procedure-in-entity-framework.aspx)
-- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://www.youtube.com/watch?v=dwMFg6uxQ0I)
-- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 2](https://www.youtube.com/watch?v=5tYSO5mAjXs)
+- See [Database-First: Stored Procedure in Entity Framework 🗗](https://www.entityframeworktutorial.net/stored-procedure-in-entity-framework.aspx) by entityframeworktutorial.net
+- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1 🗗](https://www.youtube.com/watch?v=dwMFg6uxQ0I) by Tim Corey
+- See [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 2 🗗](https://www.youtube.com/watch?v=5tYSO5mAjXs) by Tim Corey
 
 [Back to top](#top)
 
@@ -82,7 +82,7 @@ The free opensource [sp_CRUDGen](https://github.com/kevinmartintech/sp_CRUDGen) 
 ## Data Warehouse Date & Time Key Pattern
 **Check Id:** 75 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Data+Warehouse+Date+and+Time+Key+Pattern)
 
-This data warehouse date & time key pattern can be used with the [Date-Time-Number-Dimensions](https://github.com/kevinmartintech/Date-Time-Number-Dimension) tables. The grain of the time dimension records is in seconds.
+This data warehouse date & time key pattern can be used with the [Date-Time-Number-Dimensions 🗗](https://github.com/kevinmartintech/Date-Time-Number-Dimension){:target="_blank" rel="noopener"} (by Kevin Martin) tables. The grain of the time dimension records is in seconds.
 
 The primary keys in the date and time dimension tables are integers and the T-SQL below extracts and converts them.
 
@@ -143,12 +143,12 @@ ELSE
     END;
 ```
 
-- See [SQL Server UPSERT Patterns and Antipatterns](https://michaeljswart.com/2017/07/sql-server-upsert-patterns-and-antipatterns/) by Michael J Swart
-- See [Please stop using this UPSERT anti-pattern](https://sqlperformance.com/2020/09/locking/upsert-anti-pattern) by Aaron Bertrand
+- See [SQL Server UPSERT Patterns and Antipatterns 🗗](https://michaeljswart.com/2017/07/sql-server-upsert-patterns-and-antipatterns/){:target="_blank" rel="noopener"} by Michael J Swart
+- See [Please stop using this UPSERT anti-pattern 🗗](https://sqlperformance.com/2020/09/locking/upsert-anti-pattern){:target="_blank" rel="noopener"} by Aaron Bertrand
 
 **Use this UPSERT pattern when a record update is more likely:** Don't worry about checking for a records existence just perform the update.
 
-Consider using [sp_CRUDGen](https://github.com/kevinmartintech/sp_CRUDGen) to generate an UPSERT stored procedure at least as starting point.
+Consider using [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin) to generate an UPSERT stored procedure at least as starting point.
 
 ```sql
 SET NOCOUNT, XACT_ABORT ON;
@@ -237,7 +237,7 @@ END CATCH;
 
 COMMIT TRANSACTION;
 ```
-**Use this UPSERT pattern for upserting multiple rows:** You can use a [table-valued parameter](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-ver15), [JSON](https://docs.microsoft.com/en-us/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server?view=sql-server-ver15), [XML](https://docs.microsoft.com/en-us/sql/t-sql/xml/nodes-method-xml-data-type?view=sql-server-ver15) or [comma-separated list](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver15). 
+**Use this UPSERT pattern for upserting multiple rows:** You can use a [table-valued parameter 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-ver15){:target="_blank" rel="noopener"}, [JSON 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server?view=sql-server-ver15){:target="_blank" rel="noopener"}, [XML 🗗](https://docs.microsoft.com/en-us/sql/t-sql/xml/nodes-method-xml-data-type?view=sql-server-ver15){:target="_blank" rel="noopener"} or [comma-separated list 🗗](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver15){:target="_blank" rel="noopener"}. 
 
 For JSON, XML or comma-separated list ensure you insert the records into a temporary table for performance considerations.
 
@@ -335,8 +335,10 @@ ELSE
 
 **This UPSERT pattern can be problematic:** In general, do not use MERGE statements in transactional (OLTP) databases, even though they are valid in ETL processes. If you do encounter MERGE statements in OLTP databases, be sure to address potential concurrency issues as described below. MERGE can be used for ETL processing if it is assured to NOT be run concurrently.
 
-- See [What To Avoid If You Want To Use MERGE](https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/#:~:text=So%20just%20to,MERGE) article by Michael J. Swart
-- See [Use Caution with SQL Server's MERGE Statement](https://www.mssqltips.com/sqlservertip/3074/use-caution-with-sql-servers-merge-statement/#:~:text=function%20as%20expected.-,Conclusion,-I%20am%20not) article by Aaron Bertrand
+- See [An update on MERGE 🗗](https://sqlserverfast.com/blog/hugo/2023/09/an-update-on-merge/){:target="_blank" rel="noopener"} by Hugo Kornelis
+- See [What To Avoid If You Want To Use MERGE 🗗](https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/#:~:text=So%20just%20to,MERGE){:target="_blank" rel="noopener"} by Michael J. Swart
+- See [Use Caution with SQL Server's MERGE Statement 🗗](https://www.mssqltips.com/sqlservertip/3074/use-caution-with-sql-servers-merge-statement/#:~:text=function%20as%20expected.-,Conclusion,-I%20am%20not){:target="_blank" rel="noopener"} by Aaron Bertrand
+
 
 ```sql
 MERGE INTO dbo.Person WITH (HOLDLOCK) AS T
@@ -406,12 +408,13 @@ END CATCH;
 
 SQL Server is the second most expensive sorting system, remind the developer they can sort in the application layer
 
-**2020 Pricing**
+**2022 Pricing**
 
 - Oracle Enterprise Edition = $47,500 per core
-- Microsoft SQL Server Enterprise Edition = $7,128 per core 
+- Microsoft SQL Server Enterprise Edition = $7,561 per core 
+- Microsoft SQL Server Standard Edition = $1,972 per core 
 - ⬇
-- Microsoft Access $159.99
+- Microsoft Access $160
 
 [Back to top](#top)
 
@@ -428,10 +431,12 @@ Queries should also be parameterized so SQL Server can reuse the execution plan.
 
 A temporary fix is to for parameterization until you can refactor the code and include some @parameters.
 
-- See [System.Data.SqlClient > SqlCommand > Parameters Property](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters) from Microsoft Learn
-- See [Microsoft.Data.SqlClient > SqlParameter Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter) from Microsoft Learn
-- See [Using Parameters With Dapper](https://www.learndapper.com/parameters) from Lean Dapper
-- See [Entity Framework Core > SQL Queries > Passing parameters](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#passing-parameters) from Microsoft Learn
+- See [System.Data.SqlClient > SqlCommand > Parameters Property 🗗](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters){:target="_blank" rel="noopener"} by Microsoft
+- See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
+- See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
+- See [Using Parameters With Dapper 🗗](https://www.learndapper.com/parameters) by Lean Dapper
+- See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
+- See [Entity Framework Core > SQL Queries > Passing parameters 🗗](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#passing-parameters) by Microsoft
 
 
 [Back to top](#top)
@@ -601,7 +606,7 @@ DECLARE @DoNotUseMe table (
 ## Using Hints
 **Check Id:** 82 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Hints)
 
-Because the SQL Server Query Optimizer typically selects the best execution plan for a query, we recommend that [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table) be used only as a last resort by experienced developers and database administrators.
+Because the SQL Server Query Optimizer typically selects the best execution plan for a query, we recommend that [hints 🗗](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table){:target="_blank" rel="noopener"} (by Microsoft) be used only as a last resort by experienced developers and database administrators.
 
 [Back to top](#top)
 
@@ -645,7 +650,7 @@ AS
 ## When to Breakdown Complex Queries
 **Check Id:** 84 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=When+to+Breakdown+Complex+Queries)
 
-Source: [When To Break Down Complex Queries](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries)
+Source: [When To Break Down Complex Queries 🗗](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries){:target="_blank" rel="noopener"}. (by Microsoft)
 
 Microsoft SQL Server is able to create very efficient query plans in most cases. However, there are certain query patterns that can cause problems for the query optimizer; this paper describes four of these patterns. These problematic query patterns generally create situations in which SQL Server must either make multiple passes through data sets or materialize intermediate result sets for which statistics cannot be maintained. Or, these patterns create situations in which the cardinality of the intermediate result sets cannot be accurately calculated.
 
@@ -658,22 +663,22 @@ This paper focuses on the following four problematic query patterns:
 ### OR logic in the WHERE clause
 In this pattern, the condition on each side of the OR operator in the WHERE or JOIN clause evaluates different tables. This can be resolved by use of a UNION operator instead of the OR operator in the WHERE or JOIN clause. 
 
-- See [Problematic Use of OR](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#problematic-use-of-or)
+- See [Problematic Use of OR 🗗](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#problematic-use-of-or){:target="_blank" rel="noopener"} by Microsoft
 
 ### Aggregations in intermediate results sets
 This pattern has joins on aggregated data sets, which can result in poor performance. This can be resolved by placing the aggregated intermediate result sets in temporary tables.
 
-- See [Query Anti-Pattern 2: Aggregations in Intermediate Result Sets](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#:~:text=Query%20Anti%2DPattern%202%3A%20Aggregations%20in%20Intermediate%20Result%20Sets)
+- See [Query Anti-Pattern 2: Aggregations in Intermediate Result Sets 🗗](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#:~:text=Query%20Anti%2DPattern%202%3A%20Aggregations%20in%20Intermediate%20Result%20Sets){:target="_blank" rel="noopener"} by Microsoft
 
 ### A large number of very complex joins
 This pattern has a large number of joins, especially joins on ranges, which can result in poor performance because of progressively degrading estimates of cardinality. This can be resolved by breaking down the query and using temporary tables.
 
-- See [Other Query Types to Break Down](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#:~:text=A%20query%20with%20a%20large%20number%20of%20very%20complex%20joins)
+- See [Other Query Types to Break Down 🗗](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#:~:text=A%20query%20with%20a%20large%20number%20of%20very%20complex%20joins){:target="_blank" rel="noopener"} by Microsoft
 
 ### A CASE clause in the WHERE or JOIN clause
 This pattern has CASE operators in the WHERE or JOIN clauses, which cause poor estimates of cardinality. This can be resolved by breaking down the cases into separate queries and using the Transact-SQL IF statement to direct the flow for the conditions.
 
-- See [Other Query Types to Break Down](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#:~:text=%C2%B7-,A%20CASE%20clause%20in%20the%20WHERE%20or%20JOIN%20clause,-This%20case%20refers)
+- See [Other Query Types to Break Down 🗗](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#:~:text=%C2%B7-,A%20CASE%20clause%20in%20the%20WHERE%20or%20JOIN%20clause,-This%20case%20refers){:target="_blank" rel="noopener"} by Microsoft
 
 An understanding of the concepts introduced in these four cases can help you identify other situations in which these or similar patterns are causing poor or inconsistent performance; you can then construct a replacement query which will give you better, more consistent performance.
 
@@ -688,7 +693,7 @@ An understanding of the concepts introduced in these four cases can help you ide
 
 SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. Any procedure that constructs SQL statements should be reviewed for injection vulnerabilities because SQL Server will execute all syntactically valid queries that it receives. Even parameterized data can be manipulated by a skilled and determined attacker.
 
-- Source [SQL Injection](https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-injection)
+- Source [SQL Injection 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-injection){:target="_blank" rel="noopener"} by Micrsoft
 - See [Using EXECUTE](#89)
 
 [Back to top](#top)
@@ -772,9 +777,9 @@ AS
     END;
 ```
 
-- See [Dynamic Search Conditions in T‑SQL](http://www.sommarskog.se/dyn-search-2008.html) by Erland Sommarskog
+- See [Dynamic Search Conditions in T‑SQL 🗗](http://www.sommarskog.se/dyn-search-2008.html){:target="_blank" rel="noopener"} by Erland Sommarskog
 
-Consider using [sp_CRUDGen](https://github.com/kevinmartintech/sp_CRUDGen) to generate the dynamic SQL query for you.
+Consider using [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin) to generate the dynamic SQL query for you.
 
 [Back to top](#top)
 
@@ -787,7 +792,7 @@ Consider using [sp_CRUDGen](https://github.com/kevinmartintech/sp_CRUDGen) to ge
 
 You might be using square brackets [] unnecessarily for object names. If object names are valid and not reserved words, there is no need to use square brackets. Use them only for invalid names.
 
-- See [Removing the Square Bracket Decorations with SQL Prompt](https://www.red-gate.com/hub/product-learning/sql-prompt/removing-the-square-bracket-decorations-with-sql-prompt)
+- See [Removing the Square Bracket Decorations with SQL Prompt 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/removing-the-square-bracket-decorations-with-sql-prompt){:target="_blank" rel="noopener"} by Redgate
 
 ```sql
 SELECT 
@@ -817,7 +822,7 @@ FROM
 
 The default window function frame ```RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW``` is less performant than ```ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW```.
 
-Source: [What is the Difference between ROWS and RANGE?](https://auntkathisql.com/2014/09/27/what-is-the-difference-between-rows-and-range)
+Source: [What is the Difference between ROWS and RANGE? 🗗](https://auntkathisql.com/2014/09/27/what-is-the-difference-between-rows-and-range){:target="_blank" rel="noopener"} by Kathi Kellenberger
 
 [Back to top](#top)
 
@@ -870,7 +875,7 @@ Try rewriting the query to use ```LEFT OUTER JOIN``` and check for ```NULL``` on
 
 Correlated subqueries can have a performance impact. Most correlated subqueries can be rewritten with joins or window functions and perform much faster.
 
-- See [SQL Server Uncorrelated and Correlated Subquery](https://www.mssqltips.com/sqlservertip/6037/sql-server-uncorrelated-and-correlated-subquery/)
+- See [SQL Server Uncorrelated and Correlated Subquery 🗗](https://www.mssqltips.com/sqlservertip/6037/sql-server-uncorrelated-and-correlated-subquery/){:target="_blank" rel="noopener"} by Rick Dobson
 
 [Back to top](#top)
 
@@ -1003,13 +1008,13 @@ When a feature is marked deprecated, it means:
 A discontinued feature means it is no longer available. If a discontinued feature is being used, when we upgrade to a new SQL Server version, the code will break.
 
 See:
-- [Deprecated database engine features in SQL Server 2019](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15)
-  - [Discontinued features in SQL Server 2019](https://docs.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in-)
-- [Deprecated Database Engine Features in SQL Server 2017](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2017?view=sql-server-ver15)
-- [Deprecated Database Engine Features in SQL Server 2016](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2016?view=sql-server-ver15)
-  - [Discontinued features in SQL Server 2016](https://docs.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in--1)
-- [Discontinued Database Engine Functionality in SQL Server 2014](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true)
-- [Discontinued Features in SQL Server 2012](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true#Denali)
+- [Deprecated database engine features in SQL Server 2019 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
+  - [Discontinued features in SQL Server 2019 🗗](https://docs.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in-){:target="_blank" rel="noopener"} by Microsoft
+- [Deprecated Database Engine Features in SQL Server 2017 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2017?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
+- [Deprecated Database Engine Features in SQL Server 2016 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2016?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
+  - [Discontinued features in SQL Server 2016 🗗](https://docs.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in--1){:target="_blank" rel="noopener"} by Microsoft
+- [Discontinued Database Engine Functionality in SQL Server 2014 🗗](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true){:target="_blank" rel="noopener"} by Microsoft
+- [Discontinued Features in SQL Server 2012 🗗](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true#Denali){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -1024,7 +1029,7 @@ Although the semicolon isn't required for most statements prior to SQL Server 20
 
 Continued use of deprecated features will cause database migrations to fail. An example is ```RAISERROR``` in the format ```RAISERROR 15600 'MyCreateCustomer';```  is discontinued. ```RAISERROR (15600, -1, -1, 'MyCreateCustomer');``` is the current syntax. A database will not migrate to a newer SQL Server version without refactoring the TSQL code.
 
-For new development work, do not use deprecated features. For existing aplications, plan to modify applications that currently use these features as soon as possible. [See Microsoft Docs](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15#:~:text=For%20new%20development%20work%2C%20do%20not%20use%20deprecated%20features.%20For%20existing%20aplications%2C%20plan%20to%20modify%20applications%20that%20currently%20use%20these%20features%20as%20soon%20as%20possible.).
+For new development work, do not use deprecated features. For existing aplications, plan to modify applications that currently use these features as soon as possible. See [Deprecated database engine features in SQL Server 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15#:~:text=For%20new%20development%20work%2C%20do%20not%20use%20deprecated%20features.%20For%20existing%20aplications%2C%20plan%20to%20modify%20applications%20that%20currently%20use%20these%20features%20as%20soon%20as%20possible.) by Microsoft.
 
 - See [Using Deprecated or Discontinued Feature](/best-practices-and-findings/sql-code-conventions#98)
 
@@ -1121,7 +1126,7 @@ The SQL Server Missing Indexes recommendations feature has limitations and even 
 
 You should assess the missing index recommendation but create a fine-tuned custom index that includes all that is excluded items.
 
-- See the [Books Online: Limitations of the Missing Indexes Feature](http://msdn.microsoft.com/en-us/library/ms345485(v=sql.105).aspx)
+- See [Books Online: Limitations of the Missing Indexes Feature 🗗](http://msdn.microsoft.com/en-us/library/ms345485(v=sql.105).aspx){:target="_blank" rel="noopener"} by Microsoft
 
 
 The missing index feature has the following limitations:
@@ -1160,7 +1165,7 @@ In the `WHERE` clause below you will notice the "!" mark on the SELECT indicatin
 ## Using RAISERROR Instead of THROW
 **Check Id:** 104 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+RAISERROR+Instead+of+THROW)
 
-[New applications should use THROW instead of RAISERROR](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql?redirectedfrom=MSDN#:~:text=New%20applications%20should%20use%20THROW%20instead.)
+[New applications should use THROW instead of RAISERROR 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql?redirectedfrom=MSDN#:~:text=New%20applications%20should%20use%20THROW%20instead.){:target="_blank" rel="noopener"} by Microsoft
 
 The ```RAISERROR``` statement does not honor ```SET XACT_ABORT```. 
 
@@ -1349,7 +1354,7 @@ The ``ISNULL`` function and the ``COALESCE`` expression have a similar purpose b
 4. Validations for `ISNULL` and `COALESCE` are also different. For example, a NULL value for `ISNULL` is converted to int though for `COALESCE`, you must provide a data type.
 5. `ISNULL` takes only two parameters. By contrast `COALESCE` takes a variable number of parameters.
 
-Source: [Microsoft Docs: Comparing COALESCE and ISNULL](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql?view=sql-server-ver15#comparing-coalesce-and-isnull)
+Source: [Comparing COALESCE and ISNULL 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql?view=sql-server-ver15#comparing-coalesce-and-isnull){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -1375,8 +1380,8 @@ So, while DISTINCT and GROUP BY are identical in a lot of scenarios, there is on
 
 You also might be using SELECT DISTINCT to mask a JOIN problem. It’s much better to determine why rows are being duplicated and fix the problem.
 
-- See: [Performance Surprises and Assumptions : GROUP BY vs. DISTINCT](https://sqlperformance.com/2017/01/t-sql-queries/surprises-assumptions-group-by-distinct) by Aaron Bertrand
-- See: [Don’t use DISTINCT as a “join-fixer”](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/dont-use-distinct-as-a-join-fixer/)
+- See: [Don’t use DISTINCT as a "join-fixer" 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/dont-use-distinct-as-a-join-fixer/){:target="_blank" rel="noopener"} by Aaron Bertrand at Redgate
+- See: [Performance Surprises and Assumptions : GROUP BY vs. DISTINCT 🗗](https://sqlperformance.com/2017/01/t-sql-queries/surprises-assumptions-group-by-distinct){:target="_blank" rel="noopener"} by Aaron Bertrand
 
 [Back to top](#top)
 
@@ -1544,7 +1549,7 @@ A use case for `SET XACT_ABORT OFF` is when debugging to trap an error.
 ## Not Using Transactions
 **Check Id:** 122 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Transaction+Usage)
 
-Transactions allow for database operations to be [atomic](https://en.wikipedia.org/wiki/Atomicity_(database_systems)). A group of related SQL commands that must all complete successfully or not at all and must be rolled back.
+Transactions allow for database operations to be [atomic 🗗](https://en.wikipedia.org/wiki/Atomicity_(database_systems)){:target="_blank" rel="noopener"} (by Wikipedia). A group of related SQL commands that must all complete successfully or not at all and must be rolled back.
 
 If you are performing a funds transfer and updating multiple bank account tables with debiting one and crediting the other, they must all complete successfully or there will be an imbalance.
 
@@ -1647,12 +1652,12 @@ Do not use ```SET IMPLICIT_TRANSACTIONS ON```
 
 The default behavior of SQL Servers is ```IMPLICIT_TRANSACTIONS OFF``` that does not keep TSQL commands open waiting for a ```ROLLBACK TRANSACTION``` or ```COMMIT TRANSACTION``` command. When OFF, we say the transaction mode is autocommit.
 
-When ```IMPLICIT_TRANSACTIONS ON``` is used, it could appear that the command finished instantly, but there will be an exclusive lock on the row(s) until either a roll back or commit command is issued. This makes [IMPLICIT_TRANSACTIONS ON is not popular]( https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql?view=sql-server-ver15#:~:text=IMPLICIT_TRANSACTIONS%20ON%20is%20not%20popular) as they can cause considerable blocking and locking.
+When ```IMPLICIT_TRANSACTIONS ON``` is used, it could appear that the command finished instantly, but there will be an exclusive lock on the row(s) until either a roll back or commit command is issued. This makes [IMPLICIT_TRANSACTIONS ON is not popular 🗗]( https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql?view=sql-server-ver15#:~:text=IMPLICIT_TRANSACTIONS%20ON%20is%20not%20popular){:target="_blank" rel="noopener"} (by Microsoft) as they can cause considerable blocking and locking.
 
 When a connection is operating in implicit transaction mode (```IMPLICIT_TRANSACTIONS ON```), the instance of the SQL Server Database Engine automatically starts a new transaction after the current transaction is committed or rolled back. You do nothing to delineate the start of a transaction; you only commit or roll back each transaction. Implicit transaction mode generates a continuous chain of transactions.
 
-- See [Transaction locking and row versioning guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide) > [Implicit Transactions](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-ver15#:~:text=and%20DB%2DLibrary.-,Implicit%20Transactions,-When%20a%20connection)
-- See [SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea](https://www.brentozar.com/archive/2018/02/set-implicit_transactions-one-hell-bad-idea)
+- See [Transaction locking and row versioning guide 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide){:target="_blank" rel="noopener"} > [Implicit Transactions 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-ver15#:~:text=and%20DB%2DLibrary.-,Implicit%20Transactions,-When%20a%20connection){:target="_blank" rel="noopener"} by Microsoft
+- See [SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea 🗗](https://www.brentozar.com/archive/2018/02/set-implicit_transactions-one-hell-bad-idea){:target="_blank" rel="noopener"} by Brent Ozar
 
 
 [Back to top](#top)
@@ -1664,7 +1669,7 @@ When a connection is operating in implicit transaction mode (```IMPLICIT_TRANSAC
 ## Error Handling
 **Check Id:** 123 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Error+Handling)
 
-There are different methodologies for handling errors that originate in a database. [New applications should use the THROW methodologies](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql?redirectedfrom=MSDN#:~:text=New%20applications%20should%20use%20THROW%20instead.).
+There are different methodologies for handling errors that originate in a database. [New applications should use the THROW methodologies 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql?redirectedfrom=MSDN#:~:text=New%20applications%20should%20use%20THROW%20instead.){:target="_blank" rel="noopener"} (by Microsoft).
 
 In most cases it is best to bubble up (THROW) the error to the application/client to be displayed to the user and logged.
 
@@ -1674,19 +1679,19 @@ The sample stored procedures below can be used to wire up and test software code
 - See [Not Using Transactions](/best-practices-and-findings/sql-code-conventions#122)
 
 ### THROW Methodology (dbo.TestTHROW)
-This error catching and trowing methodology is the newest. [```THROW```](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/throw-transact-sql), introduced in SQL Server 2012 and raises an exception and transfers execution to a ```CATCH``` block of a ```TRY...CATCH``` construct.
+This error catching and trowing methodology is the newest. [```THROW``` 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/throw-transact-sql){:target="_blank" rel="noopener"}, introduced in SQL Server 2012 and raises an exception and transfers execution to a ```CATCH``` block of a ```TRY...CATCH``` construct.
 
 ### Return Code Methodology (dbo.TestReturnCode)
-The return code methodology utilizes [```RETURN```](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/return-transact-sql). ```RETURN```, exits unconditionally from a query or procedure. ```RETURN``` is immediate and complete and can be used at any point to exit from a procedure, batch, or statement block. Statements that follow RETURN are not executed.
+The return code methodology utilizes [```RETURN``` 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/return-transact-sql){:target="_blank" rel="noopener"}. ```RETURN```, exits unconditionally from a query or procedure. ```RETURN``` is immediate and complete and can be used at any point to exit from a procedure, batch, or statement block. Statements that follow RETURN are not executed.
 
-When ```THROW``` is utilized, a return code is not assigned. ```RETURN``` was commonly utilized with [```RAISERROR```](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql) which never aborts execution, so ```RETURN``` could be used afterwards. (See [Using RAISERROR Instead of THROW](/best-practices-and-findings/sql-code-conventions#104)). Utilizing ```RAISERROR``` with the return code would provide context to the error that occurred to present to the user and log the error.
+When ```THROW``` is utilized, a return code is not assigned. ```RETURN``` was commonly utilized with [```RAISERROR``` 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql){:target="_blank" rel="noopener"} which never aborts execution, so ```RETURN``` could be used afterwards. (See [Using RAISERROR Instead of THROW](/best-practices-and-findings/sql-code-conventions#104)). Utilizing ```RAISERROR``` with the return code would provide context to the error that occurred to present to the user and log the error.
 
 ### Output Parameter Methodology (dbo.TestReturnCodeParameter)
 This methodology utilizes stored procedure ```OUTPUT``` parameters. Here you can set a return code and a return message that is passed back to the software code to present to the user and log the error
 
 ### RAISERROR Methodology (dbo.TestRAISERROR)
 
-[New applications should use THROW instead of RAISERROR](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql?redirectedfrom=MSDN#:~:text=New%20applications%20should%20use%20THROW%20instead.)
+[New applications should use THROW instead of RAISERROR 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/raiserror-transact-sql?redirectedfrom=MSDN#:~:text=New%20applications%20should%20use%20THROW%20instead.){:target="_blank" rel="noopener"}
 
 - See [Using RAISERROR Instead of THROW](/best-practices-and-findings/sql-code-conventions#104).
 
@@ -1996,11 +2001,11 @@ GO
 
 Your scalar function is not inlineable. This means it will perform poorly.
 
-Review the [Inlineable scalar UDFs requirements](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements) to determine what changes you can make so it can go inline. If you cannot, you should in-line your scalar function in SQL query. This means duplicate the code you would put in the scalar function in your SQL code. SQL Server 2019 & Azure SQL Database (150 database compatibility level) can inline some scalar functions. 
+Review the [Inlineable scalar UDFs requirements 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements){:target="_blank" rel="noopener"} (by Microsoft) to determine what changes you can make so it can go inline. If you cannot, you should in-line your scalar function in SQL query. This means duplicate the code you would put in the scalar function in your SQL code. SQL Server 2019 & Azure SQL Database (150 database compatibility level) can inline some scalar functions. 
 
-- See [05c Blueprint Functions Scalar Function Rewrites Demo video by Erik Darling](https://www.erikdarlingdata.com/sql-server/software-vendor-mistakes-with-sql-server-not-using-inline-table-valued-functions/?mc_cid=e0205e6bac&mc_eid=90079896ec#:~:text=In%20the%20videos%20below%2C%20I%E2%80%99m%20going%20to%20show%20you%20how%20to%20rewrite%20T%2DSQL%20Scalar%20User%20Defined%20Functions%2C%20and%20a%20really%20cool%20thing%20they%20can%20do%20on%20top%20of%20just%20replacing%20the%20bad%20kinds%20of%20functions.) to see how to rewrite T-SQL Scalar User Defined Function into a Inline Table Valued function.
+- See [05c Blueprint Functions Scalar Function Rewrites Demo video🗗](https://www.erikdarlingdata.com/sql-server/software-vendor-mistakes-with-sql-server-not-using-inline-table-valued-functions/?mc_cid=e0205e6bac&mc_eid=90079896ec#:~:text=In%20the%20videos%20below%2C%20I%E2%80%99m%20going%20to%20show%20you%20how%20to%20rewrite%20T%2DSQL%20Scalar%20User%20Defined%20Functions%2C%20and%20a%20really%20cool%20thing%20they%20can%20do%20on%20top%20of%20just%20replacing%20the%20bad%20kinds%20of%20functions.){:target="_blank" rel="noopener"} (by Erik Darling) to see how to rewrite T-SQL Scalar User Defined Function into a Inline Table Valued function.
 
-Microsoft has been removing (instead of fixing) the inlineablity of scalar functions with every cumulative update. If your query requires scalar functions, you should ensure they are being inlined. Reference: [Inlineable scalar UDFs requirements](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements)
+Microsoft has been removing (instead of fixing) the inlineablity of scalar functions with every cumulative update. If your query requires scalar functions, you should ensure they are being inlined. Reference: [Inlineable scalar UDFs requirements 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements){:target="_blank" rel="noopener"} (by Microsoft)
 
 **Run this query to check if your function is inlineable. (SQL Server 2019+ & Azure SQL Server)**
 
@@ -2027,7 +2032,7 @@ WHERE
 
 **Serial execution:** SQL Server does not allow intra-query parallelism in queries that invoke UDFs.
 
-- See: [Refactor SQL Server scalar UDF to inline TVF to improve performance](https://www.mssqltips.com/sqlservertip/4772/refactor-sql-server-scalar-udf-to-inline-tvf-to-improve-performance/)
+- See: [Refactor SQL Server scalar UDF to inline TVF to improve performance 🗗](https://www.mssqltips.com/sqlservertip/4772/refactor-sql-server-scalar-udf-to-inline-tvf-to-improve-performance/){:target="_blank" rel="noopener"} by Simon Liew
 
 [Back to top](#top)
 
@@ -2040,7 +2045,7 @@ WHERE
 
 You should inline your scalar function in SQL query. This means duplicate the code you would put in the scalar function in your SQL code. SQL Server 2019 & Azure SQL Database (150 database compatibility level) can inline some scalar functions. 
 
-Microsoft has been removing (instead of fixing) the inlineablity of scalar functions with every cumulative update. If your query requires scalar functions you should ensure they are being inlined. Reference: [Inlineable scalar UDFs requirements](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements)
+Microsoft has been removing (instead of fixing) the inlineablity of scalar functions with every cumulative update. If your query requires scalar functions you should ensure they are being inlined. Reference: [Inlineable scalar UDFs requirements 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements){:target="_blank" rel="noopener"} by Microsoft
 
 **Run this query to check if your function is inlineable. (SQL Server 2019+ & Azure SQL Server)**
 
@@ -2129,13 +2134,12 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
 - Index Tuning
 - Use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
   - See [Not Using Read Committed Snapshot Isolation](configuration-issues#161)
-
-- See [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following) by Microsoft
-- See [NOLOCK Is Bad And You Probably Shouldn’t Use It](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/) by Brent Ozar
-- See [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/) by Brent Ozar
-- See [“But NOLOCK Is Okay When My Data Isn’t Changing, Right?”](https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/) by Brent Ozar
-- See [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”](https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/) by Brent Ozar
-- See [Transaction Isolation Levels](https://learn.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels) by Microsoft
+- See [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following){:target="_blank" rel="noopener"} by Microsoft
+- See [NOLOCK Is Bad And You Probably Shouldn’t Use It 🗗](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/){:target="_blank" rel="noopener"} by Brent Ozar
+- See [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results 🗗](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/){:target="_blank" rel="noopener"} by Brent Ozar
+- See ["But NOLOCK Is Okay When My Data Isn’t Changing, Right?" 🗗](https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/){:target="_blank" rel="noopener"} by Brent Ozar
+- See ["But Surely NOLOCK Is Okay If No One’s Changing Data, Right?" 🗗](https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/){:target="_blank" rel="noopener"} by Brent Ozar
+- See [Transaction Isolation Levels 🗗](https://learn.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -2199,7 +2203,7 @@ SQL code statements should be arranged in an easy-to-read manner. When statement
 
 Your SQL code should be formatted in a consistent manner so specific elements like keywords, data types, table names, functions can be identified at a quick glance.
 
-Use one of the two RedGate SQL Prompt formatting styles "[Team Collapsed](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles)" or "[Team Expanded](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles)". If you edit T-SQL code that was in a one of the two styles, put the style back to its original style after you completed editing.
+Use one of the two RedGate SQL Prompt formatting styles "[Team Collapsed 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}" or "[Team Expanded 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}". If you edit T-SQL code that was in a one of the two styles, put the style back to its original style after you completed editing.
 
 - See [RedGate SQL Server Prompt](/development-app-settings#redgate-sql-server-prompt)
 
@@ -2462,7 +2466,7 @@ In most cases, we will want to use 2-part naming conventions like SchemaName.Tab
 For completeness, the 4-part looks like ServerName.DatabaseName.SchemaName.TableName.
 
 
-- See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name) by Microsoft
+- See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name) 🗗](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name){:target="_blank" rel="noopener"} by Microsoft
 - See [Using Different Case When Executing Store Procedure](#164)
 
 [Back to top](#top)
@@ -2478,7 +2482,7 @@ If an owner-qualified procedure is executed by using a different case (upper or 
 
 The workaround is to drop and create the procedure by using the same case as the one that is used when the application executes the procedure. You can also make sure that the procedure is executed from all applications by using the correct case (upper or lower).
 
-- See [Additional Scenarios that lead to compile locks (3. Stored procedure is invoked using a different case (upper /lower))](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-blocking-caused-compile-locks#:~:text=Stored%20procedure%20is%20invoked%20using%20a%20different%20case%20(upper%20/lower)) by Microsoft
+- See [Additional Scenarios that lead to compile locks (3. Stored procedure is invoked using a different case (upper /lower)) 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-blocking-caused-compile-locks#:~:text=Stored%20procedure%20is%20invoked%20using%20a%20different%20case%20(upper%20/lower)){:target="_blank" rel="noopener"} by Microsoft
 - See [Not Using Fully Qualified Name](#136)
 
 [Back to top](#top)
@@ -2545,8 +2549,8 @@ You need to account for the end range being one of the ```datetime``` data types
 
 This can be an exclusion problem for dates with times and utilizing ```BETWEEN```. This can also occur using ```>= ... AND <= ...``` methodology. A day ends at "23:59:59.9999999" or shorter based on the ```datetime``` length, right before the chime of midnight.
 
-```BETWEEN``` is ambiguous. If a restaurant states they are open 9-5, that include all times between 9:00 AM and 5:00 PM. When you score a goal in hockey, the goal only counts when the puck is between the goal posts. In SQL Server, ```BETWEEN``` is a closed interval that includes both ends of the range. Some consider avoiding ```BETWEEN``` for date range queries. Source [Bad Habits to Kick: Mis-handling date / range queries by Aaron Bertrand](
-https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries#:~:text=avoid%20BETWEEN%20for%20range%20queries%3B)
+```BETWEEN``` is ambiguous. If a restaurant states they are open 9-5, that include all times between 9:00 AM and 5:00 PM. When you score a goal in hockey, the goal only counts when the puck is between the goal posts. In SQL Server, ```BETWEEN``` is a closed interval that includes both ends of the range. Some consider avoiding ```BETWEEN``` for date range queries. Source [Bad Habits to Kick: Mis-handling date / range queries 🗗](
+https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries#:~:text=avoid%20BETWEEN%20for%20range%20queries%3B){:target="_blank" rel="noopener"} (by Aaron Bertrand)
 
 There are two examples below to accomplish this using a subtraction trick. 
 
@@ -2672,7 +2676,7 @@ Use ```LEFT OUTER JOIN``` when rows might not always match in both tables. Rows 
 **Potential Finding:** <a name="backward-order-of-columns-in-join-clause"/>Backward Order of Columns in JOIN Clause<br/>
 **Check Id:** 144 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Backward+Order+of+Columns+in+JOIN+Clause)
 
-I recommends the [Microsoft Docs](https://docs.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/inner-join-operation-microsoft-access-sql#:~:text=The%20following%20example%20shows%20how%20you%20could%20join%20the%20Categories%20and%20Products%20tables%20on%20the%20CategoryID%20field) column order in JOIN clauses for consistency noted in the "Do This" code below.
+I recommends the [Microsoft Docs 🗗](https://learn.microsoft.com/en-us/sql/relational-databases/performance/joins?view=sql-server-ver16#:~:text=The%20following%20is%20a%20simple%20SELECT%20statement%20using%20this%20join){:target="_blank" rel="noopener"} column order in JOIN clauses for consistency noted in the "Do This" code below.
 
 It is always recommended to adapt the naming and coding conventions of inherited projects.
 
@@ -2750,11 +2754,11 @@ Try running EXEC sp_refreshsqlmodule or sp_refreshview.
 ## JSON Explicit Schema
 **Check Id:** 159 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=JSON+Explicit+Schema)
 
-Explicitly defining the schema JSON columns using [with_clause](https://learn.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql?view=sql-server-ver16#with_clause) is more performant.
+Explicitly defining the schema JSON columns using [with_clause 🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql?view=sql-server-ver16#with_clause){:target="_blank" rel="noopener"} (by Microsoft) is more performant.
 
 If you are required to use JSON string in the relational database and need to frequent parse the JSON string, you could create a computed column using `JSON_VALUE(expression, path)` and create an index
 
-- See: [JSON_VALUE (Transact-SQL)](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-value-transact-sql?view=sql-server-ver16)
+- See: [JSON_VALUE (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-value-transact-sql?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -2772,7 +2776,7 @@ CREATE NONCLUSTERED INDEX DealerInventory_MakeName ON dbo.DeliveryInventory (Mak
 ```
 
 
-- See: [JSON_VALUE (Transact-SQL)](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-value-transact-sql?view=sql-server-ver16)
+- See: [JSON_VALUE (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-value-transact-sql?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -2784,9 +2788,9 @@ CREATE NONCLUSTERED INDEX DealerInventory_MakeName ON dbo.DeliveryInventory (Mak
 
 You are using a function like `FORMAT()` that is extremely inefficient compared to other approaches. Most formatting should be performed in the client and not in the database engine.
 
-- See [FORMAT() is nice and all, but…](https://sqlperformance.com/2015/06/t-sql-queries/format-is-nice-and-all-but) from Aaron Bertrand
-- See: [FORMAT is a convenient but expensive SQL Server function - Part 1](https://www.mssqltips.com/sqlservertip/7144/sql-date-format-comparison-sql-format-sql-convert/) from Aaron Bertrand
-- See [FORMAT is a convenient but expensive SQL Server function – Part 2](https://www.mssqltips.com/sqlservertip/7145/sql-date-format-comparison-computed-column-materialized-column/) from Aaron Bertrand
+- See [FORMAT() is nice and all, but… 🗗](https://sqlperformance.com/2015/06/t-sql-queries/format-is-nice-and-all-but) by Aaron Bertrand
+- See: [FORMAT is a convenient but expensive SQL Server function - Part 1 🗗](https://www.mssqltips.com/sqlservertip/7144/sql-date-format-comparison-sql-format-sql-convert/){:target="_blank" rel="noopener"} bt Aaron Bertrand
+- See [FORMAT is a convenient but expensive SQL Server function – Part 2 🗗](https://www.mssqltips.com/sqlservertip/7145/sql-date-format-comparison-computed-column-materialized-column/){:target="_blank" rel="noopener"} by Aaron Bertrand
 
 [Back to top](#top)
 
