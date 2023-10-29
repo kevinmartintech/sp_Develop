@@ -13,9 +13,9 @@ heading_anchors: "true"
 
 
 # Aux links for the upper right navigation
-aux_links:
-    "sp_Develop on GitHub":
-        - "//github.com/kevinmartintech/sp_Develop"
+# aux_links:
+#    "sp_Develop on GitHub":
+#        - "//github.com/kevinmartintech/sp_Develop"
 
 
 # External navigation links
@@ -32,7 +32,7 @@ nav_external_links:
     url: https://www.linkedin.com/in/KevinMartinTech
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
-  - title: Kevin Martin - Twitter
+  - title: Kevin Martin - X (Twitter)
     url: https://twitter.com/KevinMartinTech
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
