@@ -27,3 +27,40 @@ The settings are located in the project [here 🗗](https://github.com/kevinmart
 
 [Browse the best practices & findings](best-practices-and-findings){: .btn .btn-green}
 [View on GitHub 🗗](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}{:target="_blank" rel="noopener"}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

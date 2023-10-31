@@ -36,11 +36,11 @@ SQL Server might be in the process of shifting hardware resources  to better loa
 
 Applications that connect to a SQL Server should be built to expect these transient errors. To handle them, implement retry logic in their code instead of surfacing them to users as application errors.
 
-.NET 4.6.1 or later (or .NET Core) can use the [.NET SqlConnection parameters for connection retry](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues#net-sqlconnection-parameters-for-connection-retry). 
+.NET 4.6.1 or later (or .NET Core) can use the [.NET SqlConnection parameters for connection retry 🗗](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues#net-sqlconnection-parameters-for-connection-retry){:target="_blank" rel="noopener"} (by Microsoft). 
 
 Ensure you are using the failover group name or availability group listener name in your connection string. The SQL Server name should not be something like 'SQL01'. This indicates you are connecting directly to a specific SQL Server instance instead of a group of SQL Servers.
 
-- See [Troubleshoot transient connection errors in SQL Database and SQL Managed Instance](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues)
+- See [Troubleshoot transient connection errors in SQL Database and SQL Managed Instance 🗗](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues){:target="_blank" rel="noopener"} (by Microsoft)
 
 [Back to top](#top)
 
@@ -64,8 +64,8 @@ Special attention should be made to ensure your SQL Server can handle the versio
 Remember to remove the `NOLOCK` hints.
 
 - See [Using NOLOCK (READ UNCOMMITTED)](sql-code-conventions#15)
-- See [Implementing Snapshot or Read Committed Snapshot Isolation in SQL Server: A Guide](https://www.brentozar.com/archive/2013/01/implementing-snapshot-or-read-committed-snapshot-isolation-in-sql-server-a-guide/) by Brent Ozar
-- See [Snapshot Isolation in SQL Server](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server) by Microsoft Learn article
+- See [Implementing Snapshot or Read Committed Snapshot Isolation in SQL Server: A Guide 🗗](https://www.brentozar.com/archive/2013/01/implementing-snapshot-or-read-committed-snapshot-isolation-in-sql-server-a-guide/){:target="_blank" rel="noopener"} by Brent Ozar
+- See [Snapshot Isolation in SQL Server 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server){:target="_blank" rel="noopener"} by Microsoft
 
 
 [Back to top](#top)
@@ -81,7 +81,7 @@ You will want to give an account or process only those privileges which are esse
 
 When a vulnerability is found in the code, service or operating system the "Principle of least privilege" lessens the blast radius of damage caused by hackers and malware.
 
-- See [Principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+- See [Principle of least privilege 🗗](https://en.wikipedia.org/wiki/Principle_of_least_privilege){:target="_blank" rel="noopener"} by Wikipedia
 
 [Back to top](#top)
 
@@ -96,7 +96,7 @@ There are query execution defaults included in SSMS (SQL Server Management Studi
 
 When dealing with indexes on computed columns and indexed views, four of these defaults (```ANSI_NULLS```, ```ANSI_PADDING```, ```ANSI_WARNINGS```, and ```QUOTED_IDENTIFIER```) must be set to ``ON``. These defaults are among seven ```SET``` options that must be assigned the required values when you are creating and changing indexes on computed columns and indexed views.
 
-The other three ```SET``` options are ```ARITHABORT (ON)```, ```CONCAT_NULL_YIELDS_NULL (ON)```, and ```NUMERIC_ROUNDABORT (OFF)```. For more information about the required ```SET``` option settings with indexed views and indexes on computed columns, see [Considerations When You Use the SET Statement](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql#considerations-when-you-use-the-set-statements).
+The other three ```SET``` options are ```ARITHABORT (ON)```, ```CONCAT_NULL_YIELDS_NULL (ON)```, and ```NUMERIC_ROUNDABORT (OFF)```. For more information about the required ```SET``` option settings with indexed views and indexes on computed columns, see [Considerations When You Use the SET Statement 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql#considerations-when-you-use-the-set-statements){:target="_blank" rel="noopener"} (by Microsoft).
 
 It is not best practice to modify these query execution settings at the SQL Server level.
 
@@ -110,8 +110,8 @@ These 2 advanced execution settings are on by default: ARITHABORT, CONCAT_NULL_Y
 
 Visual Studio database projects should be setup with the 7 query execution SET defaults (Project Settings > ‘Database Settings’ button). If there have been publish database objects without these query execution defaults, they will need to be updated. It is possible to check the “Ignore quoted identifiers” and “Ignore ANSI Nulls” under the ‘Advanced’ button when manually publishing the database project.
 
-- See [SET Statements](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql)
-- Source [SET ANSI_DEFAULTS (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql)
+- See [SET Statements 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+- Source [SET ANSI_DEFAULTS (Transact-SQL) 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 
 
 [Back to top](#top)
@@ -125,7 +125,7 @@ Visual Studio database projects should be setup with the 7 query execution SET d
 
 Users that only access one database should generally be created as contained users which means they don't have a SQL Server "login" and are not found as users in the master database. This makes the database portable by not requiring a link to a SQL Server Login. A database with contained users can be restored to your development SQL Server or a migration event needs to occur in production to a different SQL Server.
 
-- See [Contained Database Users - Making Your Database Portable](https://docs.microsoft.com/en-us/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=sql-server-ver15)
+- See [Contained Database Users - Making Your Database Portable 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/contained-database-users-making-your-database-portable?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -168,24 +168,24 @@ In the beginning, all three connection strings below will have the same content 
    - Treat this like a valuable resource.
    - Functions like inserting or modifing database rows, then redirecting or displaying the data directly afterwards would fall into the use case pattern. Determine if it is necessary to redirect to a display UI, or just notify the user of the action. In high usage databases, performing additional database queries could consume resources unnecessarly.
    - Indicate on the connection string `ApplicationIntent=ReadWrite`.
-     - See [Specifying Application Intent](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#specifying-application-intent)
+     - See [Specifying Application Intent 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#specifying-application-intent){:target="_blank" rel="noopener"} by Microsoft
    - Determine the `MultiSubnetFailover` property of `True` or `False`
-     - See [Connecting With MultiSubnetFailover](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover)
+     - See [Connecting With MultiSubnetFailover 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover){:target="_blank" rel="noopener"} by Microsoft
 2. **No Writes with Reads That Can Tolerate Data Older Than 15 Seconds**
    - This connection string has more options to scale out. This is where the majority of queries should go.
    - Think of this as the default connection string.
    - Indicate on the connection string `ApplicationIntent=ReadOnly`.
-     - See [Specifying Application Intent](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#specifying-application-intent)
+     - See [Specifying Application Intent 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#specifying-application-intent){:target="_blank" rel="noopener"} by Microsoft
    - Determine the `MultiSubnetFailover` property of `True` or `False`
-     - See [Connecting With MultiSubnetFailover](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover)
+     - See [Connecting With MultiSubnetFailover 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover){:target="_blank" rel="noopener"} by Microsoft
 3. **No Writes with Reads That Can Tolerate Data Older Than Several Hours**
    - This connection is for operational reporting, and not to be confused with analytical reporting aggregations like `SUM()`, `COUNT()`, `AVG()`, ... reporting. True analytical reporting should be performed in a system like a data warehouse or Online Analytical Arocessing (OLAP) system.
    - Queries of these types utilize higher amounts of CPU and storage Input/Output.
    - Stakeholders will eventually have to decide whether to prioritize near-real-time data for reports at the expense of slowing down production, or to separate these resource-intensive queries to a data source with a longer delay.
    - Indicate on the connection string `ApplicationIntent=ReadOnly`.
-     - See [Specifying Application Intent](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#specifying-application-intent)
+     - See [Specifying Application Intent 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#specifying-application-intent){:target="_blank" rel="noopener"} by Microsoft
    - Determine the `MultiSubnetFailover` property of `True` or `False`
-     - See [Connecting With MultiSubnetFailover](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover)
+     - See [Connecting With MultiSubnetFailover 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover){:target="_blank" rel="noopener"} by Microsoft
 
 
 - See [Not Using Code Retry Logic for Transient Errors](/best-practices-and-findings/configuration-issues#54)
@@ -203,11 +203,11 @@ Use a different message queue based system other than SQL Server Service Broker.
 
 Using a database as message queue platform is an anti-pattern. You need to poll which hammers the database. Using a single table for inserts, updates and queries are not performant when all three need to occur on the same table. Clearing the records once the workflow is complete, so do you perform and status update on the row or perform a delete which can be inefficient.
 
-- See [Why a database is not always the right tool for a queue based system](https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html) from Lovisa Johansson
-- See [Databases suck for Messaging](https://www.rabbitmq.com/resources/RabbitMQ_Oxford_Geek_Night.pdf) from Alexis Richardson
-- See [The Database As Queue Anti-Pattern](http://mikehadlow.blogspot.com/2012/04/database-as-queue-anti-pattern.html) from Mike Hadlow at Code Rant
-- See [RabbitMQ - the most widely deployed open source message broker](https://www.rabbitmq.com/)
-- See [Storage queues and Service Bus queues - compared and contrasted](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted) from Microsoft Learn
+- See [Why a database is not always the right tool for a queue based system 🗗](https://www.cloudamqp.com/blog/why-is-a-database-not-the-right-tool-for-a-queue-based-system.html){:target="_blank" rel="noopener"} by Lovisa Johansson
+- See [Databases suck for Messaging 🗗](https://www.rabbitmq.com/resources/RabbitMQ_Oxford_Geek_Night.pdf){:target="_blank" rel="noopener"} by Alexis Richardson
+- See [The Database As Queue Anti-Pattern 🗗](http://mikehadlow.blogspot.com/2012/04/database-as-queue-anti-pattern.html){:target="_blank" rel="noopener"} by Mike Hadlow at Code Rant
+- See [RabbitMQ - the most widely deployed open source message broker 🗗](https://www.rabbitmq.com/){:target="_blank" rel="noopener"} by RabbitMQ
+- See [Storage queues and Service Bus queues - compared and contrasted 🗗](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -228,8 +228,8 @@ There are a couple causes for this type of issue we can see.
     - The resolution involves diagnosing and eliminating these resource constraints through tools like Performance Monitor.
 
 
-- See: [Troubleshoot slow queries that result from ASYNC_NETWORK_IO wait type](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-query-async-network-io) by Microsoft Learn
-- See: [Reducing SQL Server ASYNC_NETWORK_IO wait type](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/) from SQLShack.com
+- See: [Troubleshoot slow queries that result from ASYNC_NETWORK_IO wait type 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-query-async-network-io){:target="_blank" rel="noopener"} by Microsoft
+- See: [Reducing SQL Server ASYNC_NETWORK_IO wait type 🗗](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/){:target="_blank" rel="noopener"} by Nikola Dimitrijevic at SQLShack.com
 
 [Back to top](#top)
 

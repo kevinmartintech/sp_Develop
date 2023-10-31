@@ -199,7 +199,7 @@ If a column has a foreign key and nullable, it will not be trusted and ```JOIN``
 
 This execution plan shows how ```JOIN``` elimination works. There is a foreign key on the column and the column does not allow null. There is only one index operation in the execution plan. SQL Server is able to eliminate JOINs because it "trusts" the data relationship.
 
-- See [Untrusted Foreign Key](#38)
+- See [Untrusted Foreign Key or Check Constraints](#38)
 
 ![Non-SARGable Scan vs. SARGable Seek](../Images/JOIN_Elimination_NOT_NULL.png)
 
@@ -306,7 +306,7 @@ There is no functional or performance difference between a unique constraint (un
 
 The only possible benefit of a unique constraint (unique key) has over a unique index is to emphasize the purpose of the index and is displayed in the SSMS (SQL Server Management Studio) table 'Keys' folder in the 'Object Explorer' side pane.
 
-- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#44)
+- See [Improper Named Constraint](/best-practices-and-findings/naming-conventions#44)
 
 [Back to top](#top)
 
@@ -574,7 +574,7 @@ A surrogate key is consistently unique. Consequently, during data migration, you
 
 Put natural key(s) in a unique index to guarantees no duplicate values and therefore every row in the table is in some way unique.
 
-- See [Using Natural Key](/best-practices-and-findings/naming-conventions#using-natural-key)
+- See [Using Natural Key](/best-practices-and-findings/naming-conventions#43)
 
 [Back to top](#top)
 

@@ -66,7 +66,7 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 
 **Example:** ```Purchasing_PurchaseOrder_PurchaseOrderId```
 
-- See [Index Naming](/best-practices-and-findings/naming-conventions#49)
+- See [Improper Index Naming](/best-practices-and-findings/naming-conventions#49)
 - See [Naming Natural Keys](/best-practices-and-findings/naming-conventions#43)
 
 
@@ -148,8 +148,8 @@ CREATE TABLE dbo.TableName (
 );
 ```
 
-- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#44)
-- See [Naming Primary Keys](/best-practices-and-findings/naming-conventions#42)
+- See [Improper Named Constraint](/best-practices-and-findings/naming-conventions#44)
+- See [Improper Named Primary Key](/best-practices-and-findings/naming-conventions#42)
 
 [Back to top](#top)
 
@@ -355,7 +355,7 @@ Sometimes SSMS will color code a word making you think it is a reserved keyword.
 
 Special characters should not be used in names. Using PascalCase for your table name allows for the upper-case letter to denote the first letter of a new word or name. Thus, there is no need to do so with an underscore character. Do not use numbers in your table names either. This usually points to a poorly designed data model or irregularly-partitioned tables. Do not use spaces in your table names either. While most database systems can handle names that include spaces, systems such as SQL Server require you to add brackets around the name when referencing it (like ``[table name]`` for example) which goes against the rule of keeping things as short and simple as possible.
 
-- See [PascalCase Usage](/best-practices-and-findings/naming-conventions#50)
+- See [Not Using PascalCase](/best-practices-and-findings/naming-conventions#50)
 
 [Back to top](#top)
 

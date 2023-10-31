@@ -88,7 +88,7 @@ The primary keys in the date and time dimension tables are integers and the T-SQ
 
 If the datetime column in the source table is a datetimeoffset data type you can remove the first 'AT TIME ZONE'.
 
-- See [Using datetime Instead of datetimeoffset](/best-practices-and-findings/data-type-conventions#using-datetime-instead-of-datetimeoffset).
+- See [Using datetime Instead of datetimeoffset](/best-practices-and-findings/data-type-conventions#70
 
 ```sql
 SELECT
@@ -434,7 +434,7 @@ A temporary fix is to force parameterization until you can refactor the code and
 - See [System.Data.SqlClient > SqlCommand > Parameters Property 🗗](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.parameters){:target="_blank" rel="noopener"} by Microsoft
 - See [Microsoft.Data.SqlClient > SqlParameter Class 🗗](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqlparameter){:target="_blank" rel="noopener"} by Microsoft
 - See [Using Parameters With Dapper 🗗](https://www.learndapper.com/parameters){:target="_blank" rel="noopener"} by Lean Dapper
-- See [Entity Framework Core > SQL Queries > Passing parameters 🗗](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#passing-parameters) by Microsoft
+- See [Entity Framework Core > SQL Queries > Passing parameters 🗗](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#passing-parameters){:target="_blank" rel="noopener"} by Microsoft
 
 
 [Back to top](#top)
@@ -1028,7 +1028,7 @@ Although the semicolon isn't required for most statements prior to SQL Server 20
 
 Continued use of deprecated features will cause database migrations to fail. An example is ```RAISERROR``` in the format ```RAISERROR 15600 'MyCreateCustomer';```  is discontinued. ```RAISERROR (15600, -1, -1, 'MyCreateCustomer');``` is the current syntax. A database will not migrate to a newer SQL Server version without refactoring the TSQL code.
 
-For new development work, do not use deprecated features. For existing aplications, plan to modify applications that currently use these features as soon as possible. See [Deprecated database engine features in SQL Server 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15#:~:text=For%20new%20development%20work%2C%20do%20not%20use%20deprecated%20features.%20For%20existing%20aplications%2C%20plan%20to%20modify%20applications%20that%20currently%20use%20these%20features%20as%20soon%20as%20possible.) by Microsoft.
+For new development work, do not use deprecated features. For existing aplications, plan to modify applications that currently use these features as soon as possible. See [Deprecated database engine features in SQL Server 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15#:~:text=For%20new%20development%20work%2C%20do%20not%20use%20deprecated%20features.%20For%20existing%20aplications%2C%20plan%20to%20modify%20applications%20that%20currently%20use%20these%20features%20as%20soon%20as%20possible.){:target="_blank" rel="noopener"} by Microsoft.
 
 - See [Using Deprecated or Discontinued Feature](/best-practices-and-findings/sql-code-conventions#98)
 
@@ -1066,6 +1066,8 @@ END CATCH; /* <-- semicolon goes at the end here */
 [Back to top](#top)
 
 ---
+
+<a name="100"/>
 
 ## Using a Non-SARGable Expression in a WHERE Clause
 **Check Id:** 100 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+a+Non-SARGable+Expression+in+a+WHERE+Clause)
@@ -2202,9 +2204,9 @@ SQL code statements should be arranged in an easy-to-read manner. When statement
 
 Your SQL code should be formatted in a consistent manner so specific elements like keywords, data types, table names, functions can be identified at a quick glance.
 
-Use one of the two RedGate SQL Prompt formatting styles "[Team Collapsed 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}" or "[Team Expanded 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}". If you edit T-SQL code that was in a one of the two styles, put the style back to its original style after you completed editing.
+Use one of the two Redgate SQL Prompt formatting styles "[Team Collapsed 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}" or "[Team Expanded 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}". If you edit T-SQL code that was in a one of the two styles, put the style back to its original style after you completed editing.
 
-- See [RedGate SQL Server Prompt](/development-app-settings#redgate-sql-server-prompt)
+- See [Redgate SQL Server Prompt](/development-app-settings#redgate-sql-server-prompt)
 
 [Back to top](#top)
 
@@ -2741,7 +2743,7 @@ A view can be helpful with the use cases below and should be no less performant,
 ## Invalid Objects
 **Check Id:** 146 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Invalid+Objects)
 
-This check found objects that were deleted, renamed. Use can also run "Find Invalid Objects" with RedGate SQL Prompt in SQL Server Management Studio.
+This check found objects that were deleted, renamed. Use can also run "Find Invalid Objects" with Redgate SQL Prompt in SQL Server Management Studio.
 
 Try running EXEC sp_refreshsqlmodule or sp_refreshview.
 
