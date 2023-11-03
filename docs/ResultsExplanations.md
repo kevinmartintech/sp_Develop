@@ -7,7 +7,7 @@ layout: default
 
 # sp_Develop Results Explanations
 
-After running [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql) the 'Results' tab will contain the findings for the best practice DBA development checks.
+After running [sp_Develop 🗗](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql){:target="_blank" rel="noopener"} the 'Results' tab will contain the findings for the best practice DBA development checks.
 
 ![sp_Develop Results](Images/sp_Develop_Results.png)
 
@@ -29,5 +29,5 @@ The findings results are order by DatabaseName, SchemaName, ObjectName, ObjectTy
 |PriorityNumber|The lower the number the more severe the potential issue is to address|
 |CheckId|Every check is uniquely numbered|
 
-[What other parameters can be used](parameter-explanations){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[What other parameters can be used](parameter-explanations){: .btn .btn-green}
+[View on GitHub 🗗](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}{:target="_blank" rel="noopener"}

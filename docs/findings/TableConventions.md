@@ -30,11 +30,11 @@ Table design matters because it is essential for building software applications 
 ## Incorrect Inheritance Type
 **Check Id:** 147 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Incorrect+Inheritance+Type)
 
-Use the [Table Per Type (TPT)](https://entityframework.net/tpt) table design pattern.
+Use the [Table Per Type (TPT) 🗗](https://entityframework.net/tpt){:target="_blank" rel="noopener"} table design pattern.
 
-The [Table Per Concrete (TPC)](https://entityframework.net/tpc) design is not good as it would have redundant data and no relationship between the sub tables. The redundant data would just be in multiple tables vs squished into one table with [Table Per Hierarchy (TPH)](https://entityframework.net/tph). TPC would help with the extra nullable columns compared to TPH.
+The [Table Per Concrete (TPC) 🗗](https://entityframework.net/tpc){:target="_blank" rel="noopener"} design is not good as it would have redundant data and no relationship between the sub tables. The redundant data would just be in multiple tables vs squished into one table with [Table Per Hierarchy (TPH) 🗗](https://entityframework.net/tph){:target="_blank" rel="noopener"}. TPC would help with the extra nullable columns compared to TPH.
 
-The [Table Per Type (TPT)](https://entityframework.net/tpt) table design pattern is performant with proper indexes well into the 100s of millions of rows and beyond. With proper indexes a query can join multiple tables and still execute in less than a second even for costly queries that scan indexes like exporting of data. Seeking on indexes for row-level queries like finding a specific CustomerId, should only take on order of 10s of milliseconds. Until multiple of billions of rows are a consideration there is no performance reason not to follow database norm form best practices. If you have slow joined table queries, you're probably not using your database correctly.
+The [Table Per Type (TPT) 🗗](https://entityframework.net/tpt){:target="_blank" rel="noopener"} table design pattern is performant with proper indexes well into the 100s of millions of rows and beyond. With proper indexes a query can join multiple tables and still execute in less than a second even for costly queries that scan indexes like exporting of data. Seeking on indexes for row-level queries like finding a specific CustomerId, should only take on order of 10s of milliseconds. Until multiple of billions of rows are a consideration there is no performance reason not to follow database norm form best practices. If you have slow joined table queries, you're probably not using your database correctly.
 
 TPC & TPH do not follow normal form. 
 
@@ -49,9 +49,9 @@ TPC & TPH do not follow normal form.
 ## Using Entity Attribute Value
 **Check Id:** 148 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Entity+Attribute+Value)
 
-The [Entity–Attribute–Value (EAV) model ](https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model) falls victim to the [Inner-platform effect](https://en.wikipedia.org/wiki/Inner-platform_effect).
+The [Entity–Attribute–Value (EAV) model 🗗](https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model){:target="_blank" rel="noopener"} falls victim to the [Inner-platform effect 🗗](https://en.wikipedia.org/wiki/Inner-platform_effect){:target="_blank" rel="noopener"}.
 
-The inner-platform effect is the tendency of software architects to create a system so customizable as to become a replica, and often a poor replica, of the software development platform they are using. This is generally inefficient and such systems are often considered to be examples of an [anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern).
+The inner-platform effect is the tendency of software architects to create a system so customizable as to become a replica, and often a poor replica, of the software development platform they are using. This is generally inefficient and such systems are often considered to be examples of an [anti-pattern 🗗](https://en.wikipedia.org/wiki/Anti-pattern){:target="_blank" rel="noopener"}.
 
 In the database world, developers are sometimes tempted to bypass the SQL Server relations database, for example by storing everything in one big table with three columns labelled EntityId, Key, and Value. While this entity-attribute-value model allows the developer to break out from the structure imposed by a SQL Server database, it loses out on all the benefits, since all of the work that could be done efficiently by the SQL Server relational database is forced onto the application instead. Queries become much more convoluted, the indexes and query optimizer can no longer work effectively, and data validity constraints are not enforced. Performance and maintainability can be extremely poor.
 
@@ -199,7 +199,7 @@ If a column has a foreign key and nullable, it will not be trusted and ```JOIN``
 
 This execution plan shows how ```JOIN``` elimination works. There is a foreign key on the column and the column does not allow null. There is only one index operation in the execution plan. SQL Server is able to eliminate JOINs because it "trusts" the data relationship.
 
-- See [Untrusted Foreign Key](#38)
+- See [Untrusted Foreign Key or Check Constraints](#38)
 
 ![Non-SARGable Scan vs. SARGable Seek](../Images/JOIN_Elimination_NOT_NULL.png)
 
@@ -306,7 +306,7 @@ There is no functional or performance difference between a unique constraint (un
 
 The only possible benefit of a unique constraint (unique key) has over a unique index is to emphasize the purpose of the index and is displayed in the SSMS (SQL Server Management Studio) table 'Keys' folder in the 'Object Explorer' side pane.
 
-- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#44)
+- See [Improper Named Constraint](/best-practices-and-findings/naming-conventions#44)
 
 [Back to top](#top)
 
@@ -437,9 +437,9 @@ SQL Server is not going to consider using untrusted constraints to compile a bet
 
 You might have disabled a constraint instead of dropping and recreating it for bulk loading data. This is fine, if you remember to enable it correctly.
 
-- See [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql#with-check--with-nocheck).
-- See [Can you trust your constraints?](https://sqlserverfast.com/blog/hugo/2007/03/can-you-trust-your-constraints/) by Hugo Kornelis
-- See [The Whys and Wherefores of Untrusted or Disabled Constraints](https://www.red-gate.com/hub/product-learning/sql-prompt/the-whys-and-wherefores-of-untrusted-or-disabled-constraints) by Phil Factor at Redgate
+- See [If you don't specify, WITH CHECK is assumed for new constraints, and WITH NOCHECK is assumed for re-enabled constraints 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql#with-check--with-nocheck){:target="_blank" rel="noopener"} by Microsoft
+- See [Can you trust your constraints? 🗗](https://sqlserverfast.com/blog/hugo/2007/03/can-you-trust-your-constraints/){:target="_blank" rel="noopener"} by Hugo Kornelis
+- See [The Whys and Wherefores of Untrusted or Disabled Constraints 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/the-whys-and-wherefores-of-untrusted-or-disabled-constraints){:target="_blank" rel="noopener"} by Phil Factor at Redgate
 
 ```sql
 ALTER TABLE dbo.TableName WITH CHECK CHECK CONSTRAINT ConstraintName;
@@ -530,7 +530,7 @@ A use case for when you can use ``uniqueidentifier/guid`` as a primary key & clu
 
 DBAs have historically not implemented ``uniqueidentifier/guid`` as primary keys and/or clustered indexes. The traditional index maintenance jobs would keep the ``uniqueidentifier/guid`` indexes in a perpetual state of fragmentation causing bad page splits, which is an expensive process.
 
-A new index maintenance strategy is to name these ``uniqueidentifier/guid`` indexes with the ending "*_INDEX_REBUILD_ONLY" and create a customized index maintenance plan. One job step will perform the standard index maintenance ignoring the ``uniqueidentifier/guid`` indexes and another job step will only perform an index rebuild, skipping index reorganizations. [Ola Hallengren maintenance scripts](https://ola.hallengren.com/) is recommended.
+A new index maintenance strategy is to name these ``uniqueidentifier/guid`` indexes with the ending "*_INDEX_REBUILD_ONLY" and create a customized index maintenance plan. One job step will perform the standard index maintenance ignoring the ``uniqueidentifier/guid`` indexes and another job step will only perform an index rebuild, skipping index reorganizations. [Ola Hallengren maintenance scripts 🗗](https://ola.hallengren.com){:target="_blank" rel="noopener"} is recommended.
 
 These ``uniqueidentifier/guid`` indexes should be created and rebuilt with a custom fill factor to account for at least a weeks' worth of data. This is not a "set it, and forget it" maintenance plan and will need some looking after.
 
@@ -574,7 +574,7 @@ A surrogate key is consistently unique. Consequently, during data migration, you
 
 Put natural key(s) in a unique index to guarantees no duplicate values and therefore every row in the table is in some way unique.
 
-- See [Using Natural Key](/best-practices-and-findings/naming-conventions#using-natural-key)
+- See [Using Natural Key](/best-practices-and-findings/naming-conventions#43)
 
 [Back to top](#top)
 
@@ -635,7 +635,7 @@ Heaps have performance issues like table scans, forward fetches.
 ## Not Normalizing Tables
 **Check Id:** 155 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Normalizing+Tables)
 
-[Database Normalizing](https://en.wikipedia.org/wiki/Database_normalization) tables is regarded as a best practice methodology for relational databases design. Relational database tables should be normalized to at least the [Boyce–Codd normal form (BCNF or 3.5NF)](https://en.wikipedia.org/wiki/Boyce%E2%80%93Codd_normal_form).
+[Database Normalizing 🗗](https://en.wikipedia.org/wiki/Database_normalization){:target="_blank" rel="noopener"} tables is regarded as a best practice methodology for relational databases design. Relational database tables should be normalized to at least the [Boyce–Codd normal form (BCNF or 3.5NF) 🗗](https://en.wikipedia.org/wiki/Boyce%E2%80%93Codd_normal_form){:target="_blank" rel="noopener"}.
 
 These normalizing principles are used to reduce data duplication, avoid data anomalies, ensure table relationship integrity, and make data management simplified.
 
@@ -651,7 +651,7 @@ Strongly consistent is with the use of transactions that will not allow the data
 
 Eventually consistent methods are something like jobs that run at a predetermined or event-based time to sync the denormalized (duplicate) data. Eventually consistent leaves a gap of time, even if for milliseconds, that could cause data consistency issues.
 
-- See [Keeping Denormalized Values Correct](http://database-programmer.blogspot.com/2008/11/keeping-denormalized-values-correct.html) article by Kenneth Downs
+- See [Keeping Denormalized Values Correct 🗗](http://database-programmer.blogspot.com/2008/11/keeping-denormalized-values-correct.html){:target="_blank" rel="noopener"} by Kenneth Downs
 
 [Back to top](#top)
 

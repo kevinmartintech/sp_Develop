@@ -9,7 +9,7 @@ layout: default
 
 Sometimes there are checks, databases or servers that you want to skip. For example, say a database is from a vendor and you are not responsible for the database development. 
 
-Another use case for skipping checks is to indicate that you have acknowledged a potential issue and you are OK with it. You can skip that check for that specific object. Using [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_Develop/master/sp_Develop.sql) with this pattern allows you to perform your database development and iteratively check for issues.
+Another use case for skipping checks is to indicate that you have acknowledged a potential issue and you are OK with it. You can skip that check for that specific object. Using [sp_Develop 🗗](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql){:target="_blank" rel="noopener"} with this pattern allows you to perform your database development and iteratively check for issues.
 
 ## Create a table to hold the list of checks you want to skip
 
@@ -49,7 +49,7 @@ EXEC dbo.sp_Develop
 
 ## Checks to Skip
 
-The CheckId column refers checks found in the [Best Practices & Findings](best-practices-and-findings) section. You can also scroll to the right in the [sp_Develop](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql) 'Results' tab and look at the 'CheckId' column to see the number of the one you want to skip. 
+The CheckId column refers checks found in the [Best Practices & Findings](best-practices-and-findings) section. You can also scroll to the right in the [sp_Develop 🗗](https://raw.githubusercontent.com/kevinmartintech/sp_develop/master/sp_Develop.sql){:target="_blank" rel="noopener"} 'Results' tab and look at the 'CheckId' column to see the number of the one you want to skip. 
 
 You can also copy the ``INSERT`` SQL statement in the 'SkipCheckTSQL' column found in the 'Results' tab to `INSERT` that record into your skip check table. You need to have a value for the parameters @SkipCheckSchema & @SkipCheckTable for the ``INSERT`` statement to be displayed. Otherwise a website URL is displayed directing you to here.
 
@@ -71,5 +71,5 @@ VALUES
 
 
 
-[Tell me about the test database](test-database-install){: .btn .btn-purple }
-[View on GitHub](https://github.com/kevinmartintech/sp_Develop){: .btn }
+[Tell me about the test database](test-database-install){: .btn .btn-green}
+[View on GitHub 🗗](https://github.com/kevinmartintech/sp_Develop){: .btn .btn-blue}{:target="_blank" rel="noopener"}

@@ -1,6 +1,6 @@
 title: "sp_Develop - Kevin Martin"
 description: "sp_Develop can be used by database developers, software developers and for performing database code (smell) reviews."
-remote_theme: just-the-docs/just-the-docs@v0.5.2
+remote_theme: just-the-docs/just-the-docs@v0.7.0
 color_scheme: "dark"
 search_enabled: "true"
 baseurl: "/"
@@ -13,10 +13,33 @@ heading_anchors: "true"
 
 
 # Aux links for the upper right navigation
-aux_links:
-    "sp_Develop on GitHub":
-        - "//github.com/kevinmartintech/sp_Develop"
+# aux_links:
+#    "sp_Develop on GitHub":
+#        - "//github.com/kevinmartintech/sp_Develop"
 
+
+# External navigation links
+nav_external_links:
+  - title: sp_Develop on GitHub
+    url: https://github.com/kevinmartintech/sp_Develop
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - Website
+    url: https://kevinmartin.tech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - LinkedIn
+    url: https://www.linkedin.com/in/KevinMartinTech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - X (Twitter)
+    url: https://twitter.com/KevinMartinTech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
+  - title: Kevin Martin - GitHub
+    url: https://github.com/KevinMartinTech
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: true # set to true to open this link in a new tab - defaults to false
 
 
 # Footer content
@@ -26,7 +49,7 @@ aux_links:
 back_to_top: "true"
 back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2020-2023 Kevin Martin LLC. Distributed by an <a href=\"https://github.com/kevinmartintech/sp_Develop/blob/master/LICENSE.md\">MIT license.</a>"
+footer_content: "Copyright &copy; 2020-2023 Kevin Martin LLC. Distributed by an <a href=\"https://github.com/kevinmartintech/sp_Develop/blob/master/LICENSE.md\" target=\"_blank\" rel=\"noopener noreferrer\">MIT license 🗗</a>."
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -34,7 +57,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
-gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_link_text: "Edit this page on GitHub 🗗"
 gh_edit_repository: "https://github.com/kevinmartintech/sp_Develop" # the github URL for your repo
 gh_edit_branch: "master" # the branch that your docs is served from
 gh_edit_source: docs # the source that your files originate from
@@ -42,5 +65,5 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 
  
 # Google Analytics Tracking (optional)
-ga_tracking: G-Y3VRXTG8JR
+ga_tracking: G-MR2B19TX21
 ga_tracking_anonymize_ip: false # Use GDPR compliant Google Analytics settings (true by default)

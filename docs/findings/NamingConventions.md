@@ -66,7 +66,7 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 
 **Example:** ```Purchasing_PurchaseOrder_PurchaseOrderId```
 
-- See [Index Naming](/best-practices-and-findings/naming-conventions#49)
+- See [Improper Index Naming](/best-practices-and-findings/naming-conventions#49)
 - See [Naming Natural Keys](/best-practices-and-findings/naming-conventions#43)
 
 
@@ -148,8 +148,8 @@ CREATE TABLE dbo.TableName (
 );
 ```
 
-- See [Naming Constraint Usage](/best-practices-and-findings/naming-conventions#44)
-- See [Naming Primary Keys](/best-practices-and-findings/naming-conventions#42)
+- See [Improper Named Constraint](/best-practices-and-findings/naming-conventions#44)
+- See [Improper Named Primary Key](/best-practices-and-findings/naming-conventions#42)
 
 [Back to top](#top)
 
@@ -294,7 +294,7 @@ If writing code for a data integration and the source is plural keep the staging
 
 Never use a descriptive prefix such as tbl_. This 'reverse-Hungarian' notation has never been a standard for SQL and clashes with SQL Server's naming conventions. Some system procedures and functions were given prefixes ``sp_``, ``fn_``, ``xp_`` or ``dt_`` to signify that they were "special" and should be searched for in the master database first. 
 
-- See [Additional Scenarios that lead to compile locks (2. Stored procedure is prefixed with sp_)](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20procedure%20is%20prefixed%20with%20sp_)
+- See [Additional Scenarios that lead to compile locks (2. Stored procedure is prefixed with sp_) 🗗](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20procedure%20is%20prefixed%20with%20sp_){:target="_blank" rel="noopener"} by Microsoft
 
 The use of the tbl_prefix for a table, often called "tibbling", came from databases imported from Access when SQL Server was first introduced. Unfortunately, this was an access convention inherited from Visual Basic, a loosely typed language.
 
@@ -342,7 +342,7 @@ Using reserved or future reserved words makes code more difficult to read, can c
 
 Sometimes SSMS will color code a word making you think it is a reserved keyword. It might just be a "special" word that is used in a database backup function somewhere. Check the Reserved Keyword link below. If the highlighted word in SSMS is not on the current or future reserved list, you are safe to use it as an object name.
 
-- See [Reserved Keywords](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/reserved-keywords-transact-sql)
+- See [Reserved Keywords 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/reserved-keywords-transact-sql){:target="_blank" rel="noopener"} By Microsoft
 
 [Back to top](#top)
 
@@ -355,7 +355,7 @@ Sometimes SSMS will color code a word making you think it is a reserved keyword.
 
 Special characters should not be used in names. Using PascalCase for your table name allows for the upper-case letter to denote the first letter of a new word or name. Thus, there is no need to do so with an underscore character. Do not use numbers in your table names either. This usually points to a poorly designed data model or irregularly-partitioned tables. Do not use spaces in your table names either. While most database systems can handle names that include spaces, systems such as SQL Server require you to add brackets around the name when referencing it (like ``[table name]`` for example) which goes against the rule of keeping things as short and simple as possible.
 
-- See [PascalCase Usage](/best-practices-and-findings/naming-conventions#50)
+- See [Not Using PascalCase](/best-practices-and-findings/naming-conventions#50)
 
 [Back to top](#top)
 
@@ -468,7 +468,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
 
 In 99% of everyday cases, you should use URL instead of URI because both are technically true but URL is more specific. The difference between a URI and a URL is that a URI can be just a name by itself (`kevinmartin.tech`), or a name with a protocol (`https://kevinmartin.tech, ftp://kevinmartin.tech, mailto://hello@kevinmartin.tech, file://kevinmartin.tech/~user/file.csv`) that tells you how to reach it—which is a URL.
 
-- See [The Difference Between a URL, URI, and a URN](https://danielmiessler.com/study/difference-between-uri-url)
+- See [The Difference Between a URL, URI, and a URN 🗗](https://danielmiessler.com/study/difference-between-uri-url){:target="_blank" rel="noopener"} by Daniel Miessler
 
 [Back to top](#top)
 
