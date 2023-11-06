@@ -2631,6 +2631,7 @@ The deprecated syntax (which includes defining the join condition in the WHERE c
 
 The "old style" Microsoft/Sybase JOIN style for T-SQL, which uses the =* and *= syntax, has been deprecated and is no longer used. Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100).
 
+- See [Finding code smells using SQL Prompt: old-style join syntax (ST001)  🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001){:target="_blank" rel="noopener"} by Phil Factor at Redgate
 - See [Not Specifying JOIN Type](/best-practices-and-findings/sql-code-conventions#141)
 
 [Back to top](#top)
