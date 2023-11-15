@@ -652,10 +652,47 @@ Strongly consistent is with the use of transactions that will not allow the data
 Eventually consistent methods are something like jobs that run at a predetermined or event-based time to sync the denormalized (duplicate) data. Eventually consistent leaves a gap of time, even if for milliseconds, that could cause data consistency issues.
 
 - See [Keeping Denormalized Values Correct 🗗](http://database-programmer.blogspot.com/2008/11/keeping-denormalized-values-correct.html){:target="_blank" rel="noopener"} by Kenneth Downs
+- See [Not Using Lookup or Reference Table](#168)
 
 [Back to top](#top)
 
 ---
+
+<a name="168"/>
+
+## Not Using Lookup or Reference Table
+**Check Id:** 168 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Lookup+or+Reference+Table)
+
+Utilize lookup or reference tables that contain status or type attributes values. Lookup or reference tables can be used to enforce allowable status or types with foreign key constraints. Lookup tables can be used in drop-down lists for user interfaces.
+
+```sql
+CREATE TABLE Application.AddressType (
+    AddressTypeId          tinyint           NOT NULL IDENTITY(1, 1)
+   ,AddressTypeName        nvarchar(50)      NOT NULL
+   ,AddressTypeShortName   nvarchar(10)      NOT NULL
+   ,AddressTypeDescription nvarchar(300)     NULL
+   ,SortOrderNumber        int               NULL
+   ,IsDefaultFlag          bit               NOT NULL CONSTRAINT Application_AddressType_IsDefaultFlag_Default DEFAULT (0)
+   ,IsLockedFlag           bit               NOT NULL CONSTRAINT Application_AddressType_IsLockedFlag_Default DEFAULT (0)
+   ,IsActiveFlag           bit               NOT NULL CONSTRAINT Application_AddressType_IsActiveFlag_Default DEFAULT (1)
+   ,RowModifyPersonId      int               NOT NULL CONSTRAINT Application_AddressType_Application_RowModifyPerson FOREIGN KEY REFERENCES Application.Person (PersonId)
+   ,RowCreatePersonId      int               NOT NULL CONSTRAINT Application_AddressType_Application_RowCreatePerson FOREIGN KEY REFERENCES Application.Person (PersonId)
+   ,RowModifyTime          datetimeoffset(7) NOT NULL CONSTRAINT Application_AddressType_RowModifyTime_Default DEFAULT (SYSDATETIMEOFFSET())
+   ,RowCreateTime          datetimeoffset(7) NOT NULL CONSTRAINT Application_AddressType_RowCreateTime_Default DEFAULT (SYSDATETIMEOFFSET())
+   ,RowVersionStamp        rowversion        NOT NULL
+   ,CONSTRAINT Application_AddressType_AddressTypeId PRIMARY KEY CLUSTERED (AddressTypeId ASC)
+   ,INDEX Application_AddressType_AddressTypeName_AddressTypeShortName UNIQUE NONCLUSTERED (AddressTypeName ASC, AddressTypeShortName ASC)
+   ,INDEX Application_AddressType_RowModifyPersonId NONCLUSTERED (RowModifyPersonId ASC)
+   ,INDEX Application_AddressType_RowCreatePersonId NONCLUSTERED (RowCreatePersonId ASC)
+);
+```
+
+
+[Back to top](#top)
+
+---
+
+
 
 <a name="30"/>
 
