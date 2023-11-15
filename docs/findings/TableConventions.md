@@ -687,6 +687,7 @@ CREATE TABLE Application.AddressType (
 );
 ```
 
+- See [Not Normalizing Tables](#155)
 
 [Back to top](#top)
 
