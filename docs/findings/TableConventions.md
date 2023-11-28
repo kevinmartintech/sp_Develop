@@ -665,6 +665,8 @@ Eventually consistent methods are something like jobs that run at a predetermine
 
 Utilize lookup or reference tables that contain status or type attributes values. Lookup or reference tables can be used to enforce allowable status or types with foreign key constraints. Lookup tables can be used in drop-down lists for user interfaces.
 
+Avoid using 'catch all' or 'common lookup' tables as they are generally an anti-pattern. You do not want to create a generic lookup table named `dbo.Type` to be used for a `dbo.Phone` table to indicate mobile, home, or a fax PhoneType. You will want to create a `dbo.PhoneType` table that contains only allowable lookup values for maintaining database integrity.
+
 ```sql
 CREATE TABLE Application.AddressType (
     AddressTypeId          tinyint           NOT NULL IDENTITY(1, 1)
@@ -688,6 +690,7 @@ CREATE TABLE Application.AddressType (
 ```
 
 - See [Not Normalizing Tables](#155)
+- See [Five Simple Database Design Errors You Should Avoid 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/database-administration-sql-server/five-simple-database-design-errors-you-should-avoid/#:~:text=(1)-,Common%20Lookup%20Tables,-Figure%201){:target="_blank" rel="noopener"} by Redgate
 
 [Back to top](#top)
 
