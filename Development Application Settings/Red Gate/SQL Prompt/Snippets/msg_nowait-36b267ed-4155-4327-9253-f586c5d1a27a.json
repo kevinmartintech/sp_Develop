@@ -1,0 +1,6 @@
+{
+  "id": "36b267ed-4155-4327-9253-f586c5d1a27a",
+  "prefix": "msg_nowait",
+  "description": "KM: Message WITH NOWAIT for things like rowcount and status message",
+  "body": "RAISERROR(N'RowCount%s %i', 0, 1, N':', @@ROWCOUNT) WITH NOWAIT; --TODO: REMOVE THIS!"
+}
