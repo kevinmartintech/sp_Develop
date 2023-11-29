@@ -8,8 +8,6 @@ layout: default
 # SQL Server Database Development Best Practices Overview
 A novella size of SQL Server database best practices, all for free. Some of the links do not work yet as indicated by the "TODO" text tag. This is being converted to be more readable form from the [Best Practices & Findings](https://www.spdevelop.org/best-practices-and-findings) section.
 
-Use the table of contents icon next to the "README.md" text above to navigate to each section or type in a word to filter the text.
-
 # Naming Conventions
 
 The purpose of naming and style convention allows you and others to identify the type and purpose of database objects. Our goal is to create legible, concise, and consistent names for our database objects.
