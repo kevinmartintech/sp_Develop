@@ -21,8 +21,6 @@ A novella size of SQL Server database best practices, all for free. Some of the 
 {:toc}
 </details>
 
-[Back to top](#top)
-
 ---
 
 # Naming Conventions
