@@ -1,5 +1,5 @@
 ---
-title: SQL Server Database Development Best Practices
+title: SQL Server Database Development Best Practices Overview
 permalink: SQL-Server-Database-Development-Best-Practices
 nav_order: 9
 layout: default
