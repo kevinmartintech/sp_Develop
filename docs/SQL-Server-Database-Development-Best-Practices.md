@@ -3195,8 +3195,9 @@ You will need to determine if the [personal data](https://en.wikipedia.org/wiki/
 
 **With SQL Server you have a couple of choices to implement hashing or encryption**
 
-- [SQL Server Always Encrypt](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/always-encrypted-database-engine)
-- [SQL Server Transparent Data Encryption (TDE)](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption)
+- [SQL Server Always Encrypt 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/always-encrypted-database-engine){:target="_blank" rel="noopener"} by Microsoft
+- [SQL Server Transparent Data Encryption (TDE) 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption){:target="_blank" rel="noopener"} by Microsoft
+- [Configure SQL Server Database Engine for encrypting connections 🗗](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-sql-server-encryption){:target="_blank" rel="noopener"} by Microsoft
 
 ---
 

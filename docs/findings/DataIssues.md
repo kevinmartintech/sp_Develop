@@ -52,7 +52,7 @@ The table column returned for this check might have unencrypted data that you mi
 
 - [SQL Server Always Encrypt 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/always-encrypted-database-engine){:target="_blank" rel="noopener"} by Microsoft
 - [SQL Server Transparent Data Encryption (TDE) 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption){:target="_blank" rel="noopener"} by Microsoft
-
+- [Configure SQL Server Database Engine for encrypting connections 🗗](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-sql-server-encryption){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
