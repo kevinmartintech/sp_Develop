@@ -427,7 +427,7 @@ SQL Server is the second most expensive sorting system, remind the developer the
 
 Parameterized queries are an effective defense against SQL injection attacks and significantly reduce the risk of such attacks. Parameterized queries help prevent SQL injection as they separate user input from the SQL query itself, ensuring that input is treated as data rather than executable code. This makes it much more challenging for attackers to inject malicious SQL code.
 
-Queries should also be parameterized so SQL Server can reuse the execution plan. You application code is either hardcoding the query values in the WHERE clause or you are using some sort of dynamic T-SQL and not doing it correctly.
+Queries should also be parameterized so SQL Server can reuse the execution plan. You application code is either hardcoding the query values in the WHERE clause or you are using some sort of dynamic T-SQL and not doing it correctly. Utilizing parameterized queries in SQL Server optimizes the reuse of execution plans minimizing the CPU cycles needed for query compilation.
 
 A temporary fix is to force parameterization until you can refactor the code and include some @parameters.
 
