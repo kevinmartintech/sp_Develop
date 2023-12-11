@@ -240,6 +240,41 @@ There are a couple causes for this type of issue we can see.
 [Back to top](#top)
 
 ---
+
+<a name="169"/>
+
+## Not Following the Architecting Microsoft SQL Server on VMware vSphere Best Practices
+**Check Id:** 169 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Following+the+Architecting+Microsoft+SQL+Server+on+VMware+vSphere+Best+Practices)
+
+The [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware is a best practices guidance for designing and implementing Microsoft SQL Server in a virtual machine to run on VMware vSphere.
+
+For a quick video ramp up on configuring VMware for SQL Server see the [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"}  by David Klee
+
+- See: [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware
+- See: [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
+
+[Back to top](#top)
+
+---
+
+<a name="170"/>
+
+## Not Using Modern Database Driver
+**Check Id:** 1709 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+
+It is generally recommended to keep database drivers up-to-date. Updating drivers ensures compatibility with the latest database versions.
+
+Microsoft recommends using the database driver named [Microsoft OLE DB Driver for SQL Server (MSOLEDBSQL or MSOLEDBSQL19 for encryption changes) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#3-microsoft-ole-db-driver-for-sql-server-msoledbsql-recommended){:target="_blank" rel="noopener"}. 
+
+Previous database drivers versions like [Microsoft OLE DB Provider for SQL Server (SQLOLEDB) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#1-microsoft-ole-db-provider-for-sql-server-sqloledb){:target="_blank" rel="noopener"}, and [SQL Server Native Client (SNAC) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#2-sql-server-native-client-snac){:target="_blank" rel="noopener"} have either been deprecated or no longer maintained. See: [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} other database drivers not recommended for new application development.
+
+- See: [Microsoft OLE DB Driver for SQL Server (MSOLEDBSQL) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#3-microsoft-ole-db-driver-for-sql-server-msoledbsql-recommended){:target="_blank" rel="noopener"} by Microsoft
+- See: [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
+
+[Back to top](#top)
+
+---
+
 <br>
 <br>
 <br>
