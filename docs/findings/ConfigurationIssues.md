@@ -28,7 +28,7 @@ These checks are for configurations to the SQL Server.
 <a name="54"/><a name="use-code-retry-logic-to-handle-transient-errors"/>
 
 ## Not Using Code Retry Logic
-**Check Id:** 54 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+Code+Retr+Logic)
+**Check Id:** 54 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+Code+Retry+Logic)
 
 It is best practice to implement client code to mitigate connection errors, transient errors, and command errors like deadlocks that your client application encounters when communicating with a SQL Server (On-premises SQL Server, Azure SQL Database, Azure SQL Managed Instance and Azure Synapse Analytics).
 
