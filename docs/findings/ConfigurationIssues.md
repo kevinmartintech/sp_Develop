@@ -27,10 +27,12 @@ These checks are for configurations to the SQL Server.
 
 <a name="54"/><a name="use-code-retry-logic-to-handle-transient-errors"/>
 
-## Not Using Code Retry Logic for Transient Errors
-**Check Id:** 54 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+Code+Retry+Logic+to+Handle+Transient+Errors)
+## Not Using Code Retry Logic
+**Check Id:** 54 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+Code+Retr+Logic)
 
-It is best practice to implement client code to mitigate connection errors and transient errors that your client application encounters when communicating with a SQL Server (On-premises SQL Server, Azure SQL Database, Azure SQL Managed Instance and Azure Synapse Analytics).
+It is best practice to implement client code to mitigate connection errors, transient errors, and command errors like deadlocks that your client application encounters when communicating with a SQL Server (On-premises SQL Server, Azure SQL Database, Azure SQL Managed Instance and Azure Synapse Analytics).
+
+Retry logic should be implemented by the application/client code "[but if your stored procedure isn't being called by an application, doing it in T-SQL isn't a horrible alternative 🗗](https://erikdarling.com/the-art-of-the-sql-server-stored-procedure-error-handling/#:~:text=But%20if%20your%20stored%20procedure%20isn%E2%80%99t%20being%20called%20by%20an%20application%2C%20doing%20it%20in%20T%2DSQL%20isn%E2%80%99t%20a%20horrible%20alternative){:target="_blank" rel="noopener"}" - Erik Darling
 
 SQL Server might be in the process of shifting hardware resources  to better load-balance or fail over in a HA/DR (High Availability / Disaster Recover). When this occurs there will be a time normally 60 seconds where your app might have issues with connecting to the database.
 
@@ -40,7 +42,11 @@ Applications that connect to a SQL Server should be built to expect these transi
 
 Ensure you are using the failover group name or availability group listener name in your connection string. The SQL Server name should not be something like 'SQL01'. This indicates you are connecting directly to a specific SQL Server instance instead of a group of SQL Servers.
 
-- See [Troubleshoot transient connection errors in SQL Database and SQL Managed Instance 🗗](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues){:target="_blank" rel="noopener"} (by Microsoft)
+
+- See [Implementing Connection Resiliency with Entity Framework 6 🗗](https://www.codeproject.com/Tips/758469/Implementing-Connection-Resiliency-with-Entity-Fra){:target="_blank" rel="noopener"} by CodeProject
+- See [Troubleshoot transient connection errors in SQL Database and SQL Managed Instance 🗗](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues){:target="_blank" rel="noopener"} by Microsoft
+- See [Looking at Entity Framework 6 Execution Strategies, Specifically SqlAzureExecutionStrategy 🗗](https://www.nikouusitalo.com/blog/using-different-execution-strategies/){:target="_blank" rel="noopener"} by Niko Uusitalo
+- See [The Art Of The SQL Server Stored Procedure: Error Handling 🗗](https://erikdarling.com/the-art-of-the-sql-server-stored-procedure-error-handling/){:target="_blank" rel="noopener"} by Erik Darling
 
 [Back to top](#top)
 
