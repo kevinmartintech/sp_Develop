@@ -524,7 +524,7 @@ This is just a sanity check to let you know there is a table that does not have 
 
 ``uniqueidentifier/guid`` columns should not be in a clustered index. Even NEWSEQUENTIALID() should not be used in a clustered index. The sequential ``uniqueidentifier/guid`` is based on the SQL Server's MAC address. When an Availability Group fails over the next ``uniqueidentifier/guid`` will not be sequential anymore.
 
-{: .Note }
+{: .note }
 With modern hardware like SSD or NVMe flash drives is no longer necessary to perform index rebuilds and reorganization. Perform update statistics nightly if your tables are not too large for auto-update stats to properly handle the number of modifications occurring.
 
 SQL Server will bad page split and fragment an index when a new record is inserted instead of being inserting on the last page using standard best practices for index maintenance. The clustered index will become fragmented because of randomness of ``uniqueidentifier/guid``. Index maintenance set to the default fill factor of 0 (packed 100%) will force bad page splits.
