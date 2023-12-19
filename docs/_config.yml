@@ -17,6 +17,22 @@ heading_anchors: "true"
 #    "sp_Develop on GitHub":
 #        - "//github.com/kevinmartintech/sp_Develop"
 
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
 
 # External navigation links
 nav_external_links:

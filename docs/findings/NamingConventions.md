@@ -313,9 +313,11 @@ Do not prefix your columns with ``fld_``, ``col_``, ``f_``, ``u_`` as it should 
 
 No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/best-practices-and-findings/naming-conventions#2).
 
-- Index Names should be ``[SchemaName_]TableName_Column1_Column2_Column3`` 
-- Index Names should indicate if there are included columns with ``[SchemaName_]TableName_Column1_Column2_Column3_Includes``
-- When using ``uniqueidentifier/guid`` columns for clustered index you can use ``[SchemaName_]TableName_ColumnName_INDEX_REBUILD_ONLY`` to signify special index maintenance handling.
+Index names only need to be unique within the table or view and do not need to be unique within the database.
+
+- Index Names should be ``Column1_Column2_Column3`` 
+- Index Names should indicate if there are included columns with ``Column1_Column2_Column3_Includes``
+- When using ``uniqueidentifier/guid`` columns for clustered index you can use ``ColumnName_INDEX_REBUILD_ONLY`` to signify special index maintenance handling.
   - See [UNIQUEIDENTIFIER in a Clustered Index](/best-practices-and-findings/table-conventions#22)
 
 [Back to top](#top)
