@@ -539,7 +539,7 @@ This is important
 {: .new }
 This is new
 
-{: .new }
+{: .warning }
 This is warning
 
 
