@@ -527,6 +527,23 @@ This is just a sanity check to let you know there is a table that does not have 
 {: .note }
 With modern hardware like SSD or NVMe flash drives is no longer necessary to perform index rebuilds and reorganization. Perform update statistics nightly if your tables are not too large for auto-update stats to properly handle the number of modifications occurring.
 
+{: .note }
+This is note
+
+{: .highlight }
+This is highlight
+
+{: .important }
+This is important
+
+{: .new }
+This is new
+
+{: .new }
+This is warning
+
+
+
 SQL Server will bad page split and fragment an index when a new record is inserted instead of being inserting on the last page using standard best practices for index maintenance. The clustered index will become fragmented because of randomness of ``uniqueidentifier/guid``. Index maintenance set to the default fill factor of 0 (packed 100%) will force bad page splits.
 
 A use case for when you can use ``uniqueidentifier/guid`` as a primary key & clustered index, is when there are separate systems and merging rows would be difficult. The uniqueness of ``uniqueidentifier/guid`` simplifies the data movements.

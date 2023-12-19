@@ -17,7 +17,7 @@ heading_anchors: "true"
 #    "sp_Develop on GitHub":
 #        - "//github.com/kevinmartintech/sp_Develop"
 
-callouts_level: quiet # or loud
+callouts_level: loud # or quiet 
 callouts:
   highlight:
     color: yellow
