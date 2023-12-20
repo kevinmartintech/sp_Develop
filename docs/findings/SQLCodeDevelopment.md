@@ -406,7 +406,7 @@ END CATCH;
 ## Using ORDER BY
 **Check Id:** 77 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+ORDER+BY)
 
-SQL Server is the second most expensive sorting system, remind the developer they can sort in the application layer
+SQL Server is the second most expensive sorting system, remind the developer they can sort in the application layer.
 
 **2022 Pricing**
 
