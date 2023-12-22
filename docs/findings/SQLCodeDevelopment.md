@@ -2797,7 +2797,25 @@ You are using a function like `FORMAT()` that is extremely inefficient compared 
 
 [Back to top](#top)
 
----<br>
+---
+<a name="171"/>
+
+## Using RBAR aka Row By Agonizing Row
+**Check Id:** 171 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+RBAR+aka+Row+By+Agonizing+Row)
+
+RBAR, which stands for "Row By Agonizing Row," is an anti-pattern where database operations are performed row by row, rather than using set-based operations. This leads to inefficient and slow performance, especially when dealing with large datasets. Other issues are extra network round-trips, increased locking and blocking, code complexity, inefficient use of resources, and difficulty in scaling.
+
+Use set-based operations whenever possible. The SQL language is optimized for set-based operations and developing queries that work on sets of data will take advantage of the database engine's capabilities and be more performant.
+
+- See [The 'Secret' to High Performance Code 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/rbar-row-by-agonizing-row/){:target="_blank" rel="noopener"} by Redgate
+- See [Hidden RBAR: Triangular Joins 🗗](https://www.sqlservercentral.com/articles/hidden-rbar-triangular-joins){:target="_blank" rel="noopener"} by Jeff Moden
+- See [Cursor Examples for SQL Server 🗗](https://www.brentozar.com/sql-syntax-examples/cursor-example/){:target="_blank" rel="noopener"} by Brent Ozar
+
+
+[Back to top](#top)
+
+---
+<br>
 <br>
 <br>
 <br>
