@@ -260,7 +260,7 @@ For a quick video ramp up on configuring VMware for SQL Server see the [SQL Serv
 <a name="170"/>
 
 ## Not Using Modern Database Driver
-**Check Id:** 1709 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+**Check Id:** 170 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Modern+Database+Driver)
 
 It is generally recommended to keep database drivers up-to-date. Updating drivers ensures compatibility with the latest database versions.
 
@@ -270,6 +270,19 @@ Previous database drivers versions like [Microsoft OLE DB Provider for SQL Serve
 
 - See: [Microsoft OLE DB Driver for SQL Server (MSOLEDBSQL) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#3-microsoft-ole-db-driver-for-sql-server-msoledbsql-recommended){:target="_blank" rel="noopener"} by Microsoft
 - See: [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
+
+[Back to top](#top)
+
+---
+
+<a name="172"/>
+
+## Schema Drift Not Handled
+**Check Id:** 172 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Schema+Drift+Not+Handled)
+
+Schema drift is a gradual change in the structure in a database. It occurs when a target database deviates from the baseline used to originally deploy it. Schema drift can impact all the database objects like tables, views, stored procedures, functions, ...
+
+- See: [Not Using Source Control](sql-code-conventions#73)
 
 [Back to top](#top)
 

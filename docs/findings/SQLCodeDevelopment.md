@@ -29,15 +29,23 @@ T-SQL code must execute properly and performant. It must be readable, well laid 
 ## Not Using Source Control
 **Check Id:** 73 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Source+Control)
 
-Your database objects (tables, views, stored procedures, functions, triggers, users, roles, schemas, static data, ...) should be in a version control system. 
+Your database objects (tables, views, stored procedures, functions, triggers, users, roles, schemas, static data, ...) should be in a source version control system.
 
 Source control lets you see who made what changes, when, and why. Automate SQL changes during deployment. Rollback any changes you don't want. Source control helps when you develop branch features.
 
-Most importantly, you work from a single source of truth, greatly reducing the risk of downtime at deployment.
+Most importantly, you work from a single source of truth, greatly reducing the risk of downtime at deployment and schema drift.
 
-Your choices are [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control/){:target="_blank" rel="noopener"} or a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by DevOps or Github depending on the client requirments.
+A [trunk-based branching strategy 🗗](https://trunkbaseddevelopment.com){:target="_blank" rel="noopener"} source control model is recommended. See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"}.
 
-It is recommended that the database project source control be kept separate from application code. Database and reporting team members might/should not need access to the app source code. The data and business intelligence development team might have their own changes (performance tuning, data warehouse, reporting) in a "dev" branch, but their version is not ready for production yet.
+Each developer should have their own database copy instead of a shared database. The dedicated database could be either a local database using the free edition of [SQL Server Developer 🗗](https://www.microsoft.com/en-us/sql-server/sql-server-downloads){:target="_blank" rel="noopener"} or a solution like [Redgate Test Data Manager 🗗](https://www.red-gate.com/products/test-data-manager/){:target="_blank" rel="noopener"}. See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt.
+
+Your SQL Server Database project choices are a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by a Git repository from Azure DevOps or GitHub depending on the client requirements or another solution like [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control){:target="_blank" rel="noopener"}, or [Redgate Flyway 🗗](https://flywaydb.org){:target="_blank" rel="noopener"}.
+
+In some instances a desired-state based solution like SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project have needs beyond the [predepoloyment or postdepolyment scripts 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-specify-predeployment-or-postdeployment-scripts?view=sql-server-ver16){:target="_blank" rel="noopener"} where an additional project that executes migration type of scripts sooner in the pipeline that the database project deploy executes.
+
+Roll forward/fix forward or use database snapshots if a release goes badly wrong. Ensure no other users or processes can access the database from the point the snapshot is created until after the release is complete. It is possible to perform a SAN snapshot instead of a SQL Server snapshot. Use of feature toggles are useful as an alternative to rolling forward so a new deployed feature can be disabled.
+
+It is recommended that the database project source control be kept separate from the application code. Database and reporting team members might/should not need access to the app source code. The data and business intelligence development team might have their own changes (performance tuning, data warehouse, reporting) in a "dev" branch, but their version is not ready for production yet.
 
 **Reasons to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:target="_blank" rel="noopener"} for multiple projects**
 - All the projects have the same permissions and access needs
@@ -47,9 +55,13 @@ It is recommended that the database project source control be kept separate from
 
 If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:target="_blank" rel="noopener"}, please ensure you have accounted for the issues that can occur if not all the bullet points are fully true.
 
-- See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin.
+- See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"} by Microsoft
+- See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin
+- See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt
+- See: [Not Using Source Control](configuration-issues#172)
 
 [Back to top](#top)
+
 
 ---
 
