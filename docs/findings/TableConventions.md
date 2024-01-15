@@ -349,7 +349,7 @@ Your table might be under indexed. Would an index on any other column make your 
 ## Disabled Index
 **Check Id:** 34
 
-An index rebuild or reorganization will enabled disabled indexes. It is now best practices to delete instead of disable if not needed.
+An index rebuild or reorganization will enable disabled indexes. Delete these indexes instead of disabling them if the index or the statistics are not needed. If the metadata is still useful then just disable the index but ensure you disabled indexes are excluded from your index maintenance processes.
 
 [Back to top](#top)
 
@@ -370,6 +370,19 @@ There are better ways to performance tune than using the wizards.
 
 ---
 
+<a name="173"/>
+
+## Using sp_updatestats
+**Check Id:** 173 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+sp_updatestats)
+
+Avoid using sp_updatestats which updates statistics even if only one row is modified in a table. This can lead to a waste of system resources.
+
+- See [Understanding What sp_updatestats Really Updates 🗗](https://sqlperformance.com/2013/07/sql-statistics/statistics-updates){:target="_blank" rel="noopener"} by Erin Stellato
+- See [Another Reason to Avoid sp_updatestats 🗗](https://sqlperformance.com/2014/11/sql-statistics/avoid-sp-updatestats){:target="_blank" rel="noopener"} by Erin Stellato
+
+[Back to top](#top)
+
+---
 <a name="154"/>
 
 ## Filter Columns Not In Index Definition
