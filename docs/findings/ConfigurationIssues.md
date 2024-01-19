@@ -288,6 +288,25 @@ Schema drift is a gradual change in the structure in a database. It occurs when 
 
 ---
 
+<a name="175"/>
+
+## Not Using SET ARITHABORT to ON
+**Check Id:** 175 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+
+[Always set ARITHABORT to ON in your logon sessions. Setting ARITHABORT to OFF can negatively impact query optimization, leading to performance issues. 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql?view=sql-server-ver16#remarks:~:text=Always%20set%20ARITHABORT%20to%20ON%20in%20your%20logon%20sessions.%20Setting%20ARITHABORT%20to%20OFF%20can%20negatively%20impact%20query%20optimization%2C%20leading%20to%20performance%20issues.){:target="_blank" rel="noopener"} by Microsoft
+
+[If SET ARITHABORT is OFF, CREATE, UPDATE, INSERT, and DELETE statements on tables with indexes on computed columns or indexed views fail. 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql?view=sql-server-ver16#remarks:~:text=If%20SET%20ARITHABORT%20is%20OFF%2C%20CREATE%2C%20UPDATE%2C%20INSERT%2C%20and%20DELETE%20statements%20on%20tables%20with%20indexes%20on%20computed%20columns%20or%20indexed%20views%20fail.){:target="_blank" rel="noopener"} by Microsoft
+
+If [ANSI_WARNINGS has a value of ON and the database compatibility level is set to 90 or higher then ARITHABORT is implicitly ON 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql?view=sql-server-ver16#remarks:~:text=When%20ANSI_WARNINGS%20has%20a%20value%20of%20ON%20and%20the%20database%20compatibility%20level%20is%20set%20to%2090%20or%20higher%20then%20ARITHABORT%20is%20implicitly%20ON%20regardless%20of%20its%20value%20setting){:target="_blank" rel="noopener"}, you are good.
+
+- See: [SET ARITHABORT 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+- See: [Slow in the Application, Fast in SSMS? - 2.5 The Default Settings 🗗](https://www.sommarskog.se/query-plan-mysteries.html#defaultsettings){:target="_blank" rel="noopener"} by Erland Sommarskog
+- See: [Troubleshooting Parameter Sniffing Issues the Right Way: Part 2 🗗](https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/){:target="_blank" rel="noopener"} by Brent Ozar
+
+[Back to top](#top)
+
+---
+
 <br>
 <br>
 <br>
