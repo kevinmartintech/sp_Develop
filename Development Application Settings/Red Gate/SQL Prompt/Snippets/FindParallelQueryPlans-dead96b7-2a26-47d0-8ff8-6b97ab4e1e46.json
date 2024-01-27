@@ -1,6 +1,6 @@
 {
   "id": "dead96b7-2a26-47d0-8ff8-6b97ab4e1e46",
-  "prefix": "parallel",
+  "prefix": "FindParallelQueryPlans",
   "description": "KM: Find Parallel Query Plans",
   "body": "SELECT\r\n    p.dbid\r\n   ,p.objectid\r\n   ,p.query_plan\r\n   ,q.encrypted\r\n   ,q.text\r\n   ,cp.usecounts\r\n   ,cp.size_in_bytes\r\n   ,cp.plan_handle\r\nFROM\r\n    sys.dm_exec_cached_plans                       AS cp\r\nCROSS APPLY sys.dm_exec_query_plan(cp.plan_handle) AS p\r\nCROSS APPLY sys.dm_exec_sql_text(cp.plan_handle)   AS q\r\nWHERE\r\n    cp.cacheobjtype                                                                                                                        = 'Compiled Plan'\r\nAND p.query_plan.value('declare namespace p=\"http://schemas.microsoft.com/sqlserver/2004/07/showplan\"; max(//p:RelOp/@Parallel)', 'float') > 0;"
 }
