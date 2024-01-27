@@ -1,6 +1,6 @@
 {
   "id": "e31a0b75-d45a-4c8d-b0fe-ed89eb7378c6",
-  "prefix": "header",
-  "description": "KM: Template header for stored procedure",
+  "prefix": "CreateHeader",
+  "description": "KM: Creates a template header for stored procedures.",
   "body": "/**********************************************************************************************************************\n** Author:      $USER$\n** Created On:  $DATE$\n** Modified On: $DATE$\n** Description: $CURSOR$\n**********************************************************************************************************************/"
 }
