@@ -1,0 +1,6 @@
+{
+  "id": "1eef7be5-6c8d-4509-b4d5-4dd71e803e5d",
+  "prefix": "FindRollback",
+  "description": "KM: This query finds ",
+  "body": "SELECT\r\n    session_id\r\n   ,percent_complete\r\n   ,last_wait_type\r\n   ,wait_resource\r\n   ,wait_time\r\n   ,wait_type\r\n   ,start_time\r\n   ,EstimatedCompletionTimeInMinutes = estimated_completion_time / (1000 * 60)\r\nFROM\r\n    sys.dm_exec_requests\r\nWHERE\r\n    status = 'ROLLBACK';"
+}

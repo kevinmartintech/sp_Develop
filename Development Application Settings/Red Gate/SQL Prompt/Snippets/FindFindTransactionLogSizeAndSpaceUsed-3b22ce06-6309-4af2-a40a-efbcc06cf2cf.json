@@ -1,0 +1,6 @@
+{
+  "id": "3b22ce06-6309-4af2-a40a-efbcc06cf2cf",
+  "prefix": "FindFindTransactionLogSizeAndSpaceUsed",
+  "description": "KM: Find transaction log size and space used",
+  "body": "DBCC SQLPERF(LOGSPACE);"
+}
