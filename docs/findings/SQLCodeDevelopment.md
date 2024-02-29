@@ -2825,6 +2825,10 @@ RBAR, which stands for "Row By Agonizing Row," is an anti-pattern where database
 
 Use set-based operations whenever possible. The SQL language is optimized for set-based operations and developing queries that work on sets of data will take advantage of the database engine's capabilities and be more performant.
 
+Performing one API insert at a time instead of inserting multiple rows with a serialized JSON object parameter in a single call can have several drawbacks including performance overhead resulting in higher network overhead and increased latency, increase database load where each single API call triggers a separate database transaction that leads to increased load impacting performance, atomicity and consistence issues that could prevent partial data commits where you wanted all-or-nothing, higher resource utilization decreasing resource for other database operations, higher risk of blocking and locking. 
+
+Use the [@GenerateCreateMulple 🗗](https://github.com/kevinmartintech/sp_CRUDGen#:~:text=%40GenerateCreateMultiple){:target="_blank" rel="noopener"} parameter in [sp_GRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} to generate a stored procedure that allows you to serialize and pass in a JSON string parameter to insert multiple rows at once.
+
 - See [The 'Secret' to High Performance Code 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/rbar-row-by-agonizing-row/){:target="_blank" rel="noopener"} by Redgate
 - See [Hidden RBAR: Triangular Joins 🗗](https://www.sqlservercentral.com/articles/hidden-rbar-triangular-joins){:target="_blank" rel="noopener"} by Jeff Moden
 - See [Cursor Examples for SQL Server 🗗](https://www.brentozar.com/sql-syntax-examples/cursor-example/){:target="_blank" rel="noopener"} by Brent Ozar
