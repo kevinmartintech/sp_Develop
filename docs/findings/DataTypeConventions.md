@@ -73,7 +73,20 @@ Use `nvarchar(128)` when storing database object names.
 [Back to top](#top)
 
 ---
+<a name="176"/>
 
+## Not Right-Sizing Columns
+**Check Id:** 176 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+
+Do not use column data type lengths larger than necessary. Excessively large column sizes can impact overall database search performance and storage efficiency. Larger columns not only occupy more disk space but also demand additional memory. Memory allocations are based on the number of rows returned by the query multiplied by half the declared length of the column.
+
+- See [Sample database table schema containing researched right-sized columns lengths 🗗](https://github.com/kevinmartintech/KevinMartinTech/blob/main/database/oltp/Schema%20Create.sql) by Kevin Martin
+- See [An Email Address Column Must not Exceed 254 Characters](#64){:target="_blank" rel="noopener"}
+- See [A URL Column Must not Exceed 2083 Characters](#65){:target="_blank" rel="noopener"}
+
+[Back to top](#top)
+
+---
 <a name="64"/><a name="email-address-column"/>
 
 ## An Email Address Column Must not Exceed 254 Characters
