@@ -76,7 +76,7 @@ Use `nvarchar(128)` when storing database object names.
 <a name="176"/>
 
 ## Not Right-Sizing Columns
-**Check Id:** 176 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+**Check Id:** 176 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Right-Sizing+Columns)
 
 Do not use column data type lengths larger than necessary. Excessively large column sizes can impact overall database search performance and storage efficiency. Larger columns not only occupy more disk space but also demand additional memory. Memory allocations are based on the number of rows returned by the query multiplied by half the declared length of the column.
 
