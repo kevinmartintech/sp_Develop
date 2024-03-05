@@ -189,7 +189,7 @@ This exception use can lead to table schema development issues for cases when yo
 
 If the row data in the table does not contain any ```NULL``` values you should assess setting the column to not 'Allow Nulls'.
 
-Null-ness does more than constraining the data, it factors in on performace optimizer decisions.
+Null-ness does more than constraining the data, it factors in on performance optimizer decisions.
 
 For data warehouses do not allow ```NULL``` values for dimensional tables. You can create a -1 identifier with the value of [UNKNOWN]. This helps business analysts who might not understand the difference between INNER and OUTER JOINs exclude data in their TSQL queries.
 
