@@ -155,7 +155,7 @@ It simplifies object management with dbo owning all the database objects. You wi
 
 The database compatibility level lower than the SQL Server it is running on.
 
-There might be query optimization your are not getting running on an older database compatibility level. You might also introduce issues with a more modern database compatibility level.
+There might be query optimization you are not getting running on an older database compatibility level. You might also introduce issues with a more modern database compatibility level.
 
 [Back to top](#top)
 
