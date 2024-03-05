@@ -2784,7 +2784,7 @@ Try running EXEC sp_refreshsqlmodule or sp_refreshview.
 
 Explicitly defining the schema JSON columns using [with_clause 🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql?view=sql-server-ver16#with_clause){:target="_blank" rel="noopener"} (by Microsoft) is more performant.
 
-If you are required to use JSON string in the relational database and need to frequent parse the JSON string, you could create a computed column using `JSON_VALUE(expression, path)` and create an index
+If you are required to use JSON string in the relational database and need to frequent parse the JSON string, you could create a computed column using `JSON_VALUE(expression, path)` and create an index.
 
 - See: [JSON_VALUE (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-value-transact-sql?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
 
