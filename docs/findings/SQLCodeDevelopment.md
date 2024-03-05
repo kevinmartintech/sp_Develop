@@ -635,6 +635,8 @@ Because the SQL Server Query Optimizer typically selects the best execution plan
 
 Parameters and variables should match the column data type, length, and precision.
 
+Data type mismatches can lead to unexpected behavior, errors, or performance issues. 
+
 The example below is how not to create parameters and variables with mismatching types and lengths.
 
 ```sql
@@ -656,6 +658,9 @@ AS
 
     END;
 ```
+
+- See [Mixing Data Types in JOIN or WHERE Clauses 🗗](#103)
+- See [Using a Non-SARGable Expression in a WHERE Clause](#100)
 
 [Back to top](#top)
 
