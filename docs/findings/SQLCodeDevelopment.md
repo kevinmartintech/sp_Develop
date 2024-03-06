@@ -2856,6 +2856,17 @@ Batching large operations like `INSERT`, `UPDATE`, `DELETE` in SQL Server is cru
 [Back to top](#top)
 
 ---
+[Back to top](#top)
+---
+<a name="177"/>
+
+## Use TRUNCATE Instead of DELETE
+**Check Id:** 177 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+TRUNCATE+Instead+of+DELETE)
+
+You should use `TRUNCATE` on a table instead of `DELETE` when you need to remove all the table rows. `TRUNCATE` is an quick, minimally logged and resource-efficient method to clear the table without the overhead of individual row deletion.
+
+[Back to top](#top)
+
 <br>
 <br>
 <br>
