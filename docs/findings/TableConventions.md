@@ -714,8 +714,6 @@ CREATE TABLE Application.AddressType (
 
 ---
 
-
-
 <a name="30"/>
 
 ## System Versioned Temporal Tables are not Compressed
@@ -754,6 +752,63 @@ ORDER BY
 [Back to top](#top)
 
 ---
+
+<a name="???"/>
+
+## Not Using Optimistic Concurrency
+**Check Id:** ??? [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Optimistic+Concurrency)
+
+If you are using Read Committed Snapshot Isolation (RCSI), with its row versioning mechanism, it serves as an optimistic concurrency control mechanism. RCSI transactions read and modify data without holding locks, assuming that conflicts are rare. 
+
+When it comes time to commit changes, your SQL code can check for conflicts by comparing the current version of the data with the version that the transaction initially read with a `rowversion` column (formerly known as `timestamp`). This methodology prevents the "Last `UPDATE` wins" scenario. The "last `UPDATE` wins" scenario occurs when two transactions try to update the same record, and the final update overwrites the changes made by the other transaction, potentially leading to data loss.
+
+Check out [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen#:~:text=%40RowVersionStampColumnName){:target="_blank" rel="noopener"} (by Kevin Martin) as it will generate optimistic concurrent stored procedures for you when a table `rowversion` column exists.
+
+Optimistic concurrency is a strategy used in SQL Server to handle concurrent access to table data by multiple users, client apps, or processes. Instead of last `UPDATE` wins
+
+The key idea behind optimistic concurrency is to assume that conflicts are rare and that transactions can proceed independently until they attempt to commit changes. At that point, the system checks for conflicts and resolves them if necessary.
+
+```sql
+CREATE PROCEDURE dbo.AddressUpdate (
+    @AddressId      int
+   ,@Line1          nvarchar(100)
+   ,@Line2          nvarchar(100)
+   ,@CityTownId     int
+   ,@PostalCode     nvarchar(12)
+   ,@ModifyPersonId int
+   ,@ModifyTime     datetimeoffset(7)
+   ,@VersionStamp   rowversion /* ← Look here */
+)
+AS
+    BEGIN
+        SET NOCOUNT, XACT_ABORT ON;
+
+        UPDATE
+            dbo.Address
+        SET
+            Line1 = @Line1
+           ,Line2 = @Line2
+           ,CityTownId = @CityTownId
+           ,PostalCode = @PostalCode
+           ,ModifyPersonId = @ModifyPersonId
+           ,ModifyTime = @ModifyTime
+        WHERE
+            AddressId    = @AddressId
+        AND VersionStamp = @VersionStamp; /* ← Look here */
+
+    END;
+```
+
+- See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/configuration-issues#161)
+- See [SQL Server > Optimistic concurrency 🗗](https://learn.microsoft.com/en-us/sql/connect/ado-net/optimistic-concurrency){:target="_blank" rel="noopener"} by Microsoft
+- See [Entity Framework Core > Handling Concurrency Conflicts 🗗](https://learn.microsoft.com/en-us/ef/core/saving/concurrency){:target="_blank" rel="noopener"} by Microsoft
+- See [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin)
+
+
+[Back to top](#top)
+
+---
+
 <br>
 <br>
 <br>
