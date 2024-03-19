@@ -24,6 +24,7 @@ T-SQL code must execute properly and performant. It must be readable, well laid 
 [Back to top](#top)
 
 ---
+
 <a name="73"/>
 
 ## Not Using Source Control
@@ -2791,6 +2792,7 @@ If you are required to use JSON string in the relational database and need to fr
 [Back to top](#top)
 
 ---
+
 <a name="160"/>
 
 ## JSON Performance
@@ -2809,6 +2811,7 @@ CREATE NONCLUSTERED INDEX DealerInventory_MakeName ON dbo.DeliveryInventory (Mak
 [Back to top](#top)
 
 ---
+
 <a name="165"/>
 
 ## Using Inefficient Function
@@ -2823,6 +2826,7 @@ You are using a function like `FORMAT()` that is extremely inefficient compared 
 [Back to top](#top)
 
 ---
+
 <a name="171"/>
 
 ## Using RBAR aka Row By Agonizing Row
@@ -2842,7 +2846,9 @@ Use the [@GenerateCreateMulple 🗗](https://github.com/kevinmartintech/sp_CRUDG
 
 
 [Back to top](#top)
+
 ---
+
 <a name="174"/>
 
 ## Causing Lock Escalation With Large Operations
@@ -2856,8 +2862,7 @@ Batching large operations like `INSERT`, `UPDATE`, `DELETE` in SQL Server is cru
 [Back to top](#top)
 
 ---
-[Back to top](#top)
----
+
 <a name="177"/>
 
 ## Use TRUNCATE Instead of DELETE
@@ -2866,6 +2871,39 @@ Batching large operations like `INSERT`, `UPDATE`, `DELETE` in SQL Server is cru
 You should use `TRUNCATE` on a table instead of `DELETE` when you need to remove all the table rows. `TRUNCATE` is an quick, minimally logged and resource-efficient method to clear the table without the overhead of individual row deletion.
 
 [Back to top](#top)
+
+---
+
+<a name="179"/>
+
+## Using a Non-Scalar Subquery to Set a Variable
+**Check Id:** 179 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+
+Do not attempt to set a subquery that returns more than 1 row to a variable.
+
+{: .note }
+> [A subquery in the column list must be scalar, meaning that it can return just one value. Even if you correctly place just one expression in your select list, you must also ensure that just one row is returned. TOP 1 can be used if there is an ORDER BY clause](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/execution-rules/ei003){:target="_blank" rel="noopener"}  by Redgate
+
+- See [When to use SET vs SELECT when assigning values to variables in SQL Server 🗗](https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/){:target="_blank" rel="noopener"} by MSSQLTips
+- See [Variables Usage](#180)
+
+[Back to top](#top)
+
+---
+
+<a name="180"/>
+
+## Variables Usage
+**Check Id:** 180 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Variables+Usage)
+
+A local variable produces the same behavior as the `OPTIMIZE FOR UNKNOWN` hint and cannot use the statistics information efficiently and can impact overall performance.
+
+- See [Yet Another Post About Local Variables In SQL Server 🗗](https://erikdarling.com/yet-another-post-about-local-variables/){:target="_blank" rel="noopener"} by Erik Darling
+- See [Impact of SQL Variables on Performance 🗗](https://www.sqlshack.com/impact-of-sql-variables-on-performance){:target="_blank" rel="noopener"} by SQLShack (Esat Erkec)
+
+[Back to top](#top)
+
+---
 
 <br>
 <br>
