@@ -2356,6 +2356,7 @@ Remove commented out code.
 
 Commented code hides what's important and it is out of date. Rely on the version control system to keep track of previous code.
 
+- See: [Unused Database Objects](configuration-issues#181)
 
 [Back to top](#top)
 
@@ -2721,7 +2722,7 @@ SELECT
 FROM
     dbo.StateProvince            AS SP
     INNER JOIN dbo.CountryRegion AS CR
-        ON SP.CountryRegionId = CR.CountryRegionId; /* <-- Look Here */
+        ON SP.CountryRegionId = CR.CountryRegionId; /* ← Look here */
 ```
 
 ### Not This:
@@ -2731,7 +2732,7 @@ SELECT
 FROM
     dbo.StateProvince            AS SP
     INNER JOIN dbo.CountryRegion AS CR
-        ON CR.CountryRegionId = SP.CountryRegionId; /* <-- Look Here */
+        ON CR.CountryRegionId = SP.CountryRegionId; /* ← Look here */
 ```
 
 [Back to top](#top)

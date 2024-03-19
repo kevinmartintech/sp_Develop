@@ -119,7 +119,6 @@ Visual Studio database projects should be setup with the 7 query execution SET d
 - See [SET Statements 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 - Source [SET ANSI_DEFAULTS (Transact-SQL) 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 
-
 [Back to top](#top)
 
 ---
@@ -291,7 +290,7 @@ Schema drift is a gradual change in the structure in a database. It occurs when 
 <a name="175"/>
 
 ## Not Using SET ARITHABORT to ON
-**Check Id:** 175 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+**Check Id:** 175 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+SET+ARITHABORT+to+ON)
 
 [Always set ARITHABORT to ON in your logon sessions. Setting ARITHABORT to OFF can negatively impact query optimization, leading to performance issues. 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql?view=sql-server-ver16#remarks:~:text=Always%20set%20ARITHABORT%20to%20ON%20in%20your%20logon%20sessions.%20Setting%20ARITHABORT%20to%20OFF%20can%20negatively%20impact%20query%20optimization%2C%20leading%20to%20performance%20issues.){:target="_blank" rel="noopener"} by Microsoft
 
@@ -307,6 +306,32 @@ If [ANSI_WARNINGS has a value of ON and the database compatibility level is set 
 
 ---
 
+<a name="181"/>
+
+## Unused Database Objects
+**Check Id:** 181 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Unused+Database+Objects)
+
+Remove unused database objects. Rely on the version control system to keep track of previous objects.
+
+Removing unused objects helps in keeping the database schema clean and organized. It improves readability and understanding of the database structure for developers, administrators, and other stakeholders.
+
+Unused datbase objects can pose security risks if they contain sensitive data or are not properly secured. By removing these objects, we reduce the potential attack surface and enhance the overall security posture of the database.
+
+If you need to create a temporary database object like a table using a naming pattern like dbo.MyTempTable_DELETE_ME_AFTER_YYYY_MM_DD. This allows your future self or others to know when it is safe to drop the object.
+
+```sql
+CREATE TABLE dbo.MyTempTable_DELETE_ME_AFTER_YYYY_MM_DD ( /* ← Look here */
+    SomeColumn    nvarchar(100)
+   ,AnotherColumn nvarchar(100)
+);
+```
+
+- See: [Cleaning up Old Code and Unused objects in SQL Server 🗗](https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/){:target="_blank" rel="noopener"} by SQLShak
+- See: [Commented Out Code](sql-code-conventions#132) 
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
