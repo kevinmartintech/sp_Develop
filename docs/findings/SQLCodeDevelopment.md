@@ -2877,7 +2877,7 @@ You should use `TRUNCATE` on a table instead of `DELETE` when you need to remove
 <a name="179"/>
 
 ## Using a Non-Scalar Subquery to Set a Variable
-**Check Id:** 179 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+**Check Id:** 179 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+a+Non-Scalar+Subquery+to+Set+a+Variable)
 
 Do not attempt to set a subquery that returns more than 1 row to a variable.
 
@@ -2885,7 +2885,7 @@ Do not attempt to set a subquery that returns more than 1 row to a variable.
 > [A subquery in the column list must be scalar, meaning that it can return just one value. Even if you correctly place just one expression in your select list, you must also ensure that just one row is returned. TOP 1 can be used if there is an ORDER BY clause](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/execution-rules/ei003){:target="_blank" rel="noopener"}  by Redgate
 
 - See [When to use SET vs SELECT when assigning values to variables in SQL Server 🗗](https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/){:target="_blank" rel="noopener"} by MSSQLTips
-- See [Variables Usage](#180)
+- See [Variables Usage](sql-code-conventions#180)
 
 [Back to top](#top)
 
