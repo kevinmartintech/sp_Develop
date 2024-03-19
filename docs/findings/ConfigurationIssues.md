@@ -326,7 +326,7 @@ CREATE TABLE dbo.MyTempTable_DELETE_ME_AFTER_YYYY_MM_DD ( /* ← Look here */
 );
 ```
 
-- See: [Cleaning up Old Code and Unused objects in SQL Server 🗗](https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/){:target="_blank" rel="noopener"} by SQLShak
+- See: [Cleaning up Old Code and Unused objects in SQL Server 🗗](https://www.sqlshack.com/cleaning-up-old-code-and-unused-objects-in-sql-server/){:target="_blank" rel="noopener"} by SQLShak
 - See: [Commented Out Code](sql-code-conventions#132) 
 
 [Back to top](#top)
