@@ -2859,6 +2859,8 @@ Batching large operations like `INSERT`, `UPDATE`, `DELETE` in SQL Server is cru
 
 - See [How to Batch Updates A Few Thousand Rows at a Time 🗗](https://www.brentozar.com/archive/2020/12/how-to-batch-updates-a-few-thousand-rows-at-a-time/){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Resolve blocking problems caused by lock escalation in SQL Server - Prevent lock esclation 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/resolve-blocking-problems-caused-lock-escalation#prevent-lock-escalation){:target="_blank" rel="noopener"} by Microsoft
+- See [Take Care When Scripting Batches 🗗](https://michaeljswart.com/2014/09/take-care-when-scripting-batches){:target="_blank" rel="noopener"} by Michael J. Swart
+- See [Batching Follow-Up 🗗](https://michaeljswart.com/2022/09/batching-follow-up){:target="_blank" rel="noopener"} by Michael J. Swart
 
 [Back to top](#top)
 
