@@ -2855,7 +2855,9 @@ Use the [@GenerateCreateMulple 🗗](https://github.com/kevinmartintech/sp_CRUDG
 ## Causing Lock Escalation With Large Operations
 **Check Id:** 174 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Causing Lock+Escalation+With+Large+Operations)
 
-Batching large operations like `INSERT`, `UPDATE`, `DELETE` in SQL Server is crucial to prevent lock escalation. Lock esclation is a process where low-level locks like row or page locks are converted into higher-level table lock, leading to contention and decreased performance. By breaking down large updates into smaller batches, lock contention is minimized, reducing the likelihood of lock escalation. This approach also decreases the duration of locks on the affected data, improving overall concurrency. 
+Batching large operations like `INSERT`, `UPDATE`, `DELETE` in SQL Server is crucial to prevent lock escalation. Lock esclation is a process where low-level locks like row or page locks are converted into higher-level table lock, leading to contention and decreased performance. By breaking down large updates into smaller batches, lock contention is minimized, reducing the likelihood of lock escalation. This approach also decreases the duration of locks on the affected data, improving overall concurrency.
+
+You need to pay special attention to batch operations to ensure they do not gradually get slower as it takes longer and longer to scan an index to find rows to delete.
 
 - See [Take Care When Scripting Batches 🗗](https://michaeljswart.com/2014/09/take-care-when-scripting-batches){:target="_blank" rel="noopener"} by Michael J. Swart
 - See [Batching Follow-Up 🗗](https://michaeljswart.com/2022/09/batching-follow-up){:target="_blank" rel="noopener"} by Michael J. Swart
