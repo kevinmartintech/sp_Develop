@@ -107,7 +107,7 @@ The primary keys in the date and time dimension tables are integers and the T-SQ
 
 If the datetime column in the source table is a datetimeoffset data type you can remove the first 'AT TIME ZONE'.
 
-- See [Using datetime Instead of datetimeoffset](/best-practices-and-findings/data-type-conventions#70
+- See [Using datetime Instead of datetimeoffset](/best-practices-and-findings/data-type-conventions#70)
 
 ```sql
 SELECT
@@ -814,8 +814,6 @@ Consider using [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){
 
 You might be using square brackets [] unnecessarily for object names. If object names are valid and not reserved words, there is no need to use square brackets. Use them only for invalid names.
 
-- See [Removing the Square Bracket Decorations with SQL Prompt 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/removing-the-square-bracket-decorations-with-sql-prompt){:target="_blank" rel="noopener"} by Redgate
-
 ```sql
 SELECT 
     P.[FirstName]
@@ -832,6 +830,10 @@ SELECT
 FROM 
 	dbo.Person AS P
 ```
+
+- See [Removing the Square Bracket Decorations with SQL Prompt 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/removing-the-square-bracket-decorations-with-sql-prompt){:target="_blank" rel="noopener"} by Redgate
+- See [Using Reserved Words in Name](/best-practices-and-findings/naming-conventions#4)
+
 
 [Back to top](#top)
 

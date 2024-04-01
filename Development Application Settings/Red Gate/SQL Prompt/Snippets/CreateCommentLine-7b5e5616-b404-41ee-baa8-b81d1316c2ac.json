@@ -2,5 +2,5 @@
   "id": "7b5e5616-b404-41ee-baa8-b81d1316c2ac",
   "prefix": "CreateCommentLine",
   "description": "KM: Comment with /* */ on one line.",
-  "body": "/* $SELECTEDTEXT$ */"
+  "body": "$CURSOR$/* $SELECTEDTEXT$ */"
 }
