@@ -198,6 +198,20 @@ In the beginning, all three connection strings below will have the same content 
 [Back to top](#top)
 
 ---
+<a name="182"/>
+
+## Connection String Settings
+**Check Id:** 182 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Connection+String+Settings)
+
+### Application Name for SQL Server Connections
+
+Always include the optional Application Name parameter in your connection strings when connecting to SQL Server. This way the SQL Server will have info on what application is using the connection. This can be invaluable info when locating errors in the database server. Documention should be kept on how to contact the app developer.
+
+Simply include "Application Name=MyAppName;" in the connection string.
+
+- See [Application Name for SQL Server Connections 🗗](https://www.connectionstrings.com/use-application-name-sql-server/){:target="_blank" rel="noopener"} by ConnectionStrings.com
+
+[Back to top](#top)
 
 <a name="164"/><a name="the-database-compatibility-level-should-match-the-sql-server-version"/>
 
