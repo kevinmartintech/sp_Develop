@@ -59,7 +59,7 @@ If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:
 - See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"} by Microsoft
 - See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin
 - See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt
-- See [Not Using Source Control](/best-practices-and-findings/configuration-issues#172)
+- See [Schema Drift Not Handled](/best-practices-and-findings/configuration-issues#172)
 
 [Back to top](#top)
 
@@ -107,8 +107,6 @@ The primary keys in the date and time dimension tables are integers and the T-SQ
 
 If the datetime column in the source table is a datetimeoffset data type you can remove the first 'AT TIME ZONE'.
 
-- See [Using datetime Instead of datetimeoffset](/best-practices-and-findings/data-type-conventions#70)
-
 ```sql
 SELECT
     [Date Key] = 
@@ -139,6 +137,8 @@ SELECT
 			), ':', ''
 		);
 ```
+
+- See [Using datetime Instead of datetimeoffset](/best-practices-and-findings/data-type-conventions#70)
 
 [Back to top](#top)
 
@@ -660,7 +660,7 @@ AS
     END;
 ```
 
-- See [Mixing Data Types in JOIN or WHERE Clauses 🗗](/best-practices-and-findings/sql-code-conventions#103)
+- See [Mixing Data Types in JOIN or WHERE Clauses](/best-practices-and-findings/sql-code-conventions#103)
 - See [Using a Non-SARGable Expression in a WHERE Clause](/best-practices-and-findings/sql-code-conventions#100)
 
 [Back to top](#top)

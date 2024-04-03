@@ -69,7 +69,7 @@ Special attention should be made to ensure your SQL Server can handle the versio
 
 Remember to remove the `NOLOCK` hints.
 
-- See [Using NOLOCK (READ UNCOMMITTED)](best-practices-and-findings/sql-code-conventions#15)
+- See [Using NOLOCK (READ UNCOMMITTED)](/best-practices-and-findings/sql-code-conventions#15)
 - See [Implementing Snapshot or Read Committed Snapshot Isolation in SQL Server: A Guide 🗗](https://www.brentozar.com/archive/2013/01/implementing-snapshot-or-read-committed-snapshot-isolation-in-sql-server-a-guide/){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Snapshot Isolation in SQL Server 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server){:target="_blank" rel="noopener"} by Microsoft
 
