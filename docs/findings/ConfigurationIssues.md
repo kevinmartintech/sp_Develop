@@ -233,8 +233,8 @@ There are a couple causes for this type of issue we can see.
     - The resolution involves diagnosing and eliminating these resource constraints through tools like Performance Monitor.
 
 
-- See: [Troubleshoot slow queries that result from ASYNC_NETWORK_IO wait type 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-query-async-network-io){:target="_blank" rel="noopener"} by Microsoft
-- See: [Reducing SQL Server ASYNC_NETWORK_IO wait type 🗗](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/){:target="_blank" rel="noopener"} by Nikola Dimitrijevic at SQLShack.com
+- See [Troubleshoot slow queries that result from ASYNC_NETWORK_IO wait type 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-query-async-network-io){:target="_blank" rel="noopener"} by Microsoft
+- See [Reducing SQL Server ASYNC_NETWORK_IO wait type 🗗](https://www.sqlshack.com/reducing-sql-server-async_network_io-wait-type/){:target="_blank" rel="noopener"} by Nikola Dimitrijevic at SQLShack.com
 
 [Back to top](#top)
 
@@ -249,8 +249,8 @@ The [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmwa
 
 For a quick video ramp up on configuring VMware for SQL Server see the [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"}  by David Klee
 
-- See: [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware
-- See: [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
+- See [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware
+- See [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
 
 [Back to top](#top)
 
@@ -265,10 +265,10 @@ It is generally recommended to keep database drivers up-to-date. Updating driver
 
 Microsoft recommends using the database driver named [Microsoft OLE DB Driver for SQL Server (MSOLEDBSQL or MSOLEDBSQL19 for encryption changes) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#3-microsoft-ole-db-driver-for-sql-server-msoledbsql-recommended){:target="_blank" rel="noopener"}. 
 
-Previous database drivers versions like [Microsoft OLE DB Provider for SQL Server (SQLOLEDB) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#1-microsoft-ole-db-provider-for-sql-server-sqloledb){:target="_blank" rel="noopener"}, and [SQL Server Native Client (SNAC) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#2-sql-server-native-client-snac){:target="_blank" rel="noopener"} have either been deprecated or no longer maintained. See: [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} other database drivers not recommended for new application development.
+Previous database drivers versions like [Microsoft OLE DB Provider for SQL Server (SQLOLEDB) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#1-microsoft-ole-db-provider-for-sql-server-sqloledb){:target="_blank" rel="noopener"}, and [SQL Server Native Client (SNAC) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#2-sql-server-native-client-snac){:target="_blank" rel="noopener"} have either been deprecated or no longer maintained. See [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} other database drivers not recommended for new application development.
 
-- See: [Microsoft OLE DB Driver for SQL Server (MSOLEDBSQL) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#3-microsoft-ole-db-driver-for-sql-server-msoledbsql-recommended){:target="_blank" rel="noopener"} by Microsoft
-- See: [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
+- See [Microsoft OLE DB Driver for SQL Server (MSOLEDBSQL) 🗗](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16#3-microsoft-ole-db-driver-for-sql-server-msoledbsql-recommended){:target="_blank" rel="noopener"} by Microsoft
+- See [Driver history for Microsoft SQL Server 🗗](https://learn.microsoft.com/en-us/sql/connect/connect-history?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -281,7 +281,7 @@ Previous database drivers versions like [Microsoft OLE DB Provider for SQL Serve
 
 Schema drift is a gradual change in the structure in a database. It occurs when a target database deviates from the baseline used to originally deploy it. Schema drift can impact all the database objects like tables, views, stored procedures, functions, ...
 
-- See: [Not Using Source Control](sql-code-conventions#73)
+- See [Not Using Source Control](sql-code-conventions#73)
 
 [Back to top](#top)
 
@@ -298,9 +298,9 @@ Schema drift is a gradual change in the structure in a database. It occurs when 
 
 If [ANSI_WARNINGS has a value of ON and the database compatibility level is set to 90 or higher then ARITHABORT is implicitly ON 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql?view=sql-server-ver16#remarks:~:text=When%20ANSI_WARNINGS%20has%20a%20value%20of%20ON%20and%20the%20database%20compatibility%20level%20is%20set%20to%2090%20or%20higher%20then%20ARITHABORT%20is%20implicitly%20ON%20regardless%20of%20its%20value%20setting){:target="_blank" rel="noopener"}, you are good.
 
-- See: [SET ARITHABORT 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql){:target="_blank" rel="noopener"} by Microsoft
-- See: [Slow in the Application, Fast in SSMS? - 2.5 The Default Settings 🗗](https://www.sommarskog.se/query-plan-mysteries.html#defaultsettings){:target="_blank" rel="noopener"} by Erland Sommarskog
-- See: [Troubleshooting Parameter Sniffing Issues the Right Way: Part 2 🗗](https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/){:target="_blank" rel="noopener"} by Brent Ozar
+- See [SET ARITHABORT 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+- See [Slow in the Application, Fast in SSMS? - 2.5 The Default Settings 🗗](https://www.sommarskog.se/query-plan-mysteries.html#defaultsettings){:target="_blank" rel="noopener"} by Erland Sommarskog
+- See [Troubleshooting Parameter Sniffing Issues the Right Way: Part 2 🗗](https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/){:target="_blank" rel="noopener"} by Brent Ozar
 
 [Back to top](#top)
 
@@ -326,8 +326,8 @@ CREATE TABLE dbo.MyTempTable_DELETE_ME_AFTER_YYYY_MM_DD ( /* ← Look here */
 );
 ```
 
-- See: [Cleaning up Old Code and Unused objects in SQL Server 🗗](https://www.sqlshack.com/cleaning-up-old-code-and-unused-objects-in-sql-server/){:target="_blank" rel="noopener"} by SQLShak
-- See: [Commented Out Code](sql-code-conventions#132) 
+- See [Cleaning up Old Code and Unused objects in SQL Server 🗗](https://www.sqlshack.com/cleaning-up-old-code-and-unused-objects-in-sql-server/){:target="_blank" rel="noopener"} by SQLShak
+- See [Commented Out Code](sql-code-conventions#132) 
 
 [Back to top](#top)
 
