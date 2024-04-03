@@ -425,7 +425,7 @@ END CATCH;
 ## Using ORDER BY
 **Check Id:** 77 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+ORDER+BY)
 
-SQL Server is the second most expensive sorting system, remind the developer they can sort in the application layer.
+SQL Server is the second most expensive sorting system, remind the developer they can sort in the application layer which does not have a cost per core.
 
 **2022 Pricing**
 
@@ -716,7 +716,7 @@ An understanding of the concepts introduced in these four cases can help you ide
 SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. Any procedure that constructs SQL statements should be reviewed for injection vulnerabilities because SQL Server will execute all syntactically valid queries that it receives. Even parameterized data can be manipulated by a skilled and determined attacker.
 
 - Source [SQL Injection 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-injection){:target="_blank" rel="noopener"} by Micrsoft
-- See [Using EXECUTE](#89)
+- See [Using EXECUTE](/best-practices-and-findings/sql-code-conventions#89)
 
 [Back to top](#top)
 
@@ -1197,12 +1197,11 @@ In the `WHERE` clause below you will notice the "!" mark on the SELECT indicatin
 
 The ```RAISERROR``` statement does not honor ```SET XACT_ABORT```. 
 
-- See [Not Using SET XACT_ABORT ON](/best-practices-and-findings/sql-code-conventions#121)
-
 ```RAISERROR``` never aborts execution, so execution will continue with the next statement.
 
 A use case exception for using ```RAISERROR``` instead of ```THROW``` is for legacy compatibility reasons. ```THROW``` was introduced in SQL Server 2012 so when making modification on this code ```THROW``` can break the current code.
 
+- See [Not Using SET XACT_ABORT ON](/best-practices-and-findings/sql-code-conventions#121)
 - See [Not Using Transactions](/best-practices-and-findings/sql-code-conventions#122)
 
 [Back to top](#top)
@@ -2034,7 +2033,7 @@ Your scalar function is not inlineable. This means it will perform poorly.
 
 Review the [Inlineable scalar UDFs requirements 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements){:target="_blank" rel="noopener"} (by Microsoft) to determine what changes you can make so it can go inline. If you cannot, you should in-line your scalar function in SQL query. This means duplicate the code you would put in the scalar function in your SQL code. SQL Server 2019 & Azure SQL Database (150 database compatibility level) can inline some scalar functions. 
 
-- See [05c Blueprint Functions Scalar Function Rewrites Demo video🗗](https://www.erikdarlingdata.com/sql-server/software-vendor-mistakes-with-sql-server-not-using-inline-table-valued-functions/?mc_cid=e0205e6bac&mc_eid=90079896ec#:~:text=In%20the%20videos%20below%2C%20I%E2%80%99m%20going%20to%20show%20you%20how%20to%20rewrite%20T%2DSQL%20Scalar%20User%20Defined%20Functions%2C%20and%20a%20really%20cool%20thing%20they%20can%20do%20on%20top%20of%20just%20replacing%20the%20bad%20kinds%20of%20functions.){:target="_blank" rel="noopener"} (by Erik Darling) to see how to rewrite T-SQL Scalar User Defined Function into a Inline Table Valued function.
+- See [05c Blueprint Functions Scalar Function Rewrites Demo video 🗗](https://www.erikdarlingdata.com/sql-server/software-vendor-mistakes-with-sql-server-not-using-inline-table-valued-functions/?mc_cid=e0205e6bac&mc_eid=90079896ec#:~:text=In%20the%20videos%20below%2C%20I%E2%80%99m%20going%20to%20show%20you%20how%20to%20rewrite%20T%2DSQL%20Scalar%20User%20Defined%20Functions%2C%20and%20a%20really%20cool%20thing%20they%20can%20do%20on%20top%20of%20just%20replacing%20the%20bad%20kinds%20of%20functions.){:target="_blank" rel="noopener"} (by Erik Darling) to see how to rewrite T-SQL Scalar User Defined Function into a Inline Table Valued function.
 
 Microsoft has been removing (instead of fixing) the inlineablity of scalar functions with every cumulative update. If your query requires scalar functions, you should ensure they are being inlined. Reference: [Inlineable scalar UDFs requirements 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#inlineable-scalar-udfs-requirements){:target="_blank" rel="noopener"} (by Microsoft)
 
@@ -2164,7 +2163,7 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
 **Alternatives**
 - Index Tuning
 - Use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
-  - See [Not Using Read Committed Snapshot Isolation](configuration-issues#161)
+  - See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/configuration-issues#161)
 - See [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following){:target="_blank" rel="noopener"} by Microsoft
 - See [NOLOCK Is Bad And You Probably Shouldn’t Use It 🗗](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results 🗗](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/){:target="_blank" rel="noopener"} by Brent Ozar
@@ -2362,7 +2361,7 @@ Remove commented out code.
 
 Commented code hides what's important and it is out of date. Rely on the version control system to keep track of previous code.
 
-- See [Unused Database Objects](configuration-issues#181)
+- See [Unused Database Objects](/best-practices-and-findings/configuration-issues#181)
 
 [Back to top](#top)
 
@@ -2502,7 +2501,7 @@ For completeness, the 4-part looks like ServerName.DatabaseName.SchemaName.Table
 
 
 - See [Additional Scenarios that lead to compile locks (1. Stored Procedure is executed without Fully Qualified Name) 🗗](https://docs.microsoft.com/en-us/troubleshoot/sql/performance/troubleshoot-blocking-caused-compile-locks#additional-scenarios-that-lead-to-compile-locks:~:text=Stored%20Procedure%20is%20executed%20without%20Fully%20Qualified%20Name){:target="_blank" rel="noopener"} by Microsoft
-- See [Using Different Case When Executing Store Procedure](#164)
+- See [Using Different Case When Executing Store Procedure](/best-practices-and-findings/sql-code-conventions#164)
 
 [Back to top](#top)
 
@@ -2518,7 +2517,7 @@ If an owner-qualified procedure is executed by using a different case (upper or 
 The workaround is to drop and create the procedure by using the same case as the one that is used when the application executes the procedure. You can also make sure that the procedure is executed from all applications by using the correct case (upper or lower).
 
 - See [Additional Scenarios that lead to compile locks (3. Stored procedure is invoked using a different case (upper /lower)) 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/troubleshoot-blocking-caused-compile-locks#:~:text=Stored%20procedure%20is%20invoked%20using%20a%20different%20case%20(upper%20/lower)){:target="_blank" rel="noopener"} by Microsoft
-- See [Not Using Fully Qualified Name](#136)
+- See [Not Using Fully Qualified Name](/best-practices-and-findings/sql-code-conventions#136)
 
 [Back to top](#top)
 
@@ -2664,7 +2663,7 @@ The deprecated syntax (which includes defining the join condition in the WHERE c
 
 The "old style" Microsoft/Sybase JOIN style for T-SQL, which uses the =* and *= syntax, has been deprecated and is no longer used. Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100).
 
-- See [Finding code smells using SQL Prompt: old-style join syntax (ST001)  🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001){:target="_blank" rel="noopener"} by Phil Factor at Redgate
+- See [Finding code smells using SQL Prompt: old-style join syntax (ST001) 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001){:target="_blank" rel="noopener"} by Phil Factor at Redgate
 - See [Not Specifying JOIN Type](/best-practices-and-findings/sql-code-conventions#141)
 
 [Back to top](#top)
@@ -2812,7 +2811,6 @@ ALTER TABLE dbo.DeliveryInventory ADD MakeName AS JSON_VALUE(JSONAttributes, '$.
 CREATE NONCLUSTERED INDEX DealerInventory_MakeName ON dbo.DeliveryInventory (MakeName ASC);
 ```
 
-
 - See [JSON_VALUE (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-value-transact-sql?view=sql-server-ver16){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
@@ -2897,7 +2895,7 @@ Do not attempt to set a subquery that returns more than 1 row to a variable.
 > [A subquery in the column list must be scalar, meaning that it can return just one value. Even if you correctly place just one expression in your select list, you must also ensure that just one row is returned. TOP (1) can be used if there is an ORDER BY clause](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/execution-rules/ei003){:target="_blank" rel="noopener"} by Redgate
 
 - See [When to use SET vs SELECT when assigning values to variables in SQL Server 🗗](https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/){:target="_blank" rel="noopener"} by MSSQLTips
-- See [Variables Usage](sql-code-conventions#180)
+- See [Variables Usage](/best-practices-and-findings/sql-code-conventions#180)
 
 [Back to top](#top)
 

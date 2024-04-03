@@ -38,7 +38,7 @@ The [Table Per Type (TPT) 🗗](https://entityframework.net/tpt){:target="_blank
 
 TPC & TPH do not follow normal form. 
 
-- See [Not Normalizing Tables](#155).
+- See [Not Normalizing Tables](/best-practices-and-findings/table-conventions#155).
 
 [Back to top](#top)
 
@@ -199,14 +199,13 @@ If a column has a foreign key and nullable, it will not be trusted and ```JOIN``
 
 This execution plan shows how ```JOIN``` elimination works. There is a foreign key on the column and the column does not allow null. There is only one index operation in the execution plan. SQL Server is able to eliminate JOINs because it "trusts" the data relationship.
 
-- See [Untrusted Foreign Key or Check Constraints](#38)
-
 ![Non-SARGable Scan vs. SARGable Seek](../Images/JOIN_Elimination_NOT_NULL.png)
 
 This execution plan shows ```JOIN``` elimination has not occurred. While there is a foreign key on the column, the column allows null. There are two index operations and a merge operation causing SQL Server to perform more work.
 
 ![Non-SARGable Scan vs. SARGable Seek](../Images/JOIN_Elimination_NULL.png)
 
+- See [Untrusted Foreign Key or Check Constraints](/best-practices-and-findings/table-conventions#38)
 
 [Back to top](#top)
 
@@ -221,7 +220,7 @@ In most cases, columns with the name ????Id that are not the primary key should 
 
 You will not get JOIN Eliminations without a foreign key and a column that allows NULLs.
 
-- See [Nullable Columns and JOIN Elimination](#nullable-columns-and-join-elimination) 
+- See [Nullable Columns and JOIN Elimination](/best-practices-and-findings/table-conventions#nullable-columns-and-join-elimination) 
 
 [Back to top](#top)
 
@@ -612,7 +611,7 @@ Using ``uniqueidentifier/guid`` as primary keys causes issues with SQL Server da
 
 A use case for when you can use ``uniqueidentifier/guid`` as primary keys, is when there are separate systems and merging rows would be difficult. The uniqueness of ``uniqueidentifier/guid`` simplifies the data movements.
 
-- See [uniqueidentifier in a Clustered Index](#22)
+- See [uniqueidentifier in a Clustered Index](/best-practices-and-findings/table-conventions#22)
 
 [Back to top](#top)
 
@@ -670,7 +669,7 @@ Strongly consistent is with the use of transactions that will not allow the data
 Eventually consistent methods are something like jobs that run at a predetermined or event-based time to sync the denormalized (duplicate) data. Eventually consistent leaves a gap of time, even if for milliseconds, that could cause data consistency issues.
 
 - See [Keeping Denormalized Values Correct 🗗](http://database-programmer.blogspot.com/2008/11/keeping-denormalized-values-correct.html){:target="_blank" rel="noopener"} by Kenneth Downs
-- See [Not Using Lookup or Reference Table](#168)
+- See [Not Using Lookup or Reference Table](/best-practices-and-findings/table-conventions#168)
 
 [Back to top](#top)
 
@@ -707,7 +706,7 @@ CREATE TABLE Application.AddressType (
 );
 ```
 
-- See [Not Normalizing Tables](#155)
+- See [Not Normalizing Tables](/best-practices-and-findings/table-conventions#155)
 - See [Five Simple Database Design Errors You Should Avoid 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/database-administration-sql-server/five-simple-database-design-errors-you-should-avoid/#:~:text=(1)-,Common%20Lookup%20Tables,-Figure%201){:target="_blank" rel="noopener"} by Redgate
 
 [Back to top](#top)
@@ -802,7 +801,7 @@ AS
 - See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/configuration-issues#161)
 - See [SQL Server > Optimistic concurrency 🗗](https://learn.microsoft.com/en-us/sql/connect/ado-net/optimistic-concurrency){:target="_blank" rel="noopener"} by Microsoft
 - See [Entity Framework Core > Handling Concurrency Conflicts 🗗](https://learn.microsoft.com/en-us/ef/core/saving/concurrency){:target="_blank" rel="noopener"} by Microsoft
-- See [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin)
+- See [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} by Kevin Martin
 
 
 [Back to top](#top)

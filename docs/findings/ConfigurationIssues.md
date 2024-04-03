@@ -69,7 +69,7 @@ Special attention should be made to ensure your SQL Server can handle the versio
 
 Remember to remove the `NOLOCK` hints.
 
-- See [Using NOLOCK (READ UNCOMMITTED)](sql-code-conventions#15)
+- See [Using NOLOCK (READ UNCOMMITTED)](best-practices-and-findings/sql-code-conventions#15)
 - See [Implementing Snapshot or Read Committed Snapshot Isolation in SQL Server: A Guide 🗗](https://www.brentozar.com/archive/2013/01/implementing-snapshot-or-read-committed-snapshot-isolation-in-sql-server-a-guide/){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Snapshot Isolation in SQL Server 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server){:target="_blank" rel="noopener"} by Microsoft
 
@@ -117,7 +117,7 @@ These 2 advanced execution settings are on by default: ARITHABORT, CONCAT_NULL_Y
 Visual Studio database projects should be setup with the 7 query execution SET defaults (Project Settings > ‘Database Settings’ button). If there have been publish database objects without these query execution defaults, they will need to be updated. It is possible to check the “Ignore quoted identifiers” and “Ignore ANSI Nulls” under the ‘Advanced’ button when manually publishing the database project.
 
 - See [SET Statements 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql){:target="_blank" rel="noopener"} by Microsoft
-- Source [SET ANSI_DEFAULTS (Transact-SQL) 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+- See [SET ANSI_DEFAULTS (Transact-SQL) 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -281,7 +281,7 @@ Previous database drivers versions like [Microsoft OLE DB Provider for SQL Serve
 
 Schema drift is a gradual change in the structure in a database. It occurs when a target database deviates from the baseline used to originally deploy it. Schema drift can impact all the database objects like tables, views, stored procedures, functions, ...
 
-- See [Not Using Source Control](sql-code-conventions#73)
+- See [Not Using Source Control](/best-practices-and-findings/sql-code-conventions#73)
 
 [Back to top](#top)
 
@@ -327,7 +327,7 @@ CREATE TABLE dbo.MyTempTable_DELETE_ME_AFTER_YYYY_MM_DD ( /* ← Look here */
 ```
 
 - See [Cleaning up Old Code and Unused objects in SQL Server 🗗](https://www.sqlshack.com/cleaning-up-old-code-and-unused-objects-in-sql-server/){:target="_blank" rel="noopener"} by SQLShak
-- See [Commented Out Code](sql-code-conventions#132) 
+- See [Commented Out Code](/best-practices-and-findings/sql-code-conventions#132)
 
 [Back to top](#top)
 
