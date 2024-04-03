@@ -1470,6 +1470,8 @@ WHERE
     P.LastName LIKE '%son';
 ```
 
+- See: [Sargability: Why %string% Is Slow 🗗](https://www.brentozar.com/archive/2010/06/sargable-why-string-is-slow/){:target="_blank" rel="noopener"} by Brent Ozar
+
 [Back to top](#top)
 
 ---
