@@ -205,7 +205,7 @@ In the beginning, all three connection strings below will have the same content 
 
 ### Application Name for SQL Server Connections
 
-Always include the optional Application Name parameter in your connection strings when connecting to SQL Server. This way the SQL Server will have info on what application is using the connection. This can be invaluable info when locating errors in the database server. Documention should be kept on how to contact the app developer.
+Always include the optional Application Name parameter in your connection strings when connecting to SQL Server. This way the SQL Server will have info on what application is using the connection. This can be invaluable info when locating errors in the database server. Documentation should be kept on how to contact the app developer.
 
 Simply include "Application Name=MyAppName;" in the connection string.
 
