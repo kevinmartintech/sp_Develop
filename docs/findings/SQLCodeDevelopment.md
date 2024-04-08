@@ -42,7 +42,7 @@ Each developer should have their own database copy instead of a shared database.
 
 Your SQL Server Database project choices are a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by a Git repository from Azure DevOps or GitHub depending on the client requirements or another solution like [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control){:target="_blank" rel="noopener"}, or [Redgate Flyway 🗗](https://flywaydb.org){:target="_blank" rel="noopener"}.
 
-In some instances a desired-state based solution like SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project have needs beyond the [predepoloyment or postdepolyment scripts 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-specify-predeployment-or-postdeployment-scripts?view=sql-server-ver16){:target="_blank" rel="noopener"} where an additional project that executes migration type of scripts sooner in the pipeline that the database project deploy executes.
+In some instances a desired-state based solution like SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project have needs beyond the [predepoloyment or postdepolyment scripts 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-specify-predeployment-or-postdeployment-scripts){:target="_blank" rel="noopener"} where an additional project that executes migration type of scripts sooner in the pipeline that the database project deploy executes.
 
 Roll forward/fix forward or use database snapshots if a release goes badly wrong. Ensure no other users or processes can access the database from the point the snapshot is created until after the release is complete. It is possible to perform a SAN snapshot instead of a SQL Server snapshot. Use of feature toggles are useful as an alternative to rolling forward so a new deployed feature can be disabled.
 
@@ -256,7 +256,7 @@ END CATCH;
 
 COMMIT TRANSACTION;
 ```
-**Use this UPSERT pattern for upserting multiple rows:** You can use a [table-valued parameter 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-ver15){:target="_blank" rel="noopener"}, [JSON 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server?view=sql-server-ver15){:target="_blank" rel="noopener"}, [XML 🗗](https://docs.microsoft.com/en-us/sql/t-sql/xml/nodes-method-xml-data-type?view=sql-server-ver15){:target="_blank" rel="noopener"} or [comma-separated list 🗗](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver15){:target="_blank" rel="noopener"}. 
+**Use this UPSERT pattern for upserting multiple rows:** You can use a [table-valued parameter 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine){:target="_blank" rel="noopener"}, [JSON 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server){:target="_blank" rel="noopener"}, [XML 🗗](https://docs.microsoft.com/en-us/sql/t-sql/xml/nodes-method-xml-data-type){:target="_blank" rel="noopener"} or [comma-separated list 🗗](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql){:target="_blank" rel="noopener"}. 
 
 For JSON, XML or comma-separated list ensure you insert the records into a temporary table for performance considerations.
 
@@ -1381,7 +1381,7 @@ The ``ISNULL`` function and the ``COALESCE`` expression have a similar purpose b
 4. Validations for `ISNULL` and `COALESCE` are also different. For example, a NULL value for `ISNULL` is converted to int though for `COALESCE`, you must provide a data type.
 5. `ISNULL` takes only two parameters. By contrast `COALESCE` takes a variable number of parameters.
 
-Source: [Comparing COALESCE and ISNULL 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql?view=sql-server-ver15#comparing-coalesce-and-isnull){:target="_blank" rel="noopener"} by Microsoft
+Source: [Comparing COALESCE and ISNULL 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql#comparing-coalesce-and-isnull){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -1682,7 +1682,7 @@ Do not use ```SET IMPLICIT_TRANSACTIONS ON```
 
 The default behavior of SQL Servers is ```IMPLICIT_TRANSACTIONS OFF``` that does not keep TSQL commands open waiting for a ```ROLLBACK TRANSACTION``` or ```COMMIT TRANSACTION``` command. When OFF, we say the transaction mode is autocommit.
 
-When ```IMPLICIT_TRANSACTIONS ON``` is used, it could appear that the command finished instantly, but there will be an exclusive lock on the row(s) until either a roll back or commit command is issued. This makes [IMPLICIT_TRANSACTIONS ON is not popular 🗗]( https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql?view=sql-server-ver15#:~:text=IMPLICIT_TRANSACTIONS%20ON%20is%20not%20popular){:target="_blank" rel="noopener"} (by Microsoft) as they can cause considerable blocking and locking.
+When ```IMPLICIT_TRANSACTIONS ON``` is used, it could appear that the command finished instantly, but there will be an exclusive lock on the row(s) until either a roll back or commit command is issued. This makes [IMPLICIT_TRANSACTIONS ON is not popular 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql?view=sql-server-ver15#:~:text=IMPLICIT_TRANSACTIONS%20ON%20is%20not%20popular){:target="_blank" rel="noopener"} (by Microsoft) as they can cause considerable blocking and locking.
 
 When a connection is operating in implicit transaction mode (```IMPLICIT_TRANSACTIONS ON```), the instance of the SQL Server Database Engine automatically starts a new transaction after the current transaction is committed or rolled back. You do nothing to delineate the start of a transaction; you only commit or roll back each transaction. Implicit transaction mode generates a continuous chain of transactions.
 
