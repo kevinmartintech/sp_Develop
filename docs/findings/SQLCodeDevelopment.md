@@ -2878,10 +2878,9 @@ You need to pay special attention to batch operations to ensure they do not grad
 ## Use TRUNCATE Instead of DELETE
 **Check Id:** 177 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+TRUNCATE+Instead+of+DELETE)
 
-You should use `TRUNCATE` on a table instead of `DELETE` when you need to remove all the table rows. `TRUNCATE` is an quick, minimally logged and resource-efficient method to clear the table without the overhead of individual row deletion.
+When possible, you should use `TRUNCATE` on a table instead of `DELETE` when you need to remove all the table rows and have fewer locks are welcomed with less transaction log space used. `TRUNCATE` is an quick, minimally logged and resource-efficient method to clear the table without the overhead of individual row deletion.
 
 - See [TRUNCATE TABLE (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/truncate-table-transact-sql){:target="_blank" rel="noopener"} by Microsoft
-
 
 [Back to top](#top)
 
