@@ -355,7 +355,8 @@ CREATE TABLE dbo.MyTempTable_DELETE_ME_AFTER_YYYY_MM_DD ( /* ← Look here */
 Do not use SQL Server to send email. SQL Server's email delivery is not very robust. Sending agent alerts when a database job fails is fine. When email delivery stops, you won’t notice. SQL Server’s email troubleshooting is almost nonexistent.
 
 - See [Don’t Use SQL Server to Send Emails. 🗗](https://www.brentozar.com/archive/2021/12/dont-use-sql-server-to-send-emails/){:target="_blank" rel="noopener"} by Brent Ozar
-- See [Send Recurring Emails using C# .NET and Hangfire with SendGrid 🗗](https://www.twilio.com/en-us/blog/recurring-emails-csharp-dotnet-with-hangfire-sendgrid){:target="_blank" rel="noopener"} by Twilio
+- See [DBA Fundamentals: Configuration: Database Mail Video 🗗](https://www.youtube.com/watch?v=WjhJJxZeU9w&t=28s) by Brent Ozar
+- - See [Send Recurring Emails using C# .NET and Hangfire with SendGrid 🗗](https://www.twilio.com/en-us/blog/recurring-emails-csharp-dotnet-with-hangfire-sendgrid){:target="_blank" rel="noopener"} by Twilio
 
 [Back to top](#top)
 
