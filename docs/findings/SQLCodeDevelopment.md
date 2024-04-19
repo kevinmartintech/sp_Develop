@@ -997,6 +997,8 @@ WHERE
     NOT EXISTS (SELECT * FROM dbo.List AS L WHERE P.PersonId = L.PersonId);
 ```
 
+- See [Consider using [NOT] EXISTS instead of [NOT] IN with a subquery (PE019) 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/consider-using-not-exists-instead-not-subquery){:target="_blank" rel="noopener"} by Redgate
+
 [Back to top](#top)
 
 ---
