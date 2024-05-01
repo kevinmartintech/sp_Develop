@@ -333,6 +333,8 @@ COMMIT TRANSACTION;
 
 For JSON, XML or comma-separated list ensure you insert the records into a temporary table for performance considerations.
 
+- See [Not Inserting Rows Into a Temporary Table](sql-code-conventions#184)
+
 ```sql
 SET NOCOUNT, XACT_ABORT ON;
 
@@ -427,7 +429,6 @@ ELSE
 
 **This UPSERT pattern can be problematic:** In general, do not use MERGE statements in transactional (OLTP) databases, even though they are valid in ETL processes. If you do encounter MERGE statements in OLTP databases, be sure to address potential concurrency issues as described below. MERGE can be used for ETL processing if it is assured to NOT be run concurrently.
 
-- See [Not Inserting Rows Into a Temporary Table](sql-code-conventions#184)
 - See [An update on MERGE 🗗](https://sqlserverfast.com/blog/hugo/2023/09/an-update-on-merge/){:target="_blank" rel="noopener"} by Hugo Kornelis
 - See [What To Avoid If You Want To Use MERGE 🗗](https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/#:~:text=So%20just%20to,MERGE){:target="_blank" rel="noopener"} by Michael J. Swart
 - See [Use Caution with SQL Server's MERGE Statement 🗗](https://www.mssqltips.com/sqlservertip/3074/use-caution-with-sql-servers-merge-statement/#:~:text=function%20as%20expected.-,Conclusion,-I%20am%20not){:target="_blank" rel="noopener"} by Aaron Bertrand
