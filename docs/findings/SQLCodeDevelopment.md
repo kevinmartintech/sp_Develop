@@ -38,6 +38,10 @@ Most importantly, you work from a single source of truth, greatly reducing the r
 
 A [trunk-based branching strategy 🗗](https://trunkbaseddevelopment.com){:target="_blank" rel="noopener"} source control model is recommended. See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"}.
 
+
+Gitflow is a legacy [Git workflow 🗗](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} that was originally a disruptive and novel strategy for managing Git branches. Gitflow has fallen in popularity in favor of [trunk-based workflows 🗗](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development){:target="_blank" rel="noopener"}, which are now considered best practices for modern continuous software development and [DevOps 🗗](https://www.atlassian.com/devops/what-is-devops){:target="_blank" rel="noopener"} practices. Gitflow also can be challenging to use with [CI/CD 🗗](https://www.atlassian.com/continuous-delivery){:target="_blank" rel="noopener"}. 
+
+
 Each developer should have their own database copy instead of a shared database. The dedicated database could be either a local database using the free edition of [SQL Server Developer 🗗](https://www.microsoft.com/en-us/sql-server/sql-server-downloads){:target="_blank" rel="noopener"} or a solution like [Redgate Test Data Manager 🗗](https://www.red-gate.com/products/test-data-manager/){:target="_blank" rel="noopener"}. See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt.
 
 Your SQL Server Database project choices are a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by a Git repository from Azure DevOps or GitHub depending on the client requirements or another solution like [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control){:target="_blank" rel="noopener"}, or [Redgate Flyway 🗗](https://flywaydb.org){:target="_blank" rel="noopener"}.
@@ -57,6 +61,7 @@ It is recommended that the database project source control be kept separate from
 If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:target="_blank" rel="noopener"}, please ensure you have accounted for the issues that can occur if not all the bullet points are fully true.
 
 - See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"} by Microsoft
+- See [Gitflow workflow 🗗](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} by Atlassian
 - See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin
 - See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt
 - See [Schema Drift Not Handled](/best-practices-and-findings/configuration-issues#172)
