@@ -62,6 +62,7 @@ If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:
 
 - See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"} by Microsoft
 - See [Gitflow workflow 🗗](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} by Atlassian
+- See [Git patterns and anti-patterns for successful developers : Build 2018 🗗](https://www.youtube.com/watch?v=ykZbBD-CmP8){:target="_blank" rel="noopener"} by Microsoft
 - See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin
 - See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt
 - See [Schema Drift Not Handled](/best-practices-and-findings/configuration-issues#172)
