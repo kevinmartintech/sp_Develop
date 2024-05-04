@@ -360,6 +360,25 @@ Do not use SQL Server to send email. SQL Server's email delivery is not very rob
 [Back to top](#top)
 
 ---
+
+<a name="185"/>
+
+## Not using Group Managed Service Account (gMSA)
+**Check Id:** 185 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+using+Group+Managed+Service+Account+(gMSA))
+
+When possible use Group Managed Service Accounts (gMSA) for SQL Server as a best practice.  gMSAs provide automatic password management and rotation, enhancing security by reducing the risk of password-related vulnerabilities. gMSAs can also be used across multiple servers, making them ideal for clustered or distributed SQL Server environments, while simplifying administration tasks such as password updates.
+
+To use gMSA for an application, run the app as a service that logs in with a gMSA, PsExec.exe can be used to launch *.exe applications. IIS App pools can configured to use the gMSA.
+
+- See [Group Managed Service Accounts Overview 🗗](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview){:target="_blank" rel="noopener"} by Microsoft
+- See [Service accounts 🗗](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts){:target="_blank" rel="noopener"} -> [Group-managed service accounts 🗗](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts#group-managed-service-accounts){:target="_blank" rel="noopener"} by Microsoft
+- See [Configure your app to use a gMSA 🗗](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/gmsa-configure-app){:target="_blank" rel="noopener"}{:target="_blank" rel="noopener"} by Microsoft
+- See [PsExec.exe 🗗](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec){:target="_blank" rel="noopener"}{:target="_blank" rel="noopener"} by Microsoft
+- See [How to Logon Interactively with a Group Managed Service Account 🗗](https://www.patrickkeisler.com/2022/03/how-to-logon-interactively-with-a-group-managed-service-account/){:target="_blank" rel="noopener"} by Patrick Keisler
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
