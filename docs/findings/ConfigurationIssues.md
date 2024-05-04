@@ -363,12 +363,14 @@ Do not use SQL Server to send email. SQL Server's email delivery is not very rob
 
 <a name="185"/>
 
-## Not using Group Managed Service Account (gMSA)
-**Check Id:** 185 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+using+Group+Managed+Service+Account+(gMSA))
+## Not using group Managed Service Account (gMSA)
+**Check Id:** 185 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+using+group+Managed+Service+Account+(gMSA))
 
-When possible use Group Managed Service Accounts (gMSA) for SQL Server as a best practice.  gMSAs provide automatic password management and rotation, enhancing security by reducing the risk of password-related vulnerabilities. gMSAs can also be used across multiple servers, making them ideal for clustered or distributed SQL Server environments, while simplifying administration tasks such as password updates.
+A group Managed Service Account, also known as gMSA, provides enhanced security compared to standard managed service accounts. They are designed for automated processes, applications, services, or tasks that need credentials but don't involve user interaction.
 
-To use gMSA for an application, run the app as a service that logs in with a gMSA, PsExec.exe can be used to launch *.exe applications. IIS App pools can configured to use the gMSA.
+When possible use gMSA for SQL Server as a best practice. gMSAs like "DOMAIN\gMSA$" provide automatic password management and rotation, enhancing security by reducing the risk of password-related vulnerabilities. gMSAs can also be used across multiple servers, making them ideal for clustered or distributed SQL Server environments, while simplifying administration tasks such as password updates.
+
+To use gMSA for an application, run the app as a Windows service, or launched with PsExec.exe, execute via scheduled tasks, or code in an IIS App Pool.
 
 - See [Group Managed Service Accounts Overview 🗗](https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview){:target="_blank" rel="noopener"} by Microsoft
 - See [Service accounts 🗗](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts){:target="_blank" rel="noopener"} -> [Group-managed service accounts 🗗](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts#group-managed-service-accounts){:target="_blank" rel="noopener"} by Microsoft
