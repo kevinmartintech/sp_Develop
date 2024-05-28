@@ -682,6 +682,8 @@ Eventually consistent methods are something like jobs that run at a predetermine
 
 Utilize lookup or reference tables that contain status or type attributes values. Lookup or reference tables can be used to enforce allowable status or types with foreign key constraints. Lookup tables can be used in drop-down lists for user interfaces.
 
+Lookup, reference, or enumeration tables are not exclusive to Domain-Key Normal Form (DKNF) or Sixth Normal Form (6NF) but are essential tools for achieving a well-normalized and maintainable database design. They help ensure data consistency, reduce redundancy, and simplify updates, aligning with the goals of higher normal forms.
+
 Avoid using 'catch all' or 'common lookup' tables as they are generally an anti-pattern. You do not want to create a generic lookup table named `dbo.Type` to be used for a `dbo.Phone` table to indicate mobile, home, or a fax PhoneType. You will want to create a `dbo.PhoneType` table that contains only allowable lookup values for maintaining database integrity.
 
 ```sql
