@@ -810,6 +810,21 @@ AS
 
 ---
 
+<a name="186"/>
+
+## Using Table Triggers
+**Check Id:** 186 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Table+Triggers)
+
+The use of triggers in SQL Server is generally not considered a best practice for several reasons, though they can be appropriate in certain circumstances. Triggers add `INSERT`, `UPDATE`, `DELETE` overhead that can slow down the performance of the database. Triggers can make the system more complex and harder to maintain. They introduce hidden logic that can be difficult for developers to trace and debug, especially in large systems with many triggers. There is the potential for silent bugs with the way the trigger is developed.
+
+- See [The Silent Bug I Find in Most Triggers 🗗](https://www.brentozar.com/archive/2019/05/the-silent-bug-i-find-in-most-triggers){:target="_blank" rel="noopener"} by Brent Ozar
+- See [SQL Server Triggers Pros and Cons 🗗](https://www.mssqltips.com/sqlservertip/6003/sql-server-triggers-pros-and-cons){:target="_blank" rel="noopener"} by MSSQLTips (Daniel Farina)
+
+
+[Back to top](#top)
+
+---
+
 <br>
 <br>
 <br>
