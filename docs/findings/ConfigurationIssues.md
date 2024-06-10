@@ -205,9 +205,9 @@ In the beginning, all three connection strings below will have the same content 
 
 ### Application Name for SQL Server Connections
 
-Always include the optional Application Name parameter in your connection strings when connecting to SQL Server. This way the SQL Server will have info on what application is using the connection. This can be invaluable info when locating errors in the database server. Documentation should be kept on how to contact the app developer.
+Always include the optional Application Name parameter in your connection strings when connecting to SQL Server. This way the SQL Server will have info on what application is using the connection. This can be invaluable info when locating errors in the database server. Documentation should be kept on how to contact the app developer or include a distribution list email address in the connection strings "Application Name". You can use up to 128 characters for the application name.
 
-Simply include "Application Name=MyAppName;" in the connection string.
+Simply include "Application Name=MyAppName &lt;MyAppGroupName@domain.com&gt;;" in the connection string.
 
 - See [Application Name for SQL Server Connections 🗗](https://www.connectionstrings.com/use-application-name-sql-server/){:target="_blank" rel="noopener"} by ConnectionStrings.com
 
