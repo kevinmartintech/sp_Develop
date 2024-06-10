@@ -91,32 +91,33 @@ If utilizing schemas other than ```dbo```, prefix the schema name before the ```
 **Potential Finding:** <a name="improper-named-constraint"/><br/>
 **Check Id:** 44 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Naming+Constraints+Usage)
 
-If utilizing schemas other than ```dbo```, prefix the schema name before the ```[TABLE-NAME]```.
+If utilizing schemas other than `dbo`, prefix the schema name before the `[TABLE-NAME]`.
 
 **Default Column Constraint Example:**
 
-Use the format Use the format ```[TABLE-NAME]_[COLUMN-NAME]_Default```
+Use the format `[SCHEMA]_[TABLE-NAME]_[COLUMN-NAME]_Default`
 
-```CONSTRAINT Person_RowUpdateTime_Default DEFAULT (SYSDATETIMEOFFSET())```
+`CONSTRAINT Person_RowUpdateTime_Default DEFAULT (SYSDATETIMEOFFSET())`
 
 **Unique Column Constraint Example:**
 
-**Instead of:** ```CONSTRAINT AddressType_AddressTypeName_Unique UNIQUE (AddressTypeName)```
+**Instead of:** `CONSTRAINT AddressType_AddressTypeName_Unique UNIQUE (AddressTypeName)`
 
-**Use:** ```INDEX AddressType_AddressTypeName UNIQUE NONCLUSTERED (AddressTypeName)```
+**Use:** `INDEX AddressType_AddressTypeName UNIQUE NONCLUSTERED (AddressTypeName ASC)`
 
 
 **Column Check Constraint Examples:** 
 
-Use the format Use the format ```[TABLE-NAME]_[COLUMN-NAME]_[DESCRIPTION]```
+Use the format Use the format `[TABLE-NAME]_[COLUMN-NAME]_[DESCRIPTION]`
 
-```CONSTRAINT ProductItem_RegularPrice_Minimum CHECK (RegularPrice > 0)```<br/>
-```CONSTRAINT ProductItem_SalePrice_Less_To_RegularPrice CHECK (SalePrice < RegularPrice)```<br/>
-```CONSTRAINT Feedback_Stars_Range CHECK (Stars BETWEEN 0 AND 5)```<br/>
+`CONSTRAINT ProductItem_RegularPrice_Minimum CHECK (RegularPrice > 0)`<br/>
+`CONSTRAINT ProductItem_SalePrice_Less_To_RegularPrice CHECK (SalePrice < RegularPrice)`<br/>
+`CONSTRAINT Feedback_Stars_Range CHECK (Stars BETWEEN 0 AND 5)`<br/>
 
 
 - See [Unique Constraint or Unique Indexes Usage](/best-practices-and-findings/table-conventions#29)
-
+- See [Improper Index Name](/best-practices-and-findings/table-conventions#49)
+ 
 [Back to top](#top)
 
 ---
@@ -313,12 +314,18 @@ Do not prefix your columns with ``fld_``, ``col_``, ``f_``, ``u_`` as it should 
 
 No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/best-practices-and-findings/naming-conventions#2).
 
-Index names only need to be unique within the table or view and do not need to be unique within the database.
+Even though index names only need to be unique within the table or view, to eliminate possible confusion, index names should follow the [constraint naming](/best-practices-and-findings/table-conventions#44) standard and be unique to the database and include the schema and table name.
 
-- Index Names should be ``Column1_Column2_Column3`` 
-- Index Names should indicate if there are included columns with ``Column1_Column2_Column3_Includes``
-- When using ``uniqueidentifier/guid`` columns for clustered index you can use ``ColumnName_INDEX_REBUILD_ONLY`` to signify special index maintenance handling.
+If utilizing schemas other than `dbo`, prefix the schema name before the `[TABLE-NAME]`.
+
+Use the format `[SCHEMA]_[TABLE-NAME]_[COLUMN-NAME-1]_[COLUMN-NAME-2...]`
+
+- Index Names should be `Person_FirstName_LastName`
+- Index Names should indicate if there are included columns with `Person_FirstName_LastName_Includes`
+- When using `uniqueidentifier/guid` columns for clustered index you can use `Person_PersonGUID_INDEX_REBUILD_ONLY` to signify special index maintenance handling.
   - See [UNIQUEIDENTIFIER in a Clustered Index](/best-practices-and-findings/table-conventions#22)
+
+- See [Improper Named Constraint](/best-practices-and-findings/table-conventions#44)
 
 [Back to top](#top)
 
