@@ -116,7 +116,7 @@ Use the format Use the format `[TABLE-NAME]_[COLUMN-NAME]_[DESCRIPTION]`
 
 
 - See [Unique Constraint or Unique Indexes Usage](/best-practices-and-findings/table-conventions#29)
-- See [Improper Index Name](/best-practices-and-findings/table-conventions#49)
+- See [Improper Index Name](/best-practices-and-findings/naming-conventions#49)
  
 [Back to top](#top)
 
@@ -325,7 +325,8 @@ Use the format `[SCHEMA]_[TABLE-NAME]_[COLUMN-NAME-1]_[COLUMN-NAME-2...]`
 - When using `uniqueidentifier/guid` columns for clustered index you can use `Person_PersonGUID_INDEX_REBUILD_ONLY` to signify special index maintenance handling.
   - See [UNIQUEIDENTIFIER in a Clustered Index](/best-practices-and-findings/table-conventions#22)
 
-- See [Improper Named Constraint](/best-practices-and-findings/table-conventions#44)
+
+- See [Improper Named Constraint](/best-practices-and-findings/naming-conventions#44)
 
 [Back to top](#top)
 
