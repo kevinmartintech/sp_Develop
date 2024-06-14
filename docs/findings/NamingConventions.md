@@ -97,7 +97,7 @@ If utilizing schemas other than `dbo`, prefix the schema name before the `[TABLE
 
 Use the format `[SCHEMA]_[TABLE-NAME]_[COLUMN-NAME]_Default`
 
-`CONSTRAINT Person_RowUpdateTime_Default DEFAULT (SYSDATETIMEOFFSET())`
+`CONSTRAINT Person_ModifiedDateTime_Default DEFAULT (SYSDATETIMEOFFSET())`
 
 **Unique Column Constraint Example:**
 
@@ -461,11 +461,11 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
     - See [URL or URI Naming](/best-practices-and-findings/naming-conventions#53)
   - Modify**PersonId** is the person who last updated a record
   - Create**PersonId** is the person who created a record
-  - Modify**Time** is the date and time something was modified
-  - Create**Time** is the date and time something was created
+  - Modify**DateTime** is the date and time something was modified
+  - Create**DateTime** is the date and time something was created
   - Version**Stamp** is the ``rowversion/timestamp`` (unique binary numbers) to increment for each insert or update
-  - ValidFrom**Time** is the period start for a system-versioned temporal tables
-  - ValidTo**Time** is the period end for a system-versioned temporal tables
+  - ValidFrom**DateTime** is the period start for a system-versioned temporal tables
+  - ValidTo**DateTime** is the period end for a system-versioned temporal tables
 
 [Back to top](#top)
 
