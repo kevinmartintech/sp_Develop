@@ -800,7 +800,7 @@ AS
     END;
 ```
 
-- See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/configuration-issues#161)
+- See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/environment-conventions#161)
 - See [SQL Server > Optimistic concurrency 🗗](https://learn.microsoft.com/en-us/sql/connect/ado-net/optimistic-concurrency){:target="_blank" rel="noopener"} by Microsoft
 - See [Entity Framework Core > Handling Concurrency Conflicts 🗗](https://learn.microsoft.com/en-us/ef/core/saving/concurrency){:target="_blank" rel="noopener"} by Microsoft
 - See [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} by Kevin Martin

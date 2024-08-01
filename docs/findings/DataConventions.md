@@ -1,6 +1,6 @@
 ---
-title: Data Issues
-permalink: best-practices-and-findings/data-issues
+title: Data Conventions
+permalink: best-practices-and-findings/data-Conventions
 parent: Best Practices & Findings
 nav_order: 5
 layout: default

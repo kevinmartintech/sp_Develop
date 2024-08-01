@@ -1,14 +1,14 @@
 ---
-title: Configuration Issues
-permalink: best-practices-and-findings/configuration-issues
+title: Environment Conventions
+permalink: best-practices-and-findings/environment-conventions
 parent: Best Practices & Findings
 nav_order: 6
 layout: default
 ---
 
-# Configuration Issues
+# Environment Conventions
 {: .no_toc }
-These checks are for configurations to the SQL Server.
+These checks are for environment and configurations conventions to the SQL Server.
 
 ---
 
