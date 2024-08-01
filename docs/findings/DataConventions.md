@@ -6,9 +6,9 @@ nav_order: 5
 layout: default
 ---
 
-# Data Issues
+# Data Conventions
 {: .no_toc }
-Checks for data issues.
+Checks for data conventions issues.
 
 ---
 
