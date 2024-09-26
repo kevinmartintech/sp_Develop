@@ -2793,33 +2793,33 @@ Use ```LEFT OUTER JOIN``` when rows might not always match in both tables. Rows 
 ## LEFT JOIN with WHERE Clause 
 **Check Id:** 188 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=LEFT+JOIN+with+WHERE+Clause)
 
-Using a `LEFT JOIN` means returning all rows from the left table and matching rows from the right table, even if no matches exist. However, placing conditions on the right-hand table within the WHERE clause can turn the `LEFT JOIN` into an `INNER JOIN` by filtering out `NULL` values, which defeats the purpose of the `LEFT JOIN`.
-
-Do This:
+Using a `LEFT JOIN` means returning all rows from the left table and matching rows from the right table, even if no matches exist. However, placing conditions on the right-hand table within the `WHERE` clause can turn the `LEFT JOIN` into an `INNER JOIN` by filtering out `NULL` values, which defeats the purpose of the `LEFT JOIN`.
 
 Place any conditions for the right-hand table in the `ON` clause.
 
+Do This:
+
 ```sql
 SELECT
-    A.column1
-   ,B.column2
+    C.CustomerName
+   ,O.OrderId
 FROM
-    dbo.TableA       AS A
-LEFT JOIN dbo.TableB AS B ON  A.id      = B.id
-                          AND B.column2 = 'Value'; /* ← Look here */
+    dbo.Customer    AS C
+LEFT JOIN dbo.Order AS O ON C.CustomerId = O.CustomerId
+                          AND O.OrderDate = '2024-09-01'; /* ← Look here */
 ```
 
 Not This:
 
 ```sql
 SELECT
-    A.column1
-   ,B.column2
+    C.CustomerName
+   ,O.OrderID
 FROM
-    dbo.TableA       AS A
-LEFT JOIN dbo.TableB AS B ON A.id = B.id
+    dbo.Customer    AS C
+LEFT JOIN dbo.Order AS O ON C.CustomerId = O.CustomerId
 WHERE
-    B.column2 = 'Value'; /* ← Look here */
+    O.OrderDate = '2024-09-01'; /* ← Look here */
 ```
 
 [Back to top](#top)
