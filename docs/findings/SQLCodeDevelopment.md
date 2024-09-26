@@ -2822,6 +2822,9 @@ WHERE
     O.OrderDate = '2024-09-01'; /* ← Look here */
 ```
 
+- See [SQL Tip: LEFT JOINs and WHERE clauses…are they really LEFT JOINs? 🗗](https://sqlbenjamin.wordpress.com/2017/12/23/sql-tip-left-joins-and-where-clauses-are-they-really-left-joins){:target="_blank" rel="noopener"} by Benjamin's Blog
+- See [Left Join With Where Clause 🗗](https://stackoverflow.com/questions/4752455/left-join-with-where-clause){:target="_blank" rel="noopener"} on Stack Overflow
+
 [Back to top](#top)
 
 ---
