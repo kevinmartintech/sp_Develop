@@ -223,6 +223,57 @@ AS
 
 ---
 
+<a name="189"/>
+
+## Use of IF EXISTS or IF NOT EXISTS Before DML Statements
+**Check Id:** 189 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+of+IF+EXISTS+or+IF+NOT+EXISTS+Before+DML+Statements)
+
+Using `IF EXISTS` checks followed by `UPDATE` or `DELETE` statements can lead to race conditions in a concurrent environment. Data may change between the existence check and the DML operation, causing inconsistent or unexpected results.
+
+A race condition occurs when multiple transactions access and manipulate the same data concurrently, and the final outcome depends on the timing of their execution. 
+conditions.
+
+**Don't do this:**
+```sql
+IF EXISTS (SELECT 1 FROM dbo.Person WHERE /* conditions */)
+BEGIN
+    UPDATE dbo.Person
+    SET /* updates */
+    WHERE /* conditions */;
+END
+```
+
+**Do This:**
+Combine the Check and Operation: Remove the `IF EXISTS` check when it's not necessary. The `UPDATE` will have no effect if no rows match.
+
+```sql
+UPDATE dbo.Person
+SET /* updates */
+WHERE /* conditions */;
+```
+
+**Or Do This:**
+Use Transactions and Locking: If the check is essential, wrap the statements in a transaction and use appropriate locking hints to prevent data changes between operations.
+
+```sql
+BEGIN TRANSACTION;
+
+IF EXISTS (SELECT 1 FROM dbo.Person WITH (UPDLOCK, HOLDLOCK) WHERE /* conditions */)
+BEGIN
+    UPDATE dbo.Person
+    SET /* updates */
+    WHERE /* conditions */;
+END
+
+COMMIT TRANSACTION;
+```
+
+- See [UPSERT Pattern](/best-practices-and-findings/sql-code-conventions#76)
+
+[Back to top](#top)
+
+---
+
 <a name="76"/>
 
 ## UPSERT Pattern
@@ -243,6 +294,7 @@ ELSE
 
 - See [SQL Server UPSERT Patterns and Antipatterns 🗗](https://michaeljswart.com/2017/07/sql-server-upsert-patterns-and-antipatterns/){:target="_blank" rel="noopener"} by Michael J Swart
 - See [Please stop using this UPSERT anti-pattern 🗗](https://sqlperformance.com/2020/09/locking/upsert-anti-pattern){:target="_blank" rel="noopener"} by Aaron Bertrand
+- See [Use of IF EXISTS or IF NOT EXISTS Before DML Statements](/best-practices-and-findings/sql-code-conventions#189)
 
 **Use this UPSERT pattern when a record update is more likely:** Don't worry about checking for a records existence just perform the update.
 
