@@ -240,7 +240,7 @@ Always include audit columns in tables. Use application-level code or stored pro
 - **Compliance**: Audit columns help meet regulatory requirements such as GDPR, HIPAA, and SOX, which often mandate detailed data audit trails.
 - **Data Engineering**: In **Data Warehousing (DW)** and **Operational Data Stores (ODS)**, `ModifyDateTime` is especially critical where the goal is to track incremental changes in source systems. It helps ensure that only modified records are processed, improving both **ETL/ETL performance** and **data consistency** between systems. Similarly, for **system integrations**, `ModifyDateTime` is frequently used to identify and synchronize changes across different platforms, ensuring that updated data is correctly transferred and maintained in external systems.
 
-- See [Using Table Triggers](/best-practices-and-findings/best-practices-and-findings/table-conventions#186) 
+- See [Using Table Triggers](/best-practices-and-findings/table-conventions#186) 
 - See [Column Naming](/best-practices-and-findings/naming-conventions#14) 
 
 [Back to top](#top)
