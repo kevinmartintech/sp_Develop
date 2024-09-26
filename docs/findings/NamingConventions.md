@@ -447,7 +447,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
   - Line**Amount** is a currency amount not dependent on the data type like ``decimal(19, 4)``
   - Group**Name** is the text string not dependent on the data type like ``varchar()`` or ``nvarchar()``
   - State**Code** indicates the short form of something
-  - Booleans - (See [Non-Affirmative Boolean Name Use](/best-practices-and-findings/naming-conventions#52)) for boolean column naming
+  - Booleans - (See [Non-Affirmative Boolean Name Use](/best-practices-and-findings/naming-conventions#52) for boolean column naming)
     - Is**Active** indicates a status
     - Is**Deleted** indicates a soft delete status
     - Is**Locked** indicates if a record is immutable
@@ -457,12 +457,12 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
     - Has**Permission** indicated permissions
     - Can**Export** indicates permission to export
   - Unit**Price** is the price of a product unit
-  - Website**URL** is the internet address 
-    - See [URL or URI Naming](/best-practices-and-findings/naming-conventions#53)
-  - Modify**PersonId** is the person who last updated a record
-  - Create**PersonId** is the person who created a record
-  - Modify**DateTime** is the date and time something was modified
-  - Create**DateTime** is the date and time something was created
+  - Website**URL** is the internet address - (See [URL or URI Naming](/best-practices-and-findings/naming-conventions#53))
+  - Audit Columns - (See [Not Using Audit Columns](/best-practices-and-findings/table-conventions#187))
+    - Modify**PersonId** is the person who last updated a record
+    - Create**PersonId** is the person who created a record
+    - Modify**DateTime** is the date and time something was modified
+    - Create**DateTime** is the date and time something was created
   - Version**Stamp** is the ``rowversion/timestamp`` (unique binary numbers) to increment for each insert or update
   - ValidFrom**DateTime** is the period start for a system-versioned temporal tables
   - ValidTo**DateTime** is the period end for a system-versioned temporal tables

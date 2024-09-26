@@ -226,6 +226,27 @@ You will not get JOIN Eliminations without a foreign key and a column that allow
 
 ---
 
+<a name="187"/>
+
+## Not Using Audit Columns
+**Check Id:** 187
+
+Audit columns such as `CreatePersonId`, `ModifyPersonId`, `CreateDateTime`, and `ModifyDateTime` are crucial for maintaining a reliable audit trail in database tables. Their absence makes it difficult to track important changes, such as who modified a record and when it was created.
+
+Always include audit columns in tables. Use application-level code or stored procedures to update these fields, and avoid using triggers due to their performance and maintainability issues. These columns are essential not only for application-level auditing but also for large-scale data engineering processes that rely on reliable modification timestamps for data pipeline efficiency.
+
+**Why It Matters:**
+- **Accountability**: Without these columns, tracing responsibility for data modifications is nearly impossible, which can pose a security risk.
+- **Compliance**: Audit columns help meet regulatory requirements such as GDPR, HIPAA, and SOX, which often mandate detailed data audit trails.
+- **Data Engineering**: In **Data Warehousing (DW)** and **Operational Data Stores (ODS)**, `ModifyDateTime` is especially critical where the goal is to track incremental changes in source systems. It helps ensure that only modified records are processed, improving both **ETL/ETL performance** and **data consistency** between systems. Similarly, for **system integrations**, `ModifyDateTime` is frequently used to identify and synchronize changes across different platforms, ensuring that updated data is correctly transferred and maintained in external systems.
+
+- See [Using Table Triggers](/best-practices-and-findings/best-practices-and-findings/table-conventions#186) 
+- See [Column Naming](/best-practices-and-findings/naming-conventions#14) 
+
+[Back to top](#top)
+
+---
+
 <a name="157"/>
 
 ## Using Table Partitions
