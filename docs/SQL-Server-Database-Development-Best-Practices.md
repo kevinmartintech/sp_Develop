@@ -8,7 +8,7 @@ nav_enabled: false
 ---
 
 # SQL Server Database Development Best Practices Overview
-A novella size of SQL Server database best practices, all for free. Some of the links do not work yet as indicated by the "TODO" text tag. This is being converted to be more readable form from the [Best Practices & Findings](https://www.spdevelop.org/best-practices-and-findings) section.
+A novella size of SQL Server database best practices, all for free. Some of the links do not work yet as indicated by the "TODO" text tag. This is being converted to be more readable form from the [Best Practices & Findings](https://www.spdevelop.org/best-practices-and-findings) section.5
 
 {: .no_toc }
 
