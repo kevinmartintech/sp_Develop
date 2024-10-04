@@ -1,8 +1,8 @@
 ---
-title: SQL Server Database Development Best Practices Overview
-permalink: SQL-Server-Database-Development-Best-Practices
-nav_order: -1
-layout: default
+txitle: SQL Server Database Development Best Practices Overview
+pxermalink: SQL-Server-Database-Development-Best-Practices
+nxav_order: 9
+lxayout: default
 search_exclude: true
 ---
 
