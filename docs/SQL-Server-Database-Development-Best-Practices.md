@@ -4,11 +4,11 @@ permalink: SQL-Server-Database-Development-Best-Practices
 nav_order: 9
 layout: default
 search_exclude: true
-nav_enabled: false
+nav_exclude: true
 ---
 
 # SQL Server Database Development Best Practices Overview
-A novella size of SQL Server database best practices, all for free. Some of the links do not work yet as indicated by the "TODO" text tag. This is being converted to be more readable form from the [Best Practices & Findings](https://www.spdevelop.org/best-practices-and-findings) section.5
+A novella size of SQL Server database best practices, all for free. Some of the links do not work yet as indicated by the "TODO" text tag. This is being converted to be more readable form from the [Best Practices & Findings](https://www.spdevelop.org/best-practices-and-findings) section.
 
 {: .no_toc }
 
