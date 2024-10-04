@@ -1,7 +1,7 @@
 ---
 title: SQL Server Database Development Best Practices Overview
 permalink: SQL-Server-Database-Development-Best-Practices
-nav_order: 9
+nav_order: -1
 layout: default
 search_exclude: true
 ---
