@@ -168,40 +168,32 @@ There might be query optimization you are not getting to run on an older databas
 
 It is a best practice to use a relational database management system (RDBMS) when handling data with complex relationships, such as customers, accounts, people, products, invoices, purchase orders, ... While NoSQL document databases are powerful tools, they are not ideally suited for managing relational data due to their schema-less nature and lack of enforced data constraints.
 
-Issues with Using NoSQL Document Databases for Relational Data:
+**Issues with Using NoSQL Document Databases for Relational Data:**
 
-- Lack of Schema Enforcement:
+- **Lack of Schema Enforcement:**
   - NoSQL databases operate on a "schema-on-read" model, which means they do not enforce a schema when data is written.
   - This can lead to inconsistent or invalid data being stored, as there are no constraints to prevent incorrect data entry.
+  - Developers may spend additional time implementing workarounds for features natively supported by relational databases.
 
-- No Constraints on Write:
+- **No Constraints on Write:**
   - Absence of foreign keys, primary keys, and unique constraints increases the risk of data anomalies.
   - Without these constraints, maintaining data integrity becomes the responsibility of the application code, which can be error-prone.
 
-- Data Integrity Challenges:
+- **Data Integrity Challenges:**
   - Relationships between entities must be managed manually, often leading to duplicated or denormalized data.
   - Updating related data across multiple documents can become complex and may result in inconsistencies.
 
-- Complexity in Querying Relational Data:
+- **Complexity in Querying Relational Data:**
   - Performing joins or complex queries across multiple collections is not as efficient or straightforward as in relational databases.
   - This can lead to performance issues and increased development time for writing and maintaining queries.
 
-- Troubles Others Have Found:
-  - Case Studies:
-    - Companies that switched to NoSQL for relational data often faced challenges with data consistency and integrity.
-    - Teams reported increased bugs and maintenance overhead due to manual handling of data relationships in application code.
-  - Performance Degradation:
-    - Inefficient queries and the need to handle data relationships at the application level can lead to slower performance.
-  - Increased Development Effort:
-    - Developers may spend additional time implementing workarounds for features natively supported by relational databases.
+**Recommendation:**
 
-Recommendation:
-
-- Use Relational Databases for Relational Data:
+- **Use Relational Databases for Relational Data:**
   - Leverage the strengths of RDBMS like enforcing schemas, constraints, and supporting complex joins.
   - This ensures data integrity, consistency, and reduces the risk of errors.
 
-- Educate Team Members:
+- **Educate Team Members:**
   - Clarify misconceptions about "document databases" being suited for handling document outputs.
   - Emphasize that the term refers to the data storage model, not the type of data (e.g., printed documents or emails).
 
