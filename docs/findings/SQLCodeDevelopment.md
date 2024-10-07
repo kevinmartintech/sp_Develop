@@ -46,9 +46,9 @@ Each developer should have their own database copy instead of a shared database.
 
 Your SQL Server Database project choices are a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by a Git repository from Azure DevOps or GitHub depending on the client requirements or another solution like [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control){:target="_blank" rel="noopener"}, or [Redgate Flyway 🗗](https://flywaydb.org){:target="_blank" rel="noopener"}.
 
-In some instances a desired-state based solution like SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project have needs beyond the [predepoloyment or postdepolyment scripts 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-specify-predeployment-or-postdeployment-scripts){:target="_blank" rel="noopener"} where an additional project that executes migration type of scripts sooner in the pipeline that the database project deploy executes.
+In some instances a desired-state based solution like SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project have needs beyond the [predepoloyment or postdepolyment scripts 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-specify-predeployment-or-postdeployment-scripts){:target="_blank" rel="noopener"} where an additional database project that executes migration type of scripts sooner in the pipeline that the database project deploy executes.
 
-Roll forward/fix forward or use database snapshots if a release goes badly wrong. Ensure no other users or processes can access the database from the point the snapshot is created until after the release is complete. It is possible to perform a SAN snapshot instead of a SQL Server snapshot. Use of feature toggles are useful as an alternative to rolling forward so a new deployed feature can be disabled.
+Right after the deployment activities are completed in the Production environment, there will always be a period of a few days of hypercare where [hotfixes 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops#release-hotfixes){:target="_blank" rel="noopener"}, "roll-forward", or "Fixing Forward" is possible if found necessary. Use of feature toggles are useful as an alternative to rolling forward so a new deployed feature can be disabled.
 
 It is recommended that the database project source control be kept separate from the application code. Database and reporting team members might/should not need access to the app source code. The data and business intelligence development team might have their own changes (performance tuning, data warehouse, reporting) in a "dev" branch, but their version is not ready for production yet.
 
@@ -223,6 +223,57 @@ AS
 
 ---
 
+<a name="189"/>
+
+## Use of IF EXISTS or IF NOT EXISTS Before DML Statements
+**Check Id:** 189 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+of+IF+EXISTS+or+IF+NOT+EXISTS+Before+DML+Statements)
+
+Using `IF EXISTS` checks followed by `UPDATE` or `DELETE` statements can lead to race conditions in a concurrent environment. Data may change between the existence check and the DML operation, causing inconsistent or unexpected results.
+
+A race condition occurs when multiple transactions access and manipulate the same data concurrently, and the final outcome depends on the timing of their execution. 
+conditions.
+
+**Don't do this:**
+```sql
+IF EXISTS (SELECT 1 FROM dbo.Person WHERE /* conditions */)
+BEGIN
+    UPDATE dbo.Person
+    SET /* updates */
+    WHERE /* conditions */;
+END
+```
+
+**Do This:**
+Combine the Check and Operation: Remove the `IF EXISTS` check when it's not necessary. The `UPDATE` will have no effect if no rows match.
+
+```sql
+UPDATE dbo.Person
+SET /* updates */
+WHERE /* conditions */;
+```
+
+**Or Do This:**
+Use Transactions and Locking: If the check is essential, wrap the statements in a transaction and use appropriate locking hints to prevent data changes between operations.
+
+```sql
+BEGIN TRANSACTION;
+
+IF EXISTS (SELECT 1 FROM dbo.Person WITH (UPDLOCK, HOLDLOCK) WHERE /* conditions */)
+BEGIN
+    UPDATE dbo.Person
+    SET /* updates */
+    WHERE /* conditions */;
+END
+
+COMMIT TRANSACTION;
+```
+
+- See [UPSERT Pattern](/best-practices-and-findings/sql-code-conventions#76)
+
+[Back to top](#top)
+
+---
+
 <a name="76"/>
 
 ## UPSERT Pattern
@@ -243,6 +294,7 @@ ELSE
 
 - See [SQL Server UPSERT Patterns and Antipatterns 🗗](https://michaeljswart.com/2017/07/sql-server-upsert-patterns-and-antipatterns/){:target="_blank" rel="noopener"} by Michael J Swart
 - See [Please stop using this UPSERT anti-pattern 🗗](https://sqlperformance.com/2020/09/locking/upsert-anti-pattern){:target="_blank" rel="noopener"} by Aaron Bertrand
+- See [Use of IF EXISTS or IF NOT EXISTS Before DML Statements](/best-practices-and-findings/sql-code-conventions#189)
 
 **Use this UPSERT pattern when a record update is more likely:** Don't worry about checking for a records existence just perform the update.
 
@@ -2783,6 +2835,47 @@ Use ```INNER JOIN``` when rows will match in both tables. Rows will match in bot
 **Check Id:** 143 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+INNER+JOIN+Instead+of+LEFT+OUTER+JOIN)
 
 Use ```LEFT OUTER JOIN``` when rows might not always match in both tables. Rows might not match in both tables if the foreign key column allows ```NULL```.
+
+[Back to top](#top)
+
+---
+
+<a name="188"/>
+
+## LEFT JOIN with WHERE Clause 
+**Check Id:** 188 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=LEFT+JOIN+with+WHERE+Clause)
+
+Using a `LEFT JOIN` means returning all rows from the left table and matching rows from the right table, even if no matches exist. However, placing conditions on the right-hand table within the `WHERE` clause can turn the `LEFT JOIN` into an `INNER JOIN` by filtering out `NULL` values, which defeats the purpose of the `LEFT JOIN`.
+
+Place any conditions for the right-hand table in the `ON` clause.
+
+Do This:
+
+```sql
+SELECT
+    C.CustomerName
+   ,O.OrderId
+FROM
+    dbo.Customer    AS C
+LEFT JOIN dbo.Order AS O ON C.CustomerId = O.CustomerId
+                          AND O.OrderDate = '2024-09-01'; /* ← Look here */
+```
+
+Not This:
+
+```sql
+SELECT
+    C.CustomerName
+   ,O.OrderID
+FROM
+    dbo.Customer    AS C
+LEFT JOIN dbo.Order AS O ON C.CustomerId = O.CustomerId
+WHERE
+    O.OrderDate = '2024-09-01'; /* ← Look here */
+```
+
+- See [SQL Tip: LEFT JOINs and WHERE clauses…are they really LEFT JOINs? 🗗](https://sqlbenjamin.wordpress.com/2017/12/23/sql-tip-left-joins-and-where-clauses-are-they-really-left-joins){:target="_blank" rel="noopener"} by Benjamin's Blog
+- See [Left Join With Where Clause 🗗](https://stackoverflow.com/questions/4752455/left-join-with-where-clause){:target="_blank" rel="noopener"} on Stack Overflow
 
 [Back to top](#top)
 

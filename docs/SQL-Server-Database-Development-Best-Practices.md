@@ -4,6 +4,7 @@ permalink: SQL-Server-Database-Development-Best-Practices
 nav_order: 9
 layout: default
 search_exclude: true
+nav_exclude: true
 ---
 
 # SQL Server Database Development Best Practices Overview
