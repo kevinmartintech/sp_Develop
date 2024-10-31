@@ -57,6 +57,19 @@ The table column returned for this check might have unencrypted data that you mi
 [Back to top](#top)
 
 ---
+
+<a name="191"/>
+
+## Use Environment-Agnostic SQL Queries and Data-Driven Design
+**Check Id:** 191
+
+Do not hard-code values into queries that will change over time. Use a data driven approach like database tables where the values can be maintained with something like a user interface. This will shift the maintenance of these values closer to the business users who are the domain experts.
+
+Hard-coding values directly in SQL queries like specific IDs, names, or lists creates rigid, error-prone SQL code that requires manual updates and is vulnerable to inconsistencies across environments. This approach also limits adaptability and introduces risks when data changes, as it requires ongoing maintenance to ensure accuracy. Using data-driven design with tables to dynamically source values allows for flexibility, ensuring the query remains consistent, adaptable, and reflective of the latest data.
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
