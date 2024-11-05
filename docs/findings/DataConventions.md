@@ -67,6 +67,10 @@ Do not hard-code values into queries that will change over time. Use a data driv
 
 Hard-coding values directly in SQL queries like specific IDs, names, or lists creates rigid, error-prone SQL code that requires manual updates and is vulnerable to inconsistencies across environments. This approach also limits adaptability and introduces risks when data changes, as it requires ongoing maintenance to ensure accuracy. Using data-driven design with tables to dynamically source values allows for flexibility, ensuring the query remains consistent, adaptable, and reflective of the latest data.
 
+- [Hard-coding Values In SQL Code – Please Don’t
+What is hard-coding? 🗗](https://sqljana.wordpress.com/2017/03/25/hard-coding-values-in-sql-code-please-dont/){:target="_blank" rel="noopener"} by SQL Jana
+- [When to hardcode data inside the source code, when to use the database, and when to use a web service? 🗗](https://stackoverflow.com/questions/33576980/when-to-hardcode-data-inside-the-source-code-when-to-use-the-database-and-when/33850208#33850208){:target="_blank" rel="noopener"} by Stack Overflow
+
 [Back to top](#top)
 
 ---
