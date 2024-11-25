@@ -2,5 +2,5 @@
   "id": "de471769-8b1c-4c26-b6d0-39e6d2031c42",
   "prefix": "CreateMailTest",
   "description": "Use this against multiple SQL Server through SSMS Registered Servers to check Database Mail is working.",
-  "body": "DECLARE @Body nvarchar(MAX) = N'This is a test e-mail sent from Database Mail on ' + @@SERVERNAME + N'.';\r\n\r\nEXEC dbo.sp_send_dbmail\r\n    @profile_name = 'SQLAdmin'\r\n   ,@recipients = N'kevin.martin@venturesolutions.com'\r\n   ,@subject = N'Database Mail Test'\r\n   ,@body = @Body;"
+  "body": "DECLARE @Subject nvarchar(MAX) = N'Database Mail Test ' + @@SERVERNAME;\r\nDECLARE @Body nvarchar(MAX) = N'This is a test e-mail sent from Database Mail on ' + @@SERVERNAME + N'.';\r\n\r\nEXEC dbo.sp_send_dbmail\r\n    @profile_name = 'SQLAdmin'\r\n   ,@recipients = N'kevin.martin@venturesolutions.com'\r\n   ,@subject = @Subject\r\n   ,@body = @Body;"
 }
