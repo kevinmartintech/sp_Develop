@@ -1,0 +1,6 @@
+{
+  "id": "3b22ce06-6309-4af2-a40a-efbcc06cf2cf",
+  "prefix": "FindFindTransactionLogAndFileSizeAndSpaceUsed",
+  "description": "KM: Find transaction log size and space used",
+  "body": "DBCC SQLPERF(LOGSPACE);\r\n\r\nSELECT\r\n    DatabaseName     = DB_NAME(database_id)\r\n   ,file_id\r\n   ,FileType         = type_desc\r\n   ,LogicalFileName  = name\r\n   ,PhysicalFilePath = physical_name\r\n   ,TotalSizeMB      = CAST((size * 8.0 / 1024) AS decimal(10, 2))\r\n   ,UsedSpaceMB      = CAST((FILEPROPERTY(name, 'SpaceUsed') * 8.0 / 1024) AS decimal(10, 2))\r\n   ,FreeSpaceMB      = CAST(((size - FILEPROPERTY(name, 'SpaceUsed')) * 8.0 / 1024) AS decimal(10, 2))\r\n   ,PercentUsed      = CASE WHEN size = 0\r\n                                THEN 0\r\n                           ELSE CAST((FILEPROPERTY(name, 'SpaceUsed') * 1.0 / size) * 100.0 AS decimal(5, 2))\r\n                       END\r\nFROM\r\n    sys.master_files\r\nWHERE\r\n    database_id = DB_ID('tempdb')\r\nORDER BY\r\n    file_id;"
+}

@@ -30,9 +30,9 @@
   "dml": {
     "addNewLineAfterDistinctAndTopClauses": true,
     "collapseShortStatements": true,
-    "collapseStatementsShorterThan": 120,
+    "collapseStatementsShorterThan": 100,
     "collapseShortSubqueries": true,
-    "collapseSubqueriesShorterThan": 120,
+    "collapseSubqueriesShorterThan": 100,
     "listItems": {
       "placeFromTableOnNewLine": "always",
       "placeWhereConditionOnNewLine": "always",
