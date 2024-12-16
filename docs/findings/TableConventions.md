@@ -211,9 +211,9 @@ This execution plan shows ```JOIN``` elimination has not occurred. While there i
 
 ---
 
-<a name="31"/><a name="column-named-id-but-no-foreign-key-exists"/>
+<a name="31"/><a name="column-named-id-but-no-foreign-key-exists"/><a name="column-named-id-but-no-fk-exists"/>
 
-## Column Named ????Id But No FK Exists
+## Column Named ????Id But No Foreign Key Exists
 **Check Id:** 31
 
 In most cases, columns with the name ????Id that are not the primary key should have a foreign key relationship to another table.
