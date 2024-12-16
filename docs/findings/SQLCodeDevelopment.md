@@ -2381,7 +2381,7 @@ Use one of the two Redgate SQL Prompt formatting styles "[Team Collapsed 🗗](h
 <a name="192"/>
 
 ## Old-Style TOP Clause is Used
-**Check Id:** 192 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=Old-Style+TOP+Clause+is+Used)
+**Check Id:** 192 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&Old-Style+TOP+Clause+is+Used)
 
 To limit query results, it's recommended to use the new style TOP clause: `TOP(n)`. This syntax, with parentheses, is clearer and more readable, even though the parentheses are syntactic sugar since only one parameter can be included.
 
