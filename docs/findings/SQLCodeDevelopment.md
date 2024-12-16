@@ -2378,6 +2378,17 @@ Use one of the two Redgate SQL Prompt formatting styles "[Team Collapsed 🗗](h
 
 ---
 
+## Old-Style TOP Clause is Used
+**Check Id:** 192 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+SQL+Formatting)
+
+To limit query results, it's recommended to use the new style TOP clause: `TOP(n)`. This syntax, with parentheses, is clearer and more readable, even though the parentheses are syntactic sugar since only one parameter can be included.
+
+See [TOP (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+
+[Back to top](#top)
+
+---
+
 <a name="127"/>
 
 ## Not Using UPPERCASE for Keywords
