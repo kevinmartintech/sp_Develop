@@ -1,0 +1,6 @@
+{
+  "id": "eea60a46-1903-48ae-af87-a67166f999fd",
+  "prefix": "CreateTempDBFileSizeTest",
+  "description": "Use this against multiple SQL Servers through SSMS Registered Servers to check TempDB file sizes are the same.",
+  "body": "DROP TABLE IF EXISTS #TempDBFileSizeCheck;\r\nCREATE TABLE #TempDBFileSizeCheck (ServerName sysname NULL, IsAllFilesTheSame varchar(50) NULL);\r\n\r\nINSERT INTO #TempDBFileSizeCheck (ServerName, IsAllFilesTheSame)\r\nSELECT\r\n    ServerName        = @@SERVERNAME\r\n   ,IsAllFilesTheSame = CASE WHEN COUNT(DISTINCT size) = 1 THEN 'True' ELSE 'False' END\r\nFROM\r\n    tempdb.sys.database_files\r\nWHERE\r\n    type_desc = N'ROWS';\r\n\r\nSELECT\r\n    ServerName\r\n   ,IsAllFilesTheSame\r\nFROM\r\n    #TempDBFileSizeCheck\r\nWHERE\r\n    IsAllFilesTheSame = 'False'\r\nAND ServerName NOT IN ('VENSSQL02-OLD');"
+}

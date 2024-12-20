@@ -1,0 +1,6 @@
+{
+  "id": "6d9362ff-83f5-467d-8517-c48ae0eec233",
+  "prefix": "CreateBackupTest",
+  "description": "Use this against multiple SQL Servers through SSMS Registered Servers to check backups are occuring.",
+  "body": "SELECT\r\n    DatabaseName = database_name\r\n   ,IsLastBackupOver1DayAgo = CASE WHEN DATEDIFF(HOUR, MAX(backup_finish_date), GETDATE()) > 24 THEN 'True' ELSE 'False' END\r\nFROM\r\n    msdb.dbo.backupset\r\nWHERE\r\n    database_name LIKE 'CGPdfSearch%'\r\nOR  database_name LIKE 'CGWebApps%'\r\nOR  database_name LIKE 'PLS%'\r\nOR  database_name LIKE 'OperationalDataStore%'\r\nOR  database_name LIKE 'VentureAccess%'\r\nOR  database_name LIKE 'CentraAccessDirectMessageTracking%'\r\nOR  database_name LIKE 'SSISDB'\r\nOR  database_name LIKE 'RedGate%'\r\nGROUP BY\r\n    database_name\r\nORDER BY\r\n    database_name;"
+}
