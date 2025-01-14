@@ -1,0 +1,6 @@
+{
+  "id": "dd2739c9-f080-4a0a-a3b9-4a1ba577e9c2",
+  "prefix": "FindVLF",
+  "description": "KM: Find Virtual Log Files (VLFs) and Log File Autogrowth Size",
+  "body": "SELECT\r\n    [Database Name]            = D.name\r\n   ,[VLF Count]                = COUNT(L.database_id)\r\n   ,[Log File Autogrowth (MB)] = CAST(CASE MF.is_percent_growth\r\n                                          WHEN 1\r\n                                              THEN (MF.growth * (MF.size * 8 / 1024) / 100.0)\r\n                                          ELSE (MF.growth * 8 / 1024)\r\n                                      END AS int)\r\n   ,[VLF Size (MB)]            = SUM(L.vlf_size_mb)\r\n   ,[Active VLF]               = SUM(CAST(L.vlf_active AS int))\r\n   ,[Active VLF Size (MB)]     = SUM(L.vlf_active * L.vlf_size_mb)\r\n   ,[In-active VLF]            = COUNT(L.database_id) - SUM(CAST(L.vlf_active AS int))\r\n   ,[In-active VLF Size (MB)]  = SUM(L.vlf_size_mb) - SUM(L.vlf_active * L.vlf_size_mb)\r\nFROM\r\n    sys.databases                             AS D\r\nCROSS APPLY sys.dm_db_log_info(D.database_id) AS L\r\nINNER JOIN sys.master_files AS MF ON D.database_id = MF.database_id AND MF.type_desc = 'LOG'\r\nGROUP BY\r\n    D.name\r\n   ,D.database_id\r\n   ,MF.growth\r\n   ,MF.is_percent_growth\r\n   ,MF.size\r\nORDER BY\r\n    [VLF Count] DESC;"
+}

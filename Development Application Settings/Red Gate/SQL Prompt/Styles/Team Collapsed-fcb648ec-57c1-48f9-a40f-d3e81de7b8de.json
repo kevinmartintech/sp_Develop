@@ -6,7 +6,8 @@
   "whitespace": {
     "wrapLongLines": false,
     "newLines": {
-      "preserveExistingEmptyLinesAfterBatchSeparator": false
+      "preserveExistingEmptyLinesAfterBatchSeparator": false,
+      "alignMultilineCommentsMatchingPatterns": true
     }
   },
   "lists": {
