@@ -323,6 +323,7 @@ For a quick video ramp up on configuring VMware for SQL Server see the [SQL Serv
 - See [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware
 - See [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
 - See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](https://www.davidklee.net/articles/sql-server-articles/why-sql-server-dbas-need-access-to-vmware-vcenter/){:target="_blank" rel="noopener"} by David Klee
+- See [Retrofit a VM with the VMware Paravirtual SCSI Driver 🗗](https://www.sqlservercentral.com/blogs/retrofit-a-vm-with-the-vmware-paravirtual-scsi-driver){:target="_blank" rel="noopener"} by David Klee
 
 [Back to top](#top)
 
