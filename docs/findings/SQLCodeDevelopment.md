@@ -1570,7 +1570,12 @@ When it comes time to migrate to Azure you can lift and shift you SSIS packages 
 ## IN/NOT VS EXISTS/NOT EXISTS
 **Check Id:** 114 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=IN+NOT+VS+EXISTS+NOT+EXISTS)
 
-Use EXISTS or NOT EXISTS if referencing a subquery, and IN/NOT IN when using a list of literal values.
+Use `EXISTS` or `NOT EXISTS` if referencing a subquery, and `IN` or `NOT IN` when using a list of literal values.
+
+
+When referencing subqueries, `EXISTS` and `NOT EXISTS` are more efficient than `IN` and `NOT IN` due to how the SQL Server engine evaluates these constructs. `EXISTS` short-circuits the search as soon as a matching row is found, making it faster for large datasets. In contrast, `IN` compares all rows, which is less efficient for subqueries. Additionally, `NOT EXISTS` is more reliable than `NOT IN` because `NOT IN` fails when encountering `NULL` values. If any value in the subquery contains `NULL`, the entire comparison may return no results due to SQL's three-valued logic.
+
+In situations involving a list of literal values, `IN` and `NOT IN` are better choices. SQL Server can optimize these comparisons by creating internal hash or range lookups, which provide faster and more efficient evaluations. Using `EXISTS` or `NOT EXISTS` for static lists is unnecessarily complex and does not offer performance benefits. Choosing `EXISTS` for subqueries and `IN` for literal lists ensures cleaner code and faster query execution.
 
 [Back to top](#top)
 
