@@ -1523,7 +1523,8 @@ The ``ISNULL`` function and the ``COALESCE`` expression have a similar purpose b
 4. Validations for `ISNULL` and `COALESCE` are also different. For example, a NULL value for `ISNULL` is converted to int though for `COALESCE`, you must provide a data type.
 5. `ISNULL` takes only two parameters. By contrast `COALESCE` takes a variable number of parameters.
 
-Source: [Comparing COALESCE and ISNULL 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql#comparing-coalesce-and-isnull){:target="_blank" rel="noopener"} by Microsoft
+- See [Deciding between COALESCE and ISNULL in SQL Server 🗗](https://www.mssqltips.com/sqlservertip/2689/deciding-between-coalesce-and-isnull-in-sql-server/){:target="_blank" rel="noopener"} by Aaron Bertrand
+- See [Comparing COALESCE and ISNULL 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql#comparing-coalesce-and-isnull){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
