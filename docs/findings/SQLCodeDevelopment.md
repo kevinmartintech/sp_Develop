@@ -1515,13 +1515,15 @@ Always specify lengths for a data type.
 ## COALESCE vs ISNULL
 **Check Id:** 110 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=COALESCE+vs+ISNULL)
 
-The ``ISNULL`` function and the ``COALESCE`` expression have a similar purpose but can behave differently.
+The `ISNULL` function and the `COALESCE` expression have a similar purpose but can behave differently. `ISNULL` is generally the best choice when there are two
 
 1. Because `ISNULL` is a function, it's evaluated only once. As described above, the input values for the `COALESCE` expression can be evaluated multiple times.
-2. Data type determination of the resulting expression is different. `ISNULL` uses the data type of the first parameter, `COALESCE` follows the `CASE` expression rules and returns the data type of value with the highest precedence.
-3. The NULLability of the result expression is different for `ISNULL` and `COALESCE`.
-4. Validations for `ISNULL` and `COALESCE` are also different. For example, a NULL value for `ISNULL` is converted to int though for `COALESCE`, you must provide a data type.
-5. `ISNULL` takes only two parameters. By contrast `COALESCE` takes a variable number of parameters.
+   1. `COALESCE`has a has a slightly more complex execution plan with being a `CASE` statement under the covers.
+1. Data type determination of the resulting expression is different. `ISNULL` uses the data type of the first parameter, `COALESCE` follows the `CASE` expression rules and returns the data type of value with the highest precedence.
+1. The NULLability of the result expression is different for `ISNULL` and `COALESCE`.
+1. Validations for `ISNULL` and `COALESCE` are also different. For example, a NULL value for `ISNULL` is converted to int though for `COALESCE`, you must provide a data type.
+1. `ISNULL` takes only two parameters. By contrast `COALESCE` takes a variable number of parameters.
+
 
 - See [Deciding between COALESCE and ISNULL in SQL Server 🗗](https://www.mssqltips.com/sqlservertip/2689/deciding-between-coalesce-and-isnull-in-sql-server/){:target="_blank" rel="noopener"} by Aaron Bertrand
 - See [Comparing COALESCE and ISNULL 🗗](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql#comparing-coalesce-and-isnull){:target="_blank" rel="noopener"} by Microsoft
