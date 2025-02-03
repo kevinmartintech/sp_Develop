@@ -324,7 +324,6 @@ Use the format `[SCHEMA]_[TABLE-NAME]_[COLUMN-NAME-1]_[COLUMN-NAME-2...]`
 - Index Names should indicate if there are included columns with `Person_FirstName_LastName_Includes`
 - When using `uniqueidentifier/guid` columns for clustered index you can use `Person_PersonGUID_INDEX_REBUILD_ONLY` to signify special index maintenance handling.
   - See [UNIQUEIDENTIFIER in a Clustered Index](/best-practices-and-findings/table-conventions#22)
-
 &nbsp;
 
 - See [Improper Named Constraint](/best-practices-and-findings/naming-conventions#44)
