@@ -2436,7 +2436,7 @@ Not converting to Unicode for ``nvarchar()`` columns will also cause implicit co
 ## Not Using lower case for Data Types
 **Check Id:** 129 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+lower+case+for+Data+Types)
 
-Data types should be lower cased to match the exact case that is in the ``SELECT * FROM sys.types;`` table. This will ensure collation differences won't cause unexpected errors.
+Data types should be lower cased to match the exact case that is in the ``SELECT * FROM sys.types;`` table. This will ensure collation differences won't cause unexpected errors. You should always code defensively and match the case sensitivity of all objects, variables, and parameters.
 
 **Use:** ``DECLARE @Id AS int`` **instead of:** ``DECLARE @Id AS INT``
 
@@ -2459,6 +2459,8 @@ CREATE TABLE dbo.Person (
    ,LastName  VARCHAR(50) NULL
 );
 ```
+
+- See [BackToBasics: Why I Use Lower Case for Data Type Names (Now)) 🗗](https://thwack.solarwinds.com/groups/data-driven/b/blog/posts/backtobasics-why-i-use-lower-case-for-data-type-names-now){:target="_blank" rel="noopener"} by Aaron Bertrand
 
 [Back to top](#top)
 
