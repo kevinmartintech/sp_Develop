@@ -560,6 +560,8 @@ END CATCH;
 
 SQL Server is the second most expensive sorting system, remind the developer they can sort in the application layer which does not have a cost per core.
 
+If you need to sort data, try doing it in the app tier instead. Developers are really good about scaling out application work, and their app servers don’t cost $7K per core. If the query doesn’t have a TOP, then it probably shouldn’t have an ORDER BY.
+
 **2022 Pricing**
 
 - Oracle Enterprise Edition = $47,500 per core
@@ -567,6 +569,11 @@ SQL Server is the second most expensive sorting system, remind the developer the
 - Microsoft SQL Server Standard Edition = $1,972 per core 
 - ⬇
 - Microsoft Access $160
+
+<br/>
+
+- See [How to Think Like the SQL Server Engine: Adding an ORDER BY 🗗](https://www.brentozar.com/archive/2019/10/how-to-think-like-the-sql-server-engine-adding-an-order-by/){:target="_blank" rel="noopener"} by Brent Ozar
+
 
 [Back to top](#top)
 
