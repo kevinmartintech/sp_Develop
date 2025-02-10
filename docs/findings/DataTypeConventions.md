@@ -134,7 +134,7 @@ You might be overusing ``(n)varchar(MAX)`` on your table.
 
 ``(n)varchar(MAX)`` columns can be included in an index but not as a key. Queries will not be able to perform an index seek on this column. 
 
-``(n)varchar(MAX)`` should only every be used if the size of the field is known to be over 8K for ``varchar`` and 4K for ``nvarchar``
+``(n)varchar(MAX)`` should only every be used if the size of the column is known to be over 8K for ``varchar`` and 4K for ``nvarchar``
 
 Since SQL Server 2016 if the size of the cell is < 8K characters for ``varchar(MAX)`` it will be treated as Row data. If > 8K it will be treated as a Large Object (LOB) for storage purposes.
 

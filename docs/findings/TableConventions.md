@@ -184,8 +184,8 @@ This exception use can lead to table schema development issues for cases when yo
 
 <a name="150"/>
 
-## Nullable Columns with No Non-Null Records
-**Check Id:** 150 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Nullable+Columns+with+No+Non-Null+Records)
+## Nullable Columns with No Non-Null Rows
+**Check Id:** 150 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Nullable+Columns+with+No+Non-Null+Rows)
 
 If the row data in the table does not contain any ```NULL``` values you should assess setting the column to not 'Allow Nulls'.
 
@@ -231,14 +231,14 @@ You will not get JOIN Eliminations without a foreign key and a column that allow
 ## Not Using Audit Columns
 **Check Id:** 187
 
-Audit columns such as `CreatePersonId`, `ModifyPersonId`, `CreateDateTime`, and `ModifyDateTime` are crucial for maintaining a reliable audit trail in database tables. Their absence makes it difficult to track important changes, such as who modified a record and when it was created.
+Audit columns such as `CreatePersonId`, `ModifyPersonId`, `CreateDateTime`, and `ModifyDateTime` are crucial for maintaining a reliable audit trail in database tables. Their absence makes it difficult to track important changes, such as who modified a row and when it was created.
 
-Always include audit columns in tables. Use application-level code or stored procedures to update these fields, and avoid using triggers due to their performance and maintainability issues. These columns are essential not only for application-level auditing but also for large-scale data engineering processes that rely on reliable modification timestamps for data pipeline efficiency.
+Always include audit columns in tables. Use application-level code or stored procedures to update these columns, and avoid using triggers due to their performance and maintainability issues. These columns are essential not only for application-level auditing but also for large-scale data engineering processes that rely on reliable modification timestamps for data pipeline efficiency.
 
 **Why It Matters:**
 - **Accountability**: Without these columns, tracing responsibility for data modifications is nearly impossible, which can pose a security risk.
 - **Compliance**: Audit columns help meet regulatory requirements such as GDPR, HIPAA, and SOX, which often mandate detailed data audit trails.
-- **Data Engineering**: In **Data Warehousing (DW)** and **Operational Data Stores (ODS)**, `ModifyDateTime` is especially critical where the goal is to track incremental changes in source systems. It helps ensure that only modified records are processed, improving both **ETL/ETL performance** and **data consistency** between systems. Similarly, for **system integrations**, `ModifyDateTime` is frequently used to identify and synchronize changes across different platforms, ensuring that updated data is correctly transferred and maintained in external systems.
+- **Data Engineering**: In **Data Warehousing (DW)** and **Operational Data Stores (ODS)**, `ModifyDateTime` is especially critical where the goal is to track incremental changes in source systems. It helps ensure that only modified rows are processed, improving both **ETL/ETL performance** and **data consistency** between systems. Similarly, for **system integrations**, `ModifyDateTime` is frequently used to identify and synchronize changes across different platforms, ensuring that updated data is correctly transferred and maintained in external systems.
 
 - See [Using Table Triggers](/best-practices-and-findings/table-conventions#186) 
 - See [Column Naming](/best-practices-and-findings/naming-conventions#14) 
@@ -562,7 +562,7 @@ This is just a sanity check to let you know there is a table that does not have 
 >
 > Perform update statistics nightly if your tables are not too large for auto-update stats to properly handle the number of modifications occurring.
 
-SQL Server will bad page split and fragment an index when a new record is inserted instead of being inserting on the last page using standard best practices for index maintenance. The clustered index will become fragmented because of randomness of ``uniqueidentifier/guid``. Index maintenance set to the default fill factor of 0 (packed 100%) will force bad page splits.
+SQL Server will bad page split and fragment an index when a new row is inserted instead of being inserting on the last page using standard best practices for index maintenance. The clustered index will become fragmented because of randomness of ``uniqueidentifier/guid``. Index maintenance set to the default fill factor of 0 (packed 100%) will force bad page splits.
 
 A use case for when you can use ``uniqueidentifier/guid`` as a primary key & clustered index, is when there are separate systems and merging rows would be difficult. The uniqueness of ``uniqueidentifier/guid`` simplifies the data movements.
 
@@ -782,7 +782,7 @@ ORDER BY
 
 If you are using Read Committed Snapshot Isolation (RCSI), with its row versioning mechanism, it serves as an optimistic concurrency control mechanism. RCSI transactions read and modify data without holding locks, assuming that conflicts are rare. 
 
-When it comes time to commit changes, your SQL code can check for conflicts by comparing the current version of the data with the version that the transaction initially read with a `rowversion` column (formerly known as `timestamp`). This methodology prevents the "Last `UPDATE` wins" scenario. The "last `UPDATE` wins" scenario occurs when two transactions try to update the same record, and the final update overwrites the changes made by the other transaction, potentially leading to data loss.
+When it comes time to commit changes, your SQL code can check for conflicts by comparing the current version of the data with the version that the transaction initially read with a `rowversion` column (formerly known as `timestamp`). This methodology prevents the "Last `UPDATE` wins" scenario. The "last `UPDATE` wins" scenario occurs when two transactions try to update the same row, and the final update overwrites the changes made by the other transaction, potentially leading to data loss.
 
 Check out [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen#:~:text=%40RowVersionStampColumnName){:target="_blank" rel="noopener"} (by Kevin Martin) as it will generate optimistic concurrent stored procedures for you when a table `rowversion` column exists.
 

@@ -30,7 +30,7 @@ Checks for data conventions issues.
 ## Using Placeholder Rows
 **Check Id:** 60 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Placeholder+Rows)
 
-A placeholder is an empty row/record that is created to hold the place of possible future data in the row that may or may not be necessary.
+A placeholder is an empty row that is created to hold the place of possible future data in the row that may or may not be necessary.
 
 While placeholder rows do not violate database normalization rules, it is not considered a best practice to create "empty" rows. Row data should only be created when it is materialized. If the row data does not exists, it should not be inserted. If the row data is removed, the row should be hard or soft deleted. Empty rows are not free, there is overhead space allocated with placeholder rows, which can impact performance.
 

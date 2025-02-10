@@ -107,7 +107,7 @@ The free opensource [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUD
 ## Data Warehouse Date & Time Key Pattern
 **Check Id:** 75 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Data+Warehouse+Date+and+Time+Key+Pattern)
 
-This data warehouse date & time key pattern can be used with the [Date-Time-Number-Dimensions 🗗](https://github.com/kevinmartintech/Date-Time-Number-Dimension){:target="_blank" rel="noopener"} (by Kevin Martin) tables. The grain of the time dimension records is in seconds.
+This data warehouse date & time key pattern can be used with the [Date-Time-Number-Dimensions 🗗](https://github.com/kevinmartintech/Date-Time-Number-Dimension){:target="_blank" rel="noopener"} (by Kevin Martin) tables. The grain of the time dimension rows is in seconds.
 
 The primary keys in the date and time dimension tables are integers and the T-SQL below extracts and converts them.
 
@@ -296,7 +296,7 @@ ELSE
 - See [Please stop using this UPSERT anti-pattern 🗗](https://sqlperformance.com/2020/09/locking/upsert-anti-pattern){:target="_blank" rel="noopener"} by Aaron Bertrand
 - See [Use of IF EXISTS or IF NOT EXISTS Before DML Statements](/best-practices-and-findings/sql-code-conventions#189)
 
-**Use this UPSERT pattern when a record update is more likely:** Don't worry about checking for a records existence just perform the update.
+**Use this UPSERT pattern when a row update is more likely:** Don't worry about checking for a rows existence just perform the update.
 
 Consider using [sp_CRUDGen 🗗](https://github.com/kevinmartintech/sp_CRUDGen){:target="_blank" rel="noopener"} (by Kevin Martin) to generate an UPSERT stored procedure at least as starting point.
 
@@ -329,7 +329,7 @@ BEGIN CATCH
 END CATCH;
 ```
 
-**Use this UPSERT pattern when a record insert is more likely:** Don't worry about checking for a records existence just perform the insert.
+**Use this UPSERT pattern when a row insert is more likely:** Don't worry about checking for a rows existence just perform the insert.
 
 ```sql
 SET NOCOUNT, XACT_ABORT ON;
@@ -389,7 +389,7 @@ COMMIT TRANSACTION;
 ```
 **Use this UPSERT pattern for upserting multiple rows:** You can use a [table-valued parameter 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine){:target="_blank" rel="noopener"}, [JSON 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server){:target="_blank" rel="noopener"}, [XML 🗗](https://docs.microsoft.com/en-us/sql/t-sql/xml/nodes-method-xml-data-type){:target="_blank" rel="noopener"} or [comma-separated list 🗗](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql){:target="_blank" rel="noopener"}. 
 
-For JSON, XML or comma-separated list ensure you insert the records into a temporary table for performance considerations.
+For JSON, XML or comma-separated list ensure you insert the rows into a temporary table for performance considerations.
 
 - See [Not Inserting Rows Into a Temporary Table](sql-code-conventions#184)
 
@@ -612,7 +612,7 @@ Even though you'll hear DBAs and other experts say, "never use cursors!", there 
 SQL Server originally supported cursors to more easily port dBase II applications to SQL Server, but even then, you can sometimes use a `WHILE` loop (See [Using WHILE Loop](/best-practices-and-findings/sql-code-conventions#80)) as an effective substitute. Modern versions of SQL Server provide window functions and the CROSS/OUTER APPLY syntax to cope with some of the traditional valid uses of the cursor.
 
 ### Valid Use Cases
-- Executing a complex stored procedure or series of stored procedures based on a set of data. It is true this can be handled with a `WHILE` loop and grabbing each record from the database, but a read-only, fast-forward cursor well and can be easier to manage.
+- Executing a complex stored procedure or series of stored procedures based on a set of data. It is true this can be handled with a `WHILE` loop and grabbing each row from the database, but a read-only, fast-forward cursor well and can be easier to manage.
 - Import scripts
 
 ### Cursor Type
@@ -647,7 +647,7 @@ INTO
 
 WHILE @@FETCH_STATUS = 0
     BEGIN
-        --Do something or a series of things for each record
+        --Do something or a series of things for each row
         DECLARE @Result int;
         EXEC @Result = dbo.SomeStoredProcedure @MyId = @MyId;
 
@@ -1152,7 +1152,7 @@ You should have a Development, Testing & Production environment.
 
 SQL Server development is a continuous process to avoid the issues caused by development and reducing the risks of blocking business.
 
-Accidents happen! Imagine you accidentally made an update to thousands of records that you cannot undo without hours of work. Imagine that you do not have access to original data before you changed it. Feeling scared yet? This is where a development and test environment save effort.
+Accidents happen! Imagine you accidentally made an update to thousands of rows that you cannot undo without hours of work. Imagine that you do not have access to original data before you changed it. Feeling scared yet? This is where a development and test environment save effort.
 
 A development environment allows developers to program and perform test ensuring their code is correct before pushing to a centralized testing environment for UAT (User Acceptance Testing) or staging for production.
 
@@ -1682,7 +1682,7 @@ You might still have some work to do. One of the codetags below was found.
 ## Missing Index on WHERE Clause
 **Check Id:** 118 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Missing+Index+on+WHERE+Clause)
 
-Check WHERE clauses for columns that are not included in an index. Might also want to exclude check for tables with small (5k or less) number of records.
+Check WHERE clauses for columns that are not included in an index. Might also want to exclude check for tables with small (5k or less) number of rows.
 
 [Back to top](#top)
 
@@ -1693,7 +1693,7 @@ Check WHERE clauses for columns that are not included in an index. Might also wa
 ## Missing Index on IN Columns
 **Check Id:** 119 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Missing+Index+on+IN+Columns)
 
-Check IN() predicates for columns that are not included in an index. Might also want to exclude check for tables with small (5k or less) number of records.
+Check IN() predicates for columns that are not included in an index. Might also want to exclude check for tables with small (5k or less) number of rows.
 
 [Back to top](#top)
 
@@ -2303,7 +2303,7 @@ Can `NOLOCK` be used when the data is not changing? Nope. It has the same proble
 **Problems**
 - You can see rows twice
 - You can skip rows altogether
-- You can see records that were never committed
+- You can see rows that were never committed
 - Your query can fail with an error "could not continue scan with `NOLOCK` due to data movement"
 
 These problems will cause non-reproducible errors. You might end up blaming the issue on user error which will not be accurate.
@@ -2691,7 +2691,7 @@ The workaround is to drop and create the procedure by using the same case as the
 ## Using SELECT *
 **Check Id:** 23
 
-Do not use the `SELECT *` in production code unless you have a good reason, instead specify the field names and bring back only those fields you need; this optimizes query performance and eliminates the possibility of unexpected results when fields are added to a table.
+Do not use the `SELECT *` in production code unless you have a good reason, instead specify the column names and bring back only those columns you need; this optimizes query performance and eliminates the possibility of unexpected results when columns are added to a table.
 
 `SELECT *` in `IF EXISTS` statements are OK. "*" in math equations is OK.
 
@@ -2970,7 +2970,7 @@ A view can be helpful with the use cases below and should be no less performant,
     - It is best to include this aggregation code in a stored procedure, but if there is a need to not have duplicated business logic code in multiple stored procedures, these data aggregation views can be helpful.
       - If a view does not work and you need parameters, try an Inline Table Valued Function (iTVF). Views and iTVF at runtime are both inlined and treaded similarly to derived tables or CTEs.
     - These aggregation views can be used to `JOIN` on with single row data like an Event. The aggregations would be used to sum up the Attendees joined on the EventId.
-    - Immutable (unchanging) records can have the parent table's column value set inside a transaction with the child rows.
+    - Immutable (unchanging) rows can have the parent table's column value set inside a transaction with the child rows.
 
 [Back to top](#top)
 

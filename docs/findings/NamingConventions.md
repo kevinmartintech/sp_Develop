@@ -206,9 +206,9 @@ Stored procedures and functions should be named so they can be ordered by the ta
 ## Using ID for Primary Key Column Name
 **Check Id:** 7
 
-For columns that are the primary key for a table and uniquely identify each record in the table, the name should be ``[TableName] + Id`` (e.g. On the Make table, the primary key column would be ``MakeId``).
+For columns that are the primary key for a table and uniquely identify each row in the table, the name should be ``[TableName] + Id`` (e.g. On the Make table, the primary key column would be ``MakeId``).
 
-Though ``MakeId`` conveys no more information about the field than Make.Id and is a far wordier implementation, it is still preferable to ``Id``.
+Though ``MakeId`` conveys no more information about the column than Make.Id and is a far wordier implementation, it is still preferable to ``Id``.
 
 Naming a primary key column ``Id`` is also "bad" when you query from several tables you will need to rename the ``Id`` columns so you can distinguish them in result set.
 
@@ -279,7 +279,7 @@ FROM
 ## Using Plural in Name
 **Check Id:** 1
 
-Table and view names should be singular, for example, ``Customer`` instead of ``Customers``. This rule is applicable because tables are patterns for storing an entity as a record – they are analogous to Classes serving up class instances. And if for no other reason than readability, you avoid errors due to the pluralization of English nouns in the process of database development. For instance, activity becomes activities, ox becomes oxen, person becomes people or persons, alumnus becomes alumni, while data remains data.
+Table and view names should be singular, for example, ``Customer`` instead of ``Customers``. This rule is applicable because tables are patterns for storing an entity as a row – they are analogous to Classes serving up class instances. And if for no other reason than readability, you avoid errors due to the pluralization of English nouns in the process of database development. For instance, activity becomes activities, ox becomes oxen, person becomes people or persons, alumnus becomes alumni, while data remains data.
 
 If writing code for a data integration and the source is plural keep the staging/integration tables the same as the source so there is no confusion.
 
@@ -441,7 +441,7 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
 - Use abbreviations rarely in attribute names. If your organization has a TPS "thing" that is commonly used and referred to in general conversation as a TPS, you might use this abbreviation
   - **Pronounced abbreviations:** It is better to use a natural abbreviation like id instead of identifier
 - Columns without common, or natural words, or terms, end the column name with a suffix (class word) that denotes general usage. These suffixes are not data types that are used in Hungarian notations. There can be names where a suffix would not apply.
-  - Invoice**Id** is the identity of the invoice record
+  - Invoice**Id** is the identity of the invoice row
   - Part**Number** is an alternate key
   - Start**Date** is the date something started
   - Line**Amount** is a currency amount not dependent on the data type like ``decimal(19, 4)``
@@ -450,8 +450,8 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
   - Booleans - (See [Non-Affirmative Boolean Name Use](/best-practices-and-findings/naming-conventions#52) for boolean column naming)
     - Is**Active** indicates a status
     - Is**Deleted** indicates a soft delete status
-    - Is**Locked** indicates if a record is immutable
-    - Is**Default** indicates if a record is defaulted
+    - Is**Locked** indicates if a row is immutable
+    - Is**Default** indicates if a row is defaulted
     - Is**Primary** indicates first in an order
     - Is**Valid** indicated validity
     - Has**Permission** indicated permissions
@@ -459,8 +459,8 @@ Bit columns should be given affirmative boolean names like ``IsActive``, ``IsDel
   - Unit**Price** is the price of a product unit
   - Website**URL** is the internet address - (See [URL or URI Naming](/best-practices-and-findings/naming-conventions#53))
   - Audit Columns - (See [Not Using Audit Columns](/best-practices-and-findings/table-conventions#187))
-    - Modify**PersonId** is the person who last updated a record
-    - Create**PersonId** is the person who created a record
+    - Modify**PersonId** is the person who last updated a row
+    - Create**PersonId** is the person who created a row
     - Modify**DateTime** is the date and time something was modified
     - Create**DateTime** is the date and time something was created
   - Version**Stamp** is the ``rowversion/timestamp`` (unique binary numbers) to increment for each insert or update
