@@ -1,0 +1,6 @@
+{
+  "id": "f2ed57bd-56be-4520-b056-c4181dc91013",
+  "prefix": "FindNUMA",
+  "description": "KM: Query to find the NUMA nodes.",
+  "body": "SELECT\r\n    osn.node_id\r\n   ,osn.node_state_desc\r\n   ,osn.memory_node_id\r\n   ,osn.processor_group\r\n   ,osn.cpu_count\r\n   ,osn.online_scheduler_count\r\n   ,osn.idle_scheduler_count\r\n   ,osn.active_worker_count\r\n   ,[Committed Memory (MB)]   = osmn.pages_kb / 1024\r\n   ,[Locked Physical (MB)]    = osmn.locked_page_allocations_kb / 1024\r\n   ,[Foreign Commited (MB)]   = CONVERT(decimal(18, 2), osmn.foreign_committed_kb / 1024.0)\r\n   ,[Target Memory Goal (MB)] = osmn.target_kb / 1024\r\n   ,osn.avg_load_balance\r\n   ,osn.resource_monitor_state\r\nFROM\r\n    sys.dm_os_nodes               AS osn WITH (NOLOCK)\r\nINNER JOIN sys.dm_os_memory_nodes AS osmn WITH (NOLOCK) ON osn.memory_node_id = osmn.memory_node_id\r\nWHERE\r\n    osn.node_state_desc <> N'ONLINE DAC'\r\nOPTION (RECOMPILE);"
+}
