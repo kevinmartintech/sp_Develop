@@ -28,7 +28,7 @@ AS
         /**********************************************************************************************************************
         ** MIT License
         ** 
-        ** Copyright 2024 Kevin Martin
+        ** Copyright 2025 Kevin Martin
         ** 
         ** Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
         ** documentation files (the "Software"), to deal in the Software without restriction, including without limitation the 
@@ -73,8 +73,8 @@ AS
 	    ** Setting some varibles
 	    **********************************************************************************************************************/
 
-        SET @Version = '3.0.4';
-        SET @VersionDate = '20241216';
+        SET @Version = '3.0.5';
+        SET @VersionDate = '20250407';
         SET @URLBase = 'https://www.spdevelop.org/best-practices-and-findings/';
         SET @URLSkipChecks = 'https://www.spdevelop.org/how-to-skip-checks';
         SET @OutputType = UPPER(@OutputType);
