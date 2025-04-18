@@ -656,7 +656,7 @@ AS
 				           ,Object_Id     = O.object_id
 				           ,ObjectName    = O.name
 				           ,ObjectType    = O.type_desc
-				           ,Details       = N''Table and view names should be singular. NOTE: This could be a false-positive for names that do end with S.''
+				           ,Details       = N''Table and view names should be singular, for example, Customer instead of Customers. This rule is applicable because tables are patterns for storing an entity as a row – they are analogous to Classes serving up class instances. NOTE: This could be a false-positive for names that do end with S.''
 				        FROM
 					        ' + QUOTENAME(@DatabaseName) + N'.sys.objects AS O
 					        INNER JOIN ' + QUOTENAME(@DatabaseName) + N'.sys.schemas AS S ON O.schema_id = S.schema_id
@@ -706,7 +706,7 @@ AS
 				           ,Object_Id     = O.object_id
 				           ,ObjectName    = O.name
 				           ,ObjectType    = O.type_desc
-				           ,Details       = N''Using Unique Constraint Instead of Unique Indexes''
+				           ,Details       = N''Create unique indexes instead of unique constraints (unique key). Doing so removes a dependency of a unique key to the unique index that is created automatically and tightly coupled.''
 				        FROM
 					        ' + QUOTENAME(@DatabaseName) + N'.sys.objects AS O
 					        INNER JOIN ' + QUOTENAME(@DatabaseName) + N'.sys.schemas AS S ON O.schema_id = S.schema_id
@@ -936,7 +936,7 @@ AS
 				           ,Object_Id     = O.object_id
 				           ,ObjectName    = O.name
 				           ,ObjectType    = O.type_desc
-				           ,Details       = N''Special characters should not be used in names.''
+				           ,Details       = N''Special characters should not be used in names. Using PascalCase for your table name allows for the upper-case letter to denote the first letter of a new word or name. Thus, there is no need to do so with an underscore character.''
 				        FROM
 					        ' + QUOTENAME(@DatabaseName) + N'.sys.objects AS O
 					        INNER JOIN ' + QUOTENAME(@DatabaseName) + N'.sys.schemas AS S ON O.schema_id = S.schema_id
@@ -1839,7 +1839,7 @@ AS
 				           ,Object_Id     = C.object_id
 				           ,ObjectName    = T.name + ''.'' + C.name
 				           ,ObjectType    = ''COLUMN''
-				           ,Details       = N''Primary key column names should be [TableName] + "Id" (e.g. '' + T.name + N''Id)''
+				           ,Details       = N''Primary key column names should be [TableName] + "Id" (e.g. '' + T.name + N''Id). When you have the same column names in joins it will mask errors that would otherwise be more obvious.''
 				        FROM
 					        ' + QUOTENAME(@DatabaseName) + N'.sys.indexes AS I
 					        INNER JOIN ' + QUOTENAME(@DatabaseName) + N'.sys.index_columns AS IC ON I.object_id  = IC.object_id AND I.index_id  = IC.index_id
@@ -2355,7 +2355,7 @@ AS
 				           ,Object_Id     = SM.object_id
 				           ,ObjectName    = O.name
 				           ,ObjectType    = O.type_desc
-				           ,Details       = N''NOLOCK does not mean your query does not take out a lock, it does not obey locks.''
+				           ,Details       = N''Using WITH (NOLOCK),  WITH (READUNCOMMITTED), or TRANSACTION ISOLATION LEVEL READ UNCOMMITTED does not mean your SELECT query does not take out a lock, it does not obey locks.''
 				        FROM
 					        ' + QUOTENAME(@DatabaseName) + N'.sys.sql_modules        AS SM
 					        INNER JOIN ' + QUOTENAME(@DatabaseName) + N'.sys.objects AS O ON SM.object_id = O.object_id

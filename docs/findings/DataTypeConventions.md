@@ -83,6 +83,7 @@ Do not use column data type lengths larger than necessary. Excessively large col
 - See [Sample database table schema containing researched right-sized columns lengths 🗗](https://github.com/kevinmartintech/KevinMartinTech/blob/main/database/oltp/Schema%20Create.sql){:target="_blank" rel="noopener"} by Kevin Martin
 - See [An Email Address Column Must not Exceed 254 Characters](/best-practices-and-findings/data-type-conventions#64)
 - See [A URL Column Must not Exceed 2083 Characters](/best-practices-and-findings/data-type-conventions#65)
+- See [FindLongestDataLength script 🗗](https://gist.github.com/kevinmartintech/96446ee2ab9cd85958f600ac573dd219){:target="_blank" rel="noopener"} Public GitHub Gist SQL script to find the longest data value in each of the text columns by Kevin Martin
 
 [Back to top](#top)
 

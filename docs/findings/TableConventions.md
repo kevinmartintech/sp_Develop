@@ -207,6 +207,10 @@ This execution plan shows ```JOIN``` elimination has not occurred. While there i
 
 - See [Untrusted Foreign Key or Check Constraints](/best-practices-and-findings/table-conventions#38)
 
+- See [Nullable Columns with No Non-Null Rows Check script 🗗](https://gist.github.com/kevinmartintech/c5411d71a4c52d208645a9dfe092f6ee){:target="_blank" rel="noopener"} Public GitHub Gist SQL script to find the longest data value in each of the text columns by Kevin Martin
+
+
+
 [Back to top](#top)
 
 ---
@@ -658,7 +662,7 @@ Add a clustered index.
 
 SQL Server storage is built around the clustered index as a fundamental part of the data storage and retrieval engine. The data itself is stored with the clustered key. All this makes having an appropriate clustered index a vital part of database design. The places where a table without a clustered index is preferable are rare; which is why a missing clustered index is a common code smell in database design.
 
-A 'table' without a clustered index is a heap, which is a particularly bad idea when its data is usually returned in an aggregated form, or in a sorted order. Paradoxically, though, it can be rather good for implementing a log or a ‘staging’ table used for bulk inserts, since it is read very infrequently, and there is less overhead in writing to it. 
+A table without a clustered index is a heap, which is a particularly bad idea when its data is usually returned in an aggregated form, or in a sorted order. Though, it can be rather good for implementing a log or a ‘staging’ table used for bulk inserts, since it is read very infrequently, and there is less overhead in writing to it. 
 
 A table with a non-clustered index, but without a clustered index can sometimes perform well even though the index must reference individual rows via a Row Identifier rather than a more meaningful clustered index. The arrangement can be effective for a table that isn’t often updated if the table is always accessed by a non-clustered index and there is no good candidate for a clustered index.
 

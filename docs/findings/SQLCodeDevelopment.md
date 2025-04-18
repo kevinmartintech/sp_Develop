@@ -2296,7 +2296,7 @@ END;
 ## Using NOLOCK (READ UNCOMMITTED)
 **Check Id:** 15
 
-Using `WITH (NOLOCK)`, `WITH (READUNCOMMITTED)` and `TRANSACTION ISOLATION LEVEL READ UNCOMMITTED` does not mean your SELECT query does not take out a lock, it does not obey locks.
+Using `WITH (NOLOCK)`, `WITH (READUNCOMMITTED)`, or `TRANSACTION ISOLATION LEVEL READ UNCOMMITTED` does not mean your SELECT query does not take out a lock, it does not obey locks.
 
 Can `NOLOCK` be used when the data is not changing? Nope. It has the same problems.
 
