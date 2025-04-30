@@ -1723,7 +1723,7 @@ A use case for `SET XACT_ABORT OFF` is when debugging to trap an error.
 - See [SET XACT_ABORT (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-xact-abort-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 - See [Error Handling Quiz Week: Making a Turkey Sandwich with XACT_ABORT 🗗](https://www.brentozar.com/archive/2022/01/error-handling-quiz-week-making-a-turkey-sandwich-with-xact_abort/){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Fundamentals of Stored Procedures 🗗](https://www.youtube.com/watch?v=kbMRv_2Z7m0){:target="_blank" rel="noopener"} by Brent Ozar
-
+- See [SET XACT_ABORT ON 🗗](https://www.sommarskog.se/error_handling/Part1.html#jumpXACT_ABORT){:target="_blank" rel="noopener"} by Erland Sommarskog
 
 [Back to top](#top)
 
