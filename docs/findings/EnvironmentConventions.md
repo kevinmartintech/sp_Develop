@@ -152,7 +152,7 @@ It simplifies object management with dbo owning all the database objects. You wi
 ## Database Compatibility Level is Lower Than the SQL Server
 **Check Id:** 59 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=The+Database+Compatibility+Level+Should+Match+the+SQL+Server+Version)
 
-The database compatibility level lower than the SQL Server it is running on.
+The database compatibility level is lower than the SQL Server it is running on.
 
 There might be query optimization you are not getting to run on an older database compatibility level. You might also introduce issues with a more modern database compatibility level.
 
