@@ -74,6 +74,129 @@ What is hard-coding? 🗗](https://sqljana.wordpress.com/2017/03/25/hard-coding-
 [Back to top](#top)
 
 ---
+
+<a name="193"/>
+
+## Not Purging Data
+**Check Id:** 193 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Purging+Data)
+
+Purging historical or obsolete data is a crucial task in maintaining a healthy SQL Server environment. It improves performance, reduces storage costs, and ensures compliance with data retention policies. The following best practices provide a structured approach to effective and safe data purging.
+
+* Work with stakeholders to define how long data must be retained (e.g., 3 years for transactions).
+* Consider legal and regulatory requirements (e.g., GDPR, HIPAA, SOX).
+* Ensure purging does not break foreign key relationships, audit trails, or reports.
+* Ensure indexes support the purge filter (e.g., a non-clustered index on CreateDateTime).
+* Purge in batches to avoide locking and deadlocking due to lock esclation. 
+
+```sql
+CREATE PROCEDURE dbo.TableNamePurge
+AS
+    BEGIN
+        SET NOCOUNT, XACT_ABORT ON;
+
+        /* This will not be performant without an index that leads on CreateDateTime. */
+        IF NOT EXISTS (
+            SELECT
+                *
+            FROM
+                sys.tables               AS t
+            INNER JOIN sys.indexes       AS i ON i.object_id   = t.object_id
+            INNER JOIN sys.columns       AS c ON c.object_id   = t.object_id
+            INNER JOIN sys.index_columns AS ic ON i.object_id  = ic.object_id
+                                               AND i.index_id  = ic.index_id
+                                               AND c.column_id = ic.column_id
+            WHERE
+                t.name                   = N'TableName'
+            AND SCHEMA_NAME(t.schema_id) = N'dbo'
+            AND c.name                   = N'CreateDateTime'
+            AND ic.key_ordinal           = 1
+            AND ic.is_included_column    = 0
+        )
+            BEGIN
+                /* This is here to tell someone to create the index. */
+                RAISERROR(
+                    'No index exists that leads on CreateDateTime. Process can''t run without it. Please create this index:
+CREATE INDEX IX_TableName_CreateDateTime
+    ON dbo.TableName (CreateDateTime ASC)
+    WITH (ONLINE = ON, SORT_IN_TEMPDB = ON);'
+                   ,11
+                   ,1
+                ) WITH NOWAIT;
+                RETURN;
+            END;
+
+        /* Start the delete and archival. */
+        DECLARE
+            @MinimumDate datetime2(0) = '0001-01-01'
+           ,@MaximumDate datetime2(0) = CAST(DATEADD(YEAR, -1, SYSDATETIME()) AS date);
+
+        WHILE (1 = 1)
+            BEGIN
+                BEGIN TRY
+                    BEGIN TRANSACTION;
+
+                    /* Starting place. */
+                    SELECT
+                        @MinimumDate = MIN(tn.CreateDateTime)
+                    FROM
+                        dbo.TableName AS tn
+                    WHERE
+                        tn.CreateDateTime >= @MinimumDate
+                    AND tn.CreateDateTime < @MaximumDate;
+
+                    /* If there's no data to delete, this will be NULL and we can exit. */
+                    IF @MinimumDate IS NULL
+                        BEGIN
+                            COMMIT TRANSACTION;
+                            RAISERROR('No more data found to purge/archive, exiting.', 0, 1) WITH NOWAIT;
+                            BREAK;
+                        END;
+
+                    /* Get the first 1000 rows with a qualifying date. */
+                    WITH d
+                      AS (
+                          SELECT TOP (1000)
+                              tn.*
+                          FROM
+                              dbo.TableName AS tn
+                          WHERE
+                              tn.CreateDateTime >= @MinimumDate
+                          AND tn.CreateDateTime < @MaximumDate
+                          ORDER BY
+                              tn.TableNameId ASC
+                      )
+                    DELETE
+                    d WITH (ROWLOCK)
+                    /* Send output to the archive if you want it archived. */
+                    OUTPUT
+                        Deleted.ColumnName1
+                       ,Deleted.ColumnName2
+                    INTO dbo.TableNameArchive (ColumnName1, ColumnName2);
+
+                    COMMIT TRANSACTION;
+
+                END TRY
+                BEGIN CATCH
+                    IF @@TRANCOUNT > 0
+                        BEGIN
+                            ROLLBACK TRANSACTION;
+                        END;
+
+                    /* Handle the error here, cleanup, et cetera.
+                       In most cases it is best to bubble up (THROW) the error to the application/client to be displayed to the user and logged.
+                    */
+                    THROW;
+                END CATCH;
+            END;
+    END;
+`
+
+- [Take Care When Scripting Batches 🗗](https://michaeljswart.com/2014/09/take-care-when-scripting-batches/){:target="_blank" rel="noopener"} by Michael J Swart
+- [How to Delete Just Some Rows from a Really Big Table: Fast Ordered Deletes 🗗](https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/){:target="_blank" rel="noopener"} by Brent Ozar
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
