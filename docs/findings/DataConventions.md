@@ -189,7 +189,7 @@ CREATE INDEX IX_TableName_CreateDateTime
                 END CATCH;
             END;
     END;
-`
+```
 
 - [Take Care When Scripting Batches 🗗](https://michaeljswart.com/2014/09/take-care-when-scripting-batches/){:target="_blank" rel="noopener"} by Michael J Swart
 - [How to Delete Just Some Rows from a Really Big Table: Fast Ordered Deletes 🗗](https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/){:target="_blank" rel="noopener"} by Brent Ozar
