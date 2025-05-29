@@ -865,19 +865,22 @@ triggers if the statement contains an OUTPUT clause without INTO clause.`.
 ## Using Abstract Views
 **Check Id:** 194 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Abstract+Views)
 
-The view abstraction pattern involves replacing a physical table with a view of the same name, then relocating the original table to a different schema for controlled access and maintainability. This technique is commonly used during data model refactoring or application decoupling. It allows you to change or replace the underlying structure of a table without immediately disrupting existing clients.
+The view abstraction pattern involves replacing a physical table with a view of the same name, then relocating the original table to a different schema for controlled access and maintainability. This technique is used during data model refactoring or application decoupling. It allows you to change or replace the underlying structure of a table without immediately disrupting existing clients.
 
-When a table is replaced with an abstract view, the insert, update, and delete operations still work if the view is simple and based on a single table without `JOINS` or aggregations. If you try to execute the `TRUNCATE TABLE` command against the abstract view, it will throw the error `Could not truncate object [TableName] because it is not a table.`.
+When a table is replaced with an abstract view, the insert, update, and delete operations still work if the view is simple and based on a single table without `JOINS` or aggregations. 
+
+{: .warning }
+>If you try to execute the `TRUNCATE TABLE` command against the abstract view, it will throw the error `Could not truncate object [TableName] because it is not a table.`.
 
 If the abstract view is more complex, INSTEAD OF triggers must be implemented to handle write operations explicitly. This approach preserves data modification capabilities while allowing underlying schema changes or relocations for table normalization changes to occur without breaking existing application logic.
 
-{: .note }
+{: .warning }
 > If using Entity Framework, these triggers will cause the error `The target table [TableName] of the DML statement cannot have any enabled 
 triggers if the statement contains an OUTPUT clause without INTO clause.`. 
 >
 > One option is, instead of directly performing the database operation through EF, create a stored procedure in your database that performs the necessary operation along with handling the `OUTPUT` clause. This stored procedure can then be called from your EF code.
 
-{: .note }
+{: .warning }
 > There could be issues if using Crystal Reports and the report SQL query does not include the table schema.
 
 - See [Entity Framework 6 / SQL Server triggers - getting error 🗗](https://stackoverflow.com/questions/65890162/entity-framework-6-sql-server-triggers-getting-error){:target="_blank" rel="noopener"} by Stack Overflow
