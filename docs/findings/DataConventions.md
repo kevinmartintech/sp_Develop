@@ -86,7 +86,7 @@ Purging historical or obsolete data is a crucial task in maintaining a healthy S
 * Consider legal and regulatory requirements (e.g., GDPR, HIPAA, SOX).
 * Ensure purging does not break foreign key relationships, audit trails, or reports.
 * Ensure indexes support the purge filter (e.g., a non-clustered index on CreateDateTime).
-* Purge in batches to avoide locking and deadlocking due to lock esclation. 
+* Purge in batches to avoid locking and deadlocking due to lock escalation. 
 
 ```sql
 CREATE PROCEDURE dbo.TableNamePurge
