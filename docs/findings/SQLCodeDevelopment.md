@@ -3118,10 +3118,25 @@ Do not attempt to set a subquery that returns more than 1 row to a variable.
 ## Variables Usage
 **Check Id:** 180 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Variables+Usage)
 
-A local variable produces the same behavior as the `OPTIMIZE FOR UNKNOWN` hint and cannot use the statistics information efficiently and can impact overall performance.
+A local variable produces the same behavior as the `OPTIMIZE FOR UNKNOWN` hint and cannot use the statistics information efficiently and can impact overall performance. This also occurs when a store procedure parameter value is copied to a local variable.
 
 - See [Yet Another Post About Local Variables In SQL Server 🗗](https://erikdarling.com/yet-another-post-about-local-variables/){:target="_blank" rel="noopener"} by Erik Darling
 - See [Impact of SQL Variables on Performance 🗗](https://www.sqlshack.com/impact-of-sql-variables-on-performance){:target="_blank" rel="noopener"} by SQLShack (Esat Erkec)
+- See [Parameterization Part 5: Two Common Mistakes 🗗](https://www.sqlservercentral.com/blogs/parameterization-part-5-two-common-mistakes){:target="_blank" rel="noopener"} by SQLServerCentral (Guy Glantser)
+
+[Back to top](#top)
+
+---
+
+<a name="195"/>
+
+## Changing Parameter Value Inside Procedure
+**Check Id:** 195 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Changing+Parameter+Value+Inside+Procedure)
+
+Changing a stored procedure parameter value from its originally passed in value can lead to plan caching issues and unpredictable performance. SQL Server may reuse a plan optimized for a different parameter value, resulting in suboptimal execution.
+
+- See [Parameterization Part 5: Two Common Mistakes 🗗](https://www.sqlservercentral.com/blogs/parameterization-part-5-two-common-mistakes){:target="_blank" rel="noopener"} by SQLServerCentral (Guy Glantser)
+- See [Variables Usage](/best-practices-and-findings/sql-code-conventions#180)
 
 [Back to top](#top)
 
