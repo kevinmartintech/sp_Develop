@@ -3078,8 +3078,9 @@ You need to pay special attention to batch operations to ensure they do not grad
 - See [Take Care When Scripting Batches 🗗](https://michaeljswart.com/2014/09/take-care-when-scripting-batches){:target="_blank" rel="noopener"} by Michael J. Swart
 - See [Batching Follow-Up 🗗](https://michaeljswart.com/2022/09/batching-follow-up){:target="_blank" rel="noopener"} by Michael J. Swart
 - See [Break large delete operations into chunks 🗗](https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes){:target="_blank" rel="noopener"} by Aaron Bertrand
-- See [3.3 Using Batches to Do a Lot of Work Without Blocking 🗗](https://www.brentozar.com/training/mastering-query-tuning-live-3-days-recording/using-batches-to-do-a-lot-of-work-without-blocking/){:target="_blank" rel="noopener"} by Brent Ozar - Mastering Query Tuning Training
+- See [Live Coding: Implementing Batching in T-SQL (video) 🗗](https://www.youtube.com/watch?v=ZNUKSoGsYiI){:target="_blank" rel="noopener"} by Brent Ozar
 - See [How to Batch Updates A Few Thousand Rows at a Time 🗗](https://www.brentozar.com/archive/2020/12/how-to-batch-updates-a-few-thousand-rows-at-a-time/){:target="_blank" rel="noopener"} by Brent Ozar
+- See [3.3 Using Batches to Do a Lot of Work Without Blocking 🗗](https://www.brentozar.com/training/mastering-query-tuning-live-3-days-recording/using-batches-to-do-a-lot-of-work-without-blocking/){:target="_blank" rel="noopener"} by Brent Ozar - Mastering Query Tuning Training
 - See [Resolve blocking problems caused by lock escalation in SQL Server - Prevent lock esclation 🗗](https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/performance/resolve-blocking-problems-caused-lock-escalation#prevent-lock-escalation){:target="_blank" rel="noopener"} by Microsoft
 
 
