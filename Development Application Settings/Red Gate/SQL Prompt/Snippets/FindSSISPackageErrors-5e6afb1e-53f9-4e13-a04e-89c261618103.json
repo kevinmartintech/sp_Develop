@@ -1,0 +1,6 @@
+{
+  "id": "5e6afb1e-53f9-4e13-a04e-89c261618103",
+  "prefix": "FindSSISPackageErrors",
+  "description": "KM: SSIS Package Error Log Query",
+  "body": "USE VentureAccess;\r\n\r\nSELECT\r\n    *\r\nFROM\r\n    dbo.SSISPackages_ErrorLog\r\nWHERE\r\n    ErrorDate > DATEADD(DAY, -3, GETDATE())\r\nORDER BY\r\n    ErrorDate DESC;\r\nGO"
+}
