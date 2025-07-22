@@ -1471,6 +1471,8 @@ GO
 
 You should be using SET ANSI_NULLS ON; unless you have a good reason not to.
 
+- See [Not Using Query Execution Defaults](/best-practices-and-findings/environment-conventions#56)
+
 [Back to top](#top)
 
 ---

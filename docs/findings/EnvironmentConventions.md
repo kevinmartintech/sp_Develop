@@ -116,6 +116,7 @@ These 2 advanced execution settings are on by default: ARITHABORT, CONCAT_NULL_Y
 
 Visual Studio database projects should be setup with the 7 query execution SET defaults (Project Settings > ‘Database Settings’ button). If there have been publish database objects without these query execution defaults, they will need to be updated. It is possible to check the “Ignore quoted identifiers” and “Ignore ANSI Nulls” under the ‘Advanced’ button when manually publishing the database project.
 
+- See [SQL Server Database and Object ANSI Settings Check Script 🗗](https://gist.github.com/kevinmartintech/629ecd00d3d64566ddf7920cfde7c4ff){:target="_blank" rel="noopener"} by Kevin Martin
 - See [SET Statements 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-statements-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 - See [SET ANSI_DEFAULTS (Transact-SQL) 🗗](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 
