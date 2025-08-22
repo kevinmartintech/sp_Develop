@@ -314,7 +314,7 @@ Do not prefix your columns with ``fld_``, ``col_``, ``f_``, ``u_`` as it should 
 
 No need for prefixing (``PK_``, ``IX_``, ``UK_``, ``UX_``) your index names. See [Using Prefix in Name](/best-practices-and-findings/naming-conventions#2).
 
-Even though index names only need to be unique within the table or view, to eliminate possible confusion, index names should follow the should be unique to the database and include the schema and table name.
+Even though index names only need to be unique within the table or view, to eliminate possible confusion, index names should be unique to the database and include the schema and table name.
 
 If utilizing schemas other than `dbo`, prefix the schema name before the `[TABLE-NAME]`.
 
