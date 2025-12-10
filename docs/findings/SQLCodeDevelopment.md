@@ -3077,6 +3077,8 @@ If these large operations are hosted in the cloud you can temporary increase the
 
 You need to pay special attention to batch operations to ensure they do not gradually get slower as it takes longer and longer to scan an index to find rows to delete.
 
+Do not blindly follow the online examples of batching and you will want to fully review the links below for best practices.
+
 
 - See [Don't Bite Off More You Can Chew - Take It in Chunks (video) 🗗](https://www.youtube.com/watch?v=oDY6Tlum5tc){:target="_blank" rel="noopener"} by Erland Sommarskog
 - See [Take Care When Scripting Batches 🗗](https://michaeljswart.com/2014/09/take-care-when-scripting-batches){:target="_blank" rel="noopener"} by Michael J. Swart
