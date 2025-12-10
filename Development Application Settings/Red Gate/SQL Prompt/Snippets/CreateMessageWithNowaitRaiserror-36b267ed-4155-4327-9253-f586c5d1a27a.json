@@ -2,5 +2,5 @@
   "id": "36b267ed-4155-4327-9253-f586c5d1a27a",
   "prefix": "CreateMessageWithNowaitRaiserror",
   "description": "KM: Message WITH NOWAIT for things like rowcount and status message.",
-  "body": "RAISERROR(N'RowCount%s %i', 0, 1, N':', @@ROWCOUNT) WITH NOWAIT; --TODO: REMOVE THIS!\r\nRAISERROR(N'Completed%s %s', 0, 1, N':', N'What was completed here') WITH NOWAIT; --TODO: REMOVE THIS!"
+  "body": "RAISERROR(N'RowCount%s %i', 0, 1, N':', @@ROWCOUNT) WITH NOWAIT; --TODO: REMOVE THIS!\r\nRAISERROR(N'Completed%s %s', 0, 1, N':', N'What was completed here') WITH NOWAIT; --TODO: REMOVE THIS!\r\nRAISERROR(N'Simple output you want here', 0, 1) WITH NOWAIT; --TODO: REMOVE THIS!"
 }
