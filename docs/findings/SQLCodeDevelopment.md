@@ -2923,7 +2923,7 @@ WHERE
 **Potential Finding:** <a name="backward-order-of-columns-in-join-clause"/>Backward Order of Columns in JOIN Clause<br/>
 **Check Id:** 144 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Backward+Order+of+Columns+in+JOIN+Clause)
 
-I recommends the [Microsoft Docs 🗗](https://learn.microsoft.com/en-us/sql/relational-databases/performance/joins?view=sql-server-ver16#:~:text=The%20following%20is%20a%20simple%20SELECT%20statement%20using%20this%20join){:target="_blank" rel="noopener"} column order in JOIN clauses for consistency noted in the "Do This" code below.
+I recommend the [Microsoft Docs 🗗](https://learn.microsoft.com/en-us/sql/relational-databases/performance/joins?view=sql-server-ver16#:~:text=The%20following%20is%20a%20simple%20SELECT%20statement%20using%20this%20join){:target="_blank" rel="noopener"} column order in JOIN clauses for consistency noted in the "Do This" code below.
 
 It is always recommended to adapt the naming and coding conventions of inherited projects.
 
