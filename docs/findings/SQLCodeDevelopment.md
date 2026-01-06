@@ -1240,7 +1240,7 @@ END CATCH; /* <-- semicolon goes at the end here */
 ## Using a Non-SARGable Expression in a WHERE Clause
 **Check Id:** 100 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+a+Non-SARGable+Expression+in+a+WHERE+Clause)
 
-Search ARGument..able. Avoid having a column or variable used within an expression or used as a function parameter. You will get a table scan instead of an index seek which will hurt performance.
+Search ARGument..able. Avoid having a column used within an expression or used as a function parameter. You will get a table scan instead of an index seek which will hurt performance.
 
 ![Non-SARGable Scan vs. SARGable Seek](../Images/Using_a_Non-SARGable_Expression_in_a_WHERE_Clause.png)
 
