@@ -2317,7 +2317,7 @@ These problems will cause non-reproducible errors. You might end up blaming the 
 
 Only use `NOLOCK` when the application stakeholders understand the problems and approve of them occurring. Get their approval in writing to CYA.
 
-Alternatives to `NOCOUNT` is to use index tuning and use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
+Alternatives to `NOLOCK` is to use index tuning and use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
     - See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/environment-conventions#161)
 
 - See [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following){:target="_blank" rel="noopener"} by Microsoft
