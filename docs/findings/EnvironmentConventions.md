@@ -323,11 +323,33 @@ For a quick video ramp up on configuring VMware for SQL Server see the [SQL Serv
 
 - See [Architecting Microsoft SQL Server on VMware vSphere 🗗](architecting_microsoft_sql_server_on_vmware_vsphere.pdf){:target="_blank" rel="noopener"} by VMware
 - See [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
-- See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](https://www.davidklee.net/articles/sql-server-articles/why-sql-server-dbas-need-access-to-vmware-vcenter/){:target="_blank" rel="noopener"} by David Klee
+- See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](#196)
 - See [Retrofit a VM with the VMware Paravirtual SCSI Driver 🗗](https://www.sqlservercentral.com/blogs/retrofit-a-vm-with-the-vmware-paravirtual-scsi-driver){:target="_blank" rel="noopener"} by David Klee
 - See [Performance Best Practices for VMware vSphere 8.0 🗗](https://blogs.vmware.com/performance/2023/01/performance-best-practices-for-vmware-vsphere-8-0.html){:target="_blank" rel="noopener"} by VMware
 - See [Performance Best Practices Guide for vSphere 7.0 🗗](https://blogs.vmware.com/performance/2020/05/performance-best-practices-guide-for-vsphere-7-0.html){:target="_blank" rel="noopener"} by VMware
 - See [Performance Best Practices for VMware vSphere 6.5 🗗](https://www.vmware.com/docs/perf_best_practices_vsphere65){:target="_blank" rel="noopener"} by VMware
+
+[Back to top](#top)
+
+---
+
+<a name="196"/>
+
+## Why SQL Server DBAs Need Access to VMware vCenter
+**Check Id:** 196 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Why+SQL+Server+DBAs+Need+Access+to+VMware+vCenter)
+
+
+Grant your DBAs read-only access to VMware vCenter performance statistics for the SQL Server virtual machine and the ESXi host it runs on. When the hypervisor layer is a black box to them, every performance incident turns into uncertainty, and virtualization becomes the default suspected cause because it is the one layer they cannot validate with objective data. This same logic applies to any business-critical database on any hypervisor: if the platform layer is opaque, the team responsible for the database cannot confidently rule it in or out.
+
+With vCenter visibility, DBAs can quickly check CPU, memory, disk, and network signals and rule the hypervisor layer in or out early. They can spot host overcommitment (CPU Ready), memory pressure (ballooning), and storage or network bottlenecks without interrupting your team for basic health checks.
+
+This access also improves baselining and capacity planning. DBAs can watch host capacity trends (including CPU Ready) to understand when consolidation ratios are approaching levels that will degrade SQL Server performance, quantify available headroom when a VM needs to scale, and correlate “noisy neighbor” activity on the same host (for example antivirus scans or backups in other VMs) against SQL Server baselines.
+
+Read-only access is the right control: it gives DBAs the metrics needed for triage and baselining while keeping operational authority with system administrators. Pair it with lightweight education so DBAs interpret VMware metrics correctly (host utilization, CPU Ready interpretation, datastores and multipathing, ballooning, resource pools, virtual networking, and VM-to-VM isolation). The result is fewer escalations, faster incident resolution, and less time spent on avoidable back-and-forth.
+
+
+- See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](https://web.archive.org/web/20260000000000*/https://www.davidklee.net/articles/sql-server-articles/why-sql-server-dbas-need-access-to-vmware-vcenter/){:target="_blank" rel="noopener"} (archived) by David Klee
+
 
 [Back to top](#top)
 
