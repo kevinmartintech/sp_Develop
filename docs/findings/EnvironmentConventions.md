@@ -317,11 +317,11 @@ There are a couple causes for this type of issue we can see.
 ## Not Following the Architecting Microsoft SQL Server on VMware vSphere Best Practices
 **Check Id:** 169 [None yet, click here to add the issue](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Following+the+Architecting+Microsoft+SQL+Server+on+VMware+vSphere+Best+Practices)
 
-The [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware is a best practices guidance for designing and implementing Microsoft SQL Server in a virtual machine to run on VMware vSphere.
+The [Architecting Microsoft SQL Server on VMware vSphere 🗗](architecting_microsoft_sql_server_on_vmware_vsphere.pdf){:target="_blank" rel="noopener"} by VMware is a best practices guidance for designing and implementing Microsoft SQL Server in a virtual machine to run on VMware vSphere.
 
 For a quick video ramp up on configuring VMware for SQL Server see the [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"}  by David Klee
 
-- See [Architecting Microsoft SQL Server on VMware vSphere 🗗](https://core.vmware.com/resource/architecting-microsoft-sql-server-vmware-vsphere){:target="_blank" rel="noopener"} by VMware
+- See [Architecting Microsoft SQL Server on VMware vSphere 🗗](architecting_microsoft_sql_server_on_vmware_vsphere.pdf){:target="_blank" rel="noopener"} by VMware
 - See [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
 - See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](https://www.davidklee.net/articles/sql-server-articles/why-sql-server-dbas-need-access-to-vmware-vcenter/){:target="_blank" rel="noopener"} by David Klee
 - See [Retrofit a VM with the VMware Paravirtual SCSI Driver 🗗](https://www.sqlservercentral.com/blogs/retrofit-a-vm-with-the-vmware-paravirtual-scsi-driver){:target="_blank" rel="noopener"} by David Klee
