@@ -2276,6 +2276,8 @@ Use `SET NOCOUNT ON;` at the beginning of your SQL batches, stored procedures fo
 
 `SET NOCOUNT OFF;` can be helpful when debugging your queries in displaying the number of rows impacted when performing INSERTs, UPDATEs and DELETEs.
 
+Also turn on `XACT_ABORT` so if it ever becomes part of a larger transactional import flow.
+
 ```sql
 CREATE OR ALTER PROCEDURE dbo.PersonInsert
     @PersonId int
@@ -2284,7 +2286,7 @@ CREATE OR ALTER PROCEDURE dbo.PersonInsert
    ,@Gender   char(1)
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT, XACT_ABORT ON;
 
     INSERT INTO
         dbo.Person (PersonId, JobTitle, HiredOn, Gender)
@@ -2295,6 +2297,8 @@ BEGIN
         Gender   = 'M';
 END;
 ```
+
+- See [Not Using Transactions](#122)
 
 [Back to top](#top)
 
