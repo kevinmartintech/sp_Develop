@@ -2267,7 +2267,7 @@ WHERE
 
 <a name="19"/>
 
-## Not Using SET NOCOUNT ON in Stored Procedure or Trigger
+## Not Using SET NOCOUNT or XACT_ABORT ON in Stored Procedure or Trigger
 **Check Id:** 19
 
 Use `SET NOCOUNT ON;` at the beginning of your SQL batches, stored procedures for report output and triggers in production environments, as this suppresses messages like '(10000 row(s) affected)' after executing INSERT, UPDATE, DELETE and SELECT statements. This improves the performance of stored procedures by reducing network traffic.
