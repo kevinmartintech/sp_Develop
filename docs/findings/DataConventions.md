@@ -197,6 +197,22 @@ CREATE INDEX IX_TableName_CreateDateTime
 [Back to top](#top)
 
 ---
+
+<a name="197"/>
+
+## Not Using Unknown -1 for Delete Data
+**Check Id:** 197 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Unknown+-1+for+Delete+Data)
+
+Use a reserved "tombstone" parent row (commonly Id = -1) to preserve foreign key integrity for required foreign key columns such as CreatedById / UpdatedById when a referenced parent record must be deleted. This keeps those foreign key columns NOT NULL and keeps historical rows queryable without dropping referential integrity.
+
+This is conceptually the same pattern Kimball describes for handling missing keys: ensure a corresponding row exists and map missing keys to a dedicated "missing/unknown" row (often keyed as -1).
+
+- [Design Tip #171 Unclogging the Fact Table Surrogate Key Pipeline 🗗](https://www.kimballgroup.com/2015/01/design-tip-171-unclogging-fact-table-surrogate-key-pipeline/){:target="_blank" rel="noopener"} by Joy Mundy on the Kimball Group Website
+
+
+[Back to top](#top)
+
+---
 <br>
 <br>
 <br>
