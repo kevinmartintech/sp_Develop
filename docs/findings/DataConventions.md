@@ -207,6 +207,16 @@ Use a reserved "tombstone" parent row (commonly Id = -1) to preserve foreign key
 
 This is conceptually the same pattern Kimball describes for handling missing keys: ensure a corresponding row exists and map missing keys to a dedicated "missing/unknown" row (often keyed as -1).
 
+When to use
+
+- A parent row (user, person, customer, vendor, product, etc.) can be removed for lifecycle or compliance reasons, but historical rows must remain valid and queryable.
+
+- Foreign keys in child tables are enforced with NOT NULL plus a FOREIGN KEY to the parent table.
+
+- You want a consistent, deterministic value representing “deleted parent” instead of breaking constraints.
+
+<br />
+
 - [Design Tip #171 Unclogging the Fact Table Surrogate Key Pipeline 🗗](https://www.kimballgroup.com/2015/01/design-tip-171-unclogging-fact-table-surrogate-key-pipeline/){:target="_blank" rel="noopener"} by Joy Mundy on the Kimball Group Website
 
 
