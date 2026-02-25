@@ -61,6 +61,19 @@ Data that meets the following criteria might be okay to use the EAV pattern at t
 - The definition of the data is highly dynamic and is likely to change numerous times of the course of the development and/or life of the application.
 - The data has no intrinsic value outside the context of the application itself.
 - The data will not be materialized in models but simply passed through the application layers as key value pairs.
+- If the data will be used for querying, reporting, searching, filtering, aggregations, or joins, the solution must include an automated way to materialize the EAV data into relational tables (physical tables with real columns) without hand-maintained DDL (table creation scripts).
+
+**Automatic Materialization Requirement**
+
+If EAV is used for storage but the data needs to be consumed like relational data, the design must provide a repeatable, automated approach to create and maintain materialized tables (physical tables generated from the EAV attributes) that are optimized for reads.
+
+At minimum, the automation should cover:
+- Creating or updating the materialized table schema from metadata (for example: adding columns when new attributes are introduced).
+- Populating and refreshing the materialized tables (for example: through ETL or ELT jobs (data move and transform steps) or a scheduled SQL Server Agent job).
+- Creating the indexes needed for the read patterns (so the optimizer can use them effectively).
+- Defining a clear contract for what is materialized and when it is refreshed (so stakeholders understand latency and performance expectations).
+
+
 
 Examples of valid use cases that meet this criteria are:
 - Application user preferences
@@ -68,7 +81,7 @@ Examples of valid use cases that meet this criteria are:
 - Saved user interface state
 - Front-end application configuration
 
-Another use case exception for utilizing an EAV model in a database is where the attributes are user defined and a developer will not have control over them.
+Another use case exception for utilizing an EAV model in a database is where the attributes are user defined and a developer will not have control over them programatically.
 
 Another use case exception for utilizing an EAV model is for something like a multiple product (entity) type shopping cart. Where each specific product (entity) type has its own list of attributes. If the product (entity) catalog only sells a manageable number of product different types the attributes, the attributes should be materialized as physical columns in the table schema. This type of EAV model will have diminishing returns for performance with more data housed in the database. Caching this type of EAV model will allow for a larger data set as to lessen the chance of performance issues. Ensure this is communicated to the stakeholders.
 
@@ -264,6 +277,8 @@ Partitioning can be used as a maintenance tool for either distributing data betw
 
 Partition switching/swapping/truncating is another use case for managing large amounts of table data like in a data warehouse.
 
+- See [Why Table Partitioning Does Not Speed Up Query Performance (video) 🗗](https://kendralittle.com/2016/05/03/why-table-partitioning-doesnt-speed-up-query-performance-video/){:target="_blank" rel="noopener"} by Kendra Little
+- See [🗗](){:target="_blank" rel="noopener"} by 
 
 [Back to top](#top)
 
