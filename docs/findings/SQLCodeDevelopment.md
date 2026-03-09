@@ -1777,14 +1777,17 @@ SET NOCOUNT, XACT_ABORT ON;
 
 BEGIN TRY
     DECLARE @ErrorMessageText nvarchar(2048);
+    DECLARE @RowCountUpdate int;
 
     BEGIN TRANSACTION;
 
     /* Debit the first account */
     UPDATE dbo.Account SET Balance = -100.00 WHERE AccountId = 1;
+    
+    SET @RowCountUpdate = @@ROWCOUNT;
 
     /* Check the first account was debited */
-    IF @@ROWCOUNT <> 1
+    IF @RowCountUpdate <> 1
         BEGIN
             SET @ErrorMessageText = N'The debited account failed to update.';
         END;
@@ -1792,8 +1795,10 @@ BEGIN TRY
     /* Credit the second account */
     UPDATE dbo.Account SET Balance = 100.00 WHERE AccountId = 2;
 
+    SET @RowCountUpdate = @@ROWCOUNT;
+
     /* Check the second account was credited */
-    IF @@ROWCOUNT <> 1
+    IF @RowCountUpdate <> 1
         BEGIN
             SET @ErrorMessageText = N'The credited account failed to update.';
         END;
