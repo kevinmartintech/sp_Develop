@@ -828,6 +828,8 @@ This paper focuses on the following four problematic query patterns:
 In this pattern, the condition on each side of the OR operator in the WHERE or JOIN clause evaluates different tables. This can be resolved by use of a UNION operator instead of the OR operator in the WHERE or JOIN clause. 
 
 - See [Problematic Use of OR 🗗](https://docs.microsoft.com/en-us/archive/blogs/sqlcat/when-to-break-down-complex-queries#problematic-use-of-or){:target="_blank" rel="noopener"} by Microsoft
+- See [How To Write SQL Server Queries Correctly: Where Clauses With OR In Them 🗗](https://erikdarling.com/how-to-write-sql-server-queries-correctly-where-clauses-with-or-in-them/){:target="_blank" rel="noopener"} by Erik Darling
+
 
 ### Aggregations in intermediate results sets
 This pattern has joins on aggregated data sets, which can result in poor performance. This can be resolved by placing the aggregated intermediate result sets in temporary tables.
