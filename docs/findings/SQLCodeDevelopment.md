@@ -2490,7 +2490,7 @@ CREATE TABLE dbo.Person (
 );
 ```
 
-- See [BackToBasics: Why I Use Lower Case for Data Type Names (Now)) 🗗](https://thwack.solarwinds.com/groups/data-driven/b/blog/posts/backtobasics-why-i-use-lower-case-for-data-type-names-now){:target="_blank" rel="noopener"} by Aaron Bertrand
+- See [BackToBasics: Why I Use Lower Case for Data Type Names (Now)) 🗗](https://thwack.solarwinds.com/discussion/150205/backtobasics-why-i-use-lower-case-for-data-type-names-now){:target="_blank" rel="noopener"} by Aaron Bertrand
 
 [Back to top](#top)
 
