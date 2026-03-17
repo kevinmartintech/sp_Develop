@@ -43,7 +43,7 @@ Applications that connect to a SQL Server should be built to expect these transi
 Ensure you are using the failover group name or availability group listener name in your connection string. The SQL Server name should not be something like 'SQL01'. This indicates you are connecting directly to a specific SQL Server instance instead of a group of SQL Servers.
 
 
-- See [Implementing Connection Resiliency with Entity Framework 6 🗗](https://www.codeproject.com/Tips/758469/Implementing-Connection-Resiliency-with-Entity-Fra){:target="_blank" rel="noopener"} by CodeProject
+- See [Connection resiliency and retry logic 🗗](https://learn.microsoft.com/en-us/ef/ef6/fundamentals/connection-resiliency/retry-logic){:target="_blank" rel="noopener"} by Microsoft
 - See [Troubleshoot transient connection errors in SQL Database and SQL Managed Instance 🗗](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues){:target="_blank" rel="noopener"} by Microsoft
 - See [Looking at Entity Framework 6 Execution Strategies, Specifically SqlAzureExecutionStrategy 🗗](https://www.nikouusitalo.com/blog/using-different-execution-strategies/){:target="_blank" rel="noopener"} by Niko Uusitalo
 - See [The Art Of The SQL Server Stored Procedure: Error Handling 🗗](https://erikdarling.com/the-art-of-the-sql-server-stored-procedure-error-handling/){:target="_blank" rel="noopener"} by Erik Darling
@@ -251,7 +251,7 @@ In the beginning, all three connection strings below will have the same content 
      - See [Connecting With MultiSubnetFailover 🗗](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery#connecting-with-multisubnetfailover){:target="_blank" rel="noopener"} by Microsoft
 
 
-- See [Not Using Code Retry Logic for Transient Errors](/best-practices-and-findings/configuration-issues#54)
+- See [Not Using Code Retry Logic for Transient Errors](/best-practices-and-findings/environment-conventions#54)
 
 [Back to top](#top)
 
@@ -323,7 +323,7 @@ For a quick video ramp up on configuring VMware for SQL Server see the [SQL Serv
 
 - See [Architecting Microsoft SQL Server on VMware vSphere 🗗](architecting_microsoft_sql_server_on_vmware_vsphere.pdf){:target="_blank" rel="noopener"} by VMware
 - See [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
-- See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](#196)
+- See [Why SQL Server DBAs Need Access to VMware vCenter](#196)
 - See [Retrofit a VM with the VMware Paravirtual SCSI Driver 🗗](https://www.sqlservercentral.com/blogs/retrofit-a-vm-with-the-vmware-paravirtual-scsi-driver){:target="_blank" rel="noopener"} by David Klee
 - See [Configuring disks to use VMware Paravirtual SCSI (PVSCSI) controllers 🗗](https://knowledge.broadcom.com/external/article?legacyId=1010398){:target="_blank" rel="noopener"} by VMware
 - See [Performance Best Practices for VMware vSphere 8.0 🗗](https://blogs.vmware.com/performance/2023/01/performance-best-practices-for-vmware-vsphere-8-0.html){:target="_blank" rel="noopener"} by VMware
@@ -349,7 +349,7 @@ This access also improves baselining and capacity planning. DBAs can watch host 
 Read-only access is the right control: it gives DBAs the metrics needed for triage and baselining while keeping operational authority with system administrators. Pair it with lightweight education so DBAs interpret VMware metrics correctly (host utilization, CPU Ready interpretation, datastores and multipathing, ballooning, resource pools, virtual networking, and VM-to-VM isolation). The result is fewer escalations, faster incident resolution, and less time spent on avoidable back-and-forth.
 
 
-- See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](https://web.archive.org/web/20260000000000*/https://www.davidklee.net/articles/sql-server-articles/why-sql-server-dbas-need-access-to-vmware-vcenter/){:target="_blank" rel="noopener"} (archived) by David Klee
+- See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](https://web.archive.org/web/20220829140404/https://www.davidklee.net/articles/sql-server-articles/why-sql-server-dbas-need-access-to-vmware-vcenter/){:target="_blank" rel="noopener"} (archived) by David Klee
 
 
 [Back to top](#top)

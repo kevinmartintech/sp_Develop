@@ -278,7 +278,6 @@ Partitioning can be used as a maintenance tool for either distributing data betw
 Partition switching/swapping/truncating is another use case for managing large amounts of table data like in a data warehouse.
 
 - See [Why Table Partitioning Does Not Speed Up Query Performance (video) 🗗](https://kendralittle.com/2016/05/03/why-table-partitioning-doesnt-speed-up-query-performance-video/){:target="_blank" rel="noopener"} by Kendra Little
-- See [🗗](){:target="_blank" rel="noopener"} by 
 
 [Back to top](#top)
 

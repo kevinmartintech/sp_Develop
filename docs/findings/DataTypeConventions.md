@@ -119,8 +119,7 @@ The Internet Explorer browser has the shortest allowed URL max length in the add
 #### Use Case Exception
 If your application requires larger than 2083 characters, ensure the users are not utilizing IE and increase the nvarchar length.
 
-- See [Maximum URL length is 2,083 characters in Internet Explorer 🗗](https://support.microsoft.com/en-us/topic/maximum-url-length-is-2-083-characters-in-internet-explorer-174e7c8a-6666-f4e0-6fd6-908b53c12246){:target="_blank" rel="noopener"} by Microsoft
-
+- Microsoft Internet Explorer has a maximum uniform resource locator (URL) length of 2,083 characters. Internet Explorer also has a maximum path length of 2,048 characters. This limit applies to both POST request and GET request URLs.
 
 [Back to top](#top)
 

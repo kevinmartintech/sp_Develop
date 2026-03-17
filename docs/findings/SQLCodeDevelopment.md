@@ -39,12 +39,12 @@ Most importantly, you work from a single source of truth, greatly reducing the r
 A [trunk-based branching strategy 🗗](https://trunkbaseddevelopment.com){:target="_blank" rel="noopener"} source control model is recommended. See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"}.
 
 
-Gitflow is a legacy [Git workflow 🗗](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} that was originally a disruptive and novel strategy for managing Git branches. Gitflow has fallen in popularity in favor of [trunk-based workflows 🗗](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development){:target="_blank" rel="noopener"}, which are now considered best practices for modern continuous software development and [DevOps 🗗](https://www.atlassian.com/devops/what-is-devops){:target="_blank" rel="noopener"} practices. Gitflow also can be challenging to use with [CI/CD 🗗](https://www.atlassian.com/continuous-delivery){:target="_blank" rel="noopener"}. 
+Gitflow is a legacy [Git workflow 🗗](https://web.archive.org/web/20250729133914/https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} that was originally a disruptive and novel strategy for managing Git branches. Gitflow has fallen in popularity in favor of [trunk-based workflows 🗗](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development){:target="_blank" rel="noopener"}, which are now considered best practices for modern continuous software development and [DevOps 🗗](https://www.atlassian.com/devops/what-is-devops){:target="_blank" rel="noopener"} practices. Gitflow also can be challenging to use with [CI/CD 🗗](https://www.atlassian.com/continuous-delivery){:target="_blank" rel="noopener"}. 
 
 
 Each developer should have their own database copy instead of a shared database. The dedicated database could be either a local database using the free edition of [SQL Server Developer 🗗](https://www.microsoft.com/en-us/sql-server/sql-server-downloads){:target="_blank" rel="noopener"} or a solution like [Redgate Test Data Manager 🗗](https://www.red-gate.com/products/test-data-manager/){:target="_blank" rel="noopener"}. See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt.
 
-Your SQL Server Database project choices are a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by a Git repository from Azure DevOps or GitHub depending on the client requirements or another solution like [Redgate SQL Source Control 🗗](https://www.red-gate.com/products/sql-development/sql-source-control){:target="_blank" rel="noopener"}, or [Redgate Flyway 🗗](https://flywaydb.org){:target="_blank" rel="noopener"}.
+Your SQL Server Database project choices are a SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project backed by a Git repository from Azure DevOps or GitHub depending on the client requirements or another solution like [Redgate Flyway 🗗](https://flywaydb.org){:target="_blank" rel="noopener"}.
 
 In some instances a desired-state based solution like SSDT ([SQL Server Data Tools 🗗](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"}) database project have needs beyond the [predepoloyment or postdepolyment scripts 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-specify-predeployment-or-postdeployment-scripts){:target="_blank" rel="noopener"} where an additional database project that executes migration type of scripts sooner in the pipeline that the database project deploy executes.
 
@@ -61,7 +61,7 @@ It is recommended that the database project source control be kept separate from
 If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:target="_blank" rel="noopener"}, please ensure you have accounted for the issues that can occur if not all the bullet points are fully true.
 
 - See [How Microsoft develops with DevOps 🗗](https://learn.microsoft.com/en-us/devops/develop/how-microsoft-develops-devops){:target="_blank" rel="noopener"} by Microsoft
-- See [Gitflow workflow 🗗](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} by Atlassian
+- See [Gitflow workflow 🗗](https://web.archive.org/web/20250729133914/https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank" rel="noopener"} by Atlassian
 - See [Git patterns and anti-patterns for successful developers : Build 2018 🗗](https://www.youtube.com/watch?v=ykZbBD-CmP8){:target="_blank" rel="noopener"} by Microsoft
 - See [Should the Database and Application projects be in the same Repository? 🗗](https://eitanblumin.com/2022/07/05/should-the-database-and-application-projects-be-in-the-same-repository){:target="_blank" rel="noopener"} by Eitan Blumin
 - See [The unnecessary evil of the shared development database 🗗](https://www.troyhunt.com/unnecessary-evil-of-shared-development){:target="_blank" rel="noopener"} by Troy Hunt
@@ -1178,9 +1178,11 @@ When a feature is marked deprecated, it means:
 A discontinued feature means it is no longer available. If a discontinued feature is being used, when we upgrade to a new SQL Server version, the code will break.
 
 See
+- [Discontinued features in SQL Server 2025 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver17#:~:text=in%20SQL%20Server.-,Discontinued%20features%20in%20SQL%20Server%202025%20(17.x),-Data%20Quality%20Services){:target="_blank" rel="noopener"} by Microsoft
+  - [Deprecated database engine features in SQL Server 2025 🗗](https://learn.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2025){:target="_blank" rel="noopener"} by Microsoft
 - [Discontinued features in SQL Server 2022 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#:~:text=in%20SQL%20Server.-,Discontinued%20features%20in%20SQL%20Server%202022,-(16.x)){:target="_blank" rel="noopener"} by Microsoft
 - [Deprecated database engine features in SQL Server 2019 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
-  - [Discontinued features in SQL Server 2019 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#:~:text=adls-,Discontinued%20features%20in%20SQL%20Server%202019,-(15.x)){:target="_blank" rel="noopener"} by Microsoft
+  - [Discontinued features in SQL Server 2019 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#:~:text=of%20SQL%20Server.-,Discontinued%20features%20in%20SQL%20Server%202019%20(15.x),-The%20following%20database){:target="_blank" rel="noopener"} by Microsoft
 - [Deprecated Database Engine Features in SQL Server 2017 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2017?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
 - [Deprecated Database Engine Features in SQL Server 2016 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-2016?view=sql-server-ver15){:target="_blank" rel="noopener"} by Microsoft
   - [Discontinued features in SQL Server 2016 🗗](https://learn.microsoft.com/en-us/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver15#discontinued-features-in--2:~:text=2017%20(14.x).-,Discontinued%20features%20in%20SQL%20Server%202016,-(13.x)){:target="_blank" rel="noopener"} by Microsoft
@@ -1200,7 +1202,7 @@ Although the semicolon isn't required for most statements prior to SQL Server 20
 
 Continued use of deprecated features will cause database migrations to fail. An example is ```RAISERROR``` in the format ```RAISERROR 15600 'MyCreateCustomer';```  is discontinued. ```RAISERROR (15600, -1, -1, 'MyCreateCustomer');``` is the current syntax. A database will not migrate to a newer SQL Server version without refactoring the TSQL code.
 
-For new development work, do not use deprecated features. For existing aplications, plan to modify applications that currently use these features as soon as possible. See [Deprecated database engine features in SQL Server 🗗](https://docs.microsoft.com/en-us/sql/database-engine/deprecated-database-engine-features-in-sql-server-version-15?view=sql-server-ver15#:~:text=For%20new%20development%20work%2C%20do%20not%20use%20deprecated%20features.%20For%20existing%20aplications%2C%20plan%20to%20modify%20applications%20that%20currently%20use%20these%20features%20as%20soon%20as%20possible.){:target="_blank" rel="noopener"} by Microsoft.
+For new development work, do not use deprecated features. For existing aplications, plan to modify applications that currently use these features as soon as possible.
 
 - See [Using Deprecated or Discontinued Feature](/best-practices-and-findings/sql-code-conventions#98)
 
@@ -1638,7 +1640,7 @@ WHERE
 ## Using Unfinished Notes
 **Check Id:** 117 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Unfinished+Notes)
 
-You might still have some work to do. One of the codetags below was found.
+You might still have some work to do. One of the codetags below was found. This should be a work item in a backlog.
 
 - TODO
 - FIXME
@@ -1852,7 +1854,7 @@ When ```IMPLICIT_TRANSACTIONS ON``` is used, it could appear that the command fi
 
 When a connection is operating in implicit transaction mode (```IMPLICIT_TRANSACTIONS ON```), the instance of the SQL Server Database Engine automatically starts a new transaction after the current transaction is committed or rolled back. You do nothing to delineate the start of a transaction; you only commit or roll back each transaction. Implicit transaction mode generates a continuous chain of transactions.
 
-- See [Transaction locking and row versioning guide 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide){:target="_blank" rel="noopener"} > [Implicit Transactions 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-ver15#:~:text=and%20DB%2DLibrary.-,Implicit%20Transactions,-When%20a%20connection){:target="_blank" rel="noopener"} by Microsoft
+- See [Transaction locking and row versioning guide 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide){:target="_blank" rel="noopener"} > [Implicit Transactions 🗗](https://learn.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-ver17#:~:text=DB%2C%20and%20ODBC.-,Implicit%20Transactions,-When%20a%20connection){:target="_blank" rel="noopener"} by Microsoft
 - See [SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea 🗗](https://www.brentozar.com/archive/2018/02/set-implicit_transactions-one-hell-bad-idea){:target="_blank" rel="noopener"} by Brent Ozar
 
 
