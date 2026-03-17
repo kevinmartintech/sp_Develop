@@ -325,6 +325,7 @@ For a quick video ramp up on configuring VMware for SQL Server see the [SQL Serv
 - See [SQL Server on VMware vSphere Accelerator Video Series 🗗](https://www.youtube.com/playlist?list=PLhRuY1yuVB7xBHKjFuTDJthZ456vF4DiW){:target="_blank" rel="noopener"} by David Klee
 - See [Why SQL Server DBAs Need Access to VMware vCenter 🗗](#196)
 - See [Retrofit a VM with the VMware Paravirtual SCSI Driver 🗗](https://www.sqlservercentral.com/blogs/retrofit-a-vm-with-the-vmware-paravirtual-scsi-driver){:target="_blank" rel="noopener"} by David Klee
+- See [Configuring disks to use VMware Paravirtual SCSI (PVSCSI) controllers 🗗](https://knowledge.broadcom.com/external/article?legacyId=1010398){:target="_blank" rel="noopener"} by VMware
 - See [Performance Best Practices for VMware vSphere 8.0 🗗](https://blogs.vmware.com/performance/2023/01/performance-best-practices-for-vmware-vsphere-8-0.html){:target="_blank" rel="noopener"} by VMware
 - See [Performance Best Practices Guide for vSphere 7.0 🗗](https://blogs.vmware.com/performance/2020/05/performance-best-practices-guide-for-vsphere-7-0.html){:target="_blank" rel="noopener"} by VMware
 - See [Performance Best Practices for VMware vSphere 6.5 🗗](https://www.vmware.com/docs/perf_best_practices_vsphere65){:target="_blank" rel="noopener"} by VMware
