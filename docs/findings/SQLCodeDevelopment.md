@@ -2631,6 +2631,8 @@ The collapse query below will format correctly in SSMS with Redgate SQL Prompt.
 SELECT * FROM dbo.Person WHERE FirstName = 'Kevin' /* This line is a comment */ AND LastName = 'Martin' ORDER BY LastName;
 ```
 
+See [Never, Ever, Ever Start T-SQL Comments with Two Dashes 🗗](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/){:target="_blank" rel="noopener"} by Brent Ozar
+
 [Back to top](#top)
 
 ---
