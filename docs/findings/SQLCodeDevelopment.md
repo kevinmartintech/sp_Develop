@@ -225,7 +225,7 @@ AS
 
 ---
 
-<a name="184"/>
+<a name="198"/>
 
 ## Dropping Temporary Table
 **Check Id:** 198 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Dropping+Temporary+Table)

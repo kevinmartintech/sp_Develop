@@ -25,6 +25,116 @@ Table design matters because it is essential for building software applications 
 
 ---
 
+<a name="???"/>
+
+## Not Including Items in CREATE TABLE
+**Check Id:** ??? [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Including+Items+in+CREATE+TABLE)
+
+Define as much of the table as possible in the original CREATE TABLE statement instead of adding parts later. In SQL Server, CREATE TABLE can include not just columns, but also defaults, identity, nullability, constraints, indexes, and certain table options. Only items outside the CREATE TABLE syntax, such as triggers, should be created separately. Keeping the definition together makes the table easier to read, review, deploy, and recreate consistently.
+
+**Do This (easier to read):**
+```sql
+CREATE TABLE Sales.SalesOrder (
+    SalesOrderId  int            NOT NULL IDENTITY(1, 1)
+   ,OrderNumber   varchar(20)    NOT NULL
+   ,CustomerId    int            NOT NULL CONSTRAINT Sales_SalesOrder_Sales_Customer FOREIGN KEY (CustomerId) REFERENCES Sales.Customer (CustomerId)
+   ,SalesPersonId int            NOT NULL CONSTRAINT Sales_SalesOrder_SalesPersonId_Default DEFAULT (-1) CONSTRAINT Sales_SalesOrder_Application_SalesPerson FOREIGN KEY REFERENCES Application.Person (PersonId)
+   ,OrderDate     date           NOT NULL CONSTRAINT Sales_SalesOrder_OrderDate_Default DEFAULT (CONVERT(date, SYSUTCDATETIME()))
+   ,SubTotal      decimal(19, 4) NOT NULL CONSTRAINT Sales_SalesOrder_SubTotal_Check CHECK (SubTotal >= 0.00)
+   ,TaxAmount     decimal(19, 4) NOT NULL CONSTRAINT Sales_SalesOrder_TaxAmount_Default DEFAULT (0.00)
+   ,TotalAmount   AS (SubTotal + TaxAmount) PERSISTED
+   ,CreateTime    datetime2(7)   NOT NULL CONSTRAINT Sales_SalesOrder_CreateTime_Default DEFAULT SYSUTCDATETIME()
+   ,ModifyTime    datetime2(7)   NOT NULL CONSTRAINT Sales_SalesOrder_ModifyTime_Default DEFAULT SYSUTCDATETIME()
+   ,ValidFromTime datetime2(7)   GENERATED ALWAYS AS ROW START NOT NULL CONSTRAINT SalesOrder_ValidFromTime_Default DEFAULT SYSUTCDATETIME()
+   ,ValidToTime   datetime2(7)   GENERATED ALWAYS AS ROW END NOT NULL CONSTRAINT SalesOrder_ValidToTime_Default DEFAULT ('9999-12-31 23:59:59.9999999')
+   ,CONSTRAINT Sales_SalesOrder_SalesOrderId PRIMARY KEY CLUSTERED (SalesOrderId ASC)
+   ,INDEX Sales_SalesOrder_OrderNumber UNIQUE NONCLUSTERED (OrderNumber ASC)
+   ,INDEX Sales_SalesOrder_CustomerId NONCLUSTERED (CustomerId ASC)
+   ,INDEX Sales_SalesOrder_OrderDate NONCLUSTERED (OrderDate ASC)
+   ,PERIOD FOR SYSTEM_TIME(ValidFromTime, ValidToTime)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = History.SalesOrder));
+GO
+```
+
+
+**Not This (hard to read):**
+```sql
+CREATE TABLE Sales.SalesOrder (
+    SalesOrderId  int            IDENTITY(1, 1) NOT NULL
+   ,OrderNumber   varchar(20)    NOT NULL
+   ,CustomerId    int            NOT NULL
+   ,SalesPersonId int            NOT NULL
+   ,OrderDate     date           NOT NULL
+   ,SubTotal      decimal(19, 4) NOT NULL
+   ,TaxAmount     decimal(19, 4) NOT NULL
+   ,TotalAmount   AS (SubTotal + TaxAmount) PERSISTED
+   ,CreateTime    datetime2(7)   NOT NULL
+   ,ModifyTime    datetime2(7)   NOT NULL
+   ,ValidFromTime datetime2(7)   GENERATED ALWAYS AS ROW START NOT NULL
+   ,ValidToTime   datetime2(7)   GENERATED ALWAYS AS ROW END NOT NULL
+   ,CONSTRAINT Sales_SalesOrder_SalesOrderId PRIMARY KEY CLUSTERED (SalesOrderId ASC)
+   ,PERIOD FOR SYSTEM_TIME(ValidFromTime, ValidToTime)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = History.SalesOrder));
+GO
+
+CREATE NONCLUSTERED INDEX Sales_SalesOrder_CustomerId ON Sales.SalesOrder (CustomerId ASC);
+GO
+
+CREATE NONCLUSTERED INDEX Sales_SalesOrder_OrderDate ON Sales.SalesOrder (OrderDate ASC);
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX Sales_SalesOrder_OrderNumber ON Sales.SalesOrder (OrderNumber ASC);
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT Sales_SalesOrder_SalesPersonId_Default DEFAULT ((-1)) FOR SalesPersonId;
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT Sales_SalesOrder_OrderDate_Default DEFAULT (CONVERT(date, SYSUTCDATETIME())) FOR OrderDate;
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT Sales_SalesOrder_TaxAmount_Default DEFAULT ((0.00)) FOR TaxAmount;
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT Sales_SalesOrder_CreateTime_Default DEFAULT (SYSUTCDATETIME()) FOR CreateTime;
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT Sales_SalesOrder_ModifyTime_Default DEFAULT (SYSUTCDATETIME()) FOR ModifyTime;
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT SalesOrder_ValidFromTime_Default DEFAULT (SYSUTCDATETIME()) FOR ValidFromTime;
+GO
+
+ALTER TABLE Sales.SalesOrder ADD CONSTRAINT SalesOrder_ValidToTime_Default DEFAULT ('9999-12-31 23:59:59.9999999') FOR ValidToTime;
+GO
+
+ALTER TABLE Sales.SalesOrder WITH CHECK ADD CONSTRAINT Sales_SalesOrder_Application_SalesPerson FOREIGN KEY (SalesPersonId) REFERENCES Application.Person (PersonId);
+GO
+
+ALTER TABLE Sales.SalesOrder CHECK CONSTRAINT Sales_SalesOrder_Application_SalesPerson;
+GO
+
+ALTER TABLE Sales.SalesOrder WITH CHECK ADD CONSTRAINT Sales_SalesOrder_Sales_Customer FOREIGN KEY (CustomerId) REFERENCES Sales.Customer (CustomerId);
+GO
+
+ALTER TABLE Sales.SalesOrder CHECK CONSTRAINT Sales_SalesOrder_Sales_Customer;
+GO
+
+ALTER TABLE Sales.SalesOrder WITH CHECK ADD CONSTRAINT Sales_SalesOrder_SubTotal_Check CHECK ((SubTotal >= (0.00)));
+GO
+
+ALTER TABLE Sales.SalesOrder CHECK CONSTRAINT Sales_SalesOrder_SubTotal_Check;
+GO
+```
+
+- See [CREATE TABLE (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+
+
+[Back to top](#top)
+
+---
+
 <a name="147"/>
 
 ## Incorrect Inheritance Type
