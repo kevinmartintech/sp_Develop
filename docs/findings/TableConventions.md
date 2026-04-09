@@ -30,7 +30,7 @@ Table design matters because it is essential for building software applications 
 ## Not Including Items in CREATE TABLE
 **Check Id:** 199 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Including+Items+in+CREATE+TABLE)
 
-Define as much of the table as possible in the original `CREATE TABLE` statement instead of adding parts later. In SQL Server, `CREATE TABLE` can include not just columns, but also defaults, identity, nullability, constraints, indexes, and certain table options. Only items outside the `CREATE TABLE` syntax, such as triggers, should be created separately. Keeping the definition together makes the table easier to read, review, deploy, and recreate consistently.
+Define as much of the table as possible in the original `CREATE TABLE` statement instead of adding parts later. In SQL Server, `CREATE TABLE` can include not just columns, but also defaults, identity, nullability, constraints, indexes (since 2014), and certain table options. Only items outside the `CREATE TABLE` syntax, such as triggers, should be created separately. Keeping the definition together makes the table easier to read, review, deploy, and recreate consistently.
 
 **Do This (easier to read):**
 ```sql
