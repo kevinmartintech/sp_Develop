@@ -2419,6 +2419,8 @@ SELECT
 ## Not Using SQL Formatting
 **Check Id:** 126 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+SQL+Formatting)
 
+If you do not have a SQL code formatting tool, you can use the free online SQL formatting tool from Redgate: [SQL Formatter 🗗](https://www.red-gate.com/website/sql-formatter/){:target="_blank" rel="noopener"}.
+
 SQL code statements should be arranged in an easy-to-read manner. When statements are written all on one line or not broken into smaller easy-to-read chunks, it is hard to decipher.
 
 Your SQL code should be formatted in a consistent manner so specific elements like keywords, data types, table names, functions can be identified at a quick glance.
