@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "id": "9fe81157-fb0e-432f-a4d6-fd42cca62577",
+    "name": "Kevin Martin - Commas after"
+  },
+  "whitespace": {
+    "wrapLinesLongerThan": 200
+  },
+  "lists": {
+    "placeFirstItemOnNewLine": "always",
+    "alignSubsequentItemsWithFirstItem": false,
+    "alignItemsAcrossClauses": false,
+    "alignAliases": true,
+    "alignComments": true,
+    "addSpaceAfterComma": false
+  },
+  "parentheses": {
+    "parenthesisStyle": "expandedSplit",
+    "indentParenthesesContents": true,
+    "collapseShortParenthesisContents": true,
+    "collapseParenthesesShorterThan": 78
+  },
+  "casing": {
+    "reservedKeywords": "uppercase",
+    "builtInFunctions": "uppercase",
+    "builtInDataTypes": "lowercase",
+    "useObjectDefinitionCase": true
+  },
+  "dml": {
+    "addNewLineAfterDistinctAndTopClauses": true,
+    "collapseShortStatements": true,
+    "collapseStatementsShorterThan": 100,
+    "collapseShortSubqueries": true,
+    "collapseSubqueriesShorterThan": 100,
+    "listItems": {
+      "placeFromTableOnNewLine": "always",
+      "placeWhereConditionOnNewLine": "always",
+      "placeGroupByAndOrderByOnNewLine": "always"
+    }
+  },
+  "ddl": {
+    "parenthesisStyle": "expandedSplit",
+    "indentParenthesesContents": true,
+    "alignDataTypesAndConstraints": true,
+    "placeConstraintColumnsOnNewLines": "ifLongerOrMultipleColumns",
+    "indentClauses": true,
+    "placeFirstProcedureParameterOnNewLine": "always",
+    "collapseShortStatements": true,
+    "collapseStatementsShorterThan": 100
+  },
+  "controlFlow": {
+    "indentBeginAndEndKeywords": true,
+    "collapseStatementsShorterThan": 120
+  },
+  "cte": {
+    "parenthesisStyle": "expandedSplit",
+    "indentContents": true,
+    "placeColumnsOnNewLine": true,
+    "columnAlignment": "indented",
+    "asAlignment": "rightAligned"
+  },
+  "variables": {
+    "placeAssignedValueOnNewLineIfLongerThanMaxLineLength": false
+  },
+  "joinStatements": {
+    "join": {
+      "indentJoinTable": false
+    },
+    "on": {
+      "placeOnNewLine": false,
+      "keywordAlignment": "indented"
+    }
+  },
+  "insertStatements": {
+    "columns": {
+      "parenthesisStyle": "expandedSplit",
+      "placeSubsequentColumnsOnNewLines": "ifLongerThanMaxLineLength"
+    },
+    "values": {
+      "parenthesisStyle": "compactSimple",
+      "indentContents": true,
+      "placeSubsequentValuesOnNewLines": "ifLongerThanMaxLineLength"
+    }
+  },
+  "caseExpressions": {
+    "placeExpressionOnNewLine": false,
+    "placeFirstWhenOnNewLine": "ifInputExpression",
+    "placeThenOnNewLine": true,
+    "collapseShortCaseExpressions": true,
+    "collapseCaseExpressionsShorterThan": 100
+  },
+  "operators": {
+    "comparison": {
+      "align": true
+    },
+    "andOr": {},
+    "between": {
+      "placeOnNewLine": false
+    },
+    "in": {
+      "placeFirstValueOnNewLine": "ifLongerThanMaxLineLength"
+    }
+  }
+}

@@ -230,9 +230,9 @@ AS
 ## Dropping Temporary Table
 **Check Id:** 198 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Dropping+Temporary+Table)
 
-Temporary tables in stored procedures do not need to be dropped.
+Temporary tables in stored procedures do not need to be dropped. They only live as long as the stored procedure execution and are automatically "dropped" when the stored procedure finishes. There is no need to explicitly drop them at the end of the stored procedure.
 
-Temporary tables created inside stored procedures do not need an explicit DROP TABLE at the end. SQL Server can cache eligible temp tables for reuse, and explicit DROP TABLE does not improve that behavior. Only drop a temp table early when there is a real functional reason, not as a default cleanup pattern.
+Temporary tables created inside stored procedures do not need an explicit `DROP TABLE` at the end. SQL Server can cache the table definition (not row data) of eligible temp tables for reuse, and explicit `DROP TABLE` does not improve that behavior. Only drop a temp table early when there is a real functional reason, not as a default cleanup pattern.
 
 - See [Temporary Table Caching Explained 🗗](https://sqlkiwi.blogspot.com/2012/08/temporary-object-caching-explained.html){:target="_blank" rel="noopener"} By Paul White
 - See [TEMPDB – Files and Trace Flags and Updates, Oh My! 🗗](https://learn.microsoft.com/en-us/archive/blogs/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my){:target="_blank" rel="noopener"}  by Microsoft
