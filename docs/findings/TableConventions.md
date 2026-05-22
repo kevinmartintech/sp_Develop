@@ -617,13 +617,11 @@ SELECT
    ,TableName  = T.name
    ,ObjectName = FK.name
    ,ObjectType = 'FOREIGN KEY'
-   ,FixSQL     = 'ALTER TABLE ' + QUOTENAME(S.name) + '.' + QUOTENAME(T.name) + ' WITH CHECK CHECK CONSTRAINT ' + FK.name + ';'
+   ,FixSQL     = N'ALTER TABLE ' + QUOTENAME(S.name) + N'.' + QUOTENAME(T.name) + N' WITH CHECK CHECK CONSTRAINT ' + QUOTENAME(FK.name) + N';'
 FROM
-    sys.foreign_keys       AS FK
-    INNER JOIN sys.tables  AS T
-        ON FK.parent_object_id = T.object_id
-    INNER JOIN sys.schemas AS S
-        ON T.schema_id         = S.schema_id
+    sys.foreign_keys   AS FK
+INNER JOIN sys.tables  AS T ON FK.parent_object_id = T.object_id
+INNER JOIN sys.schemas AS S ON T.schema_id         = S.schema_id
 WHERE
     FK.is_not_trusted         = 1
 AND FK.is_not_for_replication = 0
@@ -635,13 +633,11 @@ SELECT
    ,TableName  = T.name
    ,ObjectName = CC.name
    ,ObjectType = 'CHECK CONSTRAINT'
-   ,FixSQL     = 'ALTER TABLE ' + QUOTENAME(S.name) + '.' + QUOTENAME(T.name) + ' WITH CHECK CHECK CONSTRAINT ' + CC.name + ';'
+   ,FixSQL     = N'ALTER TABLE ' + QUOTENAME(S.name) + N'.' + QUOTENAME(T.name) + N' WITH CHECK CHECK CONSTRAINT ' + QUOTENAME(CC.name) + N';'
 FROM
-    sys.check_constraints  AS CC
-    INNER JOIN sys.tables  AS T
-        ON CC.parent_object_id = T.object_id
-    INNER JOIN sys.schemas AS S
-        ON T.schema_id         = S.schema_id
+    sys.check_constraints AS CC
+INNER JOIN sys.tables     AS T ON CC.parent_object_id = T.object_id
+INNER JOIN sys.schemas    AS S ON T.schema_id         = S.schema_id
 WHERE
     CC.is_not_trusted         = 1
 AND CC.is_not_for_replication = 0
