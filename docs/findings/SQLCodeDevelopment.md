@@ -72,6 +72,48 @@ If you choose to use a [monorepo 🗗](https://en.wikipedia.org/wiki/Monorepo){:
 
 ---
 
+<a name="200"/>
+
+## Not Using SQL Database Project Rename Refactor for Object Renames
+**Check Id:** 200 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+SQL+Database+Project+Rename+Refactor+for+Object+Renames)
+ 
+ When renaming a SQL Server object in a [SQL database project 🗗](https://learn.microsoft.com/en-us/sql/tools/sql-database-projects/sql-database-projects){:target="_blank" rel="noopener"}, use the Refactor > Rename option instead of manually changing the object name in the script.
+
+Manual renames can cause database project publish to interpret the change as a drop and create operation. That can be dangerous for tables and columns because it can lead to data loss if the deployment script drops and recreates the object instead of issuing a rename.
+
+Use rename refactor when renaming:
+
+- Tables
+- Columns
+- Stored procedures
+- Views
+- Functions
+- User-defined types
+- Other supported database objects
+
+Recommended process:
+
+1. Open the object script in the database project.
+1. Right-click the object name in the T-SQL editor.
+1. Select Refactor > Rename.
+1. Enter the new name.
+1. Keep Preview Changes checked.
+1. Review every affected script before applying the change.
+1. Apply the refactor.
+1. Confirm the .refactorlog file was added or updated.
+1. Build the project.
+1. Review the generated deployment script before publishing.
+
+- See [Refactoring in SQL Server Data Tools - SSDT 🗗](https://www.sqlservercentral.com/blogs/refactoring-in-sql-server-data-tools-ssdt){:target="_blank" rel="noopener"} by Ed Elliott SQLServerCentral.com
+- See [The SSDT Refactor Log 🗗](https://dev.to/dealeron/the-ssdt-refactor-log-4jk6){:target="_blank" rel="noopener"} by Jonathan Eccker for DealerOn Dev 
+- See [Refactoring existing database objects using SSDT 🗗](https://www.mssqltips.com/tutorial/refactoring-existing-database-objects-using-ssdt/){:target="_blank" rel="noopener"} by MSSQLTips.com
+- See [How to: Use rename and refactoring to make changes to your database objects 🗗](https://learn.microsoft.com/en-us/sql/ssdt/how-to-use-rename-and-refactoring-to-make-changes-to-your-database-objects){:target="_blank" rel="noopener"} by Microsoft
+
+
+[Back to top](#top)
+
+---
+
 <a name="74"/>
 
 ## Using ORM Instead of Stored Procedures
