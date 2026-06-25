@@ -546,7 +546,7 @@ ELSE
     END;
 ```
 
-**This UPSERT pattern can be problematic:** In general, do not use MERGE statements in transactional (OLTP) databases, even though they are valid in ETL processes. If you do encounter MERGE statements in OLTP databases, be sure to address potential concurrency issues as described below. MERGE can be used for ETL processing if it is assured to NOT be run concurrently. Hugo below says don't blindly use MERGE. Get informed on the things that can be problematic.
+**This UPSERT pattern can be problematic:** In general, do not use MERGE statements in transactional (OLTP) databases, even though they are valid in ETL processes. If you do encounter MERGE statements in OLTP databases, be sure to address potential concurrency issues as described below. MERGE can be used for ETL processing if it is assured to NOT be run concurrently. [At scale, MERGE might introduce complicated concurrency issues or require advanced troubleshooting. 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver17#:~:text=At%20scale%2C%20MERGE%20might%20introduce%20complicated%20concurrency%20issues%20or%20require%20advanced%20troubleshooting.){:target="_blank" rel="noopener"} by Microsoft. 
 
 - See [An update on MERGE 🗗](https://sqlserverfast.com/blog/hugo/2023/09/an-update-on-merge/){:target="_blank" rel="noopener"} by Hugo Kornelis
 - See [What To Avoid If You Want To Use MERGE 🗗](https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/#:~:text=So%20just%20to,MERGE){:target="_blank" rel="noopener"} by Michael J. Swart
