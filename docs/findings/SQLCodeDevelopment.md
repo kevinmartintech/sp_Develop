@@ -199,7 +199,7 @@ SELECT
 
 Ensure you insert rows into a temporary table for performance considerations for [table-valued parameter 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine){:target="_blank" rel="noopener"}, [JSON 🗗](https://docs.microsoft.com/en-us/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server){:target="_blank" rel="noopener"}, [XML 🗗](https://docs.microsoft.com/en-us/sql/t-sql/xml/nodes-method-xml-data-type){:target="_blank" rel="noopener"}, [comma-separated list 🗗](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql){:target="_blank" rel="noopener"} or [STRING_SPLIT()  🗗](https://learn.microsoft.com/en-us/sql/t-sql/functions/string-split-transact-sql?view=sql-server-ver16){:target="_blank" rel="noopener"} functions.
 
-Use a temp table for the list of values so SQL Server can build statistics (row counts and distribution) and choose an efficient join strategy; otherwise a split-function result often provides poor row estimates, leading to bad cardinality estimates and unstable plans.
+Use a temp table for the list of values so SQL Server can build statistics (row counts and distribution) and choose an efficient `JOIN` strategy; otherwise a split-function or `JOIN` result often provides poor row estimates, leading to bad cardinality estimates and unstable plans.
 
 ```sql
 CREATE OR ALTER PROCEDURE Application.PersonCreateMultiplex (@JSON nvarchar(MAX))
