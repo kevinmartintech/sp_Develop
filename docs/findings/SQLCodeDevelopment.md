@@ -2468,6 +2468,8 @@ SQL code statements should be arranged in an easy-to-read manner. When statement
 
 Your SQL code should be formatted in a consistent manner so specific elements like keywords, data types, table names, functions can be identified at a quick glance.
 
+Tabs should be converted to 4 spaces. Your development environment should be configured to convert tabs to 4 spaces. Tabs look different in different in different text editors and IDEs. Spaces look the same in all text editors, IDEs, GitHub, and web browsers. Or at least pick one for the code file so it is not mixed.
+
 Use one of the two Redgate SQL Prompt formatting styles "[Team Collapsed 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}" or "[Team Expanded 🗗](https://github.com/kevinmartintech/sp_Develop/tree/master/Development%20Application%20Settings/Red%20Gate/SQL%20Prompt/Styles){:target="_blank" rel="noopener"}". If you edit T-SQL code that was in a one of the two styles, put the style back to its original style after you completed editing.
 
 - See [Redgate SQL Server Prompt](/development-app-settings#redgate-sql-server-prompt)
