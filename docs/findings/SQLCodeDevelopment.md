@@ -2732,7 +2732,7 @@ You can skip including the Author, Created On & Modified On details when you use
 ## Not Using Fully Qualified Name
 **Check Id:** 136 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Using+Table+Schema)
 
-Prefix all database objects like tables, Views, and stored procedures with the schema (in most cases `dbo.`). This results in a performance gain as the optimizer does not have to perform a lookup on execution as well as minimizing ambiguities in your T-SQL.
+Prefix all database objects like tables, views, stored procedures, and sequences with the schema (in most cases `dbo.`). This results in a performance gain as the optimizer does not have to perform a lookup on execution as well as minimizing ambiguities in your T-SQL.
 
 By including the schema, we avoid certain bugs, minimize the time the engine spends searching for the procedure, and help ensure that cached query plans for the procedures get reused.
 
