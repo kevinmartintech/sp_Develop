@@ -579,11 +579,12 @@ WHEN NOT MATCHED BY SOURCE THEN
 ```
 
 #### UPSERT Use case exception
- If an update is not wanted for a reason like system-versioned temporal table history pollution the ```WITH (UPDLOCK, SERIALIZABLE)``` hint below should be used.
+ If an update is not wanted for a reason like system-versioned temporal table history pollution the `WITH (UPDLOCK, SERIALIZABLE)` hint below should be used.
 
-```UPDLOCK``` is used to protect against deadlocks and let other session wait instead of falling victim a deadlock event. ```SERIALIZABLE``` will protect against changes to the data in the transaction and ensure no other transactions can modify data that has been read by the current transaction until the current transaction completes.
+ #### UPDLOCK SERIALIZABLE
+`UPDLOCK` is used to protect against deadlocks and let other session wait instead of falling victim of a deadlock event. `SERIALIZABLE` will protect against changes to the data in the transaction and ensure no other transactions can modify data that has been read by the current transaction until the current transaction completes.
 
-This method will not prevent a race condition and the last update will win.
+This method can prevent the duplicate-insert race condition when the searched key is properly indexed and protected with UPDLOCK, SERIALIZABLE, but it does not prevent a last-update-wins overwrite if two sessions update the same existing row with different values.
 
 ```sql
 BEGIN TRY
