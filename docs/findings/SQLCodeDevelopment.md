@@ -1806,6 +1806,8 @@ Transactions allow for database operations to be [atomic 🗗](https://en.wikipe
 
 If you are performing a funds transfer and updating multiple bank account tables with debiting one and crediting the other, they must all complete successfully or there will be an imbalance.
 
+Exclude SQL code that does not need to be include in the transaction. Keep transactions shrt.
+
 ### Here is a basic transaction pattern.
 
 ```sql
@@ -1838,6 +1840,8 @@ END CATCH;
 
 ```sql
 SET NOCOUNT, XACT_ABORT ON;
+
+/* Exclude SQL code that does not need to be include in the transaction. Keep transactions shrt. */
 
 BEGIN TRY
     DECLARE @ErrorMessageText nvarchar(2048);
