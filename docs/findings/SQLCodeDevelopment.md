@@ -1811,7 +1811,7 @@ If you are performing a funds transfer and updating multiple bank account tables
 ```sql
 SET NOCOUNT, XACT_ABORT ON;
 
-/* Exclude SQL code that does not need to be inclued in the transaction. Keep transactions shrt. */
+/* Exclude SQL code that does not need to be include in the transaction. Keep transactions shrt. */
 
 BEGIN TRY
     BEGIN TRANSACTION;
