@@ -32,6 +32,8 @@ Table design matters because it is essential for building software applications 
 
 Define as much of the table as possible in the original `CREATE TABLE` statement instead of adding parts later. In SQL Server, `CREATE TABLE` can include not just columns, but also defaults, identity, nullability, constraints, column constraints, indexes (since 2014), and certain table options. Only items outside the `CREATE TABLE` syntax, such as triggers, should be created separately. Keeping the definition together makes the table easier to read, review, deploy, and recreate consistently.
 
+Prefer defining column-level constraints with the column definition when the constraint only applies to that column.
+
 **Do This (easier to read):**
 ```sql
 CREATE TABLE Sales.SalesOrder (
