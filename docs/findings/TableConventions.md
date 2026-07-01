@@ -30,12 +30,12 @@ Table design matters because it is essential for building software applications 
 ## Not Including Items in CREATE TABLE
 **Check Id:** 199 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Not+Including+Items+in+CREATE+TABLE)
 
-Define as much of the table as possible in the original `CREATE TABLE` statement instead of adding parts later. In SQL Server, `CREATE TABLE` can include not just columns, but also defaults, identity, nullability, constraints, indexes (since 2014), and certain table options. Only items outside the `CREATE TABLE` syntax, such as triggers, should be created separately. Keeping the definition together makes the table easier to read, review, deploy, and recreate consistently.
+Define as much of the table as possible in the original `CREATE TABLE` statement instead of adding parts later. In SQL Server, `CREATE TABLE` can include not just columns, but also defaults, identity, nullability, constraints, column constraints, indexes (since 2014), and certain table options. Only items outside the `CREATE TABLE` syntax, such as triggers, should be created separately. Keeping the definition together makes the table easier to read, review, deploy, and recreate consistently.
 
 **Do This (easier to read):**
 ```sql
 CREATE TABLE Sales.SalesOrder (
-    SalesOrderId  int            NOT NULL IDENTITY(1, 1)
+    SalesOrderId  int            NOT NULL IDENTITY(1, 1) CONSTRAINT Sales_SalesOrder_SalesOrderId PRIMARY KEY CLUSTERED (SalesOrderId ASC)
    ,OrderNumber   varchar(20)    NOT NULL
    ,CustomerId    int            NOT NULL CONSTRAINT Sales_SalesOrder_Sales_Customer FOREIGN KEY (CustomerId) REFERENCES Sales.Customer (CustomerId)
    ,SalesPersonId int            NOT NULL CONSTRAINT Sales_SalesOrder_SalesPersonId_Default DEFAULT (-1) CONSTRAINT Sales_SalesOrder_Application_SalesPerson FOREIGN KEY REFERENCES Application.Person (PersonId)
@@ -47,7 +47,6 @@ CREATE TABLE Sales.SalesOrder (
    ,ModifyTime    datetime2(7)   NOT NULL CONSTRAINT Sales_SalesOrder_ModifyTime_Default DEFAULT SYSUTCDATETIME()
    ,ValidFromTime datetime2(7)   GENERATED ALWAYS AS ROW START NOT NULL CONSTRAINT SalesOrder_ValidFromTime_Default DEFAULT SYSUTCDATETIME()
    ,ValidToTime   datetime2(7)   GENERATED ALWAYS AS ROW END NOT NULL CONSTRAINT SalesOrder_ValidToTime_Default DEFAULT ('9999-12-31 23:59:59.9999999')
-   ,CONSTRAINT Sales_SalesOrder_SalesOrderId PRIMARY KEY CLUSTERED (SalesOrderId ASC)
    ,INDEX Sales_SalesOrder_OrderNumber UNIQUE NONCLUSTERED (OrderNumber ASC)
    ,INDEX Sales_SalesOrder_CustomerId NONCLUSTERED (CustomerId ASC)
    ,INDEX Sales_SalesOrder_OrderDate NONCLUSTERED (OrderDate ASC)
