@@ -2490,6 +2490,12 @@ Use one of the two Redgate SQL Prompt formatting styles "[Team Collapsed 🗗](h
 
 To limit query results, it's recommended to use the new style TOP clause: `TOP(n)`. This syntax, with parentheses, is clearer and more readable, even though the parentheses are syntactic sugar since only one parameter can be included.
 
+{: .note-title }
+> Microsoft Compatibility Support Note
+>
+> For backward compatibility, the parentheses are optional in SELECT statements if the expression is an integer constant. We recommend that you always use parentheses for TOP in SELECT statements. Doing so provides consistency with its required use in INSERT, UPDATE, MERGE, and DELETE statements.
+
+
 See [TOP (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
