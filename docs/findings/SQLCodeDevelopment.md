@@ -2496,7 +2496,7 @@ To limit query results, it's recommended to use the new style TOP clause: `TOP(n
 > For backward compatibility, the parentheses are optional in SELECT statements if the expression is an integer constant. We recommend that you always use parentheses for TOP in SELECT statements. Doing so provides consistency with its required use in INSERT, UPDATE, MERGE, and DELETE statements.
 
 
-See [TOP (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql){:target="_blank" rel="noopener"} by Microsoft
+- See [TOP (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql){:target="_blank" rel="noopener"} by Microsoft
 
 [Back to top](#top)
 
@@ -2511,8 +2511,10 @@ See [TOP (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/querie
 
 Using `TOP` in a `SELECT` statement without an `ORDER BY` clause is legal in SQL Server, but it is logically meaningless because tables have no guaranteed implicit order. When using `TOP`, include an `ORDER BY` clause to define which rows qualify as the “top” rows. For application paging scenarios, use the `OFFSET–FETCH` sub-clause of `ORDER BY` instead of `TOP`, because it provides a clearer and more reliable paging pattern.
 
-See [Finding code smells using SQL Prompt: TOP without ORDER BY in a SELECT statement (BP006) 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement){:target="_blank" rel="noopener"} by Phil Factor (Redgate Hub)
-See [Best Practice Rule BP006 🗗](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/best-practice-rules/bp006){:target="_blank" rel="noopener"} Redgate Code Analysis for SQL Server
+- See [Finding code smells using SQL Prompt: TOP without ORDER BY in a SELECT statement (BP006) 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement){:target="_blank" rel="noopener"} by Phil Factor (Redgate Hub)
+- See [SQL Server T-SQL Protip: watch those TOPs without ORDER BY 🗗](https://erikdarling.com/t-sql-protip-watch-those-tops-without-order-by){:target="_blank" rel="noopener"} by Erik Darling
+- See [Executing SELECT query using TOP without ORDER BY 🗗](){:target="_blank" rel="noopener"} by Pankaj Manek on SQLServerCentral
+- See [Best Practice Rule BP006 🗗](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/best-practice-rules/bp006){:target="_blank" rel="noopener"} Redgate Code Analysis for SQL Server
 
 [Back to top](#top)
 
@@ -2724,7 +2726,7 @@ The collapse query below will format correctly in SSMS with Redgate SQL Prompt.
 SELECT * FROM dbo.Person WHERE FirstName = 'Kevin' /* This line is a comment */ AND LastName = 'Martin' ORDER BY LastName;
 ```
 
-See [Never, Ever, Ever Start T-SQL Comments with Two Dashes 🗗](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/){:target="_blank" rel="noopener"} by Brent Ozar
+- See [Never, Ever, Ever Start T-SQL Comments with Two Dashes 🗗](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/){:target="_blank" rel="noopener"} by Brent Ozar
 
 [Back to top](#top)
 
