@@ -2513,7 +2513,7 @@ Using `TOP` in a `SELECT` statement without an `ORDER BY` clause is legal in SQL
 
 - See [Finding code smells using SQL Prompt: TOP without ORDER BY in a SELECT statement (BP006) 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement){:target="_blank" rel="noopener"} by Phil Factor (Redgate Hub)
 - See [SQL Server T-SQL Protip: watch those TOPs without ORDER BY 🗗](https://erikdarling.com/t-sql-protip-watch-those-tops-without-order-by){:target="_blank" rel="noopener"} by Erik Darling
-- See [Executing SELECT query using TOP without ORDER BY 🗗](){:target="_blank" rel="noopener"} by Pankaj Manek on SQLServerCentral
+- See [Executing SELECT query using TOP without ORDER BY 🗗](https://www.sqlservercentral.com/blogs/executing-select-query-using-top-without-order-by){:target="_blank" rel="noopener"} by Pankaj Manek on SQLServerCentral
 - See [Best Practice Rule BP006 🗗](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/best-practice-rules/bp006){:target="_blank" rel="noopener"} Redgate Code Analysis for SQL Server
 
 [Back to top](#top)
