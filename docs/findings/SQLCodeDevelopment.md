@@ -2502,6 +2502,22 @@ See [TOP (Transact-SQL) 🗗](https://learn.microsoft.com/en-us/sql/t-sql/querie
 
 ---
 
+<a name="201"/>
+
+## TOP without ORDER BY
+**Check Id:** 201 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=TOP+without+ORDER+BY)
+
+`TOP` is being used in a `SELECT` statement without a subsequent `ORDER BY` clause.
+
+Using `TOP` in a `SELECT` statement without an `ORDER BY` clause is legal in SQL Server, but it is logically meaningless because tables have no guaranteed implicit order. When using `TOP`, include an `ORDER BY` clause to define which rows qualify as the “top” rows. For application paging scenarios, use the `OFFSET–FETCH` sub-clause of `ORDER BY` instead of `TOP`, because it provides a clearer and more reliable paging pattern.
+
+See [Finding code smells using SQL Prompt: TOP without ORDER BY in a SELECT statement (BP006) 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement){:target="_blank" rel="noopener"} by Phil Factor (Redgate Hub)
+See [Best Practice Rule BP006 🗗](https://documentation.red-gate.com/codeanalysis/code-analysis-for-sql-server/best-practice-rules/bp006){:target="_blank" rel="noopener"} Redgate Code Analysis for SQL Server
+
+[Back to top](#top)
+
+---
+
 <a name="127"/>
 
 ## Not Using UPPERCASE for Keywords
