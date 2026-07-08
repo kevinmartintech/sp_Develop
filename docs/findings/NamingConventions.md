@@ -195,7 +195,9 @@ Parameter and variable and names should be named identically as the column names
 ## Improper Stored Procedures and Function Naming
 **Check Id:** 47 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Stored+Procedures+and+Function+Naming)
 
-Stored procedures and functions should be named so they can be ordered by the table/business entity (ObjectAction) they perform a database operation on, and adding the database activity "Get, Update, Insert, Upsert, Delete, Merge" as a suffix, e.g., (``ProductGet`` or ``OrderUpdate``).
+Stored procedures and functions should be named so they can be ordered by the table/business entity (ObjectAction) they perform a database operation on, and adding the database activity "Get, Update, Insert, Upsert, Delete, Upsert, Save" as a suffix, e.g., (``ProductGet`` or ``OrderUpdate``).
+
+They should also be named logically for their actions they perform.
 
 [Back to top](#top)
 
