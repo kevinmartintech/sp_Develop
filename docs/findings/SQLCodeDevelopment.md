@@ -550,6 +550,8 @@ ELSE
 
 Do not use `MERGE` statements in transactional (OLTP) databases, even though `MERGE` is valid in ETL processes. `MERGE` can be used for ETL processing if it is assured to NOT be run concurrently. 
 
+Use separate `INSERT`, `UPDATE` if needed, and `DELETE` statements inside an explicit transaction.
+
 {: .highlight-title }
 > MERGE Concurrency Issues
 >
