@@ -556,6 +556,7 @@ Do not use `MERGE` statements in transactional (OLTP) databases, even though `ME
 > [At scale, MERGE might introduce complicated concurrency issues or require advanced troubleshooting. 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql#:~:text=At%20scale%2C%20MERGE%20might%20introduce%20complicated%20concurrency%20issues%20or%20require%20advanced%20troubleshooting.){:target="_blank" rel="noopener"} by Microsoft. 
 
 - See [UPSERT 🗗](#76)
+- See [Don't Merge 🗗](https://www.youtube.com/shorts/T_eXrbjQ5bw){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Concurrency considerations for MERGE 🗗](https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql#concurrency-considerations-for-merge){:target="_blank" rel="noopener"} by Microsoft
 - See [What To Avoid If You Want To Use MERGE 🗗](https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/#:~:text=So%20just%20to,MERGE){:target="_blank" rel="noopener"} by Michael J. Swart
 - See [Use Caution with SQL Server's MERGE Statement 🗗](https://www.mssqltips.com/sqlservertip/3074/use-caution-with-sql-servers-merge-statement/#:~:text=function%20as%20expected.-,Conclusion,-I%20am%20not){:target="_blank" rel="noopener"} by Aaron Bertrand
