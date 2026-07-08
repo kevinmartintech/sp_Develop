@@ -1331,8 +1331,10 @@ Changing the WHERE clause to not use the YEAR() function and doing a bit more ty
 **Check Id:** 101 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+Unnecessary+Functions)
 
 - Use ``TRIM(string)`` instead of ``LTRIM(RTRIM(string))``
-- When comparing a string for blank it is unnecessary to trim the string before the comparison. The examples below are two ways to check for parameter/variable blanks.
 - When a table column is defined as ``NOT NULL`` it is unnecessary to use `ISNULL()`.
+- If your database is set to 'case insensitive', you do not need to use the ``LOWER(string)`` function when comparing two strings.
+   - Execute the query ``SELECT CONVERT(varchar(256), SERVERPROPERTY('collation'));`` to verify the database shows it is a 'case insensitive'  collation (\_CI\_). The default SQL Server collation is 'SQL_Latin1_General_CP1_CI_AS'.
+- When comparing a string for blank it is unnecessary to trim the string before the comparison. The examples below are two ways to check for parameter/variable blanks.
 
 ```sql
 DECLARE @String nvarchar(100) = N'    '
@@ -1347,8 +1349,6 @@ BEGIN
     /* Do the thing here */
 END
 ```
-- If your database is set to 'case insensitive', you do not need to use the ``LOWER(string)`` function when comparing two strings.
-   - Execute the query ``SELECT CONVERT(varchar(256), SERVERPROPERTY('collation'));`` to verify the database shows it is a 'case insensitive'  collation (\_CI\_). The default SQL Server collation is 'SQL_Latin1_General_CP1_CI_AS'.
 
 [Back to top](#top)
 
