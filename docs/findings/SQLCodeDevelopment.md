@@ -1628,9 +1628,19 @@ Avoid using the `ISNUMERIC()` function, because it can often lead to data type c
 ## Using SELECT DISTINCT
 **Check Id:** 112 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Using+SELECT+DISTINCT)
 
-So, while DISTINCT and GROUP BY are identical in a lot of scenarios, there is one case where the GROUP BY approach leads to better performance (at the cost of less clear declarative intent in the query itself).
+SELECT `DISTINCT` is valid T-SQL, but it should not be used reflexively to remove duplicate rows.
 
-You also might be using SELECT DISTINCT to mask a JOIN problem. It’s much better to determine why rows are being duplicated and fix the problem.
+In many simple queries, `DISTINCT` and `GROUP BY` can produce the same results and may produce the same or very similar execution plans. However, there are cases where `GROUP BY` can perform better, especially when the `SELECT` list contains expensive expressions, scalar functions, correlated subqueries, XML/string aggregation logic, or other computations that do not need to be evaluated for every detail row.
+
+Also check whether `SELECT DISTINCT` is hiding a join or data-model problem. If rows are duplicated because of an incorrect join predicate, missing join predicate, unexpected one-to-many relationship, or incomplete filtering, fix the cause of the duplication instead of using `DISTINCT` to mask it.
+
+Preferred review guidance:
+
+Use `SELECT DISTINCT` only when the intent is truly to return unique projected rows.
+
+If duplicates are caused by a join issue, correct the join logic.
+
+If the `SELECT` list contains expensive expressions and duplicates can be removed before evaluating those expressions, consider a `GROUP BY`, derived table, CTE, or temp table approach that performs de-duplication first.
 
 - See [Don’t use DISTINCT as a "join-fixer" 🗗](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/dont-use-distinct-as-a-join-fixer/){:target="_blank" rel="noopener"} by Aaron Bertrand at Redgate
 - See [Performance Surprises and Assumptions : GROUP BY vs. DISTINCT 🗗](https://sqlperformance.com/2017/01/t-sql-queries/surprises-assumptions-group-by-distinct){:target="_blank" rel="noopener"} by Aaron Bertrand
