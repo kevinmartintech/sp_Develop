@@ -844,10 +844,10 @@ Because the SQL Server Query Optimizer typically selects the best execution plan
 
 <a name="83"/>
 
-## Parameters, Variables, or Temporary Table Columns Do Not Match Column Data Type
+## Parameters, Variables, Values, or Temporary Table Columns Do Not Match Column Data Type
 **Check Id:** 83 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Parameters+or+Variables+Do+Not+Match+Column+Data+Type)
 
-Parameters, variables, and temporary table columns should match the column data type, length, and precision.
+Parameters, variables, values, and temporary table columns should match the column data type, length, and precision.
 
 Data type mismatches can lead to unexpected behavior, errors, or performance issues. 
 
