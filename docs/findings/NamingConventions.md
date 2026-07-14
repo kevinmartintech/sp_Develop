@@ -251,7 +251,7 @@ FROM
 
 Foreign key columns should have the exact same name as they do in the parent table where the column is the primary. For example, in the Customer table the primary key column might be ``CustomerId``. In an Order table where the customer id is kept, it would also be ``CustomerId``.
 
-There is one exception to this rule, which is when you have more than one foreign key column per table referencing the same primary key column in another table. In this situation, it is helpful to add a descriptor before the column name. An example of this is if you had an Address table. You might have a Person table with foreign key columns like ``HomeAddressId``, ``WorkAddressId``, ``MailingAddressId``, or ``ShippingAddressId``.
+There is one exception to this rule, which is when you have more than one foreign key column per table referencing the same primary key column in another table. In this situation, it is helpful to add a descriptor before the column name. An example of this is if you had an Address table with foreign key columns like `HomeAddressId`, `WorkAddressId`, `MailingAddressId`, or `ShippingAddressId`. You might also have a Person table with foreign key columns like `ModifyPersonId` or `CreatePersonId`.
 
 This check combined with check [Using ID for Primary Key Column Name](#7) makes for much more readable SQL:
 
