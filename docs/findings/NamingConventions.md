@@ -143,7 +143,7 @@ DROP TABLE dbo.TableName;
 
 /* Create a better version of the table with actual constraint names */
 CREATE TABLE dbo.TableName (
-    TableNameId int         NOT NULL CONSTRAINT TableName_TableNameId PRIMARY KEY
+    TableNameId int         NOT NULL CONSTRAINT TableName_TableNameId PRIMARY KEY CLUSTERED
    ,SpecialCode char(1)     NOT NULL CONSTRAINT TableName_SpecialCode_InList CHECK (SpecialCode IN ('A', 'B', 'C'))
    ,SomeName    varchar(50) NOT NULL CONSTRAINT TableName_SomeName_Default DEFAULT ('')
 );
