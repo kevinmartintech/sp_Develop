@@ -45,6 +45,7 @@ Ensure you are using the failover group name or availability group listener name
 
 - See [Connection resiliency and retry logic 🗗](https://learn.microsoft.com/en-us/ef/ef6/fundamentals/connection-resiliency/retry-logic){:target="_blank" rel="noopener"} by Microsoft
 - See [Troubleshoot transient connection errors in SQL Database and SQL Managed Instance 🗗](https://docs.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues){:target="_blank" rel="noopener"} by Microsoft
+- See [Recommendations for handling transient faults 🗗](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/handle-transient-faults){:target="_blank" rel="noopener"} by Microsoft (Well-Architected Framework)
 - See [Looking at Entity Framework 6 Execution Strategies, Specifically SqlAzureExecutionStrategy 🗗](https://www.nikouusitalo.com/blog/using-different-execution-strategies/){:target="_blank" rel="noopener"} by Niko Uusitalo
 - See [The Art Of The SQL Server Stored Procedure: Error Handling 🗗](https://erikdarling.com/the-art-of-the-sql-server-stored-procedure-error-handling/){:target="_blank" rel="noopener"} by Erik Darling
 
