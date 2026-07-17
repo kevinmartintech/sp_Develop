@@ -30,7 +30,7 @@ These checks are for environment and configurations conventions to the SQL Serve
 ## Not Using Code Retry Logic
 **Check Id:** 54 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Use+Code+Retry+Logic)
 
-It is best practice to implement client code to mitigate connection errors, transient errors, and command errors like deadlocks that your client application encounters when communicating with a SQL Server (On-premises SQL Server, Azure SQL Database, Azure SQL Managed Instance and Azure Synapse Analytics).
+It is best practice to implement client code to mitigate connection errors, transient errors, and command errors like deadlocks that your client application encounters when communicating with a SQL Server (On-premises SQL Server, Azure SQL Database, Azure SQL Managed Instance and Azure Synapse Analytics). See [anti-patterns to avoid](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/handle-transient-faults#avoid-anti-patterns).
 
 Retry logic should be implemented by the application/client code "[but if your stored procedure isn't being called by an application, doing it in T-SQL isn't a horrible alternative 🗗](https://erikdarling.com/the-art-of-the-sql-server-stored-procedure-error-handling/#:~:text=But%20if%20your%20stored%20procedure%20isn%E2%80%99t%20being%20called%20by%20an%20application%2C%20doing%20it%20in%20T%2DSQL%20isn%E2%80%99t%20a%20horrible%20alternative){:target="_blank" rel="noopener"}" - Erik Darling
 
