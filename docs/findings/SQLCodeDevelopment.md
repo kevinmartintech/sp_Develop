@@ -3289,7 +3289,9 @@ If you do not want to create two separate stored procedures, you can keep the lo
 Use `OPTION (RECOMPILE)` cautiously if this specific stored procedure is called hundreds of times per second, as it will increase CPU usage.
 
 
-Use case exception: It is acceptable to normalize or replace an input parameter value when the parameter is used only as a control value and does not participate in filtering, joining, row-count estimation, or another expression that materially affects query optimization. Examples include validating sort-column and sort-direction parameters against an allowlist and assigning a safe default for invalid values.
+**Use Case Exception**
+
+It is acceptable to normalize or replace an input parameter value when the parameter is used only as a control value and does not participate in filtering, joining, row-count estimation, or another expression that materially affects query optimization. Examples include validating sort-column and sort-direction parameters against an allowlist and assigning a safe default for invalid values.
 
 - See [Parameterization Part 5: Two Common Mistakes 🗗](https://www.sqlservercentral.com/blogs/parameterization-part-5-two-common-mistakes){:target="_blank" rel="noopener"} by SQLServerCentral (Guy Glantser)
 - See [All About SQL Server Stored Procedures: Wrapper Stored Procedures 🗗](https://www.youtube.com/watch?v=mbFrlwIIt8w){:target="_blank" rel="noopener"} by Erik Darling (Erik Darling Data)
