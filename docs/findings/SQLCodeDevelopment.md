@@ -3283,10 +3283,10 @@ This is the cleanest approach. You use an outer procedure to safely overwrite or
 
 **Solution B: Force Recompile with the Variable**
 
-If you do not want to create two separate stored procedures, you can keep the local variable but attach OPTION (RECOMPILE) to the specific query. This pauses compilation until runtime, allowing SQL Server to look inside the local variable and get a precise cardinality estimate
+If you do not want to create two separate stored procedures, you can keep the local variable but attach `OPTION (RECOMPILE)` to the specific query. This pauses compilation until runtime, allowing SQL Server to look inside the local variable and get a precise cardinality estimate
 
 {: .important }
-Use OPTION (RECOMPILE) cautiously if this specific stored procedure is called hundreds of times per second, as it will increase CPU usage.
+Use `OPTION (RECOMPILE)` cautiously if this specific stored procedure is called hundreds of times per second, as it will increase CPU usage.
 
 
 Use case exception: It is acceptable to normalize or replace an input parameter value when the parameter is used only as a control value and does not participate in filtering, joining, row-count estimation, or another expression that materially affects query optimization. Examples include validating sort-column and sort-direction parameters against an allowlist and assigning a safe default for invalid values.
