@@ -2614,10 +2614,12 @@ CREATE TABLE dbo.Person (
 
 <a name="130"/>
 
-## Set Option Cause Recompile
+## SET Option Cause Recompile
 **Check Id:** 130 [Not implemented yet. Click here to add the issue if you want to develop and create a pull request.](https://github.com/kevinmartintech/sp_Develop/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=Set+Option+Cause+Recompile)
 
-Setting options in batches, stored procedures, and triggers cause recompilation. They should be compiled just once and have their plans reused for subsequent calls. The query will be more performant and use less memory.
+Changing `SET` options inside a batch, stored procedure, or trigger causes statements to recompile. Recompilation increases CPU usage and removes execution-plan reuse, particularly in frequently executed code. They should be compiled just once and have their plans reused for subsequent calls. 
+
+Remove unnecessary `SET` statements. The query will be more performant and use less memory.
 
 [Back to top](#top)
 
