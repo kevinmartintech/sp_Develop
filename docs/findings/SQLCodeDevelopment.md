@@ -1043,7 +1043,7 @@ SELECT
    ,P.MiddleName
    ,P.LastName
 FROM 
-	dbo.Person AS P
+    dbo.Person AS P
 ```
 
 - See [Removing the Square Bracket Decorations with SQL Prompt 🗗](https://www.red-gate.com/hub/product-learning/sql-prompt/removing-the-square-bracket-decorations-with-sql-prompt){:target="_blank" rel="noopener"} by Redgate
