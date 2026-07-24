@@ -3277,8 +3277,25 @@ A local variable produces the same behavior as the `OPTIMIZE FOR UNKNOWN` hint a
 
 Changing a stored procedure parameter value from its originally passed in value can lead to plan caching issues and unpredictable performance. SQL Server may reuse a plan optimized for a different parameter value, resulting in suboptimal execution.
 
+Solution A: The Inner/Outer "Wrapper" Pattern (Highly Recommended)
+
+This is the cleanest approach. You use an outer procedure to safely overwrite or handle the logic, then pass the finalized value into an inner procedure. The inner procedure sees it as a standard parameter and sniffs the exact, correct value.
+
+**Solution B: Force Recompile with the Variable**
+
+If you do not want to create two separate stored procedures, you can keep the local variable but attach OPTION (RECOMPILE) to the specific query. This pauses compilation until runtime, allowing SQL Server to look inside the local variable and get a precise cardinality estimate
+
+{: .important }
+Use OPTION (RECOMPILE) cautiously if this specific stored procedure is called hundreds of times per second, as it will increase CPU usage.
+
+
+Use case exception: It is acceptable to normalize or replace an input parameter value when the parameter is used only as a control value and does not participate in filtering, joining, row-count estimation, or another expression that materially affects query optimization. Examples include validating sort-column and sort-direction parameters against an allowlist and assigning a safe default for invalid values.
+
 - See [Parameterization Part 5: Two Common Mistakes 🗗](https://www.sqlservercentral.com/blogs/parameterization-part-5-two-common-mistakes){:target="_blank" rel="noopener"} by SQLServerCentral (Guy Glantser)
+- See [All About SQL Server Stored Procedures: Wrapper Stored Procedures 🗗](https://www.youtube.com/watch?v=mbFrlwIIt8w){:target="_blank" rel="noopener"} by Erik Darling (Erik Darling Data)
 - See [Variables Usage](/best-practices-and-findings/sql-code-conventions#180)
+- See [Set Option Cause Recompile](/best-practices-and-findings/sql-code-conventions#130)
+
 
 [Back to top](#top)
 
