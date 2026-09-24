@@ -12,7 +12,7 @@ The open source sp_Develop project contains the [sp_Develop 🗗](https://raw.gi
 
 You can use the link in the [results tab](results-explanations) to navigate to the [Best Practices & Findings](best-practices-and-findings) specific check details. Also, feel free to read through the sections as there might not be a check created yet to incorporate other best practices in your development.
 
-sp_Develop runs on SQL Server 2005, 2008, 2008 R2, 2012, 2014,2016, 2017, 2019, 2022, Azure SQL Server, Azure Managed Instance
+sp_Develop runs on SQL Server 2005, 2008, 2008 R2, 2012, 2014,2016, 2017, 2019, 2022, 2025, Azure SQL Server, Azure Managed Instance
 
 Please consider [Contributing to the sp_Develop 🗗](https://github.com/kevinmartintech/sp_Develop/blob/master/CONTRIBUTING.md){:target="_blank" rel="noopener"} project.
 
