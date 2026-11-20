@@ -2421,6 +2421,9 @@ Only use `NOLOCK` when the application stakeholders understand the problems and 
 Alternatives to `NOLOCK` is to use index tuning and use READ COMMITTED SNAPSHOT ISOLATION (RCSI).
     - See [Not Using Read Committed Snapshot Isolation](/best-practices-and-findings/environment-conventions#161)
 
+- See [The NOLOCK Horror Show (SQL Server Versioning Explained Video) 🗗](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/){:target="_blank" rel="noopener"} by [Bob Ward](https://www.linkedin.com/in/bobwardms/){:target="_blank" rel="noopener"} (Principal Architect at Microsoft)
+  - "20+ public articles across 5 top SQL experts saying DON'T DO THIS!" - Bob Ward
+  - "If you thing you need NOLOCK, tell Microsoft so they build the prouct in such a way that you never have to use it." - Bob Ward
 - See [You can minimize locking contention while protecting transactions from dirty reads of uncommitted data modifications by using either of the following 🗗](https://learn.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table?view=sql-server-ver16#:~:text=You%20can%20minimize%20locking%20contention%20while%20protecting%20transactions%20from%20dirty%20reads%20of%20uncommitted%20data%20modifications%20by%20using%20either%20of%20the%20following){:target="_blank" rel="noopener"} by Microsoft
 - See [NOLOCK Is Bad And You Probably Shouldn’t Use It 🗗](https://www.brentozar.com/archive/2021/11/nolock-is-bad-and-you-probably-shouldnt-use-it/){:target="_blank" rel="noopener"} by Brent Ozar
 - See [Using NOLOCK? Here’s How You’ll Get the Wrong Query Results 🗗](https://www.brentozar.com/archive/2018/10/using-nolock-heres-how-youll-get-the-wrong-query-results/){:target="_blank" rel="noopener"} by Brent Ozar
